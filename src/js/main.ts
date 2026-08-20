@@ -76,7 +76,7 @@ const init = async () => {
       topNav.className =
         'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 sticky top-0 z-50 mb-4 shadow-sm';
       topNav.innerHTML = `
-        <div class="w-full flex items-center gap-4 px-3">
+        <div class="w-full flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-3">
           <div class="shrink-0 pl-1">
             <a
               href="https://www.bentopdf.com"
@@ -87,7 +87,7 @@ const init = async () => {
               BentoPDF
             </a>
           </div>
-          <div class="flex items-center justify-center gap-3 flex-1 min-w-0">
+          <div class="flex items-center justify-center gap-3 flex-1 min-w-0 basis-full order-last min-[800px]:basis-auto min-[800px]:order-none">
             <div class="relative w-full max-w-[33.6rem]">
               <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted dark:text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <input
