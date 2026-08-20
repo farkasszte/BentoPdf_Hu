@@ -77,7 +77,7 @@ const init = async () => {
         'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 sticky top-0 z-50 mb-4 shadow-sm';
       topNav.innerHTML = `
         <div class="w-full flex items-center gap-4 px-3">
-          <div class="shrink-0 pl-1 flex flex-col leading-tight">
+          <div class="shrink-0 pl-1">
             <a
               href="https://www.bentopdf.com"
               target="_blank"
@@ -86,11 +86,6 @@ const init = async () => {
             >
               BentoPDF
             </a>
-            <span
-              class="mt-0.5 text-[11px] font-medium text-muted dark:text-slate-400"
-            >
-              Az adataid nem hagyják el az eszközöd. Az oldal ingyenes, korlátlan és megfelel a GDPR-nak.
-            </span>
           </div>
           <div class="flex items-center justify-center gap-3 flex-1 min-w-0">
             <div class="relative w-full max-w-[33.6rem]">
@@ -111,6 +106,11 @@ const init = async () => {
             >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             </button>
+          </div>
+          <div class="shrink-0 pr-1">
+            <span class="text-[11px] font-medium text-muted dark:text-slate-400">
+              Az adataid nem hagyják el az eszközöd. Az oldal ingyenes, korlátlan és megfelel a GDPR-nak.
+            </span>
           </div>
         </div>
       `;
