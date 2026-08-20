@@ -46,15 +46,51 @@ a tömörített változatokhoz (`variable COMPRESSION_MODE=…`).
 
 ## Deploy
 
-A projekt **statikus builde** (`dist/`) kerül élesbe. Két ajánlott mód:
+A projekt **statikus builde** (`dist/`) kerül élesbe. Két támogatott mód:
+
+### Közzététel (önálló publikus repó + push)
+
+A repó a gyökértől (`/`) épül — a `vite.config.ts` a `BASE_URL` környezeti
+változóból veszi az alap-útvonalat (alapértelmezett subapp-prefix helyett).
+
+```bash
+# a repó már git-inicializálva van (main ág, kezdő commit kész)
+git remote add origin https://github.com/<felhasznalo>/<repo-neve>.git
+git push -u origin main
+```
+
+> Repó létrehozás előtt: a számodra fontos infrastruktúra-fájlok (Docker/nginx/
+> cloudflare/helm, az eredeti CLA/sponsor) a `732fc20`-ból eltávolíthatók — lásd a
+> „Takarítás” részt. A `.github/workflows/deploy-pages.yml` az egyetlen CI.
 
 ### Vercel
-1. Repo import a Vercelben; a build parancs: `npm run build`, az output könyvtár: `dist`.
-   (Pl. `vercel.json`-ben megadható mindkettő, lásd alább.)
+1. Importáld a repót a Vercelben. A `vercel.json` már beállítja:
+   - build parancs: `npm run build`
+   - output könyvtár: `dist`
+   - `BASE_URL=/` (gyökéren jelenik meg).
+2. Várj az automatikus buildre — kész. (Előnézet is készül minden push-ra.)
 
 ### GitHub Pages
-1. Hozz létre publikus repót, és GitHub Actions-szel építsd a `dist/`-et a `gh-pages` ágra,
-   vagy töltsd fel kézzel a `dist/` tartalmát.
+1. Hozd létre a **publikus** repót, és a *Settings → Pages → Build and
+   deployment → Source* értéke legyen **GitHub Actions**.
+2. Push a `main` ágra — a `.github/workflows/deploy-pages.yml` automatikusan
+   lefut, és a `dist/` a Pages-re kerül.
+   - **Projekt-repó** esetén a build `BASE_URL="/<repo-neve>/"`-t használ (ezért
+     a cím `https://<felhasznalo>.github.io/<repo-neve>/`).
+   - Ha a repó egy `<felhasznalo>.github.io` (user-site) repó, akkor a
+     workflow-ban a `BASE_URL`-t `/`-ra kell venni.
+
+> A buildhez nincs `git:` függőség: a `vendor/`-beli tarballok és a
+> `xlsx` (cdn.sheetjs.com) önállóan telepíthetők `npm ci`-vel.
+
+## Takarítás (elhagyható, személyes döntés)
+
+A tüköraból értelemszerűen törölhető az eredeti projektre vonatkozó
+infrastruktúra, ha nem kell: `Dockerfile*`, `docker-compose*.yml`,
+`entrypoint.sh`, `nginx*`, `unraid_bentopdf.xml`, `chart/`, `cloudflare/`,
+`.trivyignore`, `CCLA.md`, `ICLA.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`,
+`SECURITY.md`, `.github/FUNDING.yml` (az eredeti szponzora), `signatures/`,
+`.well-known/funding-manifest-urls`. *(Mind visszanyerhető a `732fc20`-ból.)*
 
 ## Tesztelés
 
