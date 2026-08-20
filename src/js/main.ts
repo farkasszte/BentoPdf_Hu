@@ -65,27 +65,19 @@ const init = async () => {
     }
   });
 
-  // Ha közvetlenül (nem iframe-ben) nyitották meg a BentoPDF-et (pl. F5 frissítés vagy közvetlen link)
+  // A standalone fejléc (BentoPDF + kereső + kedvencek) csak a főoldalon kell:
+  // az eszközoldalaknak saját belső fejlécük van (vissza-funkcióval).
   const isTopLevel = window.self === window.top;
-  if (isTopLevel) {
+  if (isTopLevel && document.getElementById('tool-grid')) {
     const existingNav = document.getElementById('standalone-top-nav');
     if (!existingNav) {
       const topNav = document.createElement('div');
       topNav.id = 'standalone-top-nav';
       topNav.className =
         'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 sticky top-0 z-50 mb-4 shadow-sm';
-      const isToolPage = !document.getElementById('tool-grid');
-      const homeUrl = import.meta.env.BASE_URL || '/';
-      const backBtnHtml = isToolPage
-        ? `<a href="${homeUrl}" title="Vissza az eszközökhöz" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/10 text-muted dark:text-slate-300 hover:text-accent text-sm font-semibold transition-colors whitespace-nowrap">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Vissza
-          </a>`
-        : '';
       topNav.innerHTML = `
-        <div class="max-w-7xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-2">
-          <div class="justify-self-start flex items-center gap-3 min-w-0">
-            ${backBtnHtml}
+        <div class="max-w-7xl mx-auto flex items-center gap-4 px-2">
+          <div class="shrink-0">
             <a
               href="https://www.bentopdf.com"
               target="_blank"
@@ -95,24 +87,22 @@ const init = async () => {
               BentoPDF
             </a>
           </div>
-          <div id="standalone-search-wrap" class="w-full${isToolPage ? ' hidden' : ''}">
-            <div class="relative">
+          <div class="flex items-center justify-center gap-3 flex-1 min-w-0">
+            <div class="relative w-full max-w-[33.6rem]">
               <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted dark:text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <input
                 id="standalone-search"
                 type="search"
                 placeholder="Keresés az eszközök között…"
                 autocomplete="off"
-                class="w-full max-w-[33.6rem] mx-auto block pl-9 pr-4 py-2 rounded-xl bg-light dark:bg-slate-800 border border-medium dark:border-slate-700 text-sm text-dark dark:text-dark-text placeholder:text-muted dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent/50"
+                class="w-full pl-9 pr-4 py-2 rounded-xl bg-light dark:bg-slate-800 border border-medium dark:border-slate-700 text-sm text-dark dark:text-dark-text placeholder:text-muted dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent/50"
               />
             </div>
-          </div>
-          <div class="justify-self-end flex items-center gap-1.5">
             <button
               id="standalone-fav-toggle"
               type="button"
               title="Csak kedvencek mutatása"
-              class="p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 text-muted dark:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-accent/50"
+              class="shrink-0 p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 text-muted dark:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-accent/50"
             >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             </button>
@@ -121,21 +111,15 @@ const init = async () => {
       `;
       document.body.prepend(topNav);
 
-      // Kereső bekötése a főoldali tool-szűrőhöz (a főoldal __toolsSearch globált regisztrál)
+      // Kereső bekötése a főoldali tool-szűrőhöz
       const searchInput =
         topNav.querySelector<HTMLInputElement>('#standalone-search');
       searchInput?.addEventListener('input', () => {
         const g = (window as any).__toolsSearch;
         if (typeof g === 'function') g(searchInput.value);
       });
-      // Eszközoldalakon Enter -> a főoldalra visz, ahol alkalmazódik a keresés
-      searchInput?.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !document.getElementById('tool-grid')) {
-          window.location.href = homeUrl;
-        }
-      });
 
-      // Csak kedvencek gomb (csillag) — a főoldal __toolsFavoritesOnly globált kezeli
+      // Csak kedvencek gomb (csillag)
       topNav
         .querySelector('#standalone-fav-toggle')
         ?.addEventListener('click', (e) => {
