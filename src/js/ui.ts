@@ -138,7 +138,9 @@ export const hideAlert = () => {
 };
 
 export const switchView = (view: string) => {
+  const searchWrap = document.getElementById('standalone-search-wrap');
   if (view === 'grid') {
+    if (searchWrap) searchWrap.classList.remove('hidden');
     dom.gridView.classList.remove('hidden');
     dom.toolInterface.classList.add('hidden');
     // show hero and features and header
@@ -156,6 +158,7 @@ export const switchView = (view: string) => {
 
     resetState();
   } else {
+    if (searchWrap) searchWrap.classList.add('hidden');
     dom.gridView.classList.add('hidden');
     dom.toolInterface.classList.remove('hidden');
     dom.featuresSection.classList.add('hidden');
@@ -422,8 +425,8 @@ export const renderPageThumbnails = async (
       useLazyLoading: true,
       lazyLoadMargin: '300px',
       onProgress: (current, total) => {
-              showLoader(`Oldal-előnézetek renderelése: ${current}/${total}`);
-            },
+        showLoader(`Oldal-előnézetek renderelése: ${current}/${total}`);
+      },
       onBatchComplete: () => {
         createIcons({ icons });
       },

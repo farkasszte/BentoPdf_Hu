@@ -18,7 +18,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: "Roboto Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Roboto Condensed', ui-sans-serif, system-ui, sans-serif;
   --font-dancing: 'Dancing Script', cursive;
   --font-vibes: 'Great Vibes', cursive;
   --font-kalam: 'Kalam', cursive;
@@ -35,7 +35,7 @@
 }
 
 @theme {
-  --font-sans: "Roboto Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Roboto Condensed', ui-sans-serif, system-ui, sans-serif;
   --font-dancing: 'Dancing Script', cursive;
   --font-vibes: 'Great Vibes', cursive;
   --font-kalam: 'Kalam', cursive;
@@ -49,35 +49,45 @@ html {
 }
 
 @theme {
-  --color-surface: #FAFAFA;
-  --color-light: #F8FAFC;
-  --color-dark-text: #CBD5E1;
-  --color-dark-border: #065F46;
-  --color-medium: #E4E4E7;
-  --color-dark: #27272A;
+  --color-surface: #fafafa;
+  --color-light: #f8fafc;
+  --color-dark-text: #cbd5e1;
+  --color-dark-border: #065f46;
+  --color-medium: #e4e4e7;
+  --color-dark: #27272a;
   --color-darker: #030712;
-  --color-muted: #64748B;
-  --color-accent: #24A66E;
+  --color-muted: #64748b;
+  --color-accent: #24a66e;
   --color-accent-hover: #059669;
-  --color-accent-light: #ECFDF5;
+  --color-accent-light: #ecfdf5;
 }
 
 body {
-  font-family: var(--font-sans, "Roboto Condensed", ui-sans-serif, system-ui, sans-serif);
-  background-color: #FAFAFA;
-  color: #27272A;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: var(
+    --font-sans,
+    'Roboto Condensed',
+    ui-sans-serif,
+    system-ui,
+    sans-serif
+  );
+  background-color: #fafafa;
+  color: #27272a;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.dark body, body.dark, html.dark body {
+.dark body,
+body.dark,
+html.dark body {
   background-color: #030712;
-  color: #CBD5E1;
+  color: #cbd5e1;
 }
 
 .tool-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #E4E4E7;
-  background-color: #FAFAFA;
+  border: 1px solid #e4e4e7;
+  background-color: #fafafa;
   padding: 0.75rem 1rem;
   border-radius: 1rem;
   display: flex;
@@ -88,7 +98,8 @@ body {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-.dark .tool-card, html.dark .tool-card {
+.dark .tool-card,
+html.dark .tool-card {
   border-color: #1e293b;
   background-color: #0f172a;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -96,13 +107,18 @@ body {
 
 .tool-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  border-color: #24A66E;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border-color: #24a66e;
 }
 
-.dark .tool-card:hover, html.dark .tool-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
-  border-color: #24A66E;
+.dark .tool-card:hover,
+html.dark .tool-card:hover {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  border-color: #24a66e;
 }
 
 .tool-card h3 {
@@ -115,33 +131,36 @@ body {
   transition: color 0.2s ease;
 }
 
-.dark .tool-card h3, html.dark .tool-card h3 {
-  color: #CBD5E1;
+.dark .tool-card h3,
+html.dark .tool-card h3 {
+  color: #cbd5e1;
 }
 
 .tool-card:hover h3 {
-  color: #24A66E;
+  color: #24a66e;
 }
 
-.dark .tool-card:hover h3, html.dark .tool-card:hover h3 {
-  color: #24A66E;
+.dark .tool-card:hover h3,
+html.dark .tool-card:hover h3 {
+  color: #24a66e;
 }
 
 .tool-card p {
   font-size: 0.875rem; /* 14px text-sm matching UniversalCard */
   font-weight: 500;
-  color: #64748B;
+  color: #64748b;
   margin-top: 0.25rem;
   line-height: 1.375; /* leading-snug */
 }
 
-.dark .tool-card p, html.dark .tool-card p {
-  color: #94A3B8;
+.dark .tool-card p,
+html.dark .tool-card p {
+  color: #94a3b8;
 }
 
 .tool-card > div:first-of-type i,
 .tool-card .ph {
-  color: #24A66E;
+  color: #24a66e;
   transition: color 0.2s ease;
 }
 
@@ -163,19 +182,20 @@ body {
 }
 
 .fav-toggle-btn:hover svg {
-  color: #24A66E;
+  color: #24a66e;
 }
 
 .text-accent,
 .fill-accent {
-  color: #24A66E !important;
-  fill: #24A66E !important;
+  color: #24a66e !important;
+  fill: #24a66e !important;
 }
 
 .category-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.5rem;
   width: 100%;
   padding: 0.5rem 0.25rem;
   margin-top: 1.5rem;
@@ -189,27 +209,29 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #24A66E;
+  color: #24a66e;
   text-align: left;
   transition: all 0.2s ease;
 }
 
-.dark .category-header, html.dark .category-header {
+.dark .category-header,
+html.dark .category-header {
   background: transparent;
   border-bottom: 1px solid rgba(30, 41, 59, 0.8);
-  color: #34D399;
+  color: #34d399;
 }
 
 .category-header:hover {
   background: transparent;
   color: #059669;
-  border-bottom-color: #24A66E;
+  border-bottom-color: #24a66e;
 }
 
-.dark .category-header:hover, html.dark .category-header:hover {
+.dark .category-header:hover,
+html.dark .category-header:hover {
   background: transparent;
-  color: #6EE7B7;
-  border-bottom-color: #34D399;
+  color: #6ee7b7;
+  border-bottom-color: #34d399;
 }
 
 /* Custom sleek scrollbars matching Kincsesláda */
@@ -221,31 +243,35 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
-.dark ::-webkit-scrollbar-thumb, html.dark ::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb,
+html.dark ::-webkit-scrollbar-thumb {
   background: #334155;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #94a3b8;
 }
-.dark ::-webkit-scrollbar-thumb:hover, html.dark ::-webkit-scrollbar-thumb:hover {
+.dark ::-webkit-scrollbar-thumb:hover,
+html.dark ::-webkit-scrollbar-thumb:hover {
   background: #475569;
 }
 * {
   scrollbar-width: thin;
-  scrollbar-color: #CBD5E1 transparent;
+  scrollbar-color: #cbd5e1 transparent;
 }
-.dark *, html.dark * {
+.dark *,
+html.dark * {
   scrollbar-color: #334155 transparent;
 }
 
 .category-chevron {
-  color: #24A66E;
+  color: #24a66e;
 }
-.dark .category-chevron, html.dark .category-chevron {
-  color: #34D399;
+.dark .category-chevron,
+html.dark .category-chevron {
+  color: #34d399;
 }
 
 .category-tools {
@@ -269,14 +295,15 @@ body {
   border-left: none;
   border-right: none;
   border-top: none;
-  border-bottom: 1px solid #E4E4E7;
+  border-bottom: 1px solid #e4e4e7;
   background-color: transparent;
   align-items: center;
   justify-content: flex-start;
   text-align: left;
 }
 
-.dark .compact-mode .tool-card, html.dark .compact-mode .tool-card {
+.dark .compact-mode .tool-card,
+html.dark .compact-mode .tool-card {
   border-bottom: 1px solid #1e293b;
 }
 
@@ -308,7 +335,7 @@ body {
   transform: none;
   box-shadow: none;
   background-color: rgba(36, 166, 110, 0.05);
-  border-color: #24A66E;
+  border-color: #24a66e;
 }
 
 @media (min-width: 640px) {

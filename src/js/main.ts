@@ -74,17 +74,28 @@ const init = async () => {
       topNav.id = 'standalone-top-nav';
       topNav.className =
         'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 sticky top-0 z-50 mb-4 shadow-sm';
+      const isToolPage = !document.getElementById('tool-grid');
+      const homeUrl = import.meta.env.BASE_URL || '/';
+      const backBtnHtml = isToolPage
+        ? `<a href="${homeUrl}" title="Vissza az eszközökhöz" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/5 dark:bg-white/10 text-muted dark:text-slate-300 hover:text-accent text-sm font-semibold transition-colors whitespace-nowrap">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Vissza
+          </a>`
+        : '';
       topNav.innerHTML = `
-        <div class="max-w-6xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-2">
-          <a
-            href="https://www.bentopdf.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="justify-self-start text-sm font-black uppercase tracking-widest text-darker dark:text-dark-text hover:text-accent transition-colors"
-          >
-            BentoPDF
-          </a>
-          <div class="w-full">
+        <div class="max-w-7xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-2">
+          <div class="justify-self-start flex items-center gap-3 min-w-0">
+            ${backBtnHtml}
+            <a
+              href="https://www.bentopdf.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-black tracking-widest text-darker dark:text-dark-text hover:text-accent transition-colors whitespace-nowrap"
+            >
+              BentoPDF
+            </a>
+          </div>
+          <div id="standalone-search-wrap" class="w-full${isToolPage ? ' hidden' : ''}">
             <div class="relative">
               <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted dark:text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <input
@@ -92,11 +103,20 @@ const init = async () => {
                 type="search"
                 placeholder="Keresés az eszközök között…"
                 autocomplete="off"
-                class="w-full max-w-md mx-auto block pl-9 pr-4 py-2 rounded-xl bg-light dark:bg-slate-800 border border-medium dark:border-slate-700 text-sm text-dark dark:text-dark-text placeholder:text-muted dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent/50"
+                class="w-full max-w-[33.6rem] mx-auto block pl-9 pr-4 py-2 rounded-xl bg-light dark:bg-slate-800 border border-medium dark:border-slate-700 text-sm text-dark dark:text-dark-text placeholder:text-muted dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent/50"
               />
             </div>
           </div>
-          <div class="justify-self-end w-20"></div>
+          <div class="justify-self-end flex items-center gap-1.5">
+            <button
+              id="standalone-fav-toggle"
+              type="button"
+              title="Csak kedvencek mutatása"
+              class="p-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 text-muted dark:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-accent/50"
+            >
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </button>
+          </div>
         </div>
       `;
       document.body.prepend(topNav);
@@ -111,9 +131,19 @@ const init = async () => {
       // Eszközoldalakon Enter -> a főoldalra visz, ahol alkalmazódik a keresés
       searchInput?.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !document.getElementById('tool-grid')) {
-          window.location.href = import.meta.env.BASE_URL || '/';
+          window.location.href = homeUrl;
         }
       });
+
+      // Csak kedvencek gomb (csillag) — a főoldal __toolsFavoritesOnly globált kezeli
+      topNav
+        .querySelector('#standalone-fav-toggle')
+        ?.addEventListener('click', (e) => {
+          const btn = e.currentTarget as HTMLElement;
+          const g = (window as any).__toolsFavoritesOnly;
+          const on = typeof g === 'function' ? g() : false;
+          btn.classList.toggle('text-amber-500', on);
+        });
     }
   }
 
@@ -472,7 +502,7 @@ const init = async () => {
       chevron.className =
         'category-chevron w-5 h-5 text-gray-400 transition-transform duration-300';
 
-      header.append(title, chevron);
+      header.append(chevron, title);
 
       const toolsContainer = document.createElement('div');
       toolsContainer.className =
@@ -658,6 +688,13 @@ const init = async () => {
       applyActiveFilters();
     };
 
+    // A standalone fejlécen lévő „csak kedvencek" gomb bekötése
+    (window as any).__toolsFavoritesOnly = () => {
+      activeShowFavoritesOnly = !activeShowFavoritesOnly;
+      applyActiveFilters();
+      return activeShowFavoritesOnly;
+    };
+
     // Valós idejű szűrő- és témaváltás fogadása a Kincsesláda szülőablaktól
     window.addEventListener('message', (event) => {
       if (event.data?.type === 'FILTER_CHANGE') {
@@ -669,6 +706,12 @@ const init = async () => {
           standaloneSearch.value = event.data.searchTerm || '';
         }
         activeShowFavoritesOnly = !!event.data.showFavoritesOnly;
+        const standaloneFav = document.getElementById('standalone-fav-toggle');
+        if (standaloneFav)
+          standaloneFav.classList.toggle(
+            'text-amber-500',
+            activeShowFavoritesOnly
+          );
         if (Array.isArray(event.data.favoriteToolIds)) {
           currentFavorites = event.data.favoriteToolIds;
           updateAllFavoriteButtons(currentFavorites);
