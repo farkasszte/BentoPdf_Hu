@@ -162,12 +162,201 @@
       <!-- Scroll to Top Button -->
       <button
         id="scroll-to-top-btn"
-        class="fixed bottom-12 right-8 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 translate-y-10 invisible z-40"
+        class="fixed bottom-12 right-8 bg-accent hover:bg-accent-hover text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 translate-y-10 invisible z-40"
         aria-label="Ugrás az oldal tetejére"
       >
         <i data-lucide="arrow-up" class="w-6 h-6"></i>
       </button>
     </div>
+
+    <!-- FAQ szekció a főoldal alján -->
+    <section
+      id="home-faq"
+      class="w-full px-5 pb-4 pt-2 bg-light dark:bg-slate-900 border-t border-medium dark:border-slate-800"
+    >
+      <div class="max-w-3xl mx-auto">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center text-dark dark:text-dark-text mb-2"
+        >
+          Gyakran ismételt kérdések
+        </h2>
+        <p
+          class="text-center text-sm text-muted dark:text-slate-400 mb-8 max-w-2xl mx-auto"
+        >
+          Van kérdésed? Megvan a válasz! Íme, a leggyakrabban felmerülő kérdések
+          közül néhány.
+        </p>
+
+        <div class="space-y-3">
+          <details
+            class="bg-surface dark:bg-slate-800 border border-medium dark:border-slate-700 rounded-lg p-5 group"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer font-semibold text-dark dark:text-dark-text"
+            >
+              Biztonságban vannak a fájljaim, és megőrzik a magánéletem?
+              <i
+                data-lucide="plus"
+                class="w-5 h-5 text-accent icon flex-shrink-0"
+              ></i>
+            </summary>
+            <div class="mt-3 text-sm text-muted dark:text-slate-400">
+              <p>
+                <strong class="text-dark dark:text-dark-text">Teljesen.</strong>
+                Ez a PDF stúdió legfontosabb jellemzője. Minden feldolgozás
+                100%-ban helyben, a saját böngésződben történik. A fájljaid soha
+                nem kerülnek fel egyetlen szerverre sem, így mi – vagy bárki más
+                – soha nem láthatjuk őket. Az adatvédelem garantált.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="bg-surface dark:bg-slate-800 border border-medium dark:border-slate-700 rounded-lg p-5 group"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer font-semibold text-dark dark:text-dark-text"
+            >
+              Tényleg ingyenes a PDF stúdió? Mi a fogás?
+              <i
+                data-lucide="plus"
+                class="w-5 h-5 text-accent icon flex-shrink-0"
+              ></i>
+            </summary>
+            <div class="mt-3 text-sm text-muted dark:text-slate-400">
+              <p>
+                Igen, teljesen ingyenes, és nincs semmilyen fogás. Nincsenek
+                rejtett díjak, előfizetési csomagok, használati korlátok és csak
+                prémium tagoknak elérhető funkciók sem. Úgy gondoljuk, hogy az
+                alapvető eszközöknek mindenki számára hozzáférhetőnek kell
+                lenniük.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="bg-surface dark:bg-slate-800 border border-medium dark:border-slate-700 rounded-lg p-5 group"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer font-semibold text-dark dark:text-dark-text"
+            >
+              Szükségem van internetkapcsolatra az eszközök használatához?
+              <i
+                data-lucide="plus"
+                class="w-5 h-5 text-accent icon flex-shrink-0"
+              ></i>
+            </summary>
+            <div class="mt-3 text-sm text-muted dark:text-slate-400">
+              <p>
+                Miután első alkalommal betöltötted a weboldalt, a legtöbb eszköz
+                teljesen offline is működik! Mivel az összes feldolgozási
+                könyvtár betöltődik a böngésződbe, akár le is csatlakozhatsz az
+                internetről, és továbbra is biztonságosan egyesítheted,
+                szétválaszthatod, tömörítheted és szerkesztheted a PDF-jeidet.
+                Néhány speciális eszköz, amely külső adatokat igényel (például a
+                Markdown–PDF konverzió webes képekkel), internetkapcsolatot
+                igényelhet.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="bg-surface dark:bg-slate-800 border border-medium dark:border-slate-700 rounded-lg p-5 group"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer font-semibold text-dark dark:text-dark-text"
+            >
+              Van bármilyen fájlméret- vagy használati korlát?
+              <i
+                data-lucide="plus"
+                class="w-5 h-5 text-accent icon flex-shrink-0"
+              ></i>
+            </summary>
+            <div class="mt-3 text-sm text-muted dark:text-slate-400">
+              <p>
+                Nem, nem szabunk meg semmilyen mesterséges korlátot sem a
+                fájlméretre, sem a fájlok számára, sem arra, hogy hányszor
+                használhatsz egy eszközt. Az egyetlen gyakorlati korlát a saját
+                számítógéped teljesítménye és memóriája, hiszen a nagyon nagy
+                vagy összetett fájlok feldolgozása tovább tarthat.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="bg-surface dark:bg-slate-800 border border-medium dark:border-slate-700 rounded-lg p-5 group"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer font-semibold text-dark dark:text-dark-text"
+            >
+              Követitek a tevékenységemet a PDF stúdióban?
+              <i
+                data-lucide="plus"
+                class="w-5 h-5 text-accent icon flex-shrink-0"
+              ></i>
+            </summary>
+            <div class="mt-3 text-sm text-muted dark:text-slate-400">
+              <p>
+                Fontos számunkra az adatvédelmed. A PDF stúdió nem követi nyomon
+                a személyes adatokat. A
+                <a
+                  href="https://simpleanalytics.com"
+                  class="text-accent hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Simple Analytics</a
+                >
+                szolgáltatást kizárólag az anonim látogatásszámok megtekintésére
+                használjuk. Ez azt jelenti, hogy tudjuk, hányan látogatják az
+                oldalunkat, de
+                <strong class="text-dark dark:text-dark-text"
+                  >soha nem tudjuk, hogy ki vagy</strong
+                >. A Simple Analytics teljes mértékben GDPR-konform, és
+                tiszteletben tartja a magánéleted.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="bg-surface dark:bg-slate-800 border border-medium dark:border-slate-700 rounded-lg p-5 group"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer font-semibold text-dark dark:text-dark-text"
+            >
+              Milyen technológiát használ a PDF stúdió?
+              <i
+                data-lucide="plus"
+                class="w-5 h-5 text-accent icon flex-shrink-0"
+              ></i>
+            </summary>
+            <div class="mt-3 text-sm text-muted dark:text-slate-400">
+              <p>
+                A PDF stúdió a modern webes technológiák erejére épül.
+                Elsősorban olyan JavaScript-könyvtárakat használunk, mint a
+                <strong class="text-dark dark:text-dark-text"
+                  >PDF-lib.js</strong
+                >
+                és a
+                <strong class="text-dark dark:text-dark-text">PDFKit.js</strong
+                >, amelyeket WebAssembly segítségével hatékonyan futó kóddá
+                fordítunk a böngésződben. Ez lehetővé teszi a nagy
+                teljesítményű, szerverhez hasonló feldolgozást anélkül, hogy az
+                adataid valaha is elhagynák a számítógépedet.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="text-center mt-8">
+          <a
+            href="faq.html"
+            class="inline-block px-6 py-2.5 rounded-lg bg-accent hover:bg-accent-hover text-white text-sm font-semibold transition-colors"
+          >
+            További kérdések és válaszok
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Simple mode footer -->
     <footer

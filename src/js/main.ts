@@ -609,6 +609,14 @@ const init = async () => {
       }
     });
 
+    // Adatvédelmi banner az első kategória fölé (középen)
+    const privacyBanner = document.createElement('div');
+    privacyBanner.className =
+      'col-span-full order-first mb-2 text-center text-sm sm:text-base font-medium text-dark dark:text-dark-text bg-light dark:bg-slate-900 border border-medium dark:border-slate-700 rounded-xl px-4 py-3';
+    privacyBanner.textContent =
+      'Az adataid nem hagyják el az eszközöd. Az oldal ingyenes, korlátlan és megfelel a GDPR-nak.';
+    dom.toolGrid.prepend(privacyBanner);
+
     // Üres állapot üzenet
     const emptyMessage = document.createElement('div');
     emptyMessage.id = 'empty-tools-message';
