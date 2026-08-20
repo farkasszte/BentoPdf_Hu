@@ -235,6 +235,16 @@ html.dark .category-header:hover {
 }
 
 /* Custom sleek scrollbars matching Kincsesláda */
+/* Görgetősáv teljes elrejtése a főoldalon (a görgetés megmarad) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
