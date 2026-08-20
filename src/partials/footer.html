@@ -10,7 +10,13 @@
             alt="{{#if brandName}}{{brandName}}{{else}}Bento PDF{{/if}} Logo"
             class="h-10 w-10 mr-3"
           />
-          <span id="footer-brand" class="text-xl font-bold text-white">{{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}</span>
+          <a
+            id="footer-brand"
+            href="https://github.com/farkasszte/BentoPdf_Hu"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xl font-bold text-white hover:text-indigo-400"
+          >{{#if brandName}}{{brandName}}{{else}}BentoPDF magyarul{{/if}}</a>
         </div>
         <p id="footer-copyright" class="text-gray-400 text-sm" {{#unless footerText}}data-i18n="footer.copyright"{{/unless}}>
           {{#if footerText}}{{footerText}}{{else}}&copy; 2026 BentoPDF. All rights reserved.{{/if}}
