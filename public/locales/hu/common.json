@@ -1,0 +1,404 @@
+{
+  "nav": {
+    "home": "Főoldal",
+    "about": "Névjegy",
+    "contact": "Kapcsolat",
+    "licensing": "Licencelés",
+    "allTools": "Minden eszköz",
+    "docs": "Dokumentáció",
+    "openMainMenu": "Főmenü megnyitása",
+    "language": "Nyelv",
+    "searchLanguage": "Nyelv keresése…",
+    "noLanguagesFound": "Nincs találat"
+  },
+  "donation": {
+    "message": "Tetszik a BentoPDF? Támogasd a projektet, hogy ingyenes és nyílt forráskódú maradhasson!",
+    "button": "Támogatás"
+  },
+  "hero": {
+    "title": "A",
+    "pdfToolkit": "PDF eszköztár",
+    "builtForPrivacy": "amely védi az adataidat",
+    "noSignups": "Nincs regisztráció",
+    "unlimitedUse": "Korlátlan használat",
+    "worksOffline": "Offline is működik",
+    "startUsing": "Használat indítása"
+  },
+  "usedBy": {
+    "title": "Megbízható eszköz oktatók és szakemberek számára"
+  },
+  "features": {
+    "title": "Miért válaszd a",
+    "bentoPdf": "BentoPDF-et?",
+    "noSignup": {
+      "title": "Nincs regisztráció",
+      "description": "Azonnal használható, nem szükséges fiók vagy e-mail cím."
+    },
+    "noUploads": {
+      "title": "Nincs feltöltés szerverre",
+      "description": "100%-ban a böngésződben fut, a fájljaid nem hagyják el az eszközödet."
+    },
+    "foreverFree": {
+      "title": "Mindig ingyenes",
+      "description": "Minden eszköz elérhető próbaperiódusok és fizetős korlátok nélkül."
+    },
+    "noLimits": {
+      "title": "Nincsenek korlátok",
+      "description": "Használd amennyit csak szeretnéd, rejtett limitek nélkül."
+    },
+    "batchProcessing": {
+      "title": "Kötegelt feldolgozás",
+      "description": "Kezelj több PDF dokumentumot egyszerre egyetlen lépésben."
+    },
+    "lightningFast": {
+      "title": "Villámgyors",
+      "description": "Azonnali feldolgozás a helyi géped számítási kapacitásával."
+    }
+  },
+  "tools": {
+    "title": "Eszközök böngészése",
+    "toolsLabel": "Eszköztár",
+    "subtitle": "Kattints egy eszközre a fájlok feltöltéséhez",
+    "searchPlaceholder": "Keresés a PDF eszközök között",
+    "backToTools": "Vissza az eszközökhöz",
+    "firstLoadNotice": "Az első betöltés a feldolgozó motor letöltése miatt pár pillanatot igénybe vehet, ezután minden művelet azonnali lesz."
+  },
+  "upload": {
+    "clickToSelect": "Kattints a fájl kiválasztásához",
+    "orDragAndDrop": "vagy húzd ide a fájlokat",
+    "pdfOrImages": "PDF vagy képfájlok",
+    "filesNeverLeave": "A fájljaid soha nem hagyják el a gépedet.",
+    "addMore": "További fájlok hozzáadása",
+    "clearAll": "Összes törlése",
+    "clearFiles": "Fájlok törlése",
+    "hints": {
+      "singlePdf": "Egyetlen PDF fájl",
+      "pdfFile": "PDF fájl",
+      "multiplePdfs2": "Több PDF fájl (legalább 2)",
+      "bmpImages": "BMP képek",
+      "oneOrMorePdfs": "Egy vagy több PDF fájl",
+      "pdfDocuments": "PDF dokumentumok",
+      "oneOrMoreCsv": "Egy vagy több CSV fájl",
+      "multiplePdfsSupported": "Több PDF fájl támogatott",
+      "singleOrMultiplePdfs": "Egy vagy több PDF fájl támogatott",
+      "singlePdfFile": "Egyetlen PDF fájl",
+      "pdfWithForms": "PDF űrlapmezőkkel",
+      "heicImages": "HEIC/HEIF képek",
+      "jpgImages": "JPG, JPEG, JP2, JPX képek",
+      "pdfsOrImages": "PDF vagy képfájlok",
+      "oneOrMoreOdt": "Egy vagy több ODT fájl",
+      "singlePdfOnly": "Csak egyetlen PDF fájl",
+      "pdfFiles": "PDF fájlok",
+      "multiplePdfs": "Több PDF fájl",
+      "pngImages": "PNG képek",
+      "pdfFilesOneOrMore": "PDF fájlok (egy vagy több)",
+      "oneOrMoreRtf": "Egy vagy több RTF fájl",
+      "svgGraphics": "SVG vektoros grafikák",
+      "tiffImages": "TIFF képek",
+      "webpImages": "WebP képek"
+    }
+  },
+  "howItWorks": {
+    "title": "Hogyan működik",
+    "step1Title": "Fájl feltöltése",
+    "step1": "Kattints a fájlra, vagy húzd ide a kezdéshez",
+    "step2Title": "Feldolgozás",
+    "step2": "Kattints a feldolgozás gombra az indításhoz",
+    "step3Title": "Letöltés",
+    "step3": "Mentsd el a feldolgozott fájlt azonnal"
+  },
+  "relatedTools": {
+    "title": "Kapcsolódó PDF eszközök"
+  },
+  "loader": {
+    "processing": "Feldolgozás..."
+  },
+  "alert": {
+    "title": "Figyelmeztetés",
+    "ok": "OK",
+    "success": "Sikeres művelet!",
+    "error": "Hiba történt a feldolgozás során.",
+    "warning": "Figyelem",
+    "processing": "Feldolgozás folyamatban...",
+    "downloadReady": "A letöltés elkészült."
+  },
+  "preview": {
+    "title": "Dokumentum előnézet",
+    "downloadAsPdf": "Letöltés PDF-ként",
+    "close": "Bezárás"
+  },
+  "settings": {
+    "title": "Beállítások",
+    "appearance": "Megjelenés",
+    "theme": "Téma",
+    "language": "Nyelv",
+    "shortcuts": "Gyorsbillentyűk",
+    "preferences": "Beállítások",
+    "displayPreferences": "Megjelenítési beállítások",
+    "searchShortcuts": "Gyorsbillentyűk keresése...",
+    "shortcutsInfo": "Nyomd le és tartsd lenyomva a billentyűket a gyorsbillentyű beállításához. A módosítások automatikusan mentődnek.",
+    "shortcutsWarning": "⚠️ Kerüld a gyakori böngésző-gyorsbillentyűket (Cmd/Ctrl+W, Cmd/Ctrl+T, Cmd/Ctrl+N stb.), mert előfordulhat, hogy nem működnek megbízhatóan.",
+    "import": "Importálás",
+    "export": "Exportálás",
+    "resetToDefaults": "Visszaállítás alapértékekre",
+    "fullWidthMode": "Teljes szélességű mód",
+    "fullWidthDescription": "Az eszközök a középre igazított tartalom helyett a teljes képernyőszélességet használják",
+    "compactMode": "Tömör mód",
+    "compactModeDescription": "Az eszközök kártyák helyett tömör listában jelennek meg",
+    "advancedSettings": "Speciális beállítások",
+    "advancedSettingsDescription": "Külső feldolgozó modulok beállítása (PyMuPDF, Ghostscript, CoherentPDF)",
+    "settingsAutoSaved": "A beállítások automatikusan mentődnek",
+    "clickToSet": "Kattints a beállításhoz",
+    "pressKeys": "Nyomd le a billentyűket...",
+    "save": "Mentés",
+    "cancel": "Mégse",
+    "close": "Bezárás",
+    "warnings": {
+      "alreadyInUse": "A gyorsbillentyű már foglalt",
+      "assignedTo": "már hozzá van rendelve ehhez:",
+      "chooseDifferent": "Kérlek, válassz másik gyorsbillentyűt.",
+      "reserved": "Fenntartott gyorsbillentyű",
+      "commonlyUsed": "gyakran használt erre:",
+      "unreliable": "Ez a gyorsbillentyű lehet, hogy nem működik megbízhatóan, vagy ütközhet a böngésző vagy a rendszer működésével.",
+      "useAnyway": "Mindezek ellenére használod?",
+      "resetTitle": "Gyorsbillentyűk visszaállítása",
+      "resetMessage": "Biztosan visszaállítod az összes gyorsbillentyűt az alapértékre?<br><br>Ez a művelet nem vonható vissza.",
+      "importSuccessTitle": "Sikeres importálás",
+      "importSuccessMessage": "A gyorsbillentyűk importálása sikeres!",
+      "importFailTitle": "Sikertelen importálás",
+      "importFailMessage": "A gyorsbillentyűk importálása sikertelen. Érvénytelen fájlformátum."
+    }
+  },
+  "warning": {
+    "title": "Figyelmeztetés",
+    "cancel": "Mégse",
+    "proceed": "Folytatás"
+  },
+  "compliance": {
+    "title": "Az adataid soha nem hagyják el az eszközödet",
+    "weKeep": "Az adataidat",
+    "yourInfoSafe": "biztonságban tartjuk",
+    "byFollowingStandards": "a világszínvonalú biztonsági szabványok betartásával.",
+    "processingLocal": "Minden feldolgozás helyben, az eszközödön történik.",
+    "localProcessing": "Kizárólag helyi, kliensoldali feldolgozás",
+    "gdpr": {
+      "title": "GDPR-megfelelőség",
+      "description": "Védi az Európai Unió polgárainak személyes adatait és magánéletét."
+    },
+    "ccpa": {
+      "title": "CCPA-megfelelőség",
+      "description": "Jogokat biztosít a kaliforniai lakosoknak személyes adataik gyűjtésének, felhasználásának és megosztásának ellenőrzéséhez."
+    },
+    "hipaa": {
+      "title": "HIPAA-megfelelőség",
+      "description": "Védelmet biztosít az érzékeny egészségügyi adatok kezeléséhez az Egyesült Államok egészségügyi rendszerében."
+    }
+  },
+  "faq": {
+    "title": "Gyakori",
+    "questions": "kérdések",
+    "sectionTitle": "Gyakran ismételt kérdések",
+    "isFree": {
+      "question": "A BentoPDF valóban ingyenes?",
+      "answer": "Igen, teljesen. A BentoPDF minden eszköze 100%-ban ingyenesen használható, fájllimitek, regisztráció és vízjelek nélkül. Úgy gondoljuk, mindenki számára elérhetővé kell tenni az egyszerű és hatékony PDF-eszközöket, fizetési fal nélkül."
+    },
+    "areFilesSecure": {
+      "question": "Biztonságban vannak a fájljaim? Hol történik a feldolgozás?",
+      "answer": "A fájljaid a lehető legnagyobb biztonságban vannak, mert soha nem hagyják el a számítógépedet. Minden feldolgozás közvetlenül a böngésződben (kliensoldalon) történik. Soha nem töltjük fel a fájljaidat szerverre, így teljes mértékben megőrzöd a magánéleted és az irányítást a dokumentumaid felett."
+    },
+    "platforms": {
+      "question": "Működik Macen, Windows-on és mobilon is?",
+      "answer": "Igen! Mivel a BentoPDF teljes egészében a böngésződben fut, bármilyen operációs rendszeren működik, amelyen modern böngésző van, beleértve a Windows, macOS, Linux, iOS és Android rendszereket is."
+    },
+    "gdprCompliant": {
+      "question": "GDPR-megfelelő a BentoPDF?",
+      "answer": "Igen. A BentoPDF teljes mértékben GDPR-megfelelő. Mivel minden feldolgozás helyben, a böngésződben történik, és soha nem gyűjtünk vagy továbbítunk fájlokat szerverre, nem férünk hozzá az adataidhoz. Így mindig te irányítod a dokumentumaidat."
+    },
+    "dataStorage": {
+      "question": "Tároljátok vagy követitek a fájljaimat?",
+      "answer": "Nem. Soha nem tároljuk, követjük vagy naplózzuk a fájljaidat. Minden, amit a BentoPDF-ben csinálsz, a böngésző memóriájában történik, és eltűnik, amint bezárod az oldalt. Nincs feltöltés, nincs előzménynapló, és nincsenek szerverek sem."
+    },
+    "different": {
+      "question": "Mi teszi a BentoPDF-et különbözővé más PDF-eszközöktől?",
+      "answer": "A legtöbb PDF-eszköz feltölti a fájljaidat egy szerverre feldolgozás céljából. A BentoPDF ezt soha nem teszi. Biztonságos, modern webtechnológiát használunk, hogy a fájljaidat közvetlenül a böngésződben dolgozzuk fel. Ez gyorsabb működést, erősebb adatvédelmet és teljes nyugalmat jelent."
+    },
+    "browserBased": {
+      "question": "Hogyan véd meg a böngészős feldolgozás?",
+      "answer": "Azáltal, hogy teljes egészében a böngésződben fut, a BentoPDF biztosítja, hogy a fájljaid soha ne hagyják el az eszközödet. Ez kiküszöböli a szerverfeltörések, az adatszivárgások és a jogosulatlan hozzáférés kockázatát. A fájljaid mindig a tieid maradnak."
+    },
+    "analytics": {
+      "question": "Használtok cookie-kat vagy analitikát a követésemre?",
+      "answer": "Tiszteletben tartjuk a magánéletedet. A BentoPDF nem követi a személyes adatokat. A Simple Analytics szolgáltatást kizárólag anonim látogatottsági adatokhoz használjuk. Így tudjuk, hányan látogatják az oldalt, de soha nem tudjuk, hogy ki vagy. A Simple Analytics teljes mértékben GDPR-megfelelő és tiszteletben tartja a magánéletedet."
+    }
+  },
+  "testimonials": {
+    "title": "Mit mondanak",
+    "users": "a felhasználóink",
+    "say": ""
+  },
+  "support": {
+    "title": "Tetszik a munkám?",
+    "description": "A BentoPDF egy szívből jövő projekt, amelynek célja, hogy ingyenes, biztonságos és hatékony PDF-eszköztárat kínáljon mindenkinek. Ha hasznosnak találod, támogasd a fejlesztését! Minden kávé számít!",
+    "buyMeCoffee": "Vegyél nekem egy kávét"
+  },
+  "footer": {
+    "copyright": "© 2026 BentoPDF. Minden jog fenntartva.",
+    "version": "Verzió",
+    "company": "Céges",
+    "aboutUs": "Rólunk",
+    "faqLink": "GYIK",
+    "contactUs": "Kapcsolat",
+    "legal": "Jogi nyilatkozat",
+    "termsAndConditions": "Általános Szerződési Feltételek",
+    "privacyPolicy": "Adatvédelmi irányelvek",
+    "followUs": "Kövess minket",
+    "allRightsReserved": "Minden jog fenntartva.",
+    "privacy": "Adatvédelem",
+    "terms": "Feltételek",
+    "contact": "Kapcsolat",
+    "about": "Névjegy"
+  },
+  "merge": {
+    "title": "PDF-ek egyesítése",
+    "description": "Egyesíts teljes fájlokat, vagy válassz ki konkrét oldalakat, és olvaszd össze őket egy új dokumentumba.",
+    "fileMode": "Fájl mód",
+    "pageMode": "Oldal mód",
+    "howItWorks": "Hogyan működik:",
+    "fileModeInstructions": [
+      "Kattints és húzd az ikont a fájlok sorrendjének megváltoztatásához.",
+      "A fájlok „Oldalak” mezőjében tartományokat adhatsz meg (pl. „1-3, 5”), hogy csak azokat az oldalakat egyesítsd.",
+      "Hagyd üresen az „Oldalak” mezőt, ha az adott fájl összes oldalát bele szeretnéd venni."
+    ],
+    "pageModeInstructions": [
+      "A feltöltött PDF-ek összes oldala alább látható.",
+      "Egyszerűen húzd a megfelelő sorrendbe az egyes oldalminiatűröket, hogy kialakítsd az új fájlod pontos oldalsorrendjét."
+    ],
+    "mergePdfs": "PDF-ek egyesítése"
+  },
+  "common": {
+    "page": "Oldal",
+    "pages": "Oldalak",
+    "of": "/",
+    "download": "Letöltés",
+    "cancel": "Mégse",
+    "save": "Mentés",
+    "delete": "Törlés",
+    "edit": "Szerkesztés",
+    "add": "Hozzáadás",
+    "remove": "Eltávolítás",
+    "loading": "Betöltés...",
+    "loadingPageCount": "Oldalak betöltése...",
+    "error": "Hiba",
+    "success": "Siker",
+    "file": "Fájl",
+    "files": "Fájlok",
+    "close": "Bezárás",
+    "convert": "Konvertálás",
+    "unknownError": "Ismeretlen hiba"
+  },
+  "about": {
+    "hero": {
+      "title": "Úgy gondoljuk, a PDF-eszközöknek",
+      "subtitle": "gyorsnak, biztonságosnak és ingyenesnek kell lenniük.",
+      "noCompromises": "Kompromisszumok nélkül."
+    },
+    "mission": {
+      "title": "Küldetésünk",
+      "description": "A lehető legteljesebb PDF-eszköztár biztosítása, amely tiszteletben tartja a magánéletedet, és soha nem kér fizetséget. Úgy gondoljuk, hogy az alapvető dokumentum-eszközöknek mindenki számára, mindenhol, korlátok nélkül elérhetőnek kell lenniük."
+    },
+    "philosophy": {
+      "label": "Alapvető filozófiánk",
+      "title": "Első az adatvédelem. Mindig.",
+      "description": "Egy olyan korban, amikor az adat árucikk, mi más utat választunk. A BentoPDF összes eszközének feldolgozása helyben, a böngésződben történik. Ez azt jelenti, hogy a fájljaid soha nem érintik a szervereinket, soha nem látjuk a dokumentumaidat, és nem követjük nyomon, mit csinálsz. A dokumentumaid teljesen és kétségtelenül privátak maradnak. Ez nem csak egy funkció; ez az alapunk."
+    },
+    "whyBentopdf": {
+      "title": "Miért",
+      "speed": {
+        "title": "Sebességre tervezve",
+        "description": "Nincs várakozás a szerverre feltöltésre vagy onnan letöltésre. Azzal, hogy a fájlokat közvetlenül a böngésződben dolgozzuk fel olyan modern webes technológiákkal, mint a WebAssembly, páratlan sebességet kínálunk az összes eszközünkhöz."
+      },
+      "free": {
+        "title": "Teljesen ingyenes",
+        "description": "Nincs próbaidőszak, nincs előfizetés, nincsenek rejtett díjak, és nincsenek fogva tartott „prémium” funkciók sem. Úgy gondoljuk, a hatékony PDF-eszközöknek közszolgáltatásnak kell lenniük, nem pedig profitteremtőnek."
+      },
+      "noAccount": {
+        "title": "Nincs szükség fiókra",
+        "description": "Bármelyik eszközt azonnal használhatod. Nincs szükségünk e-mail címre, jelszóra vagy bármilyen személyes adatra. A munkafolyamatod legyen zökkenőmentes és anonim."
+      },
+      "openSource": {
+        "title": "Nyílt forráskódú szellemiség",
+        "description": "Átláthatóságra tervezve. Kiváló nyílt forráskódú könyvtárakat használunk, mint a PDF-lib és a PDF.js, és hiszünk a közösségi erőfeszítésben, hogy a hatékony eszközök mindenki számára elérhetők legyenek."
+      }
+    },
+    "cta": {
+      "title": "Készen állsz a kezdésre?",
+      "description": "Csatlakozz azokhoz a felhasználókhoz, akik már a mindennapi dokumentummunkájukhoz használják a BentoPDF-et. Tapasztald meg, mekkora különbséget jelent az adatvédelem és a teljesítmény.",
+      "button": "Az összes eszköz megtekintése"
+    }
+  },
+  "contact": {
+    "title": "Vedd fel velünk a kapcsolatot",
+    "subtitle": "Örömmel hallunk felőled. Legyen szó kérdésről, visszajelzésről vagy funkciójavaslatról, nyugodtan keress minket.",
+    "email": "Közvetlenül e-mailben is elérsz minket:"
+  },
+  "licensing": {
+    "title": "Licencelés a",
+    "subtitle": "Válaszd ki az igényeidnek megfelelő licencet."
+  },
+  "multiTool": {
+    "uploadPdfs": "PDF-ek feltöltése",
+    "upload": "Feltöltés",
+    "addBlankPage": "Üres oldal hozzáadása",
+    "edit": "Szerkesztés:",
+    "undo": "Visszavonás",
+    "redo": "Újra",
+    "reset": "Visszaállítás",
+    "selection": "Kijelölés:",
+    "selectAll": "Összes kijelölése",
+    "deselectAll": "Kijelölés megszüntetése",
+    "rotate": "Forgatás:",
+    "rotateLeft": "Balra",
+    "rotateRight": "Jobbra",
+    "transform": "Átalakítás:",
+    "duplicate": "Másolat",
+    "split": "Szétválasztás",
+    "clear": "Törlés:",
+    "delete": "Törlés",
+    "download": "Letöltés:",
+    "downloadSelected": "Kijelöltek letöltése",
+    "exportPdf": "PDF exportálása",
+    "uploadPdfFiles": "PDF vagy képfájl kiválasztása",
+    "dragAndDrop": "Húzd ide a PDF vagy képfájlokat, vagy kattints a kiválasztáshoz",
+    "selectFiles": "Fájlok kiválasztása",
+    "dropToAdd": "Dobd ide a PDF vagy képfájlokat a hozzáadáshoz",
+    "convertingImages": "Képek konvertálása PDF-be...",
+    "failedToConvertImages": "A képek PDF-be konvertálása sikertelen.",
+    "renderingPages": "Oldalak megjelenítése...",
+    "actions": {
+      "duplicatePage": "Oldal másolatának készítése",
+      "deletePage": "Oldal törlése",
+      "insertPdf": "PDF beszúrása az oldal után",
+      "toggleSplit": "Szétválasztás be- és kikapcsolása az oldal után"
+    },
+    "pleaseWait": "Kérlek, várj",
+    "pagesRendering": "Az oldalak még mindig renderelődnek. Kérlek, várj...",
+    "noPagesSelected": "Nincs oldal kijelölve",
+    "selectOnePage": "Legalább egy oldalt válassz ki a letöltéshez.",
+    "noPages": "Nincs oldal",
+    "noPagesToExport": "Nincs exportálható oldal.",
+    "renderingTitle": "Oldalelőnézetek renderelése",
+    "errorRendering": "Az oldalminiatűrök renderelése sikertelen",
+    "error": "Hiba",
+    "failedToLoad": "Betöltés sikertelen"
+  },
+  "simpleMode": {
+    "title": "PDF eszközök",
+    "subtitle": "Válassz egy eszközt a kezdéshez"
+  },
+  "disabledTool": {
+    "title": "Az eszköz nem érhető el",
+    "heading": "Ez az eszköz le van tiltva",
+    "message": "Ez az eszköz nem érhető el a telepítésedben. A további információkért fordulj a rendszergazdához.",
+    "backHome": "Vissza a főoldalra"
+  }
+}

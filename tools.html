@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Minden PDF-eszköz katalógusa - 100+ ingyenes online PDF-eszköz | PDF stúdió
+    </title>
+    <meta
+      name="description"
+      content="Böngéssz a 100+ ingyenes online PDF-eszköz között, és keress vagy szűrj kategória szerint: konvertálók, szerkesztők, biztonsági eszközök és még sok más. Regisztráció nélkül, teljesen ingyenes, adatvédelmet előtérbe helyezve."
+    />
+    <meta
+      name="keywords"
+      content="pdf eszközök, pdf konvertáló, pdf szerkesztő, pdf biztonság, ingyenes pdf eszközök, online pdf eszközök"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://www.bentopdf.com/tools" />
+
+    <meta
+      property="og:title"
+      content="Minden PDF-eszköz katalógusa - 100+ ingyenes eszköz | PDF stúdió"
+    />
+    <meta
+      property="og:description"
+      content="Böngéssz a 100+ ingyenes online PDF-eszköz között: konvertálók, szerkesztők, biztonsági eszközök és még sok más. Regisztráció nélkül."
+    />
+    <meta property="og:url" content="https://www.bentopdf.com/tools" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.bentopdf.com/images/og-tools.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link href="/src/css/styles.css" rel="stylesheet" />
+    <script type="module">
+      import '@phosphor-icons/web/regular';
+    </script>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/images/favicon-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+
+  <body class="antialiased bg-gray-900">
+    <!-- Navigation -->
+    {{> navbar }}
+
+    <!-- Hero -->
+    <section class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
+          Minden PDF-eszköz katalógusa
+        </h1>
+        <p class="text-lg text-gray-300 mb-8">
+          Böngéssz a 100+ ingyenes PDF-eszközt felölelő teljes gyűjteményünkben.
+          Keress név szerint, vagy szűrj kategória alapján.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="container mx-auto px-4 mb-8">
+      <div class="max-w-6xl mx-auto">
+        <!-- Search Bar -->
+        <div class="mb-6">
+          <div class="relative">
+            <i
+              class="ph ph-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-xl text-gray-400"
+            ></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Eszközök keresése… (pl. „tömörítés", „Word-be konvertálás", „egyesítés")"
+              class="w-full bg-gray-800 border border-gray-700 text-white rounded-lg pl-12 pr-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button class="category-filter active" data-category="all">
+            Minden eszköz
+            <span class="ml-1 text-xs opacity-75" id="count-all">103</span>
+          </button>
+          <button class="category-filter" data-category="converter">
+            Konvertálók
+            <span class="ml-1 text-xs opacity-75" id="count-converter">47</span>
+          </button>
+          <button class="category-filter" data-category="editor">
+            Szerkesztők
+            <span class="ml-1 text-xs opacity-75" id="count-editor">23</span>
+          </button>
+          <button class="category-filter" data-category="security">
+            Biztonság
+            <span class="ml-1 text-xs opacity-75" id="count-security">10</span>
+          </button>
+          <button class="category-filter" data-category="merge-split">
+            Egyesítés és szétbontás
+            <span class="ml-1 text-xs opacity-75" id="count-merge-split"
+              >12</span
+            >
+          </button>
+          <button class="category-filter" data-category="other">
+            Egyéb eszközök
+            <span class="ml-1 text-xs opacity-75" id="count-other">11</span>
+          </button>
+        </div>
+
+        <!-- Results Count -->
+        <div class="text-gray-400 text-sm mb-4">
+          Megjelenítve: <span id="results-count">103</span> eszköz
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="container mx-auto px-4 pb-12">
+      <div class="max-w-6xl mx-auto">
+        <div
+          id="tools-grid"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        ></div>
+
+        <div id="no-results" class="hidden text-center py-12">
+          <i
+            class="ph ph-magnifying-glass-minus text-6xl text-gray-600 mx-auto mb-4"
+          ></i>
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Nem találtunk eszközöket
+          </h3>
+          <p class="text-gray-400">Próbáld módosítani a keresést vagy a szűrőt</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    {{> footer }}
+
+    <script type="module" src="/src/js/utils/lucide-init.ts"></script>
+    <script type="module">
+      const tools = [
+        // Converters
+        {
+          name: 'word-to-pdf',
+          title: 'Word → PDF',
+          category: 'converter',
+          icon: 'microsoft-word-logo',
+        },
+        {
+          name: 'excel-to-pdf',
+          title: 'Excel → PDF',
+          category: 'converter',
+          icon: 'microsoft-excel-logo',
+        },
+        {
+          name: 'powerpoint-to-pdf',
+          title: 'PowerPoint → PDF',
+          category: 'converter',
+          icon: 'microsoft-powerpoint-logo',
+        },
+        {
+          name: 'pdf-to-docx',
+          title: 'PDF → Word',
+          category: 'converter',
+          icon: 'microsoft-word-logo',
+        },
+        {
+          name: 'pdf-to-excel',
+          title: 'PDF → Excel',
+          category: 'converter',
+          icon: 'microsoft-excel-logo',
+        },
+        {
+          name: 'pdf-to-jpg',
+          title: 'PDF → JPG',
+          category: 'converter',
+          icon: 'file-image',
+        },
+        {
+          name: 'pdf-to-png',
+          title: 'PDF → PNG',
+          category: 'converter',
+          icon: 'file-image',
+        },
+        {
+          name: 'jpg-to-pdf',
+          title: 'JPG → PDF',
+          category: 'converter',
+          icon: 'file-jpg',
+        },
+        {
+          name: 'png-to-pdf',
+          title: 'PNG → PDF',
+          category: 'converter',
+          icon: 'file-png',
+        },
+        {
+          name: 'image-to-pdf',
+          title: 'Kép → PDF',
+          category: 'converter',
+          icon: 'images',
+        },
+        {
+          name: 'pdf-to-text',
+          title: 'PDF szöveggé',
+          category: 'converter',
+          icon: 'text-aa',
+        },
+        {
+          name: 'txt-to-pdf',
+          title: 'Szöveg → PDF',
+          category: 'converter',
+          icon: 'text-t',
+        },
+        {
+          name: 'markdown-to-pdf',
+          title: 'Markdown → PDF',
+          category: 'converter',
+          icon: 'markdown-logo',
+        },
+        {
+          name: 'pdf-to-markdown',
+          title: 'PDF → Markdown',
+          category: 'converter',
+          icon: 'markdown-logo',
+        },
+        {
+          name: 'svg-to-pdf',
+          title: 'SVG → PDF',
+          category: 'converter',
+          icon: 'file-svg',
+        },
+        {
+          name: 'pdf-to-svg',
+          title: 'PDF → SVG',
+          category: 'converter',
+          icon: 'file-code',
+        },
+        {
+          name: 'webp-to-pdf',
+          title: 'WebP → PDF',
+          category: 'converter',
+          icon: 'image',
+        },
+        {
+          name: 'pdf-to-webp',
+          title: 'PDF → WebP',
+          category: 'converter',
+          icon: 'file-image',
+        },
+        {
+          name: 'heic-to-pdf',
+          title: 'HEIC → PDF',
+          category: 'converter',
+          icon: 'device-mobile',
+        },
+        {
+          name: 'tiff-to-pdf',
+          title: 'TIFF → PDF',
+          category: 'converter',
+          icon: 'image',
+        },
+        {
+          name: 'pdf-to-tiff',
+          title: 'PDF → TIFF',
+          category: 'converter',
+          icon: 'file-image',
+        },
+        {
+          name: 'bmp-to-pdf',
+          title: 'BMP → PDF',
+          category: 'converter',
+          icon: 'image',
+        },
+        {
+          name: 'pdf-to-bmp',
+          title: 'PDF → BMP',
+          category: 'converter',
+          icon: 'file-image',
+        },
+        {
+          name: 'csv-to-pdf',
+          title: 'CSV → PDF',
+          category: 'converter',
+          icon: 'file-csv',
+        },
+        {
+          name: 'pdf-to-csv',
+          title: 'PDF → CSV',
+          category: 'converter',
+          icon: 'file-csv',
+        },
+        {
+          name: 'json-to-pdf',
+          title: 'JSON → PDF',
+          category: 'converter',
+          icon: 'file-code',
+        },
+        {
+          name: 'pdf-to-json',
+          title: 'PDF → JSON',
+          category: 'converter',
+          icon: 'file-code',
+        },
+        {
+          name: 'xml-to-pdf',
+          title: 'XML → PDF',
+          category: 'converter',
+          icon: 'file-code',
+        },
+        {
+          name: 'rtf-to-pdf',
+          title: 'RTF → PDF',
+          category: 'converter',
+          icon: 'file-text',
+        },
+        {
+          name: 'odt-to-pdf',
+          title: 'ODT → PDF',
+          category: 'converter',
+          icon: 'file',
+        },
+        {
+          name: 'ods-to-pdf',
+          title: 'ODS → PDF',
+          category: 'converter',
+          icon: 'table',
+        },
+        {
+          name: 'odp-to-pdf',
+          title: 'ODP → PDF',
+          category: 'converter',
+          icon: 'presentation',
+        },
+        {
+          name: 'odg-to-pdf',
+          title: 'ODG → PDF',
+          category: 'converter',
+          icon: 'image',
+        },
+        {
+          name: 'epub-to-pdf',
+          title: 'EPUB → PDF',
+          category: 'converter',
+          icon: 'book-open-text',
+        },
+        {
+          name: 'mobi-to-pdf',
+          title: 'MOBI → PDF',
+          category: 'converter',
+          icon: 'book-open-text',
+        },
+        {
+          name: 'cbz-to-pdf',
+          title: 'CBZ → PDF',
+          category: 'converter',
+          icon: 'book-open',
+        },
+        {
+          name: 'fb2-to-pdf',
+          title: 'FB2 → PDF',
+          category: 'converter',
+          icon: 'book-bookmark',
+        },
+        {
+          name: 'psd-to-pdf',
+          title: 'PSD → PDF',
+          category: 'converter',
+          icon: 'image',
+        },
+        {
+          name: 'xps-to-pdf',
+          title: 'XPS → PDF',
+          category: 'converter',
+          icon: 'scan',
+        },
+        {
+          name: 'pages-to-pdf',
+          title: 'Pages → PDF',
+          category: 'converter',
+          icon: 'file-text',
+        },
+        {
+          name: 'pub-to-pdf',
+          title: 'PUB → PDF',
+          category: 'converter',
+          icon: 'book-open',
+        },
+        {
+          name: 'vsd-to-pdf',
+          title: 'VSD → PDF',
+          category: 'converter',
+          icon: 'git-branch',
+        },
+        {
+          name: 'wpd-to-pdf',
+          title: 'WPD → PDF',
+          category: 'converter',
+          icon: 'file-text',
+        },
+        {
+          name: 'wps-to-pdf',
+          title: 'WPS → PDF',
+          category: 'converter',
+          icon: 'file-text',
+        },
+        {
+          name: 'pdf-to-greyscale',
+          title: 'PDF → szürkeárnyalatos',
+          category: 'converter',
+          icon: 'palette',
+        },
+        {
+          name: 'pdf-to-pdfa',
+          title: 'PDF → PDF/A',
+          category: 'converter',
+          icon: 'archive',
+        },
+        {
+          name: 'pdf-to-zip',
+          title: 'PDF → ZIP',
+          category: 'converter',
+          icon: 'file-zip',
+        },
+
+        // Editors
+        {
+          name: 'edit-pdf',
+          title: 'PDF szerkesztő',
+          category: 'editor',
+          icon: 'pencil-simple',
+        },
+        {
+          name: 'edit-pdf-text',
+          title: 'PDF szöveg szerkesztése',
+          category: 'editor',
+          icon: 'cursor-text',
+        },
+        {
+          name: 'compress-pdf',
+          title: 'PDF tömörítése',
+          category: 'editor',
+          icon: 'lightning',
+        },
+        {
+          name: 'rotate-pdf',
+          title: 'PDF forgatása',
+          category: 'editor',
+          icon: 'arrow-clockwise',
+        },
+        {
+          name: 'rotate-custom',
+          title: 'Egyedi forgatás',
+          category: 'editor',
+          icon: 'arrows-clockwise',
+        },
+        {
+          name: 'crop-pdf',
+          title: 'PDF vágása',
+          category: 'editor',
+          icon: 'crop',
+        },
+        {
+          name: 'organize-pdf',
+          title: 'PDF rendezése',
+          category: 'editor',
+          icon: 'files',
+        },
+        {
+          name: 'delete-pages',
+          title: 'Oldalak törlése',
+          category: 'editor',
+          icon: 'trash',
+        },
+        {
+          name: 'add-watermark',
+          title: 'Vízjel hozzáadása',
+          category: 'editor',
+          icon: 'drop',
+        },
+        {
+          name: 'header-footer',
+          title: 'Fejléc és lábléc',
+          category: 'editor',
+          icon: 'paragraph',
+        },
+        {
+          name: 'page-numbers',
+          title: 'Oldalszámozás',
+          category: 'editor',
+          icon: 'list-numbers',
+        },
+        {
+          name: 'bates-numbering',
+          title: 'Bates-számozás',
+          category: 'editor',
+          icon: 'hash',
+        },
+        {
+          name: 'background-color',
+          title: 'Háttérszín',
+          category: 'editor',
+          icon: 'palette',
+        },
+        {
+          name: 'text-color',
+          title: 'Szövegszín',
+          category: 'editor',
+          icon: 'eyedropper',
+        },
+        {
+          name: 'invert-colors',
+          title: 'Színek invertálása',
+          category: 'editor',
+          icon: 'circle-half',
+        },
+        {
+          name: 'add-blank-page',
+          title: 'Üres oldal hozzáadása',
+          category: 'editor',
+          icon: 'file-plus',
+        },
+        {
+          name: 'reverse-pages',
+          title: 'Oldalak megfordítása',
+          category: 'editor',
+          icon: 'sort-descending',
+        },
+        {
+          name: 'divide-pages',
+          title: 'Oldalak felosztása',
+          category: 'editor',
+          icon: 'columns',
+        },
+        {
+          name: 'remove-annotations',
+          title: 'Megjegyzések eltávolítása',
+          category: 'editor',
+          icon: 'eraser',
+        },
+        {
+          name: 'remove-blank-pages',
+          title: 'Üres oldalak törlése',
+          category: 'editor',
+          icon: 'file-minus',
+        },
+        {
+          name: 'extract-pages',
+          title: 'Oldalak kivonása',
+          category: 'editor',
+          icon: 'squares-four',
+        },
+        {
+          name: 'extract-images',
+          title: 'Képek kivonása',
+          category: 'editor',
+          icon: 'download-simple',
+        },
+        {
+          name: 'extract-tables',
+          title: 'Táblázatok kivonása',
+          category: 'editor',
+          icon: 'table',
+        },
+        {
+          name: 'n-up-pdf',
+          title: 'N-up PDF',
+          category: 'editor',
+          icon: 'squares-four',
+        },
+        {
+          name: 'posterize-pdf',
+          title: 'Óriásposzter PDF',
+          category: 'editor',
+          icon: 'notepad',
+        },
+
+        // Security
+        {
+          name: 'encrypt-pdf',
+          title: 'PDF titkosítása',
+          category: 'security',
+          icon: 'lock',
+        },
+        {
+          name: 'decrypt-pdf',
+          title: 'PDF visszafejtése',
+          category: 'security',
+          icon: 'lock-open',
+        },
+        {
+          name: 'sign-pdf',
+          title: 'PDF aláírása',
+          category: 'security',
+          icon: 'pen-nib',
+        },
+        {
+          name: 'remove-restrictions',
+          title: 'Korlátozások eltávolítása',
+          category: 'security',
+          icon: 'link-break',
+        },
+        {
+          name: 'change-permissions',
+          title: 'Engedélyek módosítása',
+          category: 'security',
+          icon: 'shield-check',
+        },
+        {
+          name: 'sanitize-pdf',
+          title: 'PDF fertőtlenítése',
+          category: 'security',
+          icon: 'broom',
+        },
+        {
+          name: 'flatten-pdf',
+          title: 'PDF ellaposítása',
+          category: 'security',
+          icon: 'stack',
+        },
+        {
+          name: 'linearize-pdf',
+          title: 'PDF linearizálása',
+          category: 'security',
+          icon: 'gauge',
+        },
+        {
+          name: 'remove-metadata',
+          title: 'Metaadatok eltávolítása',
+          category: 'security',
+          icon: 'file-x',
+        },
+        {
+          name: 'pdf-layers',
+          title: 'PDF rétegek',
+          category: 'security',
+          icon: 'stack-simple',
+        },
+
+        // Merge & Split
+        {
+          name: 'merge-pdf',
+          title: 'PDF-ek egyesítése',
+          category: 'merge-split',
+          icon: 'browsers',
+        },
+        {
+          name: 'split-pdf',
+          title: 'PDF szétbontása',
+          category: 'merge-split',
+          icon: 'scissors',
+        },
+        {
+          name: 'alternate-merge',
+          title: 'Váltakozó egyesítés',
+          category: 'merge-split',
+          icon: 'shuffle',
+        },
+        {
+          name: 'combine-single-page',
+          title: 'Oldalak kombinálása',
+          category: 'merge-split',
+          icon: 'arrows-out-line-vertical',
+        },
+        {
+          name: 'compare-pdfs',
+          title: 'PDF-ek összehasonlítása',
+          category: 'merge-split',
+          icon: 'git-diff',
+        },
+        {
+          name: 'pdf-booklet',
+          title: 'PDF füzet',
+          category: 'merge-split',
+          icon: 'book-open',
+        },
+
+        // Other
+        {
+          name: 'ocr-pdf',
+          title: 'Képolvasó OCR (OCR PDF)',
+          category: 'other',
+          icon: 'barcode',
+        },
+        {
+          name: 'repair-pdf',
+          title: 'PDF javítása',
+          category: 'other',
+          icon: 'wrench',
+        },
+        {
+          name: 'view-metadata',
+          title: 'Metaadatok megtekintése',
+          category: 'other',
+          icon: 'info',
+        },
+        {
+          name: 'edit-metadata',
+          title: 'Metaadatok szerkesztése',
+          category: 'other',
+          icon: 'file-code',
+        },
+        {
+          name: 'add-attachments',
+          title: 'Mellékletek hozzáadása',
+          category: 'other',
+          icon: 'paperclip',
+        },
+        {
+          name: 'edit-attachments',
+          title: 'Mellékletek szerkesztése',
+          category: 'other',
+          icon: 'paperclip-horizontal',
+        },
+        {
+          name: 'extract-attachments',
+          title: 'Mellékletek kivonása',
+          category: 'other',
+          icon: 'download',
+        },
+        {
+          name: 'rasterize-pdf',
+          title: 'PDF raszterizálása',
+          category: 'other',
+          icon: 'image',
+        },
+        {
+          name: 'prepare-pdf-for-ai',
+          title: 'Felkészítés AI-hoz',
+          category: 'other',
+          icon: 'sparkle',
+        },
+        {
+          name: 'fix-page-size',
+          title: 'Oldalméret javítása',
+          category: 'other',
+          icon: 'ruler',
+        },
+        {
+          name: 'page-dimensions',
+          title: 'Oldalméretek',
+          category: 'other',
+          icon: 'ruler',
+        },
+        {
+          name: 'table-of-contents',
+          title: 'Tartalomjegyzék',
+          category: 'other',
+          icon: 'list',
+        },
+        {
+          name: 'bookmark',
+          title: 'PDF könyvjelzőzése',
+          category: 'other',
+          icon: 'bookmark',
+        },
+        {
+          name: 'add-stamps',
+          title: 'Bélyegzők hozzáadása',
+          category: 'other',
+          icon: 'stamp',
+        },
+        {
+          name: 'form-creator',
+          title: 'Űrlapkészítő',
+          category: 'other',
+          icon: 'file-plus',
+        },
+        {
+          name: 'form-filler',
+          title: 'Űrlapkitöltő',
+          category: 'other',
+          icon: 'pencil-line',
+        },
+        {
+          name: 'pdf-multi-tool',
+          title: 'PDF többcélú eszköz',
+          category: 'other',
+          icon: 'pencil-ruler',
+        },
+      ];
+
+      let currentCategory = 'all';
+      let searchQuery = '';
+
+      function renderTools() {
+        const grid = document.getElementById('tools-grid');
+        const noResults = document.getElementById('no-results');
+
+        const filtered = tools.filter((tool) => {
+          const matchesCategory =
+            currentCategory === 'all' || tool.category === currentCategory;
+          const matchesSearch =
+            tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            tool.name.toLowerCase().includes(searchQuery.toLowerCase());
+          return matchesCategory && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+          grid.classList.add('hidden');
+          noResults.classList.remove('hidden');
+          document.getElementById('results-count').textContent = '0';
+          return;
+        }
+
+        grid.classList.remove('hidden');
+        noResults.classList.add('hidden');
+
+        grid.innerHTML = filtered
+          .map(
+            (tool) => `
+                <a href="/${tool.name}.html" class="tool-card">
+                    <i class="ph ph-${tool.icon} text-4xl text-indigo-400 mb-2"></i>
+                    <h3 class="font-semibold text-white text-sm">${tool.title}</h3>
+                </a>
+            `
+          )
+          .join('');
+
+        document.getElementById('results-count').textContent = filtered.length;
+      }
+
+      document.querySelectorAll('.category-filter').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document
+            .querySelectorAll('.category-filter')
+            .forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.dataset.category;
+          renderTools();
+        });
+      });
+
+      document.getElementById('search-input').addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        renderTools();
+      });
+
+      renderTools();
+    </script>
+
+    <style>
+      .category-filter {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: #1f2937;
+        color: #9ca3af;
+        border: 1px solid #374151;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      .category-filter:hover {
+        background-color: #374151;
+        color: #fff;
+      }
+
+      .category-filter.active {
+        background-color: #4f46e5;
+        color: #fff;
+        border-color: #4f46e5;
+      }
+    </style>
+  </body>
+</html>

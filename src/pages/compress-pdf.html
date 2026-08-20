@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+      PDF tömörítése ingyen online – PDF méretének csökkentése akár 90%-kal | PDF stúdió
+    </title>
+    <meta
+      name="title"
+      content="PDF tömörítése ingyen online – PDF méretének csökkentése akár 90%-kal | PDF stúdió"
+    />
+    <meta
+      name="description"
+      content="★ Tömörítsd a PDF-fájlokat ingyen – méret csökkentése akár 90%-kal ★ Regisztráció nem szükséges ★ Offline is működik a böngészőben ★ Korlátlan fájlszám ★ Adatvédelem-első ★ Többféle tömörítési szint"
+    />
+    <meta
+      name="keywords"
+      content="pdf tömörítés, pdf méret csökkentése, pdf tömörítő, pdf zsugorítás, pdf optimalizálás, ingyenes pdf tömörítés, online pdf redukáló"
+    />
+    <meta name="author" content="PDF stúdió" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bentopdf.com/compress-pdf" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.bentopdf.com/compress-pdf" />
+    <meta
+      property="og:title"
+      content="PDF tömörítése ingyen online – PDF fájlméret csökkentése | PDF stúdió"
+    />
+    <meta
+      property="og:description"
+      content="Ingyenes PDF-tömörítő – fájlméret csökkentése akár 90%-kal. Regisztráció nélkül, böngészőben működik, korlátlan fájlszám, adatvédelem-első."
+    />
+    <meta
+      property="og:image"
+      content="https://www.bentopdf.com/images/og-compress-pdf.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="BentoPDF" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.bentopdf.com/compress-pdf" />
+    <meta name="twitter:title" content="PDF tömörítése ingyen – PDF méret csökkentése" />
+    <meta
+      name="twitter:description"
+      content="Ingyenes PDF-tömörítő eszköz. Fájlméret csökkentése akár 90%-kal, regisztráció nélkül, adatvédelem-első."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.bentopdf.com/images/twitter-compress-pdf.png"
+    />
+    <meta name="twitter:site" content="@BentoPDF" />
+
+    <!-- Mobile Web App -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="PDF tömörítése" />
+
+    <link href="/src/css/styles.css" rel="stylesheet" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/images/favicon-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+
+  <body class="antialiased bg-gray-900">
+    {{> navbar }}
+
+    <div
+      id="uploader"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+    >
+      <div
+        id="tool-uploader"
+        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+      >
+        <button
+          id="back-to-tools"
+          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+        >
+          <i data-lucide="arrow-left" class="cursor-pointer"></i>
+          <span class="cursor-pointer" data-i18n="tools.backToTools">
+            Back to Tools
+          </span>
+        </button>
+
+        <h1
+          class="text-2xl font-bold text-white mb-2"
+          data-i18n="tools:compressPdf.name"
+        >
+          Compress PDF
+        </h1>
+        <p class="text-gray-400 mb-6" data-i18n="tools:compressPdf.subtitle">
+          Reduce the file size of your PDF.
+        </p>
+
+        <div
+          id="drop-zone"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+        >
+          <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <i
+              data-lucide="upload-cloud"
+              class="w-10 h-10 mb-3 text-gray-400"
+            ></i>
+            <p class="mb-2 text-sm text-gray-400">
+              <span class="font-semibold" data-i18n="upload.clickToSelect"
+                >Click to select files</span
+              >
+              <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
+            </p>
+            <p
+              class="text-xs text-gray-500"
+              data-i18n="upload.hints.oneOrMorePdfs"
+            >
+              One or more PDF files
+            </p>
+            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+              Your files never leave your device.
+            </p>
+          </div>
+          <input
+            id="file-input"
+            type="file"
+            class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+            accept="application/pdf"
+            multiple
+          />
+        </div>
+
+        <div id="file-controls" class="hidden mt-4 flex gap-3">
+          <button
+            id="add-more-btn"
+            class="btn bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2"
+          >
+            <i data-lucide="plus"></i>
+            <span data-i18n="upload.addMore">Add More Files</span>
+          </button>
+          <button
+            id="clear-files-btn"
+            class="btn bg-gray-700 hover:bg-gray-600 text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2"
+          >
+            <i data-lucide="trash-2"></i>
+            <span data-i18n="upload.clearAll">Clear All</span>
+          </button>
+        </div>
+
+        <div id="file-display-area" class="mt-4 space-y-2"></div>
+
+        <div id="compress-options" class="hidden mt-6 space-y-6">
+          <div>
+            <label
+              for="compression-algorithm"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Tömörítési algoritmus</label
+            >
+            <select
+              id="compression-algorithm"
+              class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+              <option value="condense">Optimalizált (Ajánlott)</option>
+              <option value="photon">Fényképes (Fotókkal teli PDF-ekhez)</option>
+            </select>
+            <div id="algorithm-info" class="mt-2 text-xs text-gray-400">
+              <p id="condense-info">
+                <strong>Optimalizált</strong> mód: korszerű tömörítést használ –
+                eltávolítja a felesleges adatokat, optimalizálja a képeket,
+                karcsúsítja a betűtípusokat. A legtöbb PDF-hez ez a legjobb
+                választás.
+              </p>
+              <p id="photon-info" class="hidden">
+                <strong>Fényképes</strong> mód az oldalakat képpé alakítja.
+                Fotókkal teli vagy szkennelt PDF-ekhez használd.
+                <span class="text-yellow-500"
+                  >⚠️ Figyelem: A szöveg nem lesz kijelölhető, és a linkek
+                  megszűnnek.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="compression-level"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Tömörítés mértéke</label
+            >
+            <select
+              id="compression-level"
+              class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+              <option value="light">Enyhe (Minőség megőrzése)</option>
+              <option value="balanced" selected>Kiegyensúlyozott (Ajánlott)</option>
+              <option value="aggressive">Erős (Kisebb méret)</option>
+              <option value="extreme">Maximális (Legkisebb méret)</option>
+            </select>
+          </div>
+
+          <!-- Grayscale toggle - always visible -->
+          <div
+            class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg border border-gray-700"
+          >
+            <input
+              type="checkbox"
+              id="convert-to-grayscale"
+              class="w-5 h-5 rounded cursor-pointer flex-shrink-0"
+            />
+            <div>
+              <label
+                for="convert-to-grayscale"
+                class="text-sm font-medium text-gray-300 cursor-pointer"
+                >Szürkeárnyalatos konvertálás</label
+              >
+              <p class="text-xs text-gray-500 mt-0.5">
+                Csökkenti a fájlméretet a színinformációk eltávolításával
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <button
+              id="toggle-custom-settings"
+              type="button"
+              class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-medium"
+            >
+              <i data-lucide="settings" class="w-4 h-4"></i>
+              <span>Egyéni beállítások</span>
+              <i
+                data-lucide="chevron-down"
+                id="custom-settings-chevron"
+                class="w-4 h-4"
+              ></i>
+            </button>
+
+            <div
+              id="custom-settings-panel"
+              class="hidden mt-4 p-4 bg-gray-900 rounded-lg border border-gray-700 space-y-4"
+            >
+              <div class="text-sm text-gray-400 mb-2">
+                Tömörítési paraméterek finomhangolása:
+              </div>
+
+              <div class="grid grid-cols-3 gap-4">
+                <div>
+                  <label
+                    for="image-quality"
+                    class="block mb-1 text-xs font-medium text-gray-400"
+                    >Kimeneti minőség</label
+                  >
+                  <input
+                    type="number"
+                    id="image-quality"
+                    value="75"
+                    min="1"
+                    max="100"
+                    class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2 text-sm"
+                  />
+                  <p class="text-xs text-gray-500 mt-1">1-100%</p>
+                </div>
+                <div>
+                  <label
+                    for="dpi-target"
+                    class="block mb-1 text-xs font-medium text-gray-400"
+                    >Képek átméretezése</label
+                  >
+                  <input
+                    type="number"
+                    id="dpi-target"
+                    value="96"
+                    min="36"
+                    max="300"
+                    class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2 text-sm"
+                  />
+                  <p class="text-xs text-gray-500 mt-1">DPI</p>
+                </div>
+                <div>
+                  <label
+                    for="dpi-threshold"
+                    class="block mb-1 text-xs font-medium text-gray-400"
+                    >Csak ennél nagyobb képek feldolgozása</label
+                  >
+                  <input
+                    type="number"
+                    id="dpi-threshold"
+                    value="150"
+                    min="72"
+                    max="600"
+                    class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2 text-sm"
+                  />
+                  <p class="text-xs text-gray-500 mt-1">DPI</p>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="remove-metadata"
+                    checked
+                    class="w-4 h-4 rounded"
+                  />
+                  <span class="text-sm text-gray-300">Metaadatok eltávolítása</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="subset-fonts"
+                    checked
+                    class="w-4 h-4 rounded"
+                  />
+                  <span class="text-sm text-gray-300"
+                    >Betűtípusok karcsúsítása (nem használt karakterek eltávolítása)</span
+                  >
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="remove-thumbnails"
+                    checked
+                    class="w-4 h-4 rounded"
+                  />
+                  <span class="text-sm text-gray-300"
+                    >Beágyazott előnézetek törlése</span
+                  >
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button id="process-btn" class="btn-gradient w-full mt-4">
+            PDF tömörítése
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="loader-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+    >
+      <div
+        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+      >
+        <div class="solid-spinner"></div>
+        <p id="loader-text" class="text-white text-lg font-medium">
+          Feldolgozás...
+        </p>
+      </div>
+    </div>
+
+    <div
+      id="alert-modal"
+      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+    >
+      <div
+        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+      >
+        <h3
+          id="alert-title"
+          class="text-xl font-bold text-white mb-2"
+          data-i18n="alert.title"
+          data-i18n="alert.title"
+        >
+          Alert
+        </h3>
+        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <button
+          id="alert-ok"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-white mb-8 text-center"
+        data-i18n="howItWorks.title"
+      >
+        How It Works
+      </h2>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+          >
+            1
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">PDF-ek feltöltése</h3>
+            <p class="text-gray-400">
+              Kattints egy vagy több PDF fájlra, vagy húzd ide őket
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+          >
+            2
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Algoritmus kiválasztása
+            </h3>
+            <p class="text-gray-400">
+              Válassz Optimalizált (ajánlott) vagy Fényképes módot (fotókkal
+              teli PDF-ekhez)
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+          >
+            3
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Tömörítés mértékének kiválasztása
+            </h3>
+            <p class="text-gray-400">
+              Válassz Enyhe, Kiegyensúlyozott, Erős vagy Maximális tömörítést
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+          >
+            4
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Testreszabás és tömörítés
+            </h3>
+            <p class="text-gray-400">
+              Opcionálisan kapcsold be a szürkeárnyalatos vagy egyéni
+              beállításokat, majd tömöríts
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+          >
+            5
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">Letöltés</h3>
+            <p class="text-gray-400">
+              Mentsd el a tömörített PDF-jeidet – akár 90%-kal kisebb méretben
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-white mb-6 text-center"
+        data-i18n="relatedTools.title"
+      >
+        Related PDF Tools
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <a
+          href="merge-pdf.html"
+          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+        >
+          <h3 class="text-white font-semibold mb-1">PDF-ek egyesítése</h3>
+          <p class="text-gray-400 text-sm">Ingyenes PDF-egyesítő eszköz</p>
+        </a>
+        <a
+          href="split-pdf.html"
+          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+        >
+          <h3 class="text-white font-semibold mb-1">PDF szétbontása</h3>
+          <p class="text-gray-400 text-sm">Ingyenes PDF-szétbontó eszköz</p>
+        </a>
+        <a
+          href="pdf-to-jpg.html"
+          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+        >
+          <h3 class="text-white font-semibold mb-1">PDF → JPG</h3>
+          <p class="text-gray-400 text-sm">Ingyenes PDF → JPG eszköz</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-white mb-6 text-center"
+        data-i18n="faq.sectionTitle"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+          <summary
+            class="cursor-pointer font-semibold text-white flex items-center justify-between"
+          >
+            Mi a különbség az Optimalizált és a Fényképes mód között?
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </summary>
+          <p class="mt-3 text-gray-400">
+            Az Optimalizált mód eltávolítja a felesleges adatokat,
+            optimalizálja a képeket és karcsúsítja a betűtípusokat – ez a
+            legjobb a legtöbb PDF-hez. A Fényképes mód az oldalakat képpé
+            alakítja – fotókkal teli vagy szkennelt PDF-ekhez ideális, de a
+            szöveg nem lesz kijelölhető.
+          </p>
+        </details>
+        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+          <summary
+            class="cursor-pointer font-semibold text-white flex items-center justify-between"
+          >
+            Melyik tömörítési szintet használjam?
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </summary>
+          <p class="mt-3 text-gray-400">
+            A Kiegyensúlyozott (ajánlott) remek méretcsökkentést kínál minimális
+            minőségvesztéssel. A maximális minőség megőrzéséhez használd az
+            Enyhét, kisebb fájlokhoz az Erőset, a legnagyobb tömörítéshez pedig
+            a Maximálist.
+          </p>
+        </details>
+        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+          <summary
+            class="cursor-pointer font-semibold text-white flex items-center justify-between"
+          >
+            Vannak fájlméret-korlátok?
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </summary>
+          <p class="mt-3 text-gray-400">
+            Nincsenek korlátok! Tömöríts annyi PDF-et, amennyire szükséged van,
+            bármekkora méretben, teljesen ingyen.
+          </p>
+        </details>
+      </div>
+    </section>
+    {{> footer }}
+    <script type="module" src="/src/js/utils/lucide-init.ts"></script>
+    <script type="module" src="/src/js/utils/full-width.ts"></script>
+    <script type="module" src="/src/js/utils/simple-mode-footer.ts"></script>
+    <script type="module" src="/src/js/logic/compress-pdf-page.ts"></script>
+    <script type="module" src="/src/js/mobileMenu.ts"></script>
+    <script type="module" src="/src/js/main.ts"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PDF tömörítése – PDF stúdió",
+        "applicationCategory": "PDF Compression Tool",
+        "operatingSystem": "Any - Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "PDF fájlméret csökkentése",
+          "Többféle tömörítési algoritmus",
+          "Kötegelt feldolgozás",
+          "Fájlméret-korlátok nélkül",
+          "Optimalizált algoritmus az intelligens tömörítéshez",
+          "Fényképes algoritmus a képekkel teli PDF-ekhez"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Hogyan tömörítsd a PDF-fájlokat ingyen online",
+        "description": "Tanuld meg, hogyan tömörítsd a PDF-fájlokat a méret csökkentése érdekében, miközben megőrzöd a minőséget",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Töltsd fel a PDF-ed",
+            "text": "Kattints a PDF fájlra, vagy húzd a feltöltési területre"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Válaszd ki a tömörítés mértékét",
+            "text": "Válaszd ki a kívánt tömörítési szintet: Enyhe, Kiegyensúlyozott, Erős vagy Maximális"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Válaszd ki az algoritmust",
+            "text": "Válassz Optimalizált (ajánlott) vagy Fényképes algoritmust a PDF típusa alapján"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Tömörítés és letöltés",
+            "text": "Kattints a „PDF tömörítése” gombra, és töltsd le az optimalizált fájlt"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Főoldal",
+            "item": "https://www.bentopdf.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PDF tömörítése",
+            "item": "https://www.bentopdf.com/compress-pdf"
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1160 @@
+{
+  "categories": {
+    "popularTools": "Népszerű eszközök",
+    "editAnnotate": "Szerkesztés és jegyzetelés",
+    "convertToPdf": "Konvertálás PDF-be",
+    "convertFromPdf": "Konvertálás PDF-ből",
+    "organizeManage": "Rendezés és kezelés",
+    "optimizeRepair": "Optimalizálás és javítás",
+    "securePdf": "Biztonság és védelem",
+    "input": "Bemenet",
+    "output": "Kimenet"
+  },
+  "convertToPdf": "Konvertálás PDF-be",
+  "pdfMultiTool": {
+    "name": "PDF univerzális eszköztár",
+    "subtitle": "Egyesítés, szétbontás, rendezés, törlés, forgatás, üres oldalak és kivonás egyetlen felületen."
+  },
+  "mergePdf": {
+    "name": "PDF egyesítése",
+    "subtitle": "Több PDF dokumentum összefűzése egyetlen fájlba a könyvjelzők megőrzésével.",
+    "retainPageLabels": "Eredeti oldalszámozás és címkék megőrzése",
+    "retainPageLabelsHint": "Kikapcsolva: természetes 1-N számozás. Bekapcsolva: az eredeti oldalcímkék megmaradnak.",
+    "removeDuplicateFonts": "Duplikált betűtípusok eltávolítása"
+  },
+  "splitPdf": {
+    "name": "PDF szétbontása",
+    "subtitle": "Oldalak vagy oldaltartományok kimentése új PDF fájlba."
+  },
+  "compressPdf": {
+    "name": "PDF tömörítése",
+    "subtitle": "PDF fájlméret csökkentése minőségromlás nélkül.",
+    "algorithmLabel": "Tömörítési algoritmus",
+    "condense": "Optimalizált (Ajánlott)",
+    "photon": "Fényképes / Raszteres mód",
+    "condenseInfo": "Korszerű tömörítés: felesleges adatok eltávolítása, képek optimalizálása, betűkészletek csökkentése.",
+    "photonInfo": "Az oldalakat képpé alakítja, ideális szkennelt vagy fotókkal teli PDF-ekhez.",
+    "photonWarning": "Figyelem: A szöveg nem lesz kijelölhető és a linkek megszűnnek.",
+    "levelLabel": "Tömörítés mértéke",
+    "light": "Enyhe (Minőség megőrzése)",
+    "balanced": "Kiegyensúlyozott (Ajánlott)",
+    "aggressive": "Erős (Kisebb méret)",
+    "extreme": "Maximális (Legkisebb méret)",
+    "grayscale": "Szürkeárnyalatos konvertálás",
+    "grayscaleHint": "Csökkenti a fájlméretet a színinformációk eltávolításával",
+    "customSettings": "Egyéni beállítások",
+    "customSettingsHint": "Tömörítési paraméterek finomhangolása:",
+    "outputQuality": "Kimeneti minőség",
+    "resizeImagesTo": "Képek átméretezése",
+    "onlyProcessAbove": "Csak ennél nagyobb képek feldolgozása",
+    "removeMetadata": "Metaadatok eltávolítása",
+    "subsetFonts": "Betűtípusok karcsúsítása",
+    "removeThumbnails": "Beágyazott előnézetek törlése",
+    "compressButton": "PDF tömörítése"
+  },
+  "pdfEditor": {
+    "name": "PDF szerkesztő",
+    "subtitle": "Jegyzetelés, kiemelés, kitakarás, rajzolás, formák/képek beszúrása és megtekintés."
+  },
+  "editPdfText": {
+    "name": "PDF szöveg szerkesztése",
+    "subtitle": "Szövegek közvetlen módosítása a PDF dokumentumban."
+  },
+  "jpgToPdf": {
+    "name": "JPG → PDF",
+    "subtitle": "JPG képek összefűzése és konvertálása PDF-be."
+  },
+  "signPdf": {
+    "name": "PDF aláírása",
+    "subtitle": "Kézírásos vagy digitális aláírás elhelyezése a dokumentumon."
+  },
+  "cropPdf": {
+    "name": "PDF vágása",
+    "subtitle": "Margók és felesleges részek levágása az oldalakról."
+  },
+  "extractPages": {
+    "name": "Oldalak kivonása",
+    "subtitle": "Kiválasztott oldalak kimentése különálló dokumentumként."
+  },
+  "duplicateOrganize": {
+    "name": "Másolás és rendezés",
+    "subtitle": "Oldalak másolása, átrendezése és törlése.",
+    "saveChanges": "Módosítások mentése"
+  },
+  "deletePages": {
+    "name": "Oldalak törlése",
+    "subtitle": "Felesleges oldalak eltávolítása a PDF-ből."
+  },
+  "editBookmarks": {
+    "name": "Könyvjelzők szerkesztése",
+    "subtitle": "PDF könyvjelzők hozzáadása, szerkesztése, importálása, törlése és kinyerése.",
+    "autoExtractExisting": "Meglévő könyvjelzők automatikus felismerése",
+    "importSectionTitle": "Vagy könyvjelzők importálása",
+    "csvFormat": "CSV formátum: cím, oldal, szint",
+    "jsonFormat": "JSON formátum",
+    "uploadCsvAction": "Kattints a CSV feltöltéséhez",
+    "uploadJsonAction": "Kattints a JSON feltöltéséhez",
+    "orDragHere": "vagy húzd ide"
+  },
+  "tableOfContents": {
+    "name": "Tartalomjegyzék",
+    "subtitle": "Tartalomjegyzék-oldal létrehozása a PDF könyvjelzői alapján.",
+    "titleLabel": "Tartalomjegyzék címe",
+    "fontSize": "Betűméret",
+    "fontFamily": "Betűtípus",
+    "addBookmark": "Könyvjelző hozzáadása a tartalomjegyzék-oldalhoz",
+    "generateButton": "Tartalomjegyzék létrehozása",
+    "selectPdfFirst": "Előbb válassz ki egy PDF fájlt.",
+    "statusReadingFileMainThread": "Fájl olvasása (fő szál)...",
+    "statusGenerating": "Tartalomjegyzék létrehozása...",
+    "errorReadingFileWithMessage": "Hiba a fájl olvasása közben: {{message}}",
+    "successGeneratedDownloadStarted": "A tartalomjegyzék sikeresen elkészült! A letöltés elindult.",
+    "workerErrorWithMessage": "Hiba: {{message}}",
+    "workerErrorOccurred": "Hiba történt a munkavégző szálban. A részletek a konzolon tekinthetők meg."
+  },
+  "pageNumbers": {
+    "name": "Oldalszámozás",
+    "subtitle": "Oldalszámok elhelyezése tetszőleges pozícióban és formátumban."
+  },
+  "addPageLabels": {
+    "name": "Oldalcímkék hozzáadása",
+    "subtitle": "Oldalcímkék hozzáadása római számokkal, előtagokkal és egyéni kezdőértékekkel.",
+    "uploadHint": "PDF fájl",
+    "howLabelsWorkTitle": "Hogyan működnek a címkék",
+    "howLabelsWorkStep1": "Az Oldaltartomány mezőt üresen hagyva az összes oldal címkét kap.",
+    "howLabelsWorkStep2": "Használj római számokat a bevezető oldalakhoz, és decimális számozást a fő szöveghez.",
+    "howLabelsWorkStep3": "Használj előtagot 0 kezdőértékkel az olyan címkékhez, mint az A-0, A-1, A-2.",
+    "howLabelsWorkStep4": "Kapcsold be a folytatásos számozást, ha egy szabály nem összefüggő tartományt használ (pl. 1-9, 30-40 vagy páratlan oldalak).",
+    "labelRulesTitle": "Címkeszabályok",
+    "addRule": "Szabály hozzáadása",
+    "removeExistingLabels": "Meglévő oldalcímkék eltávolítása a szabályok alkalmazása előtt",
+    "cpdfNote": "Ez az eszköz a CoherentPDF-et használja a böngésződben. Ha a CoherentPDF nincs beállítva, a WASM-beállításoknál kérni fogjuk a konfigurálását.",
+    "processButton": "Oldalcímkék hozzáadása",
+    "howItWorksUploadTitle": "Fájl feltöltése",
+    "howItWorksUploadDescription": "Válaszd ki az átcímkézni kívánt PDF-et.",
+    "howItWorksDefineTitle": "Szabályok megadása",
+    "howItWorksDefineDescription": "Adj meg egy vagy több oldalcímke-szabályt oldaltartománnyal, stílussal, előtaggal és kezdőértékkel.",
+    "howItWorksDownloadTitle": "Letöltés",
+    "howItWorksDownloadDescription": "Mentsd el a frissített PDF-et az új oldalcímkékkel.",
+    "relatedToolsTitle": "Kapcsolódó PDF eszközök",
+    "faqWhatIsQuestion": "Mi az az oldalcímke?",
+    "faqWhatIsAnswer": "Az oldalcímke az a számozás, amelyet a PDF-olvasók a miniatűrökben, az oldalnavigációban és a nyomtatási párbeszédablakban mutatnak. Magára az oldalra nem nyomtat új szöveget.",
+    "faqMixQuestion": "Keverhetem a római számokat a hagyományos számokkal?",
+    "faqMixAnswer": "Igen. Adj hozzá több szabályt, például 1-4 kisbetűs római és 5-20 decimális számozással.",
+    "faqPrivacyQuestion": "A fájljaim privátak maradnak?",
+    "faqPrivacyAnswer": "Igen. A feldolgozás a böngésződben történik a CoherentPDF WASM segítségével. A PDF soha nem hagyja el az eszközödet.",
+    "invalidFileTitle": "Érvénytelen fájl",
+    "invalidFileMessage": "Tölts fel egy érvényes PDF fájlt.",
+    "loadingPdf": "PDF betöltése...",
+    "protectedPdfTitle": "Védett PDF",
+    "protectedPdfMessage": "Ez a PDF jelszóval védett. Előbb használd a PDF visszafejtése vagy a Jogosultságok módosítása eszközt.",
+    "loadErrorMessage": "A PDF fájl betöltése sikertelen. A fájl érvénytelen, sérült vagy jelszóval védett lehet.",
+    "fileMeta": "{{size}} • {{count}} oldal",
+    "ruleTitle": "Címkeszabály {{number}}",
+    "pageRangeLabel": "Oldaltartomány",
+    "pageRangePlaceholder": "Minden oldal, vagy pl. 1-4, 7, odd (páratlan)",
+    "labelStyleLabel": "Címke stílusa",
+    "labelPrefixLabel": "Címke előtagja",
+    "labelPrefixPlaceholder": "Opcionális előtag, pl. A-",
+    "startValueLabel": "Kezdőérték",
+    "continueNumbering": "Számozás folytatása a nem összefüggő tartományok között",
+    "examplesNote": "Példák: 1-4 római számokkal a bevezetőhöz, 15-20 az A- előtaggal és 0 kezdőértékkel, vagy páratlan oldalak folytatásos számozással.",
+    "uploadFirstMessage": "Előbb tölts fel egy PDF fájlt.",
+    "applyingLabels": "Oldalcímkék alkalmazása...",
+    "invalidRangeMessage": "A(z) {{number}}. szabály oldaltartománya érvénytelen: {{range}}",
+    "allPages": "minden oldal",
+    "emptyOutputMessage": "A CoherentPDF üres fájlt hozott létre.",
+    "successMessage": "Az oldalcímkék sikeresen hozzáadva!",
+    "processErrorMessage": "Az oldalcímkék hozzáadása nem sikerült.",
+    "styleOptions": {
+      "DecimalArabic": "Decimális arab számok",
+      "LowercaseRoman": "Kisbetűs római",
+      "UppercaseRoman": "Nagybetűs római",
+      "LowercaseLetters": "Kisbetűs betűk",
+      "UppercaseLetters": "Nagybetűs betűk",
+      "NoLabelPrefixOnly": "Csak előtag, szám nélkül"
+    }
+  },
+  "batesNumbering": {
+    "name": "Bates-számozás",
+    "subtitle": "Szekvenciális Bates-számok hozzáadása egy vagy több PDF fájlhoz."
+  },
+  "addWatermark": {
+    "name": "Vízjel hozzáadása",
+    "subtitle": "Szöveg vagy kép nyomtatása a PDF-oldalakra.",
+    "applyToAllPages": "Alkalmazás minden oldalra"
+  },
+  "headerFooter": {
+    "name": "Fejléc és lábléc",
+    "subtitle": "Szöveg hozzáadása az oldalak tetejéhez és aljához."
+  },
+  "invertColors": {
+    "name": "Színek invertálása",
+    "subtitle": "A PDF „sötét módú” változatának elkészítése."
+  },
+  "scannerEffect": {
+    "name": "Szkennelési effektus",
+    "subtitle": "A PDF olyan legyen, mint egy beolvasott dokumentum.",
+    "scanSettings": "Szkennelési beállítások",
+    "colorspace": "Színtér",
+    "gray": "Szürke",
+    "border": "Keret",
+    "rotate": "Forgatás",
+    "rotateVariance": "Forgatási eltérés",
+    "brightness": "Fényerő",
+    "contrast": "Kontraszt",
+    "blur": "Elmosás",
+    "noise": "Zaj",
+    "yellowish": "Sárgás árnyalat",
+    "resolution": "Felbontás",
+    "processButton": "Szkennelési effektus alkalmazása"
+  },
+  "adjustColors": {
+    "name": "Színbeállítás",
+    "subtitle": "Fényerő, kontraszt, telítettség és egyebek finomhangolása a PDF-ben.",
+    "colorSettings": "Színbeállítások",
+    "brightness": "Fényerő",
+    "contrast": "Kontraszt",
+    "saturation": "Telítettség",
+    "hueShift": "Színárnyalat eltolása",
+    "temperature": "Színhőmérséklet",
+    "tint": "Árnyalat",
+    "gamma": "Gamma",
+    "sepia": "Szépia",
+    "processButton": "Színbeállítások alkalmazása"
+  },
+  "backgroundColor": {
+    "name": "Háttérszín",
+    "subtitle": "A PDF háttérszínének módosítása."
+  },
+  "changeTextColor": {
+    "name": "Szövegszín módosítása",
+    "subtitle": "A PDF szövegének színmódosítása."
+  },
+  "addStamps": {
+    "name": "Bélyegzők hozzáadása",
+    "subtitle": "Képbélyegzők hozzáadása a PDF-hez a jegyzetelő eszköztárral.",
+    "usernameLabel": "Bélyegző felhasználóneve",
+    "usernamePlaceholder": "Add meg a neved (a bélyegzőkhöz)",
+    "usernameHint": "Ez a név fog megjelenni az általad létrehozott bélyegzőkön.",
+    "saveButton": "Bélyegzett PDF mentése"
+  },
+  "removeAnnotations": {
+    "name": "Megjegyzések eltávolítása",
+    "subtitle": "Megjegyzések, kiemelések és hivatkozások eltávolítása."
+  },
+  "pdfFormFiller": {
+    "name": "PDF űrlapkitöltő",
+    "subtitle": "Űrlapok közvetlen kitöltése a böngészőben. XFA űrlapokat is támogat.",
+    "uploadHint": "Tölts fel egy PDF űrlapmezőkkel. Töltsd ki közvetlenül az alábbi megjelenítőben, majd kattints a gombra a kitöltött űrlap mentéséhez és letöltéséhez. XFA űrlapokat is támogat.",
+    "xfaNoteTitle": "Megjegyzés az XFA űrlapokról:",
+    "xfaNoteDescription": "Az XFA (XML Forms Architecture) egy régi formátum, amelyet csak bizonyos PDF-megjelenítők támogatnak, mint a BentoPDF és a Firefox. Ha más szoftverben nyitsz meg egy XFA PDF-et, és üres oldalakat vagy hiányzó űrlapmezőket látsz, az azt jelenti, hogy az a megjelenítő nem támogatja az XFA-t. Az XFA űrlapok megtekintéséhez és kitöltéséhez használd a Firefoxot vagy a BentoPDF Űrlapkitöltőjét."
+  },
+  "createPdfForm": {
+    "name": "PDF űrlap létrehozása",
+    "subtitle": "Kitölthető PDF űrlapok létrehozása húzd-és-engedd szövegmezőkkel.",
+    "orSeparator": "VAGY",
+    "createBlankPdf": "Üres PDF létrehozása"
+  },
+  "removeBlankPages": {
+    "name": "Üres oldalak eltávolítása",
+    "subtitle": "Üres oldalak automatikus felismerése és törlése.",
+    "sensitivityHint": "Magasabb érték = szigorúbb, csak a teljesen üres oldalakat távolítja el. Alacsonyabb = megtartja a némi tartalommal rendelkező oldalakat."
+  },
+  "imageToPdf": {
+    "name": "Képek PDF-be",
+    "subtitle": "JPG, PNG, BMP, GIF, TIFF, PNM, PGM, PBM, PPM, PAM, JXR, JPX, JP2, PSD, SVG, HEIC, WebP képek konvertálása PDF-be."
+  },
+  "pngToPdf": {
+    "name": "PNG → PDF",
+    "subtitle": "PNG képek összefűzése PDF dokumentummá."
+  },
+  "webpToPdf": {
+    "name": "WebP → PDF",
+    "subtitle": "PDF létrehozása egy vagy több WebP képből."
+  },
+  "svgToPdf": {
+    "name": "SVG → PDF",
+    "subtitle": "PDF létrehozása egy vagy több SVG képből."
+  },
+  "bmpToPdf": {
+    "name": "BMP → PDF",
+    "subtitle": "PDF létrehozása egy vagy több BMP képből."
+  },
+  "heicToPdf": {
+    "name": "HEIC → PDF",
+    "subtitle": "PDF létrehozása egy vagy több HEIC képből."
+  },
+  "tiffToPdf": {
+    "name": "TIFF → PDF",
+    "subtitle": "PDF létrehozása egy vagy több TIFF képből."
+  },
+  "textToPdf": {
+    "name": "Szöveg PDF-be",
+    "subtitle": "Egyszerű szövegfájl konvertálása PDF formátumba.",
+    "uploadFiles": "Fájlok feltöltése",
+    "typeText": "Szöveg beírása",
+    "acceptedFormats": "Szövegfájlok (.txt)",
+    "fontFamily": "Betűtípus",
+    "fontSize": "Betűméret",
+    "textColor": "Szövegszín",
+    "pageSize": "Oldalméret",
+    "rtlAutoDetectNote": "A jobbról balra írt nyelvek (arab, urdu, perzsa stb.) automatikusan felismerésre kerülnek, és a szöveg iránya igazodik hozzájuk.",
+    "createButton": "PDF létrehozása"
+  },
+  "jsonToPdf": {
+    "name": "JSON → PDF",
+    "subtitle": "JSON fájlok konvertálása PDF formátumba.",
+    "noteLabel": "Megjegyzés:",
+    "noteText": "Csak a PDF-ből JSON konverter eszközzel létrehozott JSON fájlok támogatottak. Más eszközökkel készült általános JSON fájlok nem működnek.",
+    "acceptedFormats": "Több JSON fájl",
+    "status": {
+      "selectAtLeastOne": "Válassz ki legalább 1 JSON fájlt",
+      "selectedReady": "{{count}} fájl kiválasztva. Készen áll az átalakításra!",
+      "readingFiles": "Fájlok olvasása (fő szál)...",
+      "converting": "JSON fájlok konvertálása PDF-ekké...",
+      "readError": "Hiba a fájlok olvasása közben: {{message}}",
+      "creatingZip": "ZIP fájl készítése...",
+      "success": "A JSON fájlok sikeresen PDF formátumba lettek konvertálva! A ZIP letöltés elindult.",
+      "zipError": "Hiba a ZIP létrehozása közben: {{message}}",
+      "workerError": "Munkavégző hiba: {{message}}",
+      "getStarted": "Válassz JSON fájlokat a kezdéshez"
+    }
+  },
+  "pdfToJpg": {
+    "name": "PDF → JPG",
+    "subtitle": "PDF oldalak mentése jó minőségű JPG képfájlokként.",
+    "imageQuality": "Képminőség",
+    "imageQualityExplanation": "Magasabb minőség = nagyobb fájlméret",
+    "alert": {
+      "invalidFile": "Érvénytelen fájl",
+      "invalidFileExplanation": "Tölts fel egy PDF fájlt.",
+      "noFile": "Nincs fájl",
+      "noFileExplanation": "Előbb tölts fel egy PDF fájlt.",
+      "conversionSuccess": "A PDF sikeresen JPG-képekké lett konvertálva!",
+      "conversionError": "A PDF JPG-vé konvertálása sikertelen. A fájl sérült lehet."
+    },
+    "loader": {
+      "converting": "Konvertálás JPG formátumba..."
+    }
+  },
+  "pdfToPng": {
+    "name": "PDF → PNG",
+    "subtitle": "PDF oldalak exportálása veszteségmentes PNG képekké.",
+    "imageScale": "Képméretarány",
+    "imageScaleExplanation": "Nagyobb méretarány = jobb minőség, de nagyobb fájlméret",
+    "alert": {
+      "invalidFile": "Érvénytelen fájl",
+      "invalidFileExplanation": "Tölts fel egy PDF fájlt.",
+      "noFile": "Nincs fájl",
+      "noFileExplanation": "Előbb tölts fel egy PDF fájlt.",
+      "conversionSuccess": "A PDF sikeresen PNG-képekké lett konvertálva!",
+      "conversionError": "A PDF PNG-vé konvertálása sikertelen. A fájl sérült lehet."
+    },
+    "loader": {
+      "converting": "Konvertálás PNG formátumba..."
+    }
+  },
+  "pdfToWebp": {
+    "name": "PDF → WebP",
+    "subtitle": "A PDF minden oldalának konvertálása WebP képpé.",
+    "imageQuality": "Képminőség",
+    "imageQualityExplanation": "Magasabb minőség = nagyobb fájlméret",
+    "alert": {
+      "invalidFile": "Érvénytelen fájl",
+      "invalidFileExplanation": "Tölts fel egy PDF fájlt.",
+      "noFile": "Nincs fájl",
+      "noFileExplanation": "Előbb tölts fel egy PDF fájlt.",
+      "conversionSuccess": "A PDF sikeresen WebP-képekké lett konvertálva!",
+      "conversionError": "A PDF WebP formátumba konvertálása sikertelen. A fájl sérült lehet."
+    },
+    "loader": {
+      "converting": "Konvertálás WebP formátumba..."
+    }
+  },
+  "pdfToBmp": {
+    "name": "PDF → BMP",
+    "subtitle": "A PDF minden oldalának konvertálása BMP képpé.",
+    "alert": {
+      "invalidFile": "Érvénytelen fájl",
+      "invalidFileExplanation": "Tölts fel egy PDF fájlt.",
+      "noFile": "Nincs fájl",
+      "noFileExplanation": "Előbb tölts fel egy PDF fájlt.",
+      "conversionSuccess": "A PDF sikeresen BMP-képekké lett konvertálva!",
+      "conversionError": "A PDF BMP formátumba konvertálása sikertelen. A fájl sérült lehet."
+    },
+    "loader": {
+      "converting": "Konvertálás BMP formátumba..."
+    }
+  },
+  "pdfToTiff": {
+    "name": "PDF → TIFF",
+    "subtitle": "A PDF minden oldalának konvertálása TIFF képpé.",
+    "dpi": "DPI (felbontás)",
+    "dpiExplanation": "Magasabb DPI = jobb nyomtatási minőség, nagyobb fájlméret",
+    "compression": "Tömörítés",
+    "compressionExplanation": "Az LZW és a Deflate veszteségmentes. A CCITT 4. csoport a fekete-fehér szkennelt dokumentumokhoz a legjobb.",
+    "colorMode": "Színmód",
+    "multiPage": "Mentés többoldalas TIFF-ként (egy fájlba)",
+    "loadingVips": "Képfeldolgozó betöltése...",
+    "converting": "Konvertálás TIFF formátumba...",
+    "alert": {
+      "invalidFile": "Érvénytelen fájl",
+      "invalidFileExplanation": "Tölts fel egy PDF fájlt.",
+      "noFile": "Nincs fájl",
+      "noFileExplanation": "Előbb tölts fel egy PDF fájlt.",
+      "conversionSuccess": "A PDF sikeresen TIFF-képekké lett konvertálva!",
+      "conversionError": "A PDF TIFF formátumba konvertálása sikertelen. A fájl sérült lehet.",
+      "conversionOutOfMemory": "A böngésző memóriája kimerült a konvertálás közben. Próbálj alacsonyabb DPI-t, vagy kapcsold ki a többoldalas TIFF opciót, hogy az oldalakat egyesével konvertálhassa."
+    }
+  },
+  "pdfToCbz": {
+    "name": "PDF → CBZ",
+    "subtitle": "PDF konvertálása CBZ (képregényarchívum) formátumba képregényolvasókhoz.",
+    "imageFormat": "Képformátum",
+    "quality": "Képminőség",
+    "qualityExplanation": "Magasabb minőség = nagyobb fájlméret",
+    "scale": "Méretarány",
+    "scaleExplanation": "Nagyobb méretarány = jobb minőség nagy felbontású képernyőkön",
+    "grayscale": "Szürkeárnyalatos konvertálás",
+    "manga": "Manga mód (jobbról balra)",
+    "includeMetadata": "ComicInfo.xml metaadatok belefoglalása",
+    "titleLabel": "Cím",
+    "seriesLabel": "Sorozat",
+    "authorLabel": "Szerző(k)",
+    "numberLabel": "#",
+    "volumeLabel": "Kötet",
+    "publisherLabel": "Kiadó",
+    "tagsLabel": "Címkék / műfaj",
+    "yearLabel": "Megjelenés éve",
+    "ratingLabel": "Értékelés (0-5)",
+    "converting": "Konvertálás CBZ formátumba...",
+    "alert": {
+      "invalidFile": "Érvénytelen fájl",
+      "invalidFileExplanation": "Tölts fel egy PDF fájlt.",
+      "noFile": "Nincs fájl",
+      "noFileExplanation": "Előbb tölts fel egy PDF fájlt.",
+      "conversionSuccess": "A PDF sikeresen CBZ formátumba lett konvertálva!",
+      "conversionError": "A PDF CBZ formátumba konvertálása sikertelen. A fájl sérült lehet."
+    }
+  },
+  "pdfToGreyscale": {
+    "name": "PDF szürkeárnyalatosra",
+    "subtitle": "Minden szín átalakítása fekete-fehérré."
+  },
+  "pdfToJson": {
+    "name": "PDF → JSON",
+    "subtitle": "PDF fájlok konvertálása JSON formátumba.",
+    "convertButton": "Konvertálás JSON-ba",
+    "status": {
+      "selectAtLeastOne": "Válassz ki legalább 1 PDF fájlt",
+      "selectedReady": "{{count}} fájl kiválasztva. Készen áll az átalakításra!",
+      "checkingEncrypted": "Titkosított PDF-ek ellenőrzése...",
+      "readingFiles": "Fájlok olvasása (fő szál)...",
+      "converting": "PDF-ek konvertálása JSON formátumba...",
+      "readError": "Hiba a fájlok olvasása közben: {{message}}",
+      "creatingZip": "ZIP fájl készítése...",
+      "success": "A PDF-ek sikeresen JSON formátumba lettek konvertálva! A ZIP letöltés elindult.",
+      "zipError": "Hiba a ZIP létrehozása közben: {{message}}",
+      "workerError": "Munkavégző hiba: {{message}}",
+      "getStarted": "Válassz PDF fájlokat a kezdéshez"
+    }
+  },
+  "ocrPdf": {
+    "name": "Képolvasó OCR",
+    "subtitle": "Szkennelt és képi PDF dokumentumok szövegének felismerése.",
+    "languagesInDocument": "Nyelvek a dokumentumban",
+    "searchLanguagesPlaceholder": "Keresés a nyelvek között...",
+    "selectedLabel": "Kiválasztva:",
+    "none": "Nincs",
+    "advancedSettingsSummary": "Speciális beállítások (pontosabb felismeréshez ajánlott)",
+    "resolutionLabel": "Felbontás",
+    "resolutionStandard": "Normál (192 DPI)",
+    "resolutionHigh": "Nagy (288 DPI)",
+    "resolutionUltra": "Ultra (384 DPI)",
+    "binarizeLabel": "Kép bináris átalakítása (kontraszt növelése tiszta szkennelésekhez)",
+    "embedFullFontsLabel": "Teljes betűtípusok beágyazása (nagyobb fájl, jobb kompatibilitás)",
+    "whitelistPresetLabel": "Karakterfehérlista előbeállítás",
+    "whitelistNone": "Nincs (minden karakter)",
+    "whitelistAlphanumeric": "Alfanumerikus + alap írásjelek",
+    "whitelistNumbersCurrency": "Számok + pénznemjelek",
+    "whitelistLettersOnly": "Csak betűk (A-Z, a-z)",
+    "whitelistNumbersOnly": "Csak számok (0-9)",
+    "whitelistInvoice": "Számla/nyugta (számok, $, ., -, /)",
+    "whitelistForms": "Űrlapok (alfanumerikus + gyakori jelek)",
+    "whitelistCustom": "Egyéni...",
+    "whitelistHelp": "Csak ezek a karakterek lesznek felismerve. Hagyd üresen minden karakterhez.",
+    "whitelistInputLabel": "Karakterfehérlista (opcionális)",
+    "whitelistInputPlaceholder": "pl. abcdefghijklmnopqrstuvwxyz0123456789$.,",
+    "startButton": "OCR indítása",
+    "progressInitializing": "Inicializálás...",
+    "resultsTitle": "Az OCR elkészült",
+    "resultsDescription": "A kereshető PDF elkészült. Az alábbi kinyert szöveget másolhatod vagy letöltheted.",
+    "copyToClipboard": "Másolás vágólapra",
+    "downloadTxt": "Letöltés .txt-ként",
+    "downloadSearchablePdf": "Kereshető PDF letöltése",
+    "statusPrefix": "Állapot: {{status}}",
+    "availabilityInvalidConfig": "Ez a telepítés nem biztosít érvényes OCR-nyelveket. Építsd újra a VITE_TESSERACT_AVAILABLE_LANGUAGES beállítással, érvényes Tesseract-kódokkal.",
+    "availabilityBundles": "Ez a telepítés OCR-t biztosít ehhez: {{languages}}.",
+    "noLanguagesAvailable": "Ebben a telepítésben nem érhető el OCR-nyelv.",
+    "noLanguagesTitle": "Nincs nyelv kiválasztva",
+    "noLanguagesMessage": "Az OCR-hez legalább egy nyelvet ki kell választanod.",
+    "noFileTitle": "Nincs fájl",
+    "noFileMessage": "Előbb tölts fel egy PDF fájlt.",
+    "languageUnavailableTitle": "Az OCR-nyelv nem érhető el",
+    "ocrErrorTitle": "OCR hiba",
+    "ocrErrorMessage": "Hiba történt az OCR-feldolgozás közben. Lehet, hogy a munkavégző szál betöltése sikertelen volt. Próbáld újra.",
+    "howItWorksTitle": "Hogyan működik:",
+    "extractTextLabel": "Szöveg kinyerése:",
+    "extractTextDescription": "A Tesseract OCR használatával felismeri a szöveget a beolvasott képekből vagy PDF-ekből.",
+    "searchableOutputLabel": "Kereshető kimenet:",
+    "searchableOutputDescription": "Új PDF-et hoz létre láthatatlan szövegréteggel, így a dokumentum teljesen kereshető lesz az eredeti megjelenés megtartása mellett.",
+    "characterFilteringLabel": "Karakterek szűrése:",
+    "characterFilteringDescription": "Fehérlistákkal szűrheted ki a felesleges karaktereket, és javíthatod a pontosságot bizonyos dokumentumtípusoknál (számlák, űrlapok stb.).",
+    "multiLanguageSupportLabel": "Többnyelvű támogatás:",
+    "multiLanguageSupportDescription": "Több nyelvet is kiválaszthatsz a vegyes nyelvű tartalmú dokumentumokhoz."
+  },
+  "alternateMerge": {
+    "name": "Oldalak váltogatása és keverése",
+    "subtitle": "PDF-ek egyesítése az oldalak váltogatásával, a könyvjelzők megőrzésével.",
+    "retainPageLabels": "Eredeti oldalszámozás és címkék megőrzése",
+    "retainPageLabelsHint": "Kikapcsolva: természetes 1-N számozás. Bekapcsolva: az eredeti oldalcímkék megmaradnak (ismétlődő címkéket eredményezhet)."
+  },
+  "addAttachments": {
+    "name": "Mellékletek hozzáadása",
+    "subtitle": "Egy vagy több fájl beágyazása a PDF-dbe."
+  },
+  "extractAttachments": {
+    "name": "Mellékletek kinyerése",
+    "subtitle": "Az összes beágyazott fájl kinyerése a PDF(ek)ből ZIP-ként."
+  },
+  "editAttachments": {
+    "name": "Mellékletek szerkesztése",
+    "subtitle": "Mellékletek megtekintése vagy eltávolítása a PDF-ben."
+  },
+  "dividePages": {
+    "name": "Oldalak felosztása",
+    "subtitle": "Oldalak felosztása vízszintesen vagy függőlegesen."
+  },
+  "addBlankPage": {
+    "name": "Üres oldal beszúrása",
+    "subtitle": "Üres oldal beszúrása a PDF bármely pontjára."
+  },
+  "reversePages": {
+    "name": "Oldalak megfordítása",
+    "subtitle": "Az összes oldal sorrendjének megfordítása a dokumentumban."
+  },
+  "rotatePdf": {
+    "name": "PDF forgatása",
+    "subtitle": "Oldalak forgatása 90, 180 vagy 270 fokkal."
+  },
+  "rotateCustom": {
+    "name": "Forgatás tetszőleges fokban",
+    "subtitle": "Oldalak forgatása tetszőleges szögben."
+  },
+  "nUpPdf": {
+    "name": "N-Up elrendezés",
+    "subtitle": "Több oldal elrendezése egyetlen lapon."
+  },
+  "combineToSinglePage": {
+    "name": "Összevonás egyetlen oldalra",
+    "subtitle": "Az összes oldal összefűzése egyetlen folyamatos oldallá."
+  },
+  "viewMetadata": {
+    "name": "Metaadatok megtekintése",
+    "subtitle": "A PDF rejtett tulajdonságainak vizsgálata."
+  },
+  "editMetadata": {
+    "name": "Metaadatok szerkesztése",
+    "subtitle": "A szerző, cím és egyéb tulajdonságok módosítása."
+  },
+  "pdfsToZip": {
+    "name": "PDF-ek ZIP-be",
+    "subtitle": "Több PDF fájl csomagolása ZIP archívumba."
+  },
+  "comparePdfs": {
+    "name": "PDF-ek összehasonlítása",
+    "subtitle": "Két PDF egymás melletti összehasonlítása.",
+    "firstPdf": "Első PDF",
+    "secondPdf": "Második PDF",
+    "clickOrDrop": "Kattints vagy húzd ide",
+    "page": "Oldal",
+    "overlay": "Egymásra helyezés",
+    "sideBySide": "Egymás mellett",
+    "flicker": "Villogtatás",
+    "syncScroll": "Görgetés szinkronizálása",
+    "export": "Exportálás",
+    "exportAsPdf": "Exportálás PDF-ként",
+    "splitView": "Oszott nézet",
+    "alternating": "Váltakozó",
+    "leftDocument": "Bal oldali dokumentum",
+    "rightDocument": "Jobb oldali dokumentum",
+    "original": "Eredeti",
+    "modified": "Módosított",
+    "searchChanges": "Változások keresése...",
+    "deleted": "Törölt",
+    "added": "Hozzáadott",
+    "prevPage": "Előző oldal",
+    "nextPage": "Következő oldal",
+    "prevChange": "Előző változás",
+    "nextChange": "Következő változás",
+    "uploadTwoPdfs": "Tölts fel két PDF-et a különbségek megtekintéséhez.",
+    "noDifferences": "Ezen az oldalon nem található különbség.",
+    "noMatchingChanges": "Nem található a szűrőnek megfelelő változás.",
+    "pageNotExist": "A(z) {{page}}. oldal nem létezik ebben a PDF-ben.",
+    "noPairedPage": "Ehhez az oldalhoz nincs párja.",
+    "buildingModel": "Oldalpárosítási modell felépítése...",
+    "indexingPdf": "PDF {{num}} indexelése, {{page}}. oldal a(z) {{total}} közül...",
+    "loadingComparison": "Összehasonlítás betöltése: {{current}} / {{total}}...",
+    "runningOcr": "OCR futtatása a(z) {{page}}. oldalon...",
+    "preparingExport": "PDF-export előkészítése...",
+    "renderingPage": "{{current}}. oldal renderelése a(z) {{total}} közül...",
+    "exportError": "Exportálási hiba",
+    "exportFailed": "Az összehasonlító PDF exportálása nem sikerült.",
+    "loadingFile": "{{name}} betöltése...",
+    "invalidFile": "Érvénytelen fájl",
+    "invalidFileMsg": "Válassz ki egy érvényes PDF fájlt.",
+    "loadError": "A PDF betöltése nem sikerült. Lehet, hogy sérült vagy jelszóval védett."
+  },
+  "posterizePdf": {
+    "name": "PDF poszterezése",
+    "subtitle": "Nagy oldal felosztása több kisebb oldalra."
+  },
+  "fixPageSize": {
+    "name": "Oldalméret javítása",
+    "subtitle": "Minden oldal egységes méretre hozása."
+  },
+  "linearizePdf": {
+    "name": "PDF linearizálása",
+    "subtitle": "A PDF optimalizálása gyors webes megjelenítéshez."
+  },
+  "pageDimensions": {
+    "name": "Oldalméretek",
+    "subtitle": "Oldalméret, tájolás és mértékegységek elemzése."
+  },
+  "removeRestrictions": {
+    "name": "Korlátozások eltávolítása",
+    "subtitle": "A digitálisan aláírt PDF-ekhez kapcsolódó jelszavas védelem és biztonsági korlátozások eltávolítása."
+  },
+  "repairPdf": {
+    "name": "PDF javítása",
+    "subtitle": "Sérült vagy hibás PDF dokumentumok helyreállítása."
+  },
+  "encryptPdf": {
+    "name": "PDF titkosítása",
+    "subtitle": "A PDF zárolása jelszó hozzáadásával."
+  },
+  "sanitizePdf": {
+    "name": "PDF megtisztítása",
+    "subtitle": "Metaadatok, megjegyzések, szkriptek és egyebek eltávolítása."
+  },
+  "decryptPdf": {
+    "name": "PDF visszafejtése",
+    "subtitle": "A PDF feloldása a jelszavas védelem eltávolításával."
+  },
+  "flattenPdf": {
+    "name": "PDF lapítása",
+    "subtitle": "Űrlapmezők és rétegek véglegesítése egyetlen képi rétegre."
+  },
+  "removeMetadata": {
+    "name": "Metaadatok eltávolítása",
+    "subtitle": "Rejtett adatok eltávolítása a PDF-ből."
+  },
+  "changePermissions": {
+    "name": "Jogosultságok módosítása",
+    "subtitle": "Felhasználói jogosultságok beállítása vagy módosítása a PDF-en."
+  },
+  "odtToPdf": {
+    "name": "ODT → PDF",
+    "subtitle": "OpenDocument szövegfájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "ODT fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "csvToPdf": {
+    "name": "CSV → PDF",
+    "subtitle": "CSV táblázatfájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "CSV fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "rtfToPdf": {
+    "name": "RTF → PDF",
+    "subtitle": "Rich Text Format dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "RTF fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "wordToPdf": {
+    "name": "Word → PDF",
+    "subtitle": "Word dokumentumok (DOCX, DOC, ODT, RTF) konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "DOCX, DOC, ODT, RTF fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "excelToPdf": {
+    "name": "Excel → PDF",
+    "subtitle": "Excel táblázatok (XLSX, XLS, ODS, CSV) konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "XLSX, XLS, ODS, CSV fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "powerpointToPdf": {
+    "name": "PowerPoint → PDF",
+    "subtitle": "PowerPoint prezentációk (PPTX, PPT, ODP) konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "PPTX, PPT, ODP fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "markdownToPdf": {
+    "name": "Markdown → PDF",
+    "subtitle": "Írj vagy illessz be Markdown-t, és exportáld szépen formázott PDF-ként.",
+    "paneMarkdown": "Markdown",
+    "panePreview": "Előnézet",
+    "btnUpload": "Feltöltés",
+    "btnSyncScroll": "Görgetés szinkronizálása",
+    "btnSettings": "Beállítások",
+    "btnExportPdf": "PDF exportálása",
+    "settingsTitle": "Markdown beállítások",
+    "settingsPreset": "Előbeállítás",
+    "presetDefault": "Alapértelmezett (GFM-szerű)",
+    "presetCommonmark": "CommonMark (szigorú)",
+    "presetZero": "Minimális (funkciók nélkül)",
+    "settingsOptions": "Markdown opciók",
+    "optAllowHtml": "HTML-címkék engedélyezése",
+    "optBreaks": "Sortörések átalakítása <br> taggé",
+    "optLinkify": "URL-ek automatikus linkké alakítása",
+    "optTypographer": "Tipográfus mód (okos idézőjelek stb.)"
+  },
+  "pdfBooklet": {
+    "name": "PDF füzet",
+    "subtitle": "Oldalak átrendezése kétoldalas füzetnyomtatáshoz. Hajtsd össze és tűzd össze a füzet elkészítéséhez.",
+    "howItWorks": "Hogyan működik:",
+    "step1": "Tölts fel egy PDF fájlt.",
+    "step2": "Az oldalak füzet sorrendbe rendeződnek.",
+    "step3": "Nyomtasd kétoldalasra, rövid él mentén fordítsd, majd hajtsd össze és tűzd össze.",
+    "paperSize": "Papírméret",
+    "orientation": "Tájolás",
+    "portrait": "Álló",
+    "landscape": "Fekvő",
+    "pagesPerSheet": "Oldalak laponként",
+    "createBooklet": "Füzet létrehozása",
+    "processing": "Feldolgozás...",
+    "pageCount": "Az oldalszám szükség esetén 4 többszörösére egészül ki."
+  },
+  "xpsToPdf": {
+    "name": "XPS → PDF",
+    "subtitle": "XPS/OXPS dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "XPS, OXPS fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "mobiToPdf": {
+    "name": "MOBI → PDF",
+    "subtitle": "MOBI e-könyvek konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "MOBI fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "epubToPdf": {
+    "name": "EPUB → PDF",
+    "subtitle": "EPUB e-könyvek konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "EPUB fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "fb2ToPdf": {
+    "name": "FB2 → PDF",
+    "subtitle": "FictionBook (FB2) e-könyvek konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "FB2 fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "cbzToPdf": {
+    "name": "CBZ → PDF",
+    "subtitle": "Képregényarchívumok (CBZ/CBR) konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "CBZ, CBR fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "wpdToPdf": {
+    "name": "WPD → PDF",
+    "subtitle": "WordPerfect dokumentumok (WPD) konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "WPD fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "wpsToPdf": {
+    "name": "WPS → PDF",
+    "subtitle": "WPS Office dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "WPS fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "xmlToPdf": {
+    "name": "XML → PDF",
+    "subtitle": "XML dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "XML fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "pagesToPdf": {
+    "name": "Pages → PDF",
+    "subtitle": "Apple Pages dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "Pages fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "odgToPdf": {
+    "name": "ODG → PDF",
+    "subtitle": "OpenDocument Graphics (ODG) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "ODG fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "odsToPdf": {
+    "name": "ODS → PDF",
+    "subtitle": "OpenDocument Spreadsheet (ODS) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "ODS fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "odpToPdf": {
+    "name": "ODP → PDF",
+    "subtitle": "OpenDocument Presentation (ODP) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "ODP fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "pubToPdf": {
+    "name": "PUB → PDF",
+    "subtitle": "Microsoft Publisher (PUB) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "PUB fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "vsdToPdf": {
+    "name": "VSD → PDF",
+    "subtitle": "Microsoft Visio (VSD, VSDX) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "VSD, VSDX fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "psdToPdf": {
+    "name": "PSD → PDF",
+    "subtitle": "Adobe Photoshop (PSD) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "acceptedFormats": "PSD fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "pdfToSvg": {
+    "name": "PDF → SVG",
+    "subtitle": "A PDF minden oldalának konvertálása méretarányos vektorgrafikává (SVG), tökéletes minőségben bármilyen méretnél."
+  },
+  "extractTables": {
+    "name": "PDF táblázatok kinyerése",
+    "subtitle": "Táblázatok kinyerése PDF fájlokból, exportálás CSV, JSON vagy Markdown formátumba."
+  },
+  "pdfToCsv": {
+    "name": "PDF → CSV",
+    "subtitle": "Táblázatok kinyerése PDF-ből és konvertálás CSV formátumba."
+  },
+  "pdfToExcel": {
+    "name": "PDF → Excel",
+    "subtitle": "Táblázatok kinyerése PDF-ből és konvertálás Excel (XLSX) formátumba."
+  },
+  "pdfToText": {
+    "name": "PDF szöveggé",
+    "subtitle": "Nyers szöveges tartalom kinyerése a PDF-ből (.txt).",
+    "noteLabel": "Megjegyzés:",
+    "noteText": "Ez az eszköz KIZÁRÓLAG digitálisan létrehozott PDF-ekkel működik. Szkennelt vagy képi alapú PDF-ekhez használd inkább az OCR PDF eszközt.",
+    "convertButton": "Szöveg kinyerése"
+  },
+  "digitalSignPdf": {
+    "name": "Digitális aláírás",
+    "pageTitle": "Digitális aláírás – kriptográfiai aláírás hozzáadása | BentoPDF",
+    "subtitle": "Kriptográfiai digitális aláírás hozzáadása a PDF-hez X.509 tanúsítványokkal. PKCS#12 (.pfx, .p12) és PEM formátumokat támogat. A privát kulcsod soha nem hagyja el a böngésződet.",
+    "certificateSection": "Tanúsítvány",
+    "uploadCert": "Tanúsítvány feltöltése (.pfx, .p12, .pem)",
+    "certPassword": "Tanúsítvány jelszava",
+    "privateKeyPassword": "Privát kulcs jelszava",
+    "certPasswordPlaceholder": "Add meg a tanúsítvány jelszavát",
+    "certInfo": "Tanúsítvány adatai",
+    "certSubject": "Tulajdonos",
+    "certIssuer": "Kibocsátó",
+    "certValidity": "Érvényesség",
+    "signatureDetails": "Aláírás adatai (opcionális)",
+    "reason": "Indoklás",
+    "reasonPlaceholder": "pl. Jóváhagyom ezt a dokumentumot",
+    "location": "Helyszín",
+    "locationPlaceholder": "pl. Budapest, Magyarország",
+    "contactInfo": "Elérhetőség",
+    "contactPlaceholder": "pl. email@example.com",
+    "visibleSignature": "Látható aláírás",
+    "visibleSignatureDescription": "Bekapcsolásakor látható aláírásmező jelenik meg a PDF-en. Feltölthetsz képet/logót, vagy szöveget adhatsz hozzá. Ha egyiket sem adsz meg, a tanúsítványban szereplő aláíró neve jelenik meg automatikusan.",
+    "signatureImage": "Aláírás képe/logója (opcionális)",
+    "uploadSignatureImage": "Kép feltöltése (PNG, JPG, WebP)",
+    "signaturePreviewAlt": "Aláírás előnézete",
+    "remove": "Eltávolítás",
+    "page": "Oldal",
+    "firstPage": "Első oldal",
+    "lastPage": "Utolsó oldal",
+    "allPages": "Minden oldal",
+    "customPage": "Egyéni oldalszám",
+    "pageNumber": "Oldalszám",
+    "xPosition": "X pozíció (bal)",
+    "yPosition": "Y pozíció (felül)",
+    "width": "Szélesség",
+    "height": "Magasság",
+    "addTextOverlay": "Szövegréteg hozzáadása",
+    "text": "Szöveg",
+    "textPlaceholder": "pl. Digitálisan aláírta: Kovács János",
+    "textColor": "Szövegszín",
+    "fontSize": "Betűméret",
+    "invalidImageTitle": "Érvénytelen kép",
+    "invalidImageMessage": "Válassz PNG, JPG vagy WebP képet.",
+    "invalidFileTitle": "Érvénytelen fájl",
+    "invalidFileMessage": "Válassz egy PDF fájlt.",
+    "invalidCertificateTitle": "Érvénytelen tanúsítvány",
+    "invalidCertificateMessage": "Válassz .pfx, .p12 vagy .pem tanúsítványfájlt.",
+    "certificateLoaded": "A tanúsítvány betöltve",
+    "certificateUnlocked": "A tanúsítvány feloldva",
+    "failedParsePem": "A PEM fájl feldolgozása sikertelen",
+    "enterPasswordToUnlock": "Add meg a jelszót a feloldáshoz",
+    "invalidPasswordOrCertificate": "Érvénytelen jelszó vagy tanúsítvány",
+    "incorrectPassword": "Hibás jelszó",
+    "failedParseCertificate": "A tanúsítvány feldolgozása sikertelen",
+    "missingDataTitle": "Hiányzó adatok",
+    "missingDataMessage": "Tölts fel egy PDF-et és egy érvényes tanúsítványt is.",
+    "applyingSignature": "Digitális aláírás alkalmazása...",
+    "signingFailedTitle": "Az aláírás nem sikerült",
+    "chainFetchFailed": "A tanúsítványlánc lekérése sikertelen. Ennek oka lehet hálózati hiba vagy a tanúsítványproxy elérhetetlensége. Ellenőrizd az internetkapcsolatot, és próbáld újra. Ha a probléma továbbra is fennáll, fordulj az ügyfélszolgálathoz.",
+    "failedToSignPdf": "A PDF aláírása sikertelen: {{message}}",
+    "defaultSignatureText": "Digitálisan aláírta: {{signer}}\n{{date}}",
+    "pageCount": "{{count}} oldal",
+    "howToStep1Title": "PDF feltöltése",
+    "howToStep1Text": "Válaszd ki az aláírandó PDF dokumentumot",
+    "howToStep2Title": "Tanúsítvány feltöltése",
+    "howToStep2Text": "Add meg a .pfx vagy .p12 tanúsítványfájlodat és a jelszót",
+    "howToStep3Title": "Aláírás és letöltés",
+    "howToStep3Text": "Alkalmazd a digitális aláírást, és töltsd le az aláírt PDF-et",
+    "relatedEncryptDesc": "PDF jelszavas védelme",
+    "relatedDecryptDesc": "PDF jelszó eltávolítása",
+    "relatedFlattenDesc": "Megjegyzések véglegesítése",
+    "relatedSanitizeDesc": "Rejtett adatok eltávolítása",
+    "relatedPermissionsDesc": "PDF jogosultságok beállítása",
+    "faqWhatIsQuestion": "Mi az a digitális aláírás?",
+    "faqWhatIsAnswer": "A digitális aláírás egy kriptográfiai mechanizmus, amely ellenőrzi a dokumentum hitelességét és sértetlenségét. A kézzel rajzolt aláírással ellentétben nyilvános kulcsú kriptográfiát (X.509 tanúsítványokat) használ az aláíró személyazonosságának igazolására.",
+    "faqFormatsQuestion": "Milyen tanúsítványformátumok támogatottak?",
+    "faqFormatsAnswer": "PKCS#12 formátumú tanúsítványokat (.pfx, .p12) támogatunk, amelyek egyetlen titkosított fájlban tartalmazzák a tanúsítványt és a privát kulcsot. Ezeket általában tanúsítványkiadók bocsátják ki.",
+    "faqPrivateKeyQuestion": "Biztonságban van a privát kulcsom?",
+    "faqPrivateKeyAnswer": "Igen! Minden feldolgozás teljes egészében a böngésződben történik. A tanúsítványod, privát kulcsod és a PDF-fájljaid soha nem hagyják el az eszközödet, és nem kerülnek feltöltésre szerverre.",
+    "faqValidReadersQuestion": "Érvényes lesz az aláírás a PDF-olvasókban?",
+    "faqValidReadersAnswer": "Igen, az eszköz szabványos PKCS#7 leválasztott aláírásokat hoz létre, amelyeket minden jelentős PDF-megjelenítő felismer. A teljes érvényesítéshez megbízható hitelesítésszolgáltatótól származó tanúsítványt használj.",
+    "applySignature": "Digitális aláírás alkalmazása",
+    "successMessage": "A PDF sikeresen aláírva! Az aláírás bármely PDF-olvasóban ellenőrizhető.",
+    "internetRequiredTitle": "Internetkapcsolat szükséges",
+    "internetRequiredDescription": "Az aláíráshoz le kell tölteni a tanúsítványlánc adatait a tanúsítványkibocsátó szerveréről az aláírás érvényesítéséhez."
+  },
+  "validateSignaturePdf": {
+    "name": "Aláírás ellenőrzése",
+    "pageTitle": "Aláírás ellenőrzése – digitális aláírások ellenőrzése | BentoPDF",
+    "subtitle": "Digitális aláírások ellenőrzése a PDF-fájljaidban. Tanúsítvány érvényességének ellenőrzése, aláíró adatainak megtekintése és a dokumentum sértetlenségének megerősítése. Minden feldolgozás a böngésződben történik."
+  },
+  "timestampPdf": {
+    "name": "PDF időbélyegzése",
+    "pageTitle": "PDF időbélyegzés online, ingyenes – RFC 3161 dokumentum időbélyeg | BentoPDF",
+    "subtitle": "RFC 3161 dokumentumidőbélyeg hozzáadása a PDF-hez megbízható Időbélyeg Szolgáltató (TSA) szerver használatával. Igazolja, hogy a dokumentum egy adott időpontban létezett. Tanúsítvány nem szükséges.",
+    "tsaSectionTitle": "Időbélyeg szerver (TSA)",
+    "selectTsa": "TSA szerver kiválasztása",
+    "applyTimestamp": "Időbélyeg alkalmazása",
+    "successMessage": "A PDF sikeresen időbélyeget kapott! Az időbélyeg bármely PDF-olvasóban ellenőrizhető."
+  },
+  "emailToPdf": {
+    "name": "E-mail → PDF",
+    "subtitle": "E-mail fájlok (EML, MSG) konvertálása PDF formátumba. Outlook-exportokat és szabványos e-mail formátumokat támogat.",
+    "acceptedFormats": "EML, MSG fájlok",
+    "convertButton": "Konvertálás PDF-be"
+  },
+  "fontToOutline": {
+    "name": "Betűk körvonallá alakítása",
+    "subtitle": "Minden betűtípus vektoros körvonallá alakítása a konzisztens megjelenítéshez minden eszközön."
+  },
+  "deskewPdf": {
+    "name": "PDF kiegyenesítése",
+    "subtitle": "Megdőlt beolvasott oldalak automatikus kiegyenesítése OpenCV segítségével."
+  },
+  "pdfToWord": {
+    "name": "PDF → Word",
+    "subtitle": "PDF-fájlok konvertálása szerkeszthető Word-dokumentummá."
+  },
+  "extractImages": {
+    "name": "Képek kinyerése",
+    "subtitle": "Az összes beágyazott kép kinyerése a PDF-fájljaidból."
+  },
+  "pdfToMarkdown": {
+    "name": "PDF → Markdown",
+    "subtitle": "PDF szöveg és táblázatok konvertálása Markdown formátumba."
+  },
+  "preparePdfForAi": {
+    "name": "PDF előkészítése AI-hoz",
+    "subtitle": "PDF-tartalom kinyerése LlamaIndex JSON formátumban RAG/LLM folyamatokhoz."
+  },
+  "pdfOcg": {
+    "name": "PDF rétegek (OCG)",
+    "subtitle": "OCG rétegek megtekintése, ki-/bekapcsolása, hozzáadása és törlése a PDF-ben."
+  },
+  "pdfToPdfa": {
+    "name": "PDF → PDF/A",
+    "subtitle": "PDF konvertálása PDF/A formátumba hosszú távú archiváláshoz."
+  },
+  "rasterizePdf": {
+    "name": "PDF raszterizálása",
+    "subtitle": "PDF konvertálása képi alapú PDF-dé. Rétegek ellapítása és a kijelölhető szöveg eltávolítása."
+  },
+  "pdfWorkflow": {
+    "name": "PDF munkafolyamat-tervező",
+    "subtitle": "Egyedi PDF-feldolgozási folyamatok építése vizuális csomópontszerkesztővel.",
+    "nodes": "Csomópontok",
+    "searchNodes": "Csomópontok keresése...",
+    "run": "Futtatás",
+    "clear": "Törlés",
+    "save": "Mentés",
+    "load": "Betöltés",
+    "export": "Exportálás",
+    "import": "Importálás",
+    "ready": "Kész",
+    "settings": "Beállítások",
+    "processing": "Feldolgozás...",
+    "saveTemplate": "Sablon mentése",
+    "templateName": "Sablon neve",
+    "templatePlaceholder": "pl. Számla munkafolyamat",
+    "cancel": "Mégse",
+    "loadTemplate": "Sablon betöltése",
+    "noTemplates": "Még nincs mentett sablon.",
+    "ok": "OK",
+    "workflowCompleted": "A munkafolyamat befejeződött",
+    "errorDuringExecution": "Hiba történt a végrehajtás közben",
+    "addNodeError": "A munkafolyamat futtatásához adj hozzá legalább egy csomópontot.",
+    "needInputOutput": "A munkafolyamathoz legalább egy bemeneti és egy kimeneti csomópontra van szükség a futtatáshoz.",
+    "enterName": "Adj meg egy nevet.",
+    "templateExists": "Már létezik ilyen nevű sablon.",
+    "templateSaved": "A(z) „{{name}}” sablon elmentve.",
+    "templateLoaded": "A(z) „{{name}}” sablon betöltve.",
+    "failedLoadTemplate": "A sablon betöltése sikertelen.",
+    "noSettings": "Ehhez a csomóponthoz nincs beállítható opció.",
+    "advancedSettings": "Speciális beállítások",
+    "specialNodes": {
+      "pdfInput": {
+        "name": "PDF bemenet",
+        "description": "Egy vagy több PDF fájl feltöltése"
+      },
+      "download": {
+        "name": "Letöltés",
+        "description": "Automatikus letöltés PDF vagy ZIP formátumban"
+      }
+    },
+    "errors": {
+      "noPdfsConnected": "Nincs PDF csatlakoztatva a(z) {{node}} csomóponthoz",
+      "noPdfInputs": "Nincs PDF a bemenetben",
+      "expectedPdfInput": "PDF bemenet szükséges",
+      "failedToRenderPage": "A(z) {{page}}. oldal renderelése sikertelen",
+      "failedToGetCanvasContext": "Nem sikerült canvas-kontextust kapni a(z) {{page}}. oldalhoz",
+      "failedToRenderPageToImage": "A(z) {{page}}. oldal képpé renderelése sikertelen",
+      "noPagesProcessed": "Nem lett feldolgozva egyetlen oldal sem",
+      "cpdfNotConfigured": "A CoherentPDF nincs beállítva. Állítsd be a Speciális beállításoknál.",
+      "workerError": "Munkavégző hiba: {{message}}",
+      "alternateMergeWorkerError": "Váltogatásos egyesítés munkavégző hiba: {{message}}",
+      "noPdfFilesUploaded": "Nincs PDF fájl feltöltve a PDF bemenet csomópontban",
+      "failedToLoadFile": "A(z) „{{file}}” betöltése sikertelen – a fájl sérült lehet",
+      "noImagesUploaded": "Nincs kép feltöltve a Kép bemenet csomópontban",
+      "noWordDocsUploaded": "Nincs dokumentum feltöltve a Word bemenet csomópontban",
+      "noExcelUploaded": "Nincs táblázat feltöltve az Excel bemenet csomópontban",
+      "noPowerPointUploaded": "Nincs prezentáció feltöltve a PowerPoint bemenet csomópontban",
+      "noCbzUploaded": "Nincs képregényarchívum feltöltve a CBZ bemenet csomópontban",
+      "noEmailUploaded": "Nincs e-mail fájl feltöltve az E-mail bemenet csomópontban",
+      "noEpubUploaded": "Nincs EPUB fájl feltöltve az EPUB bemenet csomópontban",
+      "noFb2Uploaded": "Nincs FB2 fájl feltöltve az FB2 bemenet csomópontban",
+      "noJsonUploaded": "Nincs JSON fájl feltöltve a JSON bemenet csomópontban",
+      "noMarkdownUploaded": "Nincs Markdown fájl feltöltve a Markdown bemenet csomópontban",
+      "noMobiUploaded": "Nincs MOBI fájl feltöltve a MOBI bemenet csomópontban",
+      "noOdgUploaded": "Nincs ODG fájl feltöltve az ODG bemenet csomópontban",
+      "noPagesUploaded": "Nincs Pages fájl feltöltve a Pages bemenet csomópontban",
+      "noPubUploaded": "Nincs PUB fájl feltöltve a PUB bemenet csomópontban",
+      "noSvgUploaded": "Nincs SVG fájl feltöltve az SVG bemenet csomópontban",
+      "noTextUploaded": "Nincs szövegfájl feltöltve a Szöveg bemenet csomópontban",
+      "noVsdUploaded": "Nincs Visio fájl feltöltve a VSD bemenet csomópontban",
+      "noWpdUploaded": "Nincs WPD fájl feltöltve a WPD bemenet csomópontban",
+      "noWpsUploaded": "Nincs WPS fájl feltöltve a WPS bemenet csomópontban",
+      "noXmlUploaded": "Nincs XML fájl feltöltve az XML bemenet csomópontban",
+      "noXpsUploaded": "Nincs XPS fájl feltöltve az XPS bemenet csomópontban",
+      "alternateMergeNeedsTwo": "A váltogatásos egyesítéshez legalább két PDF-nek kell csatlakoznia a bemenetéhez",
+      "cropMarginsExceed": "A vágási margók meghaladják az oldalméreteket. Csökkentsd a vágási értékeket.",
+      "digitalSignNoCertificate": "Nincs tanúsítvány betöltve a Digitális aláírás csomópontban",
+      "encryptUserPasswordRequired": "A titkosításhoz felhasználói jelszó szükséges",
+      "extractImagesNoneFound": "A csatlakoztatott PDF-ekben nem található kép",
+      "invertColorsFailedReadImage": "A kép adatainak beolvasása sikertelen",
+      "overlayRequiresPdf": "Az Overlay csomóponthoz ráfedő PDF bemenet szükséges.",
+      "pdfToCsvNoTables": "Nem található táblázat a PDF-ben",
+      "pdfToXlsxNoTables": "Nem található táblázat ebben a fájlban: {{file}}",
+      "posterizeFailedTileCanvas": "Nem sikerült tile-canvas kontextust kapni",
+      "redactNoText": "Kitakarás: nincs megadva kitakarandó szöveg",
+      "removeBlankPagesAllBlank": "Minden oldal üres",
+      "svgFailedToConvert": "Az SVG konvertálása sikertelen",
+      "svgFailedToLoad": "Az SVG betöltése sikertelen",
+      "timestampFailed": "Az időbélyegzés sikertelen a(z) {{tsa}} TSA-val: {{message}}",
+      "noOutputNodes": "Nem található kimeneti csomópont. Adj hozzá egy Letöltés csomópontot a munkafolyamat befejezéséhez.",
+      "circularDependency": "Körkörös függőséget észleltünk a munkafolyamatban. Távolítsd el a csomópontok közötti hurkokat.",
+      "encryptOrdering": "A Titkosítás csomópont a(z) „{{target}}” felé továbbítja az adatokat, ami a titkosított adatoknál hibát okozhat. Helyezd át a Titkosítást közvetlenül a kimeneti csomópont elé.",
+      "invalidWorkflowFile": "Érvénytelen munkafolyamat-fájl: hiányzik a nodes vagy a connections tömb.",
+      "storageQuotaExceeded": "A munkafolyamat mentése sikertelen: a tárhelykvóta betelt. Próbálj törölni régi sablonokat.",
+      "failedToImport": "A munkafolyamat importálása sikertelen: {{message}}"
+    }
+  },
+  "wasmSettings": {
+    "title": "Speciális folyamatok beállításai",
+    "description": "Külső feldolgozó modulok beállítása a speciális PDF-funkciók eléréséhez. Ezek a modulok opcionálisak, és külön licenceltek.",
+    "status": {
+      "testing": "Tesztelés...",
+      "customOverride": "Egyéni felülírás",
+      "preConfigured": "Előre konfigurált",
+      "notConfigured": "Nincs beállítva"
+    },
+    "preconfiguredTitle": "Előre konfigurálva, használatra kész.",
+    "preconfiguredDescription": "A speciális feldolgozó modulok automatikusan betöltődnek a CDN-ről. Az alábbi URL-eket felülírhatod, ha egyéni forrást szeretnél használni (pl. zárt vagy önálló telepítésekhez).",
+    "usingDefault": "Alapértelmezett használata: {{url}}",
+    "pymupdfSubtitle": "Dokumentumfeldolgozó motor",
+    "pymupdfFeatures": "Lehetővé teszi: PDF szöveggé, Markdownná, SVG-vé, DOCX-szé, Excellel • Képek/táblázatok kinyerése • Formátumkonverzió",
+    "testButton": "Teszt",
+    "recommendedLabel": "Ajánlott:",
+    "copyTitle": "Másolás vágólapra",
+    "ghostscriptSubtitle": "PDF/A konverziós motor",
+    "ghostscriptFeatures": "Lehetővé teszi: PDF/A-1b, PDF/A-2b, PDF/A-3b konverzió • Betűtípusok körvonallá alakítása",
+    "cpdfSubtitle": "Könyvjelző- és metaadat-motor",
+    "cpdfFeatures": "Lehetővé teszi: szétválasztás könyvjelzők szerint • könyvjelzők szerkesztése • PDF-metaadatok",
+    "saveConfiguration": "Konfiguráció mentése",
+    "savingConfiguration": "Konfiguráció mentése...",
+    "savedTitle": "Elmentve",
+    "savedMessage": "A konfiguráció sikeresen elmentve!",
+    "errorTitle": "Hiba",
+    "failedSave": "A konfiguráció mentése sikertelen: {{message}}",
+    "emptyUrlTitle": "Üres URL",
+    "emptyUrlMessage": "Adj meg egy URL-t a teszteléshez.",
+    "testSuccessTitle": "Siker",
+    "connectionSuccess": "Sikeres kapcsolat a következővel: {{package}}!",
+    "connectionFailedTitle": "Sikertelen kapcsolat",
+    "connectionFailedMessage": "Nem sikerült kapcsolódni az URL-hez.",
+    "resetDefaults": "Visszaállítás alapértékekre",
+    "resetTitle": "Visszaállítás",
+    "resetWithDefaults": "Az egyéni felülírások törölve. Az előre konfigurált alapértékek aktívak.",
+    "resetNoDefaults": "Az összes konfiguráció és gyorsítótárazott modul törölve.",
+    "licenseTitle": "Licenc-megjegyzés:",
+    "licenseDescription": "A külső modulok (PyMuPDF, Ghostscript, CoherentPDF) AGPL-3.0 vagy hasonló copyleft licencek alatt állnak. A modulok konfigurálásával és használatával elfogadod a licencfeltételeiket. A BentoPDF bármely, az elvárt felületet követő Ghostscript WASM és PyMuPDF WASM implementációval kompatibilis."
+  },
+  "pdfOverlay": {
+    "name": "PDF ráfedés",
+    "subtitle": "Egy PDF oldalainak ráhelyezése vagy aláhelyezése egy másik PDF-re.",
+    "basePdfLabel": "Alap PDF",
+    "uploadBasePdf": "Alap PDF feltöltése",
+    "overlayPdfLabel": "Ráfedő / alátét PDF",
+    "uploadOverlayPdf": "Ráfedő/alátét PDF feltöltése",
+    "modeLabel": "Mód",
+    "overlayOption": "Ráfedés (az oldalak tetejére)",
+    "underlayOption": "Alátét (az oldalak mögé)",
+    "pageRangeLabel": "Alkalmazás oldalakra (opcionális)",
+    "pageRangeHint": "Az utolsó oldalhoz használd a „z” jelet. Üresen hagyva minden oldalra alkalmazza.",
+    "repeatLabel": "A ráfedő/alátét oldalak ismétlése, ha az alap hosszabb",
+    "processButton": "Ráfedés / alátét alkalmazása",
+    "howItWorksUploadTitle": "Két PDF feltöltése",
+    "howItWorksUploadDescription": "Töltsd fel az alap PDF-et és azt a PDF-et, amelyet rá vagy alá szeretnél helyezni.",
+    "howItWorksModeTitle": "Mód kiválasztása",
+    "howItWorksModeDescription": "Válaszd a ráfedést (felülre) vagy az alátétet (mögé). Opcionálisan oldaltartományt és ismétlést is beállíthatsz.",
+    "howItWorksDownloadTitle": "Letöltés",
+    "howItWorksDownloadDescription": "Töltsd le a PDF-et a ráfedés vagy alátét alkalmazása után.",
+    "faqDifferenceQuestion": "Mi a különbség a ráfedés és az alátét között?",
+    "faqDifferenceAnswer": "A ráfedés az oldalakat az alap PDF tetejére helyezi (mint a vízjel). Az alátét az alap PDF mögé helyezi őket (mint a fejléc vagy a háttér).",
+    "faqSinglePageQuestion": "Használhatok egyoldalas PDF-et ráfedésként az összes oldalhoz?",
+    "faqSinglePageAnswer": "Igen! Kapcsold be az „Ismétlés” opciót, és a ráfedő PDF oldalai minden alapoldalon megismétlődnek. Az egyoldalas vízjel minden oldalra rákerül.",
+    "faqPrivacyQuestion": "A fájljaim privátak és biztonságosak?",
+    "faqPrivacyAnswer": "Teljesen! Minden feldolgozás a böngésződben történik. A fájljaid soha nem hagyják el az eszközödet, így teljes az adatvédelem."
+  }
+}

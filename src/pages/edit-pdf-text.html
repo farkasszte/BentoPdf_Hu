@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta name="color-scheme" content="dark" />
+
+    <meta
+      name="title"
+      content="PDF szöveg szerkesztése ingyen online – PDF szövegszerkesztő | PDF stúdió"
+    />
+    <meta
+      name="description"
+      content="★ PDF-szöveg szerkesztése ingyen online – kattints bármelyik bekezdésre, és szerkeszd helyben, élő újrarendezéssel ★ Regisztráció nélkül ★ Adatvédelem-első ★ Böngészőben működik"
+    />
+    <meta
+      name="keywords"
+      content="pdf szöveg szerkesztése, pdf szövegszerkesztő, pdf szöveg módosítása, pdf bekezdés átírása"
+    />
+    <meta name="author" content="PDF stúdió" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <link rel="canonical" href="https://www.bentopdf.com/edit-pdf-text" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.bentopdf.com/edit-pdf-text" />
+    <meta
+      property="og:title"
+      content="PDF szöveg szerkesztése ingyen online – PDF szövegszerkesztő | PDF stúdió"
+    />
+    <meta
+      property="og:description"
+      content="★ PDF-szöveg szerkesztése ingyen online – kattints bármelyik bekezdésre, és szerkeszd helyben, élő újrarendezéssel ★ Regisztráció nélkül ★ Adatvédelem-első ★ Böngészőben működik"
+    />
+    <meta property="og:site_name" content="BentoPDF" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.bentopdf.com/edit-pdf-text" />
+    <meta name="twitter:title" content="PDF szöveg szerkesztése ingyen" />
+    <meta
+      name="twitter:description"
+      content="Szerkeszd a PDF-szöveget helyben, élő újrarendezéssel. Ingyenes, privát, a böngésződben."
+    />
+    <meta name="twitter:site" content="@BentoPDF" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="PDF szöveg szerkesztése" />
+
+    <title>PDF szöveg szerkesztése | PDF stúdió</title>
+
+    <link href="/src/css/styles.css" rel="stylesheet" />
+    <link href="/src/css/edit-pdf-text.css" rel="stylesheet" />
+
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/images/favicon-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+
+  <body class="antialiased bg-gray-900">
+    {{> navbar }}
+
+    <div
+      id="uploader"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+    >
+      <div
+        id="tool-uploader"
+        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-blue-400 border border-gray-700"
+      >
+        <button
+          id="back-to-tools"
+          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+        >
+          <i data-lucide="arrow-left" class="cursor-pointer"></i>
+          <span class="cursor-pointer" data-i18n="tools.backToTools">
+            Back to Tools
+          </span>
+        </button>
+
+        <h1
+          class="text-2xl font-bold text-white mb-2"
+          data-i18n="tools:editPdfText.name"
+        >
+          Edit PDF Text
+        </h1>
+        <p class="text-gray-400 mb-6" data-i18n="tools:editPdfText.subtitle">
+          Click any paragraph and edit it in place with live reflow. Move and
+          restyle text, images, and shapes — then save a clean PDF.
+        </p>
+
+        <div
+          id="drop-zone"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+        >
+          <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <i
+              data-lucide="upload-cloud"
+              class="w-10 h-10 mb-3 text-gray-400"
+            ></i>
+            <p class="mb-2 text-sm text-gray-400">
+              <span class="font-semibold" data-i18n="upload.clickToSelect"
+                >Click to select a file</span
+              >
+              <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
+            </p>
+            <p class="text-xs text-gray-500" data-i18n="upload.hints.pdfFile">
+              PDF file
+            </p>
+            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+              Your files never leave your device.
+            </p>
+          </div>
+          <input
+            id="file-input"
+            type="file"
+            class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+            accept="application/pdf"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="tool-landing">
+      <section class="max-w-4xl mx-auto px-4 py-12">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-white mb-8 text-center"
+          data-i18n="howItWorks.title"
+        >
+          How It Works
+        </h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            >
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-white mb-1">PDF feltöltése</h3>
+              <p class="text-gray-400">
+                Válaszd ki vagy húzd ide a szerkesztendő szöveget tartalmazó PDF-et
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            >
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-white mb-1">
+                Kattints egy bekezdésre
+              </h3>
+              <p class="text-gray-400">
+                Minden szerkeszthető bekezdés keretezve van – kattints rá, és írj; a szöveg menet közben újrarendeződik
+              
+</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            >
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-white mb-1">
+                Bármit átformázhatsz
+              </h3>
+              <p class="text-gray-400">
+                Módosítsd a betűtípust, méretet, színt, igazítást és térközt, mozgasd vagy cseréld a képeket, adj hozzá új szövegdobozokat
+              
+</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            >
+              4
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-white mb-1">Mentés</h3>
+              <p class="text-gray-400">
+                Tölts le egy tiszta PDF-et a szerkesztéseiddel – minden az eszközödön marad
+              
+</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-6xl mx-auto px-4 py-12">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-white mb-6 text-center"
+          data-i18n="relatedTools.title"
+        >
+          Related PDF Tools
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <a
+            href="pdf-editor.html"
+            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          >
+            <h3 class="text-white font-semibold mb-1">h3>PDF szerkesztő</h3>
+            <p class="text-gray-400 text-sm">Jegyzetelés és megjegyzések a PDF-eken</p>
+          </a>
+          <a
+            href="sign-pdf.html"
+            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          >
+            <h3 class="text-white font-semibold mb-1">h3>PDF aláírása</h3>
+            <p class="text-gray-400 text-sm">
+              Rajzolj, írj be vagy tölts fel aláírást
+            </p>
+          </a>
+          <a
+            href="add-watermark.html"
+            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          >
+            <h3 class="text-white font-semibold mb-1">h3>Vízjel hozzáadása</h3>
+            <p class="text-gray-400 text-sm">Szöveg vagy képek rányomása</p>
+          </a>
+          <a
+            href="add-stamps.html"
+            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          >
+            <h3 class="text-white font-semibold mb-1">h3>Bélyegek hozzáadása</h3>
+            <p class="text-gray-400 text-sm">Bélyegek elhelyezése az oldalakon</p>
+          </a>
+          <a
+            href="compress-pdf.html"
+            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          >
+            <h3 class="text-white font-semibold mb-1">h3>PDF tömörítése</h3>
+            <p class="text-gray-400 text-sm">A fájlméret csökkentése</p>
+          </a>
+          <a
+            href="organize-pdf.html"
+            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          >
+            <h3 class="text-white font-semibold mb-1">h3>PDF rendezése</h3>
+            <p class="text-gray-400 text-sm">Oldalak átrendezése és kezelése</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="max-w-4xl mx-auto px-4 py-12">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-white mb-6 text-center"
+          data-i18n="faq.sectionTitle"
+        >
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <summary
+              class="cursor-pointer font-semibold text-white flex items-center justify-between"
+            >
+              Elhagyja a PDF az eszközömet?
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </summary>
+            <p class="mt-3 text-gray-400">
+              Nem. A teljes szerkesztő – beleértve a PDF-motort is – a böngésződben fut. A fájlok soha nem kerülnek feltöltésre sehová.
+            
+</p>
+          </details>
+          <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <summary
+              class="cursor-pointer font-semibold text-white flex items-center justify-between"
+            >
+              Miért zároltak egyes bekezdések?
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </summary>
+            <p class="mt-3 text-gray-400">
+              A törékeny részhalmaz-betűtípusokat vagy összetett elrendezéseket használó bekezdések védettek, hogy a dokumentumod ne sérülhessen meg észrevétlenül. Minden más teljesen szerkeszthető marad.
+            
+
+</p>
+          </details>
+          <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <summary
+              class="cursor-pointer font-semibold text-white flex items-center justify-between"
+            >
+              A betűtípusok egyezni fognak az eredetivel?
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </summary>
+            <p class="mt-3 text-gray-400">
+              Igen – a szerkesztő ahol lehet, a dokumentum beágyazott betűtípusait használja újra, és az eszközödre telepített betűtípusokat is bevonhatod.
+            
+</p>
+          </details>
+        </div>
+      </section>
+      {{> footer }}
+    </div>
+
+    <div id="text-editor-app" hidden>
+      <div id="toolbar">
+        <div class="tgroup">
+          <button id="exitEditor" class="btn icon" title="Vissza a feltöltéshez">
+            <i class="ph ph-arrow-left"></i>
+          </button>
+          <label class="btn" for="file" title="Másik PDF megnyitása">
+            <i class="ph ph-folder-open"></i><span>Megnyitás</span>
+          </label>
+          <input id="file" type="file" accept="application/pdf" hidden />
+          <button id="save" class="btn" disabled title="Exportálás (⌘S)">
+            <i class="ph ph-export"></i><span>Exportálás</span>
+          </button>
+          <button id="undo" class="btn icon" disabled hidden title="Visszavonás (⌘Z)">
+            <i class="ph ph-arrow-u-up-left"></i>
+          </button>
+          <button id="redo" class="btn icon" disabled hidden title="Újra (⇧⌘Z)">
+            <i class="ph ph-arrow-u-up-right"></i>
+          </button>
+        </div>
+        <button
+          id="docName"
+          class="docname"
+          hidden
+          title="Fájl adatai"
+        ></button>
+        <span class="sep"></span>
+        <div id="tools" class="segmented">
+          <button data-tool="edit" class="on" title="Meglévő tartalom szerkesztése">
+            <i class="ph ph-pencil-simple"></i
+            ><span id="editLabel">Mindent szerkeszt</span
+            ><i class="ph ph-caret-down editcaret"></i>
+          </button>
+          <select
+            id="editScope"
+            hidden
+            title="Mit érint a szerkesztőeszköz – szűkítsd a kört a zsúfolt oldalakon"
+          >
+            <option value="all" selected>Mindent</option>
+            <option value="text">Szöveg</option>
+            <option value="image">Képek</option>
+            <option value="shape">Alakzatok</option>
+          </select>
+          <button data-tool="addSzöveg" title="Kattints az oldalra egy szövegdoboz hozzáadásához">
+            <i class="ph ph-textbox"></i><span>Szöveg hozzáadása</span>
+          </button>
+        </div>
+        <input id="imgFile" type="file" accept="image/*" hidden />
+        <div class="tgroup viewopts" hidden>
+          <label class="chk"
+            ><input id="spellchk" type="checkbox" /> Helyesírás</label
+          >
+          <select id="spellLang" title="Helyesírás-ellenőrzés nyelve">
+            <option value="">Automatikus</option>
+            <option value="en">Angol (US)</option>
+            <option value="en-GB">Angol (UK)</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+            <option value="pt">Português</option>
+            <option value="ar">العربية</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+          <label class="chk"
+            ><input id="rulersChk" type="checkbox" /> Vonalzók</label
+          >
+        </div>
+        <span id="info" class="info"></span>
+        <div class="tgroup toolright">
+          <button id="find" class="btn icon" title="Keresés és csere">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <button id="addImage" class="btn icon" title="Kép hozzáadása">
+            <i class="ph ph-image"></i>
+          </button>
+          <button
+            id="copySzöveg"
+            class="btn icon"
+            hidden
+            title="Az oldal szövegének másolása olvasási sorrendben"
+          >
+            <i class="ph ph-clipboard-text"></i>
+          </button>
+          <button
+            id="spellPage"
+            class="btn icon"
+            hidden
+            title="Az oldal helyesírásának ellenőrzése"
+          >
+            <i class="ph ph-text-aa"></i>
+          </button>
+          <span class="sep"></span>
+          <button
+            id="toggleInspector"
+            class="btn icon"
+            title="A formázási panel megjelenítése vagy elrejtése"
+          >
+            <i class="ph ph-sidebar-simple"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="spellbar" hidden>
+        <i class="ph ph-text-aa barlead"></i>
+        <span id="spellWord" class="info">—</span>
+        <input id="spellFix" placeholder="Csere erre:" />
+        <button id="spellCsere" class="btn">Csere</button>
+        <button id="spellKihagyás" class="btn">Kihagyás</button>
+        <button id="spellHozzáadás" class="btn" title="Hozzáadás a szótárhoz">
+          Hozzáadás
+        </button>
+        <button id="spellKövetkező" class="btn">Következő</button>
+        <span id="spellStatus" class="info"></span>
+        <button id="spellDone" class="btn icon" title="Bezárás">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+
+      <div id="main">
+        <div id="findbar" hidden>
+          <div class="findhead">
+            <span class="findtitle"
+              ><i class="ph ph-magnifying-glass barlead"></i> Keresés és csere
+</span
+            >
+            <button id="findDone" class="btn icon" title="Bezárás">
+              <i class="ph ph-x"></i>
+            </button>
+          </div>
+          <div class="findfield">
+            <input id="findSzöveg" placeholder="Keresés" />
+            <button id="findPrev" class="btn icon" title="Előző találat">
+              <i class="ph ph-caret-up"></i>
+            </button>
+            <button id="findKövetkező" class="btn icon" title="Következő találat">
+              <i class="ph ph-caret-down"></i>
+            </button>
+          </div>
+          <input id="replSzöveg" placeholder="Csere erre:" />
+          <div class="findrow">
+            <button id="replOne" class="btn grow">Csere</button>
+            <button id="replMindent" class="btn grow">Összes cseréje</button>
+          </div>
+          <label class="chk"
+            ><input id="caseSens" type="checkbox" /> Kis- és nagybetűk</label
+          >
+          <label class="chk"
+            ><input id="wholeWord" type="checkbox" /> Teljes szó</label
+          >
+          <label class="chk"
+            ><input id="noAccents" type="checkbox" /> Ékezetek kihagyása</label
+          >
+          <span id="findStatus" class="findstatus"></span>
+        </div>
+        <div id="stage">
+          <div id="empty">
+            <h1 data-i18n="tools:editPdfText.name">Edit PDF Text</h1>
+            <p>Nyiss meg egy PDF-et a szöveg, képek és alakzatok szerkesztéséhez.</p>
+            <label class="btn big" for="file">Válassz PDF-et…</label>
+            <p class="hint">
+              Minden a böngésződben fut – semmi sem kerül feltöltésre.
+            </p>
+          </div>
+          <div id="pageWrap" hidden>
+            <canvas id="page"></canvas>
+            <div id="overlay"></div>
+          </div>
+        </div>
+        <div id="zoomHud" hidden></div>
+        <div id="contextbar">
+          <div class="tgroup">
+            <button
+              id="rotL"
+              class="btn icon objbtn"
+              hidden
+              title="Forgatás balra 90°"
+            >
+              <i class="ph ph-arrow-counter-clockwise"></i>
+            </button>
+            <button
+              id="rotR"
+              class="btn icon objbtn"
+              hidden
+              title="Forgatás jobbra 90°"
+            >
+              <i class="ph ph-arrow-clockwise"></i>
+            </button>
+            <button
+              id="flipH"
+              class="btn icon objbtn"
+              hidden
+              title="Vízszintes tükrözés"
+            >
+              <i class="ph ph-flip-horizontal"></i>
+            </button>
+            <button
+              id="flipV"
+              class="btn icon objbtn"
+              hidden
+              title="Függőleges tükrözés"
+            >
+              <i class="ph ph-flip-vertical"></i>
+            </button>
+            <span class="sep objsep" hidden></span>
+            <button
+              id="replImg"
+              class="btn icon objbtn"
+              hidden
+              title="A kép cseréje a helyén tartva"
+            >
+              <i class="ph ph-image-square"></i>
+            </button>
+            <button
+              id="extEdit"
+              class="btn icon objbtn"
+              hidden
+              title="A kép mentése PNG-ként, szerkeszd bármely alkalmazásban; a módosítások automatikusan visszaimportálódnak"
+            >
+              <i class="ph ph-arrow-square-out"></i>
+            </button>
+            <button
+              id="altSzöveg"
+              class="btn icon objbtn"
+              hidden
+              title="Helyettesítő szöveg akadálymentesítéshez (címkézett PDF-ek)"
+            >
+              <i class="ph ph-tag"></i>
+            </button>
+            <input id="replImgFile" type="file" accept="image/*" hidden />
+            <span class="sep objsep" hidden></span>
+            <button
+              id="front"
+              class="btn icon objbtn"
+              hidden
+              title="Előtérbe hozás"
+            >
+              <i class="ph ph-arrow-line-up"></i>
+            </button>
+            <button
+              id="back"
+              class="btn icon objbtn"
+              hidden
+              title="Háttérbe küldés"
+            >
+              <i class="ph ph-arrow-line-down"></i>
+            </button>
+            <button id="dupe" class="btn icon objbtn" hidden title="Másolat">
+              <i class="ph ph-copy"></i>
+            </button>
+            <button id="del" class="btn icon objbtn" hidden title="Törlés">
+              <i class="ph ph-trash"></i>
+            </button>
+          </div>
+          <div id="alignTools" class="segmented" hidden>
+            <button data-al="left" title="Bal élek igazítása">
+              <i class="ph ph-align-left"></i>
+            </button>
+            <button data-al="hcenter" title="Vízszintes középpontok igazítása">
+              <i class="ph ph-align-center-horizontal"></i>
+            </button>
+            <button data-al="right" title="Jobb élek igazítása">
+              <i class="ph ph-align-right"></i>
+            </button>
+            <button data-al="top" title="Felső élek igazítása">
+              <i class="ph ph-align-top"></i>
+            </button>
+            <button data-al="vcenter" title="Függőleges középpontok igazítása">
+              <i class="ph ph-align-center-vertical"></i>
+            </button>
+            <button data-al="bottom" title="Alsó élek igazítása">
+              <i class="ph ph-align-bottom"></i>
+            </button>
+            <button data-al="disth" title="Vízszintes elosztás">
+              <i class="ph ph-columns"></i>
+            </button>
+            <button data-al="distv" title="Függőleges elosztás">
+              <i class="ph ph-rows"></i>
+            </button>
+          </div>
+        </div>
+
+        <aside id="inspector" hidden>
+          <h2><i class="ph ph-sliders-horizontal"></i> Formázás</h2>
+          <h3 class="sect">Betűtípus</h3>
+          <div class="row">
+            <select id="fFamily"></select>
+            <input
+              id="fSize"
+              type="number"
+              min="1"
+              max="400"
+              step="1"
+              class="num"
+              title="Betűméret"
+            />
+          </div>
+          <div class="row">
+            <button
+              id="sysBetűtípuss"
+              class="btn grow"
+              title="Az eszközre telepített betűtípusok listája (Chromium)"
+            >
+              <i class="ph ph-download-simple"></i><span>Rendszerbetűtípusok</span>
+            </button>
+          </div>
+          <h3 class="sect">Szín</h3>
+          <div class="row swatchrow">
+            <div class="swatches" id="fSwatches"></div>
+            <input
+              id="fSzín"
+              type="color"
+              value="#000000"
+              title="Egyéni szövegszín"
+            />
+          </div>
+          <h3 class="sect">Igazítás</h3>
+          <div class="row">
+            <div class="segmented small grow" id="fAlign">
+              <button data-a="0" title="Balra igazítás">
+                <i class="ph ph-text-align-left"></i>
+              </button>
+              <button data-a="1" title="Középre igazítás">
+                <i class="ph ph-text-align-center"></i>
+              </button>
+              <button data-a="2" title="Jobbra igazítás">
+                <i class="ph ph-text-align-right"></i>
+              </button>
+              <button data-a="3" title="Sorkizárás">
+                <i class="ph ph-text-align-justify"></i>
+              </button>
+            </div>
+          </div>
+          <h3 class="sect">Stílus</h3>
+          <div class="row toggles" id="fToggles">
+            <button data-t="bold" title="Félkövér">
+              <i class="ph ph-text-b"></i>
+            </button>
+            <button data-t="italic" title="Dőlt">
+              <i class="ph ph-text-italic"></i>
+            </button>
+            <button data-t="underline" title="Aláhúzott">
+              <i class="ph ph-text-underline"></i>
+            </button>
+            <button data-t="strike" title="Áthúzott">
+              <i class="ph ph-text-strikethrough"></i>
+            </button>
+            <button data-t="sup" title="Felső index">
+              <i class="ph ph-text-superscript"></i>
+            </button>
+            <button data-t="sub" title="Alsó index">
+              <i class="ph ph-text-subscript"></i>
+            </button>
+          </div>
+          <h3 class="sect">Listák</h3>
+          <div class="row">
+            <div class="segmented small" id="fList">
+              <button data-l="bullet" title="Listajel váltása">
+                <i class="ph ph-list-bullets"></i>
+              </button>
+              <button data-l="number" title="Számozás váltása">
+                <i class="ph ph-list-numbers"></i>
+              </button>
+            </div>
+            <select id="fMarkerStílus" title="Számozott lista jelölőstílusa">
+              <option value="1">1. 2. 3.</option>
+              <option value="a">a. b. c.</option>
+              <option value="A">A. B. C.</option>
+              <option value="i">i. ii. iii.</option>
+              <option value="I">I. II. III.</option>
+            </select>
+            <div class="segmented small" id="fLevel">
+              <button data-lv="-1" title="Lista behúzásának csökkentése (⇧Tab)">
+                <i class="ph ph-text-outdent"></i>
+              </button>
+              <button data-lv="1" title="Lista behúzásának növelése (Tab)">
+                <i class="ph ph-text-indent"></i>
+              </button>
+            </div>
+          </div>
+          <h3 class="sect">Körvonal</h3>
+          <div class="row">
+            <input
+              id="fStrokeSzín"
+              type="color"
+              value="#000000"
+              title="Szöveg körvonalának színe"
+            />
+            <input
+              id="fStrokeW"
+              type="number"
+              min="0"
+              max="20"
+              step="0.1"
+              class="num"
+              title="Körvonalvastagság (0 = nincs)"
+            />
+          </div>
+          <h3 class="sect">Térköz</h3>
+          <label class="field"
+            >Sorköz
+            <input
+              id="fLine"
+              type="number"
+              min="0.6"
+              max="4"
+              step="0.05"
+              class="num"
+          /></label>
+          <label class="field"
+            >Bekezdésköz
+            <input
+              id="fPara"
+              type="number"
+              min="0"
+              max="200"
+              step="1"
+              class="num"
+          /></label>
+          <label class="field"
+            >Karakterköz
+            <input
+              id="fChar"
+              type="number"
+              min="-3"
+              max="30"
+              step="0.1"
+              class="num"
+          /></label>
+          <label class="field"
+            >Szóköz
+            <input
+              id="fWordSp"
+              type="number"
+              min="-10"
+              max="100"
+              step="0.5"
+              class="num"
+          /></label>
+          <label class="field"
+            >Vízszintes méretarány %
+            <input
+              id="fHScale"
+              type="number"
+              min="10"
+              max="400"
+              step="1"
+              class="num"
+          /></label>
+          <label class="field"
+            >Első sor behúzása
+            <input
+              id="fFirstInd"
+              type="number"
+              min="0"
+              max="300"
+              step="1"
+              class="num"
+          /></label>
+          <label class="field"
+            >Függő behúzás
+            <input
+              id="fHangInd"
+              type="number"
+              min="0"
+              max="300"
+              step="1"
+              class="num"
+          /></label>
+          <h3 class="sect">Irány</h3>
+          <div class="row">
+            <div class="segmented small grow" id="fDir">
+              <button data-d="0" title="Tartalom szerint">Automatikus</button>
+              <button data-d="1" title="Balról jobbra">BJR</button>
+              <button data-d="2" title="Jobbról balra">JBL</button>
+            </div>
+          </div>
+          <div class="row" id="pStrokeRow" hidden>
+            <span class="chk">Útvonal körvonala</span>
+            <input
+              id="pStrokeSzín"
+              type="color"
+              value="#000000"
+              title="Körvonal színe"
+            />
+            <input
+              id="pStrokeW"
+              type="number"
+              min="0"
+              max="40"
+              step="0.5"
+              class="num"
+              title="Körvonalvastagság"
+            />
+          </div>
+        </aside>
+      </div>
+
+      <div id="viewbar">
+        <div class="vbzoom">
+          <button id="zoomMenuBtn" class="btn vbzoomlabel" title="Nagyítási előbeállítások">
+            <span id="zoomLabel" class="label">100%</span
+            ><i class="ph ph-caret-down editcaret"></i>
+          </button>
+          <button id="zoomOut" class="btn icon" title="Kicsinyítés">
+            <i class="ph ph-minus-circle"></i>
+          </button>
+          <button id="zoomIn" class="btn icon" title="Nagyítás">
+            <i class="ph ph-plus-circle"></i>
+          </button>
+          <button id="zoomFit" class="btn icon" title="Oldal illesztése">
+            <i class="ph ph-frame-corners"></i>
+          </button>
+        </div>
+        <div class="vbcenter">
+          <button id="prev" class="btn icon" title="Előző oldal">
+            <i class="ph ph-caret-left"></i>
+          </button>
+          <span id="pageLabel" class="label">– / –</span>
+          <input
+            id="pageInput"
+            class="pagebox"
+            type="number"
+            min="1"
+            step="1"
+            title="Írd be az oldalszámot, és nyomj Entert"
+          />
+          <span id="pageTotal" class="label pagetotal">/ –</span>
+          <button id="next" class="btn icon" title="Következő oldal">
+            <i class="ph ph-caret-right"></i>
+          </button>
+        </div>
+        <div class="vbright">
+          <button id="docInfoBtn" class="btn icon" title="Dokumentum tulajdonságai">
+            <i class="ph ph-info"></i>
+          </button>
+          <button id="vbCollapse" class="btn icon" title="Sáv elrejtése">
+            <i class="ph ph-caret-double-down"></i>
+          </button>
+        </div>
+      </div>
+      <button id="vbRestore" class="btn icon" hidden title="Sáv megjelenítése">
+        <i class="ph ph-caret-double-up"></i>
+      </button>
+
+      <div id="toast" hidden></div>
+    </div>
+
+    <div
+      id="loader-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+    >
+      <div
+        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+      >
+        <div class="solid-spinner"></div>
+        <p id="loader-text" class="text-white text-lg font-medium">
+          Feldolgozás...
+        </p>
+      </div>
+    </div>
+
+    <div
+      id="alert-modal"
+      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+    >
+      <div
+        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+      >
+        <h3
+          id="alert-title"
+          class="text-xl font-bold text-white mb-2"
+          data-i18n="alert.title"
+        >
+          Alert
+        </h3>
+        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <button
+          id="alert-ok"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/js/utils/full-width.ts"></script>
+    <script type="module" src="/src/js/utils/simple-mode-footer.ts"></script>
+    <script type="module" src="/src/js/logic/edit-pdf-text-page.ts"></script>
+    <script type="module" src="/src/js/mobileMenu.ts"></script>
+    <script type="module" src="/src/js/main.ts"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PDF szöveg szerkesztése – PDF stúdió",
+        "applicationCategory": "PDF Tool",
+        "operatingSystem": "Any - Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </body>
+</html>
