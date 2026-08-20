@@ -33,10 +33,16 @@ const init = async () => {
   // Theme synchronization (URL parameter, localStorage, system preference, or postMessage)
   const urlParams = new URLSearchParams(window.location.search);
   const themeParam = urlParams.get('theme');
-  const storedTheme = localStorage.getItem('theme') || localStorage.getItem('kincseslada_theme');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const storedTheme =
+    localStorage.getItem('theme') || localStorage.getItem('kincseslada_theme');
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  const isDark = themeParam === 'dark' || (themeParam !== 'light' && (storedTheme === 'dark' || (!storedTheme && prefersDark)));
+  const isDark =
+    themeParam === 'dark' ||
+    (themeParam !== 'light' &&
+      (storedTheme === 'dark' || (!storedTheme && prefersDark)));
   if (isDark) {
     document.documentElement.classList.add('dark');
   } else {
@@ -47,10 +53,14 @@ const init = async () => {
     if (event.data && event.data.type === 'THEME_CHANGE') {
       if (event.data.theme === 'dark') {
         document.documentElement.classList.add('dark');
-        try { localStorage.setItem('theme', 'dark'); } catch {}
+        try {
+          localStorage.setItem('theme', 'dark');
+        } catch {}
       } else {
         document.documentElement.classList.remove('dark');
-        try { localStorage.setItem('theme', 'light'); } catch {}
+        try {
+          localStorage.setItem('theme', 'light');
+        } catch {}
       }
     }
   });
@@ -62,17 +72,48 @@ const init = async () => {
     if (!existingNav) {
       const topNav = document.createElement('div');
       topNav.id = 'standalone-top-nav';
-      topNav.className = 'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 flex items-center justify-between sticky top-0 z-50 mb-4 shadow-sm';
+      topNav.className =
+        'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 sticky top-0 z-50 mb-4 shadow-sm';
       topNav.innerHTML = `
-        <div class="flex items-center gap-3">
-          <a href="/" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-accent/10 hover:bg-accent hover:text-white text-accent text-xs font-bold uppercase tracking-wider transition-all">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            <span>Vissza a Kincsesládára</span>
+        <div class="max-w-6xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-2">
+          <a
+            href="https://www.bentopdf.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="justify-self-start text-sm font-black uppercase tracking-widest text-darker dark:text-dark-text hover:text-accent transition-colors"
+          >
+            BentoPDF
           </a>
-          <span class="text-sm font-black uppercase tracking-widest text-darker dark:text-dark-text">BentoPDF stúdió</span>
+          <div class="w-full">
+            <div class="relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted dark:text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input
+                id="standalone-search"
+                type="search"
+                placeholder="Keresés az eszközök között…"
+                autocomplete="off"
+                class="w-full max-w-md mx-auto block pl-9 pr-4 py-2 rounded-xl bg-light dark:bg-slate-800 border border-medium dark:border-slate-700 text-sm text-dark dark:text-dark-text placeholder:text-muted dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent/50"
+              />
+            </div>
+          </div>
+          <div class="justify-self-end w-20"></div>
         </div>
       `;
       document.body.prepend(topNav);
+
+      // Kereső bekötése a főoldali tool-szűrőhöz (a főoldal __toolsSearch globált regisztrál)
+      const searchInput =
+        topNav.querySelector<HTMLInputElement>('#standalone-search');
+      searchInput?.addEventListener('input', () => {
+        const g = (window as any).__toolsSearch;
+        if (typeof g === 'function') g(searchInput.value);
+      });
+      // Eszközoldalakon Enter -> a főoldalra visz, ahol alkalmazódik a keresés
+      searchInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !document.getElementById('tool-grid')) {
+          window.location.href = import.meta.env.BASE_URL || '/';
+        }
+      });
     }
   }
 
@@ -367,13 +408,17 @@ const init = async () => {
 
     function updateAllFavoriteButtons(favs: string[]) {
       currentFavorites = favs;
-      document.querySelectorAll<HTMLButtonElement>('.fav-toggle-btn').forEach((btn) => {
-        const id = btn.dataset.favToolId;
-        if (!id) return;
-        const isFav = favs.includes(id);
-        btn.title = isFav ? 'Eltávolítás a kedvencekből' : 'Hozzáadás a kedvencekhez';
-        btn.innerHTML = renderStarSvg(isFav);
-      });
+      document
+        .querySelectorAll<HTMLButtonElement>('.fav-toggle-btn')
+        .forEach((btn) => {
+          const id = btn.dataset.favToolId;
+          if (!id) return;
+          const isFav = favs.includes(id);
+          btn.title = isFav
+            ? 'Eltávolítás a kedvencekből'
+            : 'Hozzáadás a kedvencekhez';
+          btn.innerHTML = renderStarSvg(isFav);
+        });
     }
 
     function toggleToolFavorite(toolId: string) {
@@ -399,7 +444,11 @@ const init = async () => {
     }
 
     const filteredCategories = categories
-      .filter((category) => category.name !== 'Popular Tools' && category.name !== 'Népszerű eszközök')
+      .filter(
+        (category) =>
+          category.name !== 'Popular Tools' &&
+          category.name !== 'Népszerű eszközök'
+      )
       .map((category) => ({
         ...category,
         tools: category.tools.filter((tool) => !isToolDisabled(tool.id)),
@@ -522,7 +571,9 @@ const init = async () => {
         favBtn.className =
           'fav-toggle-btn absolute top-2.5 right-2.5 z-10 p-1.5 rounded-full cursor-pointer hover:scale-110 transition-transform';
         const isFav = currentFavorites.includes(toolId);
-        favBtn.title = isFav ? 'Eltávolítás a kedvencekből' : 'Hozzáadás a kedvencekhez';
+        favBtn.title = isFav
+          ? 'Eltávolítás a kedvencekből'
+          : 'Hozzáadás a kedvencekhez';
         favBtn.innerHTML = renderStarSvg(isFav);
 
         favBtn.addEventListener('click', (e) => {
@@ -549,7 +600,8 @@ const init = async () => {
     emptyMessage.id = 'empty-tools-message';
     emptyMessage.className =
       'hidden col-span-full py-16 text-center text-muted dark:text-slate-400 text-xs sm:text-sm font-medium';
-    emptyMessage.textContent = 'Nincs a megadott keresésnek vagy a kedvencek szűrésének megfelelő eszköz.';
+    emptyMessage.textContent =
+      'Nincs a megadott keresésnek vagy a kedvencek szűrésének megfelelő eszköz.';
     dom.toolGrid.appendChild(emptyMessage);
 
     let activeSearchTerm = '';
@@ -557,7 +609,8 @@ const init = async () => {
 
     function applyActiveFilters() {
       let totalVisible = 0;
-      const categoryGroups = dom.toolGrid.querySelectorAll<HTMLElement>('.category-group');
+      const categoryGroups =
+        dom.toolGrid.querySelectorAll<HTMLElement>('.category-group');
 
       categoryGroups.forEach((group) => {
         const toolCards = group.querySelectorAll<HTMLElement>('.tool-card');
@@ -565,8 +618,12 @@ const init = async () => {
 
         toolCards.forEach((card) => {
           const toolId = card.dataset.toolId || '';
-          const toolName = (card.querySelector('h3')?.textContent || '').toLowerCase();
-          const toolSubtitle = (card.querySelector('p')?.textContent || '').toLowerCase();
+          const toolName = (
+            card.querySelector('h3')?.textContent || ''
+          ).toLowerCase();
+          const toolSubtitle = (
+            card.querySelector('p')?.textContent || ''
+          ).toLowerCase();
 
           const matchesSearch =
             !activeSearchTerm ||
@@ -595,10 +652,22 @@ const init = async () => {
       }
     }
 
+    // A standalone fejlécen lévő keresőmező bekötése a tool-szűrőbe
+    (window as any).__toolsSearch = (term: string) => {
+      activeSearchTerm = (term || '').toLowerCase().trim();
+      applyActiveFilters();
+    };
+
     // Valós idejű szűrő- és témaváltás fogadása a Kincsesláda szülőablaktól
     window.addEventListener('message', (event) => {
       if (event.data?.type === 'FILTER_CHANGE') {
         activeSearchTerm = (event.data.searchTerm || '').toLowerCase().trim();
+        const standaloneSearch = document.getElementById(
+          'standalone-search'
+        ) as HTMLInputElement | null;
+        if (standaloneSearch && !standaloneSearch.matches(':focus')) {
+          standaloneSearch.value = event.data.searchTerm || '';
+        }
         activeShowFavoritesOnly = !!event.data.showFavoritesOnly;
         if (Array.isArray(event.data.favoriteToolIds)) {
           currentFavorites = event.data.favoriteToolIds;
@@ -907,30 +976,30 @@ const init = async () => {
 
   // Reserved shortcuts that commonly conflict with browser/OS functions
   const RESERVED_SHORTCUTS: Record<string, { mac?: string; windows?: string }> =
-  {
-    'mod+w': { mac: 'Closes tab', windows: 'Closes tab' },
-    'mod+t': { mac: 'Opens new tab', windows: 'Opens new tab' },
-    'mod+n': { mac: 'Opens new window', windows: 'Opens new window' },
-    'mod+shift+n': {
-      mac: 'Opens incognito window',
-      windows: 'Opens incognito window',
-    },
-    'mod+q': { mac: 'Quits application (cannot be overridden)' },
-    'mod+m': { mac: 'Minimizes window' },
-    'mod+h': { mac: 'Hides window' },
-    'mod+r': { mac: 'Reloads page', windows: 'Reloads page' },
-    'mod+shift+r': { mac: 'Hard reloads page', windows: 'Hard reloads page' },
-    'mod+l': { mac: 'Focuses address bar', windows: 'Focuses address bar' },
-    'mod+d': { mac: 'Bookmarks page', windows: 'Bookmarks page' },
-    'mod+shift+t': {
-      mac: 'Reopens closed tab',
-      windows: 'Reopens closed tab',
-    },
-    'mod+shift+w': { mac: 'Closes window', windows: 'Closes window' },
-    'mod+tab': { mac: 'Switches tabs', windows: 'Switches apps' },
-    'alt+f4': { windows: 'Closes window' },
-    'ctrl+tab': { mac: 'Switches tabs', windows: 'Switches tabs' },
-  };
+    {
+      'mod+w': { mac: 'Closes tab', windows: 'Closes tab' },
+      'mod+t': { mac: 'Opens new tab', windows: 'Opens new tab' },
+      'mod+n': { mac: 'Opens new window', windows: 'Opens new window' },
+      'mod+shift+n': {
+        mac: 'Opens incognito window',
+        windows: 'Opens incognito window',
+      },
+      'mod+q': { mac: 'Quits application (cannot be overridden)' },
+      'mod+m': { mac: 'Minimizes window' },
+      'mod+h': { mac: 'Hides window' },
+      'mod+r': { mac: 'Reloads page', windows: 'Reloads page' },
+      'mod+shift+r': { mac: 'Hard reloads page', windows: 'Hard reloads page' },
+      'mod+l': { mac: 'Focuses address bar', windows: 'Focuses address bar' },
+      'mod+d': { mac: 'Bookmarks page', windows: 'Bookmarks page' },
+      'mod+shift+t': {
+        mac: 'Reopens closed tab',
+        windows: 'Reopens closed tab',
+      },
+      'mod+shift+w': { mac: 'Closes window', windows: 'Closes window' },
+      'mod+tab': { mac: 'Switches tabs', windows: 'Switches apps' },
+      'alt+f4': { windows: 'Closes window' },
+      'ctrl+tab': { mac: 'Switches tabs', windows: 'Switches tabs' },
+    };
 
   function getReservedShortcutWarning(
     combo: string,
@@ -1176,8 +1245,8 @@ const init = async () => {
               await showWarningModal(
                 t('settings.warnings.alreadyInUse'),
                 `<strong>${escapeHtml(displayCombo)}</strong> ${t('settings.warnings.assignedTo')}<br><br>` +
-                `<em>"${escapeHtml(translatedToolName)}"</em><br><br>` +
-                t('settings.warnings.chooseDifferent'),
+                  `<em>"${escapeHtml(translatedToolName)}"</em><br><br>` +
+                  t('settings.warnings.chooseDifferent'),
                 false
               );
 
@@ -1196,9 +1265,9 @@ const init = async () => {
               const shouldProceed = await showWarningModal(
                 t('settings.warnings.reserved'),
                 `<strong>${escapeHtml(displayCombo)}</strong> ${t('settings.warnings.commonlyUsed')}<br><br>` +
-                `"<em>${escapeHtml(reservedWarning)}</em>"<br><br>` +
-                `${t('settings.warnings.unreliable')}<br><br>` +
-                t('settings.warnings.useAnyway')
+                  `"<em>${escapeHtml(reservedWarning)}</em>"<br><br>` +
+                  `${t('settings.warnings.unreliable')}<br><br>` +
+                  t('settings.warnings.useAnyway')
               );
 
               if (!shouldProceed) {
