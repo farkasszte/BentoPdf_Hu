@@ -1,0 +1,25 @@
+BentoPDF – magyar tükör („PDF stúdió”)
+=======================================
+
+Ez a szoftver a BentoPDF projekt módosított (származékos) műve.
+
+Eredeti mű
+----------
+  BentoPDF
+  https://github.com/alam00000/bentopdf
+  A szerzői jog a BentoPDF projekt szerzőit/tulajdonosait illeti,
+  a mű a GNU Affero General Public License 3.0 (AGPL-3.0) alatt érhető el.
+
+Ez a (módosított) projekt
+-------------------------
+  • Teljes magyar nyelvű fordítás (minden oldal, felirat, meta, JSON-LD).
+  • Önálló, publikusan deployolható statikus csomag (Vercel / GitHub Pages).
+  • A módosítások szerzői joga a fordítás készítőjét illeti.
+
+A módosított mű a GNU Affero General Public License 3.0 szerint kerül
+terjesztésre. A licenc teljes szövege: LICENSE.
+
+Megfelelő forráskód (AGPL-3.0 13. szakasz)
+------------------------------------------
+  A hálózati felhasználók a forráskódhoz a projekt publikus GitHub repójából
+  jutnak hozzá: <A-PUBLIKUS-REPO-URL>

@@ -510,14 +510,31 @@ export default defineConfig(() => {
     console.log('[Vite] Using local WASM files only');
   }
 
-  const pdfiumWasmPath = fs.existsSync(resolve(__dirname, 'node_modules/bentopdf-viewer/dist/pdfium.wasm'))
-    ? resolve(__dirname, 'node_modules/bentopdf-viewer/dist/pdfium.wasm').replace(/\\/g, '/')
-    : resolve(__dirname, '../../node_modules/bentopdf-viewer/dist/pdfium.wasm').replace(/\\/g, '/');
+  const pdfiumWasmPath = fs.existsSync(
+    resolve(__dirname, 'node_modules/bentopdf-viewer/dist/pdfium.wasm')
+  )
+    ? resolve(
+        __dirname,
+        'node_modules/bentopdf-viewer/dist/pdfium.wasm'
+      ).replace(/\\/g, '/')
+    : resolve(
+        __dirname,
+        '../../node_modules/bentopdf-viewer/dist/pdfium.wasm'
+      ).replace(/\\/g, '/');
 
   const staticCopyTargets = [
     {
       src: pdfiumWasmPath,
       dest: 'embedpdf',
+    },
+    // AGPL-megfelelés: a deployolt oldalon is elérhető legyen a licenc és a NOTICE
+    {
+      src: resolve(__dirname, 'LICENSE').replace(/\\/g, '/'),
+      dest: '.',
+    },
+    {
+      src: resolve(__dirname, 'NOTICE').replace(/\\/g, '/'),
+      dest: '.',
     },
   ];
 

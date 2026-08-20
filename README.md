@@ -112,6 +112,25 @@ npm run lint         # ESLint
 npm run security:audit  # npm audit + biztonsági lint
 ```
 
-## Licenc
+## Licenc és AGPL-megfelelés
 
-[AGPL-3.0-only](./LICENSE). Az eredeti projekt: BentoPDF.
+Ez a projekt a [BentoPDF](https://github.com/alam00000/bentopdf) **módosított
+(származékos) műve**, és a **GNU Affero General Public License 3.0**
+(AGPL-3.0) alatt terjesztjük — teljes szöveg: [LICENSE](./LICENSE).
+
+Az AGPL-3.0-nak való megfelelés:
+
+- **Az eredeti szerzői jog érintetlen** (§5c): az eredeti BentoPDF-projektet és
+  szerzőit a [NOTICE](./NOTICE) rögzíti.
+- **A módosítások prominensen jelezve** (§5a): a fő módosítás a teljes magyar
+  fordítás; a [NOTICE](./NOTICE) és ez a README rögzíti.
+- **A megfelelő forráskód hálózati felhasználók számára elérhető** (§13):
+  a teljes forrás a projekt publikus GitHub repójában van.
+- **Mindenki a saját módosításaira is AGPL-3.0-t alkalmazhat** — a weboldal
+  láblécében a licenc és a forráskód linkje is szerepel.
+
+### Feladat repo létrehozásakor
+
+A [NOTICE](./NOTICE) és a lábléc `Forráskód` linkje a `<A-PUBLIKUS-REPO-URL>`
+helyőrzőt tartalmazza — a repo létrehozása után cseréld a tényleges
+`https://github.com/<felhasznalo>/<repo-neve>` címre.
