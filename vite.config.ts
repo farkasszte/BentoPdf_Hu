@@ -522,10 +522,30 @@ export default defineConfig(() => {
         '../../node_modules/bentopdf-viewer/dist/pdfium.wasm'
       ).replace(/\\/g, '/');
 
+  const editcoreWasmPath = fs.existsSync(
+    resolve(__dirname, 'node_modules/bentopdf-pdfium/editcore.wasm')
+  )
+    ? resolve(__dirname, 'node_modules/bentopdf-pdfium/editcore.wasm').replace(
+        /\\/g,
+        '/'
+      )
+    : resolve(
+        __dirname,
+        '../../node_modules/bentopdf-pdfium/editcore.wasm'
+      ).replace(/\\/g, '/');
+
   const staticCopyTargets = [
     {
       src: pdfiumWasmPath,
       dest: 'embedpdf',
+    },
+    {
+      src: editcoreWasmPath,
+      dest: 'assets',
+    },
+    {
+      src: editcoreWasmPath,
+      dest: '.',
     },
     // AGPL-megfelelés: a deployolt oldalon is elérhető legyen a licenc és a NOTICE
     {

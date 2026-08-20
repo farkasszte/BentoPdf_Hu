@@ -80,6 +80,7 @@ const rgbaToHex = (n) => {
 
 function toast(msg) {
   const t = $('toast');
+  if (!t) return;
   t.textContent = msg;
   t.hidden = false;
   clearTimeout(toast._t);
@@ -2865,8 +2866,7 @@ async function runE2E() {
       !!state.editing && !!state.editing.newGeom,
       'add-text opened inline empty box'
     );
-    state.editing.editable.firstChild.textContent =
-      'Új szövegdoboz begépelve';
+    state.editing.editable.firstChild.textContent = 'Új szövegdoboz begépelve';
     endEdit(true);
     refreshModel();
     check(
@@ -9033,7 +9033,7 @@ function wireUI() {
     'Garamond',
     'Palatino',
   ];
-  $('fFamily').append(
+  $('fFamily')?.append(
     ...fams.map((f) => {
       const o = document.createElement('option');
       o.value = o.textContent = f;
@@ -9049,20 +9049,26 @@ function wireUI() {
     '#3b6ef5',
     '#cc8cf7',
   ];
-  for (const c of swatches) {
-    const d = document.createElement('div');
-    d.className = 'swatch';
-    d.style.background = c;
-    d.addEventListener('mousedown', (e) => e.preventDefault());
-    d.addEventListener('click', () =>
-      styleTargetRuns((s) => {
-        s.rgba = cssHexToRgba(c);
-      })
-    );
-    $('fSwatches').appendChild(d);
+  const fSwatches = $('fSwatches');
+  if (fSwatches) {
+    for (const c of swatches) {
+      const d = document.createElement('div');
+      d.className = 'swatch';
+      d.style.background = c;
+      d.addEventListener('mousedown', (e) => e.preventDefault());
+      d.addEventListener('click', () =>
+        styleTargetRuns((s) => {
+          s.rgba = cssHexToRgba(c);
+        })
+      );
+      fSwatches.appendChild(d);
+    }
   }
 
-  for (const b of [...$('fToggles').children, ...$('fAlign').children]) {
+  for (const b of [
+    ...($('fToggles')?.children || []),
+    ...($('fAlign')?.children || []),
+  ]) {
     b.addEventListener('mousedown', (e) => e.preventDefault());
   }
 
@@ -9084,7 +9090,7 @@ function wireUI() {
         : editorSelectionRange(e.editable);
   });
 
-  $('file').addEventListener('change', (e) => {
+  $('file')?.addEventListener('change', (e) => {
     if (e.target.files[0]) openFile(e.target.files[0]);
   });
   window.addEventListener('dragover', (e) => e.preventDefault());
@@ -9096,18 +9102,18 @@ function wireUI() {
     if (f) openFile(f);
     else if (e.dataTransfer?.files?.length) toast('Húzz ide egy PDF-fájlt.');
   });
-  $('save').addEventListener('click', saveFile);
-  $('undo').addEventListener('click', () => restore(state.undo, state.redo));
-  $('redo').addEventListener('click', () => restore(state.redo, state.undo));
-  $('prev').addEventListener('click', () => goToPage(P().pageIndex - 1));
-  $('next').addEventListener('click', () => goToPage(P().pageIndex + 1));
-  $('zoomIn').addEventListener('click', () => setZoom(state.zoom * 1.25));
-  $('zoomOut').addEventListener('click', () => setZoom(state.zoom / 1.25));
-  $('zoomFit').addEventListener('click', fitZoom);
+  $('save')?.addEventListener('click', saveFile);
+  $('undo')?.addEventListener('click', () => restore(state.undo, state.redo));
+  $('redo')?.addEventListener('click', () => restore(state.redo, state.undo));
+  $('prev')?.addEventListener('click', () => goToPage(P().pageIndex - 1));
+  $('next')?.addEventListener('click', () => goToPage(P().pageIndex + 1));
+  $('zoomIn')?.addEventListener('click', () => setZoom(state.zoom * 1.25));
+  $('zoomOut')?.addEventListener('click', () => setZoom(state.zoom / 1.25));
+  $('zoomFit')?.addEventListener('click', fitZoom);
   for (const b of document.querySelectorAll('[data-tool]')) {
     b.addEventListener('click', () => setTool(b.dataset.tool));
   }
-  $('editScope').addEventListener('change', () => {
+  $('editScope')?.addEventListener('change', () => {
     state.editScope = $('editScope').value;
     setTool('edit');
     endEdit(true);
@@ -9120,12 +9126,12 @@ function wireUI() {
     updateChrome();
   });
 
-  $('rotL').addEventListener('click', () => rotateSelection(90));
-  $('rotR').addEventListener('click', () => rotateSelection(-90));
-  $('flipH').addEventListener('click', () =>
+  $('rotL')?.addEventListener('click', () => rotateSelection(90));
+  $('rotR')?.addEventListener('click', () => rotateSelection(-90));
+  $('flipH')?.addEventListener('click', () =>
     objectOp((h) => P().flipObject(h, true))
   );
-  $('flipV').addEventListener('click', () =>
+  $('flipV')?.addEventListener('click', () =>
     objectOp((h) => P().flipObject(h, false))
   );
   const replaceImageFromBlob = async (handle, blobOrFile, label) => {
@@ -9157,8 +9163,8 @@ function wireUI() {
     toast('A kép cseréje nem sikerült.');
     return false;
   };
-  $('replImg').addEventListener('click', () => $('replImgFile').click());
-  $('replImgFile').addEventListener('change', async (e) => {
+  $('replImg')?.addEventListener('click', () => $('replImgFile')?.click());
+  $('replImgFile')?.addEventListener('change', async (e) => {
     const file = e.target.files[0];
     e.target.value = '';
     if (
@@ -9169,7 +9175,7 @@ function wireUI() {
       return;
     await replaceImageFromBlob(state.selection.handle, file, 'Image replaced.');
   });
-  $('altText').addEventListener('click', () => {
+  $('altText')?.addEventListener('click', () => {
     const sel = state.selection;
     if (sel?.kind !== 'object' || sel.type !== OBJ.IMAGE) return;
     const mcid = P().objectMcid(sel.handle);
@@ -9192,7 +9198,7 @@ function wireUI() {
     toast('Az alt szöveg előkészítve – mentéskor lép érvénybe.');
   });
 
-  $('extEdit').addEventListener('click', async () => {
+  $('extEdit')?.addEventListener('click', async () => {
     const sel = state.selection;
     if (sel?.kind !== 'object' || sel.type !== OBJ.IMAGE) return;
     const img = P().renderImageObject(sel.handle);
@@ -9224,7 +9230,9 @@ function wireUI() {
     await w.write(blob);
     await w.close();
     let lastSeen = (await fh.getFile()).lastModified;
-    toast('Exportálva. Szerkeszd és mentsd a PNG-t bármely alkalmazásban – a módosítások élőben újraimportálódnak.');
+    toast(
+      'Exportálva. Szerkeszd és mentsd a PNG-t bármely alkalmazásban – a módosítások élőben újraimportálódnak.'
+    );
     if (state.extWatch) clearInterval(state.extWatch);
     const handle = sel.handle;
     state.extWatch = setInterval(async () => {
@@ -9239,17 +9247,17 @@ function wireUI() {
       }
     }, 1500);
   });
-  $('pStrokeColor').addEventListener('change', () => applyPathStroke());
-  $('pStrokeW').addEventListener('change', () => applyPathStroke());
-  $('front').addEventListener('click', () => arrangeSel('front'));
-  $('back').addEventListener('click', () => arrangeSel('back'));
-  $('dupe').addEventListener('click', duplicateSelection);
-  $('addImage').addEventListener('click', () => $('imgFile').click());
-  $('imgFile').addEventListener('change', (e) => {
+  $('pStrokeColor')?.addEventListener('change', () => applyPathStroke());
+  $('pStrokeW')?.addEventListener('change', () => applyPathStroke());
+  $('front')?.addEventListener('click', () => arrangeSel('front'));
+  $('back')?.addEventListener('click', () => arrangeSel('back'));
+  $('dupe')?.addEventListener('click', duplicateSelection);
+  $('addImage')?.addEventListener('click', () => $('imgFile')?.click());
+  $('imgFile')?.addEventListener('change', (e) => {
     if (e.target.files[0]) addImageFromFile(e.target.files[0]);
     e.target.value = '';
   });
-  $('del').addEventListener('click', () => {
+  $('del')?.addEventListener('click', () => {
     if (state.selection?.kind === 'object') {
       snapshotEdit('delete');
       P().historyRemoveObject(state.selection.handle);
@@ -9277,14 +9285,14 @@ function wireUI() {
     }
   });
 
-  $('fFamily').addEventListener('change', async (e) => {
+  $('fFamily')?.addEventListener('change', async (e) => {
     const fam = e.target.value;
     await ensureLocalFontBytes(fam);
     styleTargetRuns((s) => {
       s.family = fam;
     });
   });
-  $('docName').addEventListener('click', () => {
+  $('docName')?.addEventListener('click', () => {
     const m = state.docMeta;
     if (!m) return;
     const kb = (m.size / 1024).toFixed(0);
@@ -9294,7 +9302,7 @@ function wireUI() {
         : `${m.name} — ${kb} KB — chosen from your device (browsers hide the folder path; it stays wherever you picked it)`
     );
   });
-  $('sysFonts').addEventListener('click', () => loadSystemFonts(false));
+  $('sysFonts')?.addEventListener('click', () => loadSystemFonts(false));
   if (!new URLSearchParams(location.search).get('noauto'))
     loadSystemFonts(true);
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
@@ -9310,11 +9318,11 @@ function wireUI() {
     },
     { once: true }
   );
-  for (const b of $('fList').children)
+  for (const b of $('fList')?.children || [])
     b.addEventListener('click', () => toggleListPrefix(b.dataset.l));
-  for (const b of $('alignTools').children)
+  for (const b of $('alignTools')?.children || [])
     b.addEventListener('click', () => alignSelection(b.dataset.al));
-  $('copyText').addEventListener('click', async () => {
+  $('copyText')?.addEventListener('click', async () => {
     if (!P()?.doc) return;
     const t = P().pageTextJson();
     if (!t || !t.text) {
@@ -9335,18 +9343,18 @@ function wireUI() {
     }
   });
 
-  $('spellPage').addEventListener('click', () => {
+  $('spellPage')?.addEventListener('click', () => {
     spellStart();
   });
-  $('spellNext').addEventListener('click', () => spellNext());
-  $('spellChange').addEventListener('click', () => spellChange());
-  $('spellIgnore').addEventListener('click', () => {
+  $('spellNext')?.addEventListener('click', () => spellNext());
+  $('spellChange')?.addEventListener('click', () => spellChange());
+  $('spellIgnore')?.addEventListener('click', () => {
     const hit = spell.list[spell.at];
     if (hit) spell.ignored.add(hit.word.toLowerCase());
     spellRescan();
     spellNext();
   });
-  $('spellAdd').addEventListener('click', () => {
+  $('spellAdd')?.addEventListener('click', () => {
     const hit = spell.list[spell.at];
     if (!hit) return;
     userDictionaryAdd(hit.word);
@@ -9354,12 +9362,13 @@ function wireUI() {
     spellRescan();
     spellNext();
   });
-  $('spellDone').addEventListener('click', () => {
-    $('spellbar').hidden = true;
+  $('spellDone')?.addEventListener('click', () => {
+    const sb = $('spellbar');
+    if (sb) sb.hidden = true;
     document.querySelectorAll('.spellhit').forEach((el) => el.remove());
   });
 
-  $('spellchk').addEventListener('change', (e) => {
+  $('spellchk')?.addEventListener('change', (e) => {
     const ed = state.editing?.editable;
     if (ed) {
       ed.spellcheck = e.target.checked;
@@ -9367,9 +9376,9 @@ function wireUI() {
       ed.focus();
     }
   });
-  $('fStrokeW').addEventListener('change', (e) => {
+  $('fStrokeW')?.addEventListener('change', (e) => {
     const w = Math.max(0, parseFloat(e.target.value) || 0);
-    const rgba = cssHexToRgba($('fStrokeColor').value || '#000000');
+    const rgba = cssHexToRgba($('fStrokeColor')?.value || '#000000');
     styleTargetRuns((s) => {
       s.strokeWidth = w;
       if (w > 0) {
@@ -9382,7 +9391,7 @@ function wireUI() {
         s.renderMode = 0;
     });
   });
-  $('fStrokeColor').addEventListener('input', (e) => {
+  $('fStrokeColor')?.addEventListener('input', (e) => {
     const rgba = cssHexToRgba(e.target.value);
     styleTargetRuns((s) => {
       s.strokeRgba = rgba;
@@ -9393,115 +9402,126 @@ function wireUI() {
         s.renderMode = 2;
     });
   });
-  $('fSize').addEventListener('change', (e) =>
+  $('fSize')?.addEventListener('change', (e) =>
     styleTargetRuns((s) => {
       s.size = parseFloat(e.target.value);
     })
   );
-  $('fColor').addEventListener('input', (e) =>
+  $('fColor')?.addEventListener('input', (e) =>
     styleTargetRuns((s) => {
       s.rgba = cssHexToRgba(e.target.value);
     })
   );
-  for (const b of $('fToggles').children)
+  for (const b of $('fToggles')?.children || [])
     b.addEventListener('click', () => toggleStyle(b.dataset.t));
-  for (const b of $('fAlign').children)
+  for (const b of $('fAlign')?.children || [])
     b.addEventListener('click', () =>
       changeFormat((f) => {
         f.align = parseInt(b.dataset.a);
       })
     );
-  $('fLine').addEventListener('change', (e) =>
+  $('fLine')?.addEventListener('change', (e) =>
     changeFormat((f) => {
       f.lineSpacing = parseFloat(e.target.value);
     })
   );
-  $('fPara').addEventListener('change', (e) =>
+  $('fPara')?.addEventListener('change', (e) =>
     changeFormat((f) => {
       f.paraSpacing = parseFloat(e.target.value);
     })
   );
-  $('fChar').addEventListener('change', (e) =>
+  $('fChar')?.addEventListener('change', (e) =>
     changeFormat((f) => {
       f.charSpacing = parseFloat(e.target.value);
     })
   );
-  $('fWordSp').addEventListener('change', (e) =>
+  $('fWordSp')?.addEventListener('change', (e) =>
     changeFormat((f) => {
       f.wordSpacing = parseFloat(e.target.value);
     })
   );
-  $('fFirstInd').addEventListener('change', (e) =>
+  $('fFirstInd')?.addEventListener('change', (e) =>
     changeFormat((f) => {
       f.firstIndent = Math.max(0, parseFloat(e.target.value) || 0);
     })
   );
-  $('fHangInd').addEventListener('change', (e) =>
+  $('fHangInd')?.addEventListener('change', (e) =>
     changeFormat((f) => {
       f.hangIndent = Math.max(0, parseFloat(e.target.value) || 0);
     })
   );
-  for (const b of $('fDir').children) {
+  for (const b of $('fDir')?.children || []) {
     b.addEventListener('click', () =>
       changeFormat((f) => {
         f.dir = parseInt(b.dataset.d);
       })
     );
   }
-  for (const b of $('fLevel').children) {
+  for (const b of $('fLevel')?.children || []) {
     b.addEventListener('click', () => adjustListLevel(parseInt(b.dataset.lv)));
   }
-  $('fMarkerStyle').addEventListener('change', (e) =>
+  $('fMarkerStyle')?.addEventListener('change', (e) =>
     setListMarkerStyle(e.target.value)
   );
-  $('rulersChk').addEventListener('change', drawRulers);
+  $('rulersChk')?.addEventListener('change', drawRulers);
   wireBlockClipboard();
-  $('spellLang').addEventListener('change', () => {
+  $('spellLang')?.addEventListener('change', () => {
     const ed = state.editing?.editable;
-    if (ed) ed.lang = $('spellLang').value || '';
+    if (ed) ed.lang = $('spellLang')?.value || '';
   });
-  $('fHScale').addEventListener('change', (e) =>
+  $('fHScale')?.addEventListener('change', (e) =>
     styleTargetRuns((s) => {
       s.hScale = parseFloat(e.target.value) / 100;
     })
   );
 
-  $('find').addEventListener('click', () => {
-    $('findbar').hidden = !$('findbar').hidden;
-    if (!$('findbar').hidden) $('findText').focus();
+  $('find')?.addEventListener('click', () => {
+    const fb = $('findbar');
+    if (fb) {
+      fb.hidden = !fb.hidden;
+      if (!fb.hidden) $('findText')?.focus();
+    }
   });
-  $('findDone').addEventListener('click', () => ($('findbar').hidden = true));
+  $('findDone')?.addEventListener('click', () => {
+    const fb = $('findbar');
+    if (fb) fb.hidden = true;
+  });
   const findReport = (r) => {
-    $('findStatus').textContent = r
-      ? `${r.i + 1} of ${r.total} on page ${r.page + 1}: ${r.text}`
-      : 'Not found';
+    const fs = $('findStatus');
+    if (fs) {
+      fs.textContent = r
+        ? `${r.i + 1} of ${r.total} on page ${r.page + 1}: ${r.text}`
+        : 'Not found';
+    }
   };
   const findGo = (dir) => {
-    const n = $('findText').value;
+    const n = $('findText')?.value;
     if (!n) return;
     findReport(findStep(n, dir));
   };
-  $('findNext').addEventListener('click', () => findGo(1));
-  $('findPrev').addEventListener('click', () => findGo(-1));
-  $('findText').addEventListener('keydown', (e) => {
+  $('findNext')?.addEventListener('click', () => findGo(1));
+  $('findPrev')?.addEventListener('click', () => findGo(-1));
+  $('findText')?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       findGo(e.shiftKey ? -1 : 1);
     }
   });
-  $('replOne').addEventListener('click', () => {
-    const n = $('findText').value;
+  $('replOne')?.addEventListener('click', () => {
+    const n = $('findText')?.value;
     if (!n) return;
     if (!state.find || state.find.i < 0) findStep(n, 1);
-    const done = replaceCurrent(n, $('replText').value);
-    $('findStatus').textContent = done ? 'Replaced 1' : 'Not found';
+    const done = replaceCurrent(n, $('replText')?.value);
+    const fs = $('findStatus');
+    if (fs) fs.textContent = done ? 'Replaced 1' : 'Not found';
     if (done) findReport(findStep(n, 1));
   });
-  $('replAll').addEventListener('click', () => {
-    const n = $('findText').value;
+  $('replAll')?.addEventListener('click', () => {
+    const n = $('findText')?.value;
     if (!n) return;
-    const c = replaceAll(n, $('replText').value);
-    $('findStatus').textContent = 'Replaced ' + c;
+    const c = replaceAll(n, $('replText')?.value);
+    const fs = $('findStatus');
+    if (fs) fs.textContent = 'Replaced ' + c;
   });
 
   stagePointHandlers();
@@ -9527,15 +9547,16 @@ function wireUI() {
       restore(state.redo, state.undo);
     } else if (meta && e.key.toLowerCase() === 'f') {
       e.preventDefault();
-      $('findbar').hidden = false;
-      $('findText').focus();
+      const fb = $('findbar');
+      if (fb) fb.hidden = false;
+      $('findText')?.focus();
     } else if (
       (e.key === 'Backspace' || e.key === 'Törlés') &&
       !typing &&
       state.selection
     ) {
       e.preventDefault();
-      $('del').click();
+      $('del')?.click();
     } else if (e.key.startsWith('Arrow') && !typing && state.selection) {
       e.preventDefault();
       const step = e.shiftKey ? 10 : 1;
@@ -9721,7 +9742,9 @@ const localFontMeta = new Map();
 async function loadSystemFonts(silent = false) {
   if (!window.queryLocalFonts) {
     if (!silent)
-      toast('A rendszerbetűtípusok elérése Chrome/Edge böngészőt igényel (Local Font Access API).');
+      toast(
+        'A rendszerbetűtípusok elérése Chrome/Edge böngészőt igényel (Local Font Access API).'
+      );
     return;
   }
   try {

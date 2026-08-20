@@ -394,7 +394,7 @@
             <option value="shape">Alakzatok</option>
           </select>
           <button
-            data-tool="addSzöveg"
+            data-tool="addText"
             title="Kattints az oldalra egy szövegdoboz hozzáadásához"
           >
             <i class="ph ph-textbox"></i><span>Szöveg hozzáadása</span>
@@ -430,7 +430,7 @@
             <i class="ph ph-image"></i>
           </button>
           <button
-            id="copySzöveg"
+            id="copyText"
             class="btn icon"
             hidden
             title="Az oldal szövegének másolása olvasási sorrendben"
@@ -460,12 +460,12 @@
         <i class="ph ph-text-aa barlead"></i>
         <span id="spellWord" class="info">—</span>
         <input id="spellFix" placeholder="Csere erre:" />
-        <button id="spellCsere" class="btn">Csere</button>
-        <button id="spellKihagyás" class="btn">Kihagyás</button>
-        <button id="spellHozzáadás" class="btn" title="Hozzáadás a szótárhoz">
+        <button id="spellChange" class="btn">Csere</button>
+        <button id="spellIgnore" class="btn">Kihagyás</button>
+        <button id="spellAdd" class="btn" title="Hozzáadás a szótárhoz">
           Hozzáadás
         </button>
-        <button id="spellKövetkező" class="btn">Következő</button>
+        <button id="spellNext" class="btn">Következő</button>
         <span id="spellStatus" class="info"></span>
         <button id="spellDone" class="btn icon" title="Bezárás">
           <i class="ph ph-x"></i>
@@ -483,22 +483,18 @@
             </button>
           </div>
           <div class="findfield">
-            <input id="findSzöveg" placeholder="Keresés" />
+            <input id="findText" placeholder="Keresés" />
             <button id="findPrev" class="btn icon" title="Előző találat">
               <i class="ph ph-caret-up"></i>
             </button>
-            <button
-              id="findKövetkező"
-              class="btn icon"
-              title="Következő találat"
-            >
+            <button id="findNext" class="btn icon" title="Következő találat">
               <i class="ph ph-caret-down"></i>
             </button>
           </div>
-          <input id="replSzöveg" placeholder="Csere erre:" />
+          <input id="replText" placeholder="Csere erre:" />
           <div class="findrow">
             <button id="replOne" class="btn grow">Csere</button>
-            <button id="replMindent" class="btn grow">Összes cseréje</button>
+            <button id="replAll" class="btn grow">Összes cseréje</button>
           </div>
           <label class="chk"
             ><input id="caseSens" type="checkbox" /> Kis- és nagybetűk</label
@@ -580,7 +576,7 @@
               <i class="ph ph-arrow-square-out"></i>
             </button>
             <button
-              id="altSzöveg"
+              id="altText"
               class="btn icon objbtn"
               hidden
               title="Helyettesítő szöveg akadálymentesítéshez (címkézett PDF-ek)"
@@ -657,7 +653,7 @@
           </div>
           <div class="row">
             <button
-              id="sysBetűtípuss"
+              id="sysFonts"
               class="btn grow"
               title="Az eszközre telepített betűtípusok listája (Chromium)"
             >
@@ -669,7 +665,7 @@
           <div class="row swatchrow">
             <div class="swatches" id="fSwatches"></div>
             <input
-              id="fSzín"
+              id="fColor"
               type="color"
               value="#000000"
               title="Egyéni szövegszín"
@@ -723,7 +719,7 @@
                 <i class="ph ph-list-numbers"></i>
               </button>
             </div>
-            <select id="fMarkerStílus" title="Számozott lista jelölőstílusa">
+            <select id="fMarkerStyle" title="Számozott lista jelölőstílusa">
               <option value="1">1. 2. 3.</option>
               <option value="a">a. b. c.</option>
               <option value="A">A. B. C.</option>
@@ -742,7 +738,7 @@
           <h3 class="sect">Körvonal</h3>
           <div class="row">
             <input
-              id="fStrokeSzín"
+              id="fStrokeColor"
               type="color"
               value="#000000"
               title="Szöveg körvonalának színe"
@@ -839,7 +835,7 @@
           <div class="row" id="pStrokeRow" hidden>
             <span class="chk">Útvonal körvonala</span>
             <input
-              id="pStrokeSzín"
+              id="pStrokeColor"
               type="color"
               value="#000000"
               title="Körvonal színe"

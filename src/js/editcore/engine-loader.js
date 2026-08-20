@@ -1,10 +1,5 @@
 import createModule from 'bentopdf-pdfium';
-
-const inBrowser = typeof window !== 'undefined';
-
-const wasmUrl = inBrowser
-  ? new URL('bentopdf-pdfium/editcore.wasm', import.meta.url).href
-  : new URL(import.meta.resolve('bentopdf-pdfium/editcore.wasm')).pathname;
+import wasmUrl from 'bentopdf-pdfium/editcore.wasm?url';
 
 export const ENGINE_BUILD = 'bentopdf-pdfium';
 
