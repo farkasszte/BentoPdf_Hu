@@ -87,9 +87,9 @@ const init = async () => {
               BentoPDF
             </a>
             <span
-              class="mt-0.5 text-[10px] sm:text-[11px] font-medium text-muted dark:text-slate-400 whitespace-nowrap"
+              class="mt-0.5 text-[11px] font-medium text-muted dark:text-slate-400"
             >
-              Az adataid nem hagyják el az eszközöd · Ingyenes és korlátlan · GDPR
+              Az adataid nem hagyják el az eszközöd. Az oldal ingyenes, korlátlan és megfelel a GDPR-nak.
             </span>
           </div>
           <div class="flex items-center justify-center gap-3 flex-1 min-w-0">
