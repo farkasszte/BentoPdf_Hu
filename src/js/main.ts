@@ -76,13 +76,13 @@ const init = async () => {
       topNav.className =
         'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 sticky top-0 z-50 mb-4 shadow-sm';
       topNav.innerHTML = `
-        <div class="max-w-7xl mx-auto flex items-center gap-4 px-2">
-          <div class="shrink-0">
+        <div class="w-full flex items-center gap-4 px-3">
+          <div class="shrink-0 pl-1">
             <a
               href="https://www.bentopdf.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm font-black tracking-widest text-darker dark:text-dark-text hover:text-accent transition-colors whitespace-nowrap"
+              class="text-lg font-black tracking-widest text-darker dark:text-dark-text hover:text-accent transition-colors whitespace-nowrap"
             >
               BentoPDF
             </a>
