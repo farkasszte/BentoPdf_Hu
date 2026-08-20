@@ -64,6 +64,7 @@ git push -u origin main
 > „Takarítás” részt. A `.github/workflows/deploy-pages.yml` az egyetlen CI.
 
 ### Vercel
+
 1. Importáld a repót a Vercelben. A `vercel.json` már beállítja:
    - build parancs: `npm run build`
    - output könyvtár: `dist`
@@ -71,8 +72,9 @@ git push -u origin main
 2. Várj az automatikus buildre — kész. (Előnézet is készül minden push-ra.)
 
 ### GitHub Pages
-1. Hozd létre a **publikus** repót, és a *Settings → Pages → Build and
-   deployment → Source* értéke legyen **GitHub Actions**.
+
+1. Hozd létre a **publikus** repót, és a _Settings → Pages → Build and
+   deployment → Source_ értéke legyen **GitHub Actions**.
 2. Push a `main` ágra — a `.github/workflows/deploy-pages.yml` automatikusan
    lefut, és a `dist/` a Pages-re kerül.
    - **Projekt-repó** esetén a build `BASE_URL="/<repo-neve>/"`-t használ (ezért
@@ -83,6 +85,16 @@ git push -u origin main
 > A buildhez nincs `git:` függőség: a `vendor/`-beli tarballok és a
 > `xlsx` (cdn.sheetjs.com) önállóan telepíthetők `npm ci`-vel.
 
+> **⚠️ SITE_URL (kötelező beállítani!)** A sitemap, a canonical/og URL-ek és a
+> JSON-LD a buildkor a `SITE_URL` env-ből épül, alapértelmezésben
+> `https://www.bentopdf.com` (az eredeti). A saját domainedet **build-enként
+> meg kell adnod**:
+>
+> - **Vercel**: _Project → Settings → Environment Variables_ → `SITE_URL = https://<a-te-domained>/`
+> - **Pages**: a workflow-ban a `Build` lépéshez `SITE_URL=https://<felhasznalo>.github.io/<repo-neve>/`
+>   (projekt-repó) env.
+>   Helyileg: `SITE_URL=https://… npm run build`.
+
 ## Takarítás (elhagyható, személyes döntés)
 
 A tüköraból értelemszerűen törölhető az eredeti projektre vonatkozó
@@ -90,7 +102,7 @@ infrastruktúra, ha nem kell: `Dockerfile*`, `docker-compose*.yml`,
 `entrypoint.sh`, `nginx*`, `unraid_bentopdf.xml`, `chart/`, `cloudflare/`,
 `.trivyignore`, `CCLA.md`, `ICLA.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`,
 `SECURITY.md`, `.github/FUNDING.yml` (az eredeti szponzora), `signatures/`,
-`.well-known/funding-manifest-urls`. *(Mind visszanyerhető a `732fc20`-ból.)*
+`.well-known/funding-manifest-urls`. _(Mind visszanyerhető a `732fc20`-ból.)_
 
 ## Tesztelés
 
