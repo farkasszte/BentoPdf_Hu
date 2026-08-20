@@ -81,20 +81,20 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
 
     <div
       id="uploader"
-      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-blue-400 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-blue-400 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools">
@@ -108,30 +108,33 @@
         >
           Edit PDF Text
         </h1>
-        <p class="text-gray-400 mb-6" data-i18n="tools:editPdfText.subtitle">
+        <p class="text-slate-400 mb-6" data-i18n="tools:editPdfText.subtitle">
           Click any paragraph and edit it in place with live reflow. Move and
           restyle text, images, and shapes — then save a clean PDF.
         </p>
 
         <div
           id="drop-zone"
-          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
         >
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <i
               data-lucide="upload-cloud"
-              class="w-10 h-10 mb-3 text-gray-400"
+              class="w-10 h-10 mb-3 text-slate-400"
             ></i>
-            <p class="mb-2 text-sm text-gray-400">
+            <p class="mb-2 text-sm text-slate-400">
               <span class="font-semibold" data-i18n="upload.clickToSelect"
                 >Click to select a file</span
               >
               <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.hints.pdfFile">
+            <p class="text-xs text-slate-500" data-i18n="upload.hints.pdfFile">
               PDF file
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
               Your files never leave your device.
             </p>
           </div>
@@ -156,20 +159,23 @@
         <div class="space-y-6">
           <div class="flex items-start gap-4">
             <div
-              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+              class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
             >
               1
             </div>
             <div class="flex-1">
-              <h3 class="text-lg font-semibold text-white mb-1">PDF feltöltése</h3>
-              <p class="text-gray-400">
-                Válaszd ki vagy húzd ide a szerkesztendő szöveget tartalmazó PDF-et
+              <h3 class="text-lg font-semibold text-white mb-1">
+                PDF feltöltése
+              </h3>
+              <p class="text-slate-400">
+                Válaszd ki vagy húzd ide a szerkesztendő szöveget tartalmazó
+                PDF-et
               </p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <div
-              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+              class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
             >
               2
             </div>
@@ -177,15 +183,15 @@
               <h3 class="text-lg font-semibold text-white mb-1">
                 Kattints egy bekezdésre
               </h3>
-              <p class="text-gray-400">
-                Minden szerkeszthető bekezdés keretezve van – kattints rá, és írj; a szöveg menet közben újrarendeződik
-              
-</p>
+              <p class="text-slate-400">
+                Minden szerkeszthető bekezdés keretezve van – kattints rá, és
+                írj; a szöveg menet közben újrarendeződik
+              </p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <div
-              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+              class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
             >
               3
             </div>
@@ -193,24 +199,24 @@
               <h3 class="text-lg font-semibold text-white mb-1">
                 Bármit átformázhatsz
               </h3>
-              <p class="text-gray-400">
-                Módosítsd a betűtípust, méretet, színt, igazítást és térközt, mozgasd vagy cseréld a képeket, adj hozzá új szövegdobozokat
-              
-</p>
+              <p class="text-slate-400">
+                Módosítsd a betűtípust, méretet, színt, igazítást és térközt,
+                mozgasd vagy cseréld a képeket, adj hozzá új szövegdobozokat
+              </p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <div
-              class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+              class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
             >
               4
             </div>
             <div class="flex-1">
               <h3 class="text-lg font-semibold text-white mb-1">Mentés</h3>
-              <p class="text-gray-400">
-                Tölts le egy tiszta PDF-et a szerkesztéseiddel – minden az eszközödön marad
-              
-</p>
+              <p class="text-slate-400">
+                Tölts le egy tiszta PDF-et a szerkesztéseiddel – minden az
+                eszközödön marad
+              </p>
             </div>
           </div>
         </div>
@@ -226,47 +232,55 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           <a
             href="pdf-editor.html"
-            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+            class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <h3 class="text-white font-semibold mb-1">h3>PDF szerkesztő</h3>
-            <p class="text-gray-400 text-sm">Jegyzetelés és megjegyzések a PDF-eken</p>
+            <p class="text-slate-400 text-sm">
+              Jegyzetelés és megjegyzések a PDF-eken
+            </p>
           </a>
           <a
             href="sign-pdf.html"
-            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+            class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <h3 class="text-white font-semibold mb-1">h3>PDF aláírása</h3>
-            <p class="text-gray-400 text-sm">
+            <p class="text-slate-400 text-sm">
               Rajzolj, írj be vagy tölts fel aláírást
             </p>
           </a>
           <a
             href="add-watermark.html"
-            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+            class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <h3 class="text-white font-semibold mb-1">h3>Vízjel hozzáadása</h3>
-            <p class="text-gray-400 text-sm">Szöveg vagy képek rányomása</p>
+            <p class="text-slate-400 text-sm">Szöveg vagy képek rányomása</p>
           </a>
           <a
             href="add-stamps.html"
-            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+            class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
-            <h3 class="text-white font-semibold mb-1">h3>Bélyegek hozzáadása</h3>
-            <p class="text-gray-400 text-sm">Bélyegek elhelyezése az oldalakon</p>
+            <h3 class="text-white font-semibold mb-1">
+              h3>Bélyegek hozzáadása
+            </h3>
+            <p class="text-slate-400 text-sm">
+              Bélyegek elhelyezése az oldalakon
+            </p>
           </a>
           <a
             href="compress-pdf.html"
-            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+            class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <h3 class="text-white font-semibold mb-1">h3>PDF tömörítése</h3>
-            <p class="text-gray-400 text-sm">A fájlméret csökkentése</p>
+            <p class="text-slate-400 text-sm">A fájlméret csökkentése</p>
           </a>
           <a
             href="organize-pdf.html"
-            class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+            class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <h3 class="text-white font-semibold mb-1">h3>PDF rendezése</h3>
-            <p class="text-gray-400 text-sm">Oldalak átrendezése és kezelése</p>
+            <p class="text-slate-400 text-sm">
+              Oldalak átrendezése és kezelése
+            </p>
           </a>
         </div>
       </section>
@@ -279,42 +293,43 @@
           Frequently Asked Questions
         </h2>
         <div class="space-y-4">
-          <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+          <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
             <summary
               class="cursor-pointer font-semibold text-white flex items-center justify-between"
             >
               Elhagyja a PDF az eszközömet?
               <i data-lucide="chevron-down" class="w-5 h-5"></i>
             </summary>
-            <p class="mt-3 text-gray-400">
-              Nem. A teljes szerkesztő – beleértve a PDF-motort is – a böngésződben fut. A fájlok soha nem kerülnek feltöltésre sehová.
-            
-</p>
+            <p class="mt-3 text-slate-400">
+              Nem. A teljes szerkesztő – beleértve a PDF-motort is – a
+              böngésződben fut. A fájlok soha nem kerülnek feltöltésre sehová.
+            </p>
           </details>
-          <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+          <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
             <summary
               class="cursor-pointer font-semibold text-white flex items-center justify-between"
             >
               Miért zároltak egyes bekezdések?
               <i data-lucide="chevron-down" class="w-5 h-5"></i>
             </summary>
-            <p class="mt-3 text-gray-400">
-              A törékeny részhalmaz-betűtípusokat vagy összetett elrendezéseket használó bekezdések védettek, hogy a dokumentumod ne sérülhessen meg észrevétlenül. Minden más teljesen szerkeszthető marad.
-            
-
-</p>
+            <p class="mt-3 text-slate-400">
+              A törékeny részhalmaz-betűtípusokat vagy összetett elrendezéseket
+              használó bekezdések védettek, hogy a dokumentumod ne sérülhessen
+              meg észrevétlenül. Minden más teljesen szerkeszthető marad.
+            </p>
           </details>
-          <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+          <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
             <summary
               class="cursor-pointer font-semibold text-white flex items-center justify-between"
             >
               A betűtípusok egyezni fognak az eredetivel?
               <i data-lucide="chevron-down" class="w-5 h-5"></i>
             </summary>
-            <p class="mt-3 text-gray-400">
-              Igen – a szerkesztő ahol lehet, a dokumentum beágyazott betűtípusait használja újra, és az eszközödre telepített betűtípusokat is bevonhatod.
-            
-</p>
+            <p class="mt-3 text-slate-400">
+              Igen – a szerkesztő ahol lehet, a dokumentum beágyazott
+              betűtípusait használja újra, és az eszközödre telepített
+              betűtípusokat is bevonhatod.
+            </p>
           </details>
         </div>
       </section>
@@ -324,7 +339,11 @@
     <div id="text-editor-app" hidden>
       <div id="toolbar">
         <div class="tgroup">
-          <button id="exitEditor" class="btn icon" title="Vissza a feltöltéshez">
+          <button
+            id="exitEditor"
+            class="btn icon"
+            title="Vissza a feltöltéshez"
+          >
             <i class="ph ph-arrow-left"></i>
           </button>
           <label class="btn" for="file" title="Másik PDF megnyitása">
@@ -334,7 +353,13 @@
           <button id="save" class="btn" disabled title="Exportálás (⌘S)">
             <i class="ph ph-export"></i><span>Exportálás</span>
           </button>
-          <button id="undo" class="btn icon" disabled hidden title="Visszavonás (⌘Z)">
+          <button
+            id="undo"
+            class="btn icon"
+            disabled
+            hidden
+            title="Visszavonás (⌘Z)"
+          >
             <i class="ph ph-arrow-u-up-left"></i>
           </button>
           <button id="redo" class="btn icon" disabled hidden title="Újra (⇧⌘Z)">
@@ -349,7 +374,11 @@
         ></button>
         <span class="sep"></span>
         <div id="tools" class="segmented">
-          <button data-tool="edit" class="on" title="Meglévő tartalom szerkesztése">
+          <button
+            data-tool="edit"
+            class="on"
+            title="Meglévő tartalom szerkesztése"
+          >
             <i class="ph ph-pencil-simple"></i
             ><span id="editLabel">Mindent szerkeszt</span
             ><i class="ph ph-caret-down editcaret"></i>
@@ -364,7 +393,10 @@
             <option value="image">Képek</option>
             <option value="shape">Alakzatok</option>
           </select>
-          <button data-tool="addSzöveg" title="Kattints az oldalra egy szövegdoboz hozzáadásához">
+          <button
+            data-tool="addSzöveg"
+            title="Kattints az oldalra egy szövegdoboz hozzáadásához"
+          >
             <i class="ph ph-textbox"></i><span>Szöveg hozzáadása</span>
           </button>
         </div>
@@ -445,8 +477,7 @@
           <div class="findhead">
             <span class="findtitle"
               ><i class="ph ph-magnifying-glass barlead"></i> Keresés és csere
-</span
-            >
+            </span>
             <button id="findDone" class="btn icon" title="Bezárás">
               <i class="ph ph-x"></i>
             </button>
@@ -456,7 +487,11 @@
             <button id="findPrev" class="btn icon" title="Előző találat">
               <i class="ph ph-caret-up"></i>
             </button>
-            <button id="findKövetkező" class="btn icon" title="Következő találat">
+            <button
+              id="findKövetkező"
+              class="btn icon"
+              title="Következő találat"
+            >
               <i class="ph ph-caret-down"></i>
             </button>
           </div>
@@ -479,7 +514,9 @@
         <div id="stage">
           <div id="empty">
             <h1 data-i18n="tools:editPdfText.name">Edit PDF Text</h1>
-            <p>Nyiss meg egy PDF-et a szöveg, képek és alakzatok szerkesztéséhez.</p>
+            <p>
+              Nyiss meg egy PDF-et a szöveg, képek és alakzatok szerkesztéséhez.
+            </p>
             <label class="btn big" for="file">Válassz PDF-et…</label>
             <p class="hint">
               Minden a böngésződben fut – semmi sem kerül feltöltésre.
@@ -624,7 +661,8 @@
               class="btn grow"
               title="Az eszközre telepített betűtípusok listája (Chromium)"
             >
-              <i class="ph ph-download-simple"></i><span>Rendszerbetűtípusok</span>
+              <i class="ph ph-download-simple"></i
+              ><span>Rendszerbetűtípusok</span>
             </button>
           </div>
           <h3 class="sect">Szín</h3>
@@ -821,7 +859,11 @@
 
       <div id="viewbar">
         <div class="vbzoom">
-          <button id="zoomMenuBtn" class="btn vbzoomlabel" title="Nagyítási előbeállítások">
+          <button
+            id="zoomMenuBtn"
+            class="btn vbzoomlabel"
+            title="Nagyítási előbeállítások"
+          >
             <span id="zoomLabel" class="label">100%</span
             ><i class="ph ph-caret-down editcaret"></i>
           </button>
@@ -854,7 +896,11 @@
           </button>
         </div>
         <div class="vbright">
-          <button id="docInfoBtn" class="btn icon" title="Dokumentum tulajdonságai">
+          <button
+            id="docInfoBtn"
+            class="btn icon"
+            title="Dokumentum tulajdonságai"
+          >
             <i class="ph ph-info"></i>
           </button>
           <button id="vbCollapse" class="btn icon" title="Sáv elrejtése">
@@ -874,7 +920,7 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
         <p id="loader-text" class="text-white text-lg font-medium">
@@ -885,10 +931,10 @@
 
     <div
       id="alert-modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
       >
         <h3
           id="alert-title"
@@ -897,10 +943,10 @@
         >
           Alert
         </h3>
-        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
         <button
           id="alert-ok"
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+          class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
         >
           OK
         </button>

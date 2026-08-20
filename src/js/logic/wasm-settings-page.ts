@@ -132,7 +132,7 @@ async function initializePage() {
     } else {
       statusEl.textContent = t('tools:wasmSettings.status.notConfigured');
       statusEl.className =
-        'text-xs px-2 py-1 rounded-full bg-gray-600 text-gray-300';
+        'text-xs px-2 py-1 rounded-full bg-slate-600 text-slate-300';
     }
   }
 

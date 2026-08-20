@@ -36,7 +36,7 @@ function getOrCreateModal(): HTMLElement {
         <div id="preview-canvas-container" class="flex items-center justify-center max-w-[90vw] max-h-[85vh]">
           <div id="preview-loading" class="text-white/60 text-sm">Betöltés...</div>
         </div>
-    <div id="preview-page-info" class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white text-sm px-4 py-2 rounded-full backdrop-blur-sm"></div>
+    <div id="preview-page-info" class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-slate-950/80 text-white text-sm px-4 py-2 rounded-full backdrop-blur-sm"></div>
   `;
 
   modal.addEventListener('click', (e) => {
@@ -68,7 +68,7 @@ async function renderPreviewPage(pageNumber: number): Promise<void> {
 
   container.innerHTML = '<div class="text-white/60 text-sm">Betöltés...</div>';
 
-    pageInfo.textContent = `${pageNumber}. oldal / összesen ${state.totalPages}`;
+  pageInfo.textContent = `${pageNumber}. oldal / összesen ${state.totalPages}`;
   prevBtn.style.visibility = pageNumber > 1 ? 'visible' : 'hidden';
   nextBtn.style.visibility =
     pageNumber < state.totalPages ? 'visible' : 'hidden';
@@ -97,7 +97,7 @@ async function renderPreviewPage(pageNumber: number): Promise<void> {
   } catch (err) {
     console.error('Preview render error:', err);
     container.innerHTML =
-          '<div class="text-red-400 text-sm">Az oldal megjelenítése nem sikerült</div>';
+      '<div class="text-red-400 text-sm">Az oldal megjelenítése nem sikerült</div>';
   }
 }
 
@@ -175,7 +175,7 @@ export function initPagePreview(
 
     const icon = document.createElement('button');
     icon.className =
-      'page-preview-btn absolute bottom-1 right-1 bg-gray-900/80 hover:bg-indigo-600 text-white/70 hover:text-white rounded-full w-7 h-7 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10';
+      'page-preview-btn absolute bottom-1 right-1 bg-slate-950/80 hover:bg-accent-hover text-white/70 hover:text-white rounded-full w-7 h-7 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10';
     icon.title = 'Előnézet';
     icon.innerHTML =
       '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>';

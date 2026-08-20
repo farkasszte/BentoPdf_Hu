@@ -16,9 +16,9 @@ export const createLanguageSwitcher = (): HTMLElement => {
   const button = document.createElement('button');
   button.className = `
     inline-flex items-center gap-1.5 text-sm font-medium
-    bg-gray-800 text-gray-200 border border-gray-600
+    bg-slate-800 text-slate-200 border border-slate-600
     px-3 py-1.5 rounded-full transition-colors duration-200
-    shadow-sm hover:shadow-md hover:bg-gray-700
+    shadow-sm hover:shadow-md hover:bg-slate-700
   `.trim();
   button.setAttribute('aria-haspopup', 'true');
   button.setAttribute('aria-expanded', 'false');
@@ -42,14 +42,14 @@ export const createLanguageSwitcher = (): HTMLElement => {
   dropdown.className = `
     hidden absolute right-0 mt-2 z-50
     w-64 max-w-[calc(100vw-2rem)]
-    rounded-lg bg-gray-800 border border-gray-700 shadow-xl
+    rounded-lg bg-slate-800 border border-slate-700 shadow-xl
     flex flex-col overflow-hidden
   `.trim();
   dropdown.setAttribute('role', 'menu');
 
   const searchWrapper = document.createElement('div');
   searchWrapper.className =
-    'p-2 border-b border-gray-700 bg-gray-800 flex-shrink-0';
+    'p-2 border-b border-slate-700 bg-slate-800 flex-shrink-0';
 
   const searchPlaceholder =
     t('nav.searchLanguage') !== 'nav.searchLanguage'
@@ -61,9 +61,9 @@ export const createLanguageSwitcher = (): HTMLElement => {
   searchInput.placeholder = searchPlaceholder;
   searchInput.className = `
     w-full px-3 py-1.5 text-sm
-    bg-gray-900 text-gray-200
-    border border-gray-700 rounded-md
-    focus:outline-none focus:border-indigo-500
+    bg-slate-950 text-slate-200
+    border border-slate-700 rounded-md
+    focus:outline-none focus:border-accent
     placeholder-gray-500
   `.trim();
   searchInput.setAttribute('aria-label', searchPlaceholder);
@@ -75,7 +75,7 @@ export const createLanguageSwitcher = (): HTMLElement => {
   list.setAttribute('role', 'none');
 
   const emptyState = document.createElement('p');
-  emptyState.className = 'hidden px-4 py-3 text-sm text-gray-400 text-center';
+  emptyState.className = 'hidden px-4 py-3 text-sm text-slate-400 text-center';
   const emptyText =
     t('nav.noLanguagesFound') !== 'nav.noLanguagesFound'
       ? t('nav.noLanguagesFound')
@@ -87,9 +87,9 @@ export const createLanguageSwitcher = (): HTMLElement => {
     const option = document.createElement('button');
     option.type = 'button';
     option.className = `
-      w-full px-4 py-2 text-left text-sm text-gray-200
-      hover:bg-gray-700 flex items-center gap-2 transition-colors
-      ${lang === currentLang ? 'bg-gray-700' : ''}
+      w-full px-4 py-2 text-left text-sm text-slate-200
+      hover:bg-slate-700 flex items-center gap-2 transition-colors
+      ${lang === currentLang ? 'bg-slate-700' : ''}
     `.trim();
     option.setAttribute('role', 'menuitem');
     option.dataset.lang = lang;
@@ -210,9 +210,9 @@ export const injectLanguageSwitcher = (): void => {
       if (button) {
         button.className = `
                     flex items-center justify-between w-full text-sm font-medium
-                    bg-gray-800 text-gray-400 border border-gray-700
+                    bg-slate-800 text-slate-400 border border-slate-700
                     px-3 py-2 rounded-lg transition-colors duration-200
-                    hover:text-white hover:border-gray-600
+                    hover:text-white hover:border-slate-600
                 `.trim();
       }
 

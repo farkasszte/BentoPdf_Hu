@@ -204,17 +204,17 @@ async function updateUI() {
   if (pageState.file) {
     const fileDiv = document.createElement('div');
     fileDiv.className =
-      'flex items-center justify-between bg-gray-700 p-3 rounded-lg text-sm';
+      'flex items-center justify-between bg-slate-700 p-3 rounded-lg text-sm';
 
     const infoContainer = document.createElement('div');
     infoContainer.className = 'flex flex-col overflow-hidden';
 
     const nameSpan = document.createElement('div');
-    nameSpan.className = 'truncate font-medium text-gray-200 text-sm mb-1';
+    nameSpan.className = 'truncate font-medium text-slate-200 text-sm mb-1';
     nameSpan.textContent = pageState.file.name;
 
     const metaSpan = document.createElement('div');
-    metaSpan.className = 'text-xs text-gray-400';
+    metaSpan.className = 'text-xs text-slate-400';
     metaSpan.textContent = formatBytes(pageState.file.size);
 
     infoContainer.append(nameSpan, metaSpan);
@@ -270,14 +270,14 @@ function populateLanguageList() {
   availableEntries.forEach(function ([code, name]) {
     const label = document.createElement('label');
     label.className =
-      'flex items-center gap-2 p-2 rounded-md hover:bg-gray-700 cursor-pointer';
+      'flex items-center gap-2 p-2 rounded-md hover:bg-slate-700 cursor-pointer';
     label.dataset.search = `${name} ${code}`.toLowerCase();
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.value = code;
     checkbox.className =
-      'lang-checkbox w-4 h-4 rounded text-indigo-600 bg-gray-700 border-gray-600 focus:ring-indigo-500';
+      'lang-checkbox w-4 h-4 rounded text-accent bg-slate-700 border-slate-600 focus:ring-accent';
 
     label.append(checkbox);
     label.append(document.createTextNode(' ' + name));
@@ -324,17 +324,17 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     dropZone.addEventListener('dragover', function (e) {
       e.preventDefault();
-      dropZone.classList.add('bg-gray-700');
+      dropZone.classList.add('bg-slate-700');
     });
 
     dropZone.addEventListener('dragleave', function (e) {
       e.preventDefault();
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
     });
 
     dropZone.addEventListener('drop', function (e) {
       e.preventDefault();
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
       const files = e.dataTransfer?.files;
       if (files && files.length > 0) {
         const pdfFiles = Array.from(files).filter(function (f) {
@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
           setTimeout(function () {
             copyBtn.innerHTML =
-              '<i data-lucide="clipboard-copy" class="w-4 h-4 text-gray-300"></i>';
+              '<i data-lucide="clipboard-copy" class="w-4 h-4 text-slate-300"></i>';
             createIcons({ icons });
           }, 2000);
         });

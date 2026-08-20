@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Bates-számozás ingyen online – Bates-bélyegzés hozzáadása | PDF stúdió</title>
+    <title>
+      Bates-számozás ingyen online – Bates-bélyegzés hozzáadása | PDF stúdió
+    </title>
     <meta
       name="description"
       content="Adj szekvenciális Bates-számokat a PDF-dokumentumokhoz. Többfájlos feldolgozást, egyedi sablonokat és testre szabható formázást támogat. Ingyenes, biztonságos, böngészőalapú."
@@ -60,20 +62,20 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
 
     <div
       id="uploader"
-      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools"
@@ -87,27 +89,35 @@
         >
           Bates Numbering
         </h1>
-        <p class="text-gray-400 mb-6" data-i18n="tools:batesNumbering.subtitle">
+        <p
+          class="text-slate-400 mb-6"
+          data-i18n="tools:batesNumbering.subtitle"
+        >
           Add sequential Bates numbers across one or more PDF files.
         </p>
 
         <div
           id="drop-zone"
-          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
         >
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <i
               data-lucide="upload-cloud"
-              class="w-10 h-10 mb-3 text-gray-400"
+              class="w-10 h-10 mb-3 text-slate-400"
             ></i>
-            <p class="mb-2 text-sm text-gray-400">
+            <p class="mb-2 text-sm text-slate-400">
               <span class="font-semibold" data-i18n="upload.clickToSelect"
                 >Click to select files</span
               >
               <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
             </p>
-            <p class="text-xs text-gray-500">PDF fájlok (több is támogatott)</p>
-            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+            <p class="text-xs text-slate-500">
+              PDF fájlok (több is támogatott)
+            </p>
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
               Your files never leave your device.
             </p>
           </div>
@@ -123,14 +133,14 @@
         <div id="file-controls" class="hidden mt-4 flex gap-3">
           <button
             id="add-more-btn"
-            class="btn bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2"
+            class="btn bg-accent hover:bg-accent-hover text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2"
           >
             <i data-lucide="plus"></i>
             <span>Több fájl hozzáadása</span>
           </button>
           <button
             id="clear-files-btn"
-            class="btn bg-gray-700 hover:bg-gray-600 text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2"
+            class="btn bg-slate-700 hover:bg-slate-600 text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2"
           >
             <i data-lucide="trash-2"></i>
             <span>Összes törlése</span>
@@ -143,16 +153,20 @@
           <div>
             <label
               for="style-preset"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               >Stílus kiválasztása</label
             >
             <select
               id="style-preset"
-              class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+              class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent"
             >
               <optgroup label="Melléklet + Ügy + Bates + Oldal">
-                <option value="full-6">Melléklet 1 Ügy XYZ 000001 Oldal 1</option>
-                <option value="full-5">Melléklet 1 Ügy XYZ 00001 Oldal 1</option>
+                <option value="full-6">
+                  Melléklet 1 Ügy XYZ 000001 Oldal 1
+                </option>
+                <option value="full-5">
+                  Melléklet 1 Ügy XYZ 00001 Oldal 1
+                </option>
                 <option value="full-4">Melléklet 1 Ügy XYZ 0001 Oldal 1</option>
                 <option value="full-3">Melléklet 1 Ügy XYZ 001 Oldal 1</option>
                 <option value="full-0">Melléklet 1 Ügy XYZ 1 Oldal 1</option>
@@ -185,25 +199,25 @@
           <div>
             <label
               for="bates-template"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               >Stílus testreszabása</label
             >
             <input
               type="text"
               id="bates-template"
               value="[BATES]"
-              class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500 font-mono"
+              class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent font-mono"
             />
-            <p class="text-xs text-gray-500 mt-1">
+            <p class="text-xs text-slate-500 mt-1">
               Helyőrzők: [BATES] [PAGE] [FILE] [FILENAME]
             </p>
           </div>
 
           <div
             id="preview-box"
-            class="bg-gray-900 border border-gray-700 rounded-lg p-4 text-sm text-gray-300 font-mono"
+            class="bg-slate-950 border border-slate-700 rounded-lg p-4 text-sm text-slate-300 font-mono"
           >
-            <div class="text-xs text-gray-500 mb-1">Előnézet:</div>
+            <div class="text-xs text-slate-500 mb-1">Előnézet:</div>
             <div id="preview-content"></div>
           </div>
 
@@ -211,12 +225,12 @@
             <div id="padding-group" class="hidden">
               <label
                 for="bates-padding"
-                class="block mb-2 text-sm font-medium text-gray-300"
+                class="block mb-2 text-sm font-medium text-slate-300"
                 >Bates-szám kitöltése</label
               >
               <select
                 id="bates-padding"
-                class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent"
               >
                 <option value="6" selected>6 számjegy (000001)</option>
                 <option value="5">5 számjegy (00001)</option>
@@ -229,12 +243,12 @@
             <div>
               <label
                 for="position"
-                class="block mb-2 text-sm font-medium text-gray-300"
+                class="block mb-2 text-sm font-medium text-slate-300"
                 >Pozíció</label
               >
               <select
                 id="position"
-                class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent"
               >
                 <option value="top-center">Fejléc közepén</option>
                 <option value="top-left">Fejléc baloldalt</option>
@@ -250,7 +264,7 @@
             <div>
               <label
                 for="bates-start"
-                class="block mb-2 text-sm font-medium text-gray-300"
+                class="block mb-2 text-sm font-medium text-slate-300"
                 >Bates-szám kezdőértéke</label
               >
               <input
@@ -258,14 +272,14 @@
                 id="bates-start"
                 value="1"
                 min="0"
-                class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent"
               />
             </div>
 
             <div>
               <label
                 for="file-start"
-                class="block mb-2 text-sm font-medium text-gray-300"
+                class="block mb-2 text-sm font-medium text-slate-300"
                 >Fájlszámláló kezdőértéke</label
               >
               <input
@@ -273,7 +287,7 @@
                 id="file-start"
                 value="1"
                 min="1"
-                class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent"
               />
             </div>
           </div>
@@ -282,12 +296,12 @@
             <div>
               <label
                 for="font-family"
-                class="block mb-2 text-sm font-medium text-gray-300"
+                class="block mb-2 text-sm font-medium text-slate-300"
                 >Betűtípus</label
               >
               <select
                 id="font-family"
-                class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent"
               >
                 <option value="Helvetica">Helvetica</option>
                 <option value="TimesRoman">Times New Roman</option>
@@ -298,7 +312,7 @@
             <div>
               <label
                 for="font-size"
-                class="block mb-2 text-sm font-medium text-gray-300"
+                class="block mb-2 text-sm font-medium text-slate-300"
                 >Betűméret</label
               >
               <input
@@ -307,14 +321,14 @@
                 value="10"
                 min="6"
                 max="72"
-                class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-indigo-500 focus:border-indigo-500"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5 focus:ring-accent focus:border-accent"
               />
             </div>
 
             <div>
               <label
                 for="text-color"
-                class="block mb-2 text-sm font-medium text-gray-300"
+                class="block mb-2 text-sm font-medium text-slate-300"
                 >Szín</label
               >
               <input type="color" id="text-color" value="#000000" />
@@ -333,7 +347,7 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
         <p
@@ -348,18 +362,18 @@
 
     <div
       id="alert-modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
       >
         <h3 id="alert-title" class="text-xl font-bold text-white mb-2">
           Figyelmeztetés
         </h3>
-        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
         <button
           id="alert-ok"
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+          class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
         >
           OK
         </button>
@@ -376,13 +390,15 @@
       <div class="space-y-6">
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             1
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">Fájlok feltöltése</h3>
-            <p class="text-gray-400">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Fájlok feltöltése
+            </h3>
+            <p class="text-slate-400">
               Tölts fel egy vagy több PDF fájlt. Húzd őket sorrendbe a
               többfájlos számozáshoz.
             </p>
@@ -390,7 +406,7 @@
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             2
           </div>
@@ -398,7 +414,7 @@
             <h3 class="text-lg font-semibold text-white mb-1">
               Stílus beállítása
             </h3>
-            <p class="text-gray-400">
+            <p class="text-slate-400">
               Válassz egy előre beállított stílust, vagy hozz létre egyedi
               sablont helyőrzőkkel, mint [BATES], [PAGE], [FILE].
             </p>
@@ -406,13 +422,13 @@
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             3
           </div>
           <div class="flex-1">
             <h3 class="text-lg font-semibold text-white mb-1">Letöltés</h3>
-            <p class="text-gray-400">
+            <p class="text-slate-400">
               Töltsd le bates-számozott PDF-jeidet azonnal. Több fájl esetén
               ZIP-csomagot kapsz.
             </p>
@@ -431,40 +447,44 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <a
           href="page-numbers.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Oldalszámozás</h3>
-          <p class="text-gray-400 text-sm">Oldalszámok hozzáadása a PDF-ekhez</p>
+          <p class="text-slate-400 text-sm">
+            Oldalszámok hozzáadása a PDF-ekhez
+          </p>
         </a>
         <a
           href="header-footer.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Fejléc és lábléc</h3>
-          <p class="text-gray-400 text-sm">
+          <p class="text-slate-400 text-sm">
             Szöveg hozzáadása a fejlécekhez és láblécekhez
           </p>
         </a>
         <a
           href="add-watermark.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Vízjel hozzáadása</h3>
-          <p class="text-gray-400 text-sm">Vízjel hozzáadása a PDF-dokumentumokhoz</p>
+          <p class="text-slate-400 text-sm">
+            Vízjel hozzáadása a PDF-dokumentumokhoz
+          </p>
         </a>
         <a
           href="merge-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF-ek egyesítése</h3>
-          <p class="text-gray-400 text-sm">Több PDF egyesítése</p>
+          <p class="text-slate-400 text-sm">Több PDF egyesítése</p>
         </a>
         <a
           href="organize-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF rendezése</h3>
-          <p class="text-gray-400 text-sm">Oldalak átrendezése és rendezése</p>
+          <p class="text-slate-400 text-sm">Oldalak átrendezése és rendezése</p>
         </a>
       </div>
     </section>
@@ -477,39 +497,39 @@
         Frequently Asked Questions
       </h2>
       <div class="space-y-4">
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             Mi az a Bates-számozás?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             A Bates-számozás a jogi dokumentumok könnyű azonosítására és
             visszakeresésére szolgáló módszer. Minden oldal egyedi,
             szekvenciális számot kap, gyakran elő- vagy utótaggal kombinálva.
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             Számozhatok egyszerre több fájlt?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Igen! Tölts fel több PDF-et, és a Bates-számok az összes fájlon át
             folytatódnak. A fájlokat húzással rendezheted.
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             Biztonságban vannak a fájljaim?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Minden feldolgozás a böngésződben történik. A fájljaid soha nem
             hagyják el az eszközödet.
           </p>

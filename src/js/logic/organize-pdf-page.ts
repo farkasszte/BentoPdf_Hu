@@ -47,14 +47,14 @@ function initializePage() {
   if (dropZone) {
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
-      dropZone.classList.add('bg-gray-700');
+      dropZone.classList.add('bg-slate-700');
     });
     dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
     });
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
       const droppedFiles = e.dataTransfer?.files;
       if (droppedFiles && droppedFiles.length > 0) handleFile(droppedFiles[0]);
     });
@@ -199,17 +199,17 @@ function updateFileDisplay() {
   fileDisplayArea.innerHTML = '';
   const fileDiv = document.createElement('div');
   fileDiv.className =
-    'flex items-center justify-between bg-gray-700 p-3 rounded-lg';
+    'flex items-center justify-between bg-slate-700 p-3 rounded-lg';
 
   const infoContainer = document.createElement('div');
   infoContainer.className = 'flex flex-col flex-1 min-w-0';
 
   const nameSpan = document.createElement('div');
-  nameSpan.className = 'truncate font-medium text-gray-200 text-sm mb-1';
+  nameSpan.className = 'truncate font-medium text-slate-200 text-sm mb-1';
   nameSpan.textContent = organizeState.file.name;
 
   const metaSpan = document.createElement('div');
-  metaSpan.className = 'text-xs text-gray-400';
+  metaSpan.className = 'text-xs text-slate-400';
   metaSpan.textContent = `${formatBytes(organizeState.file.size)} • ${organizeState.totalPages} oldal`;
 
   infoContainer.append(nameSpan, metaSpan);
@@ -286,7 +286,7 @@ async function renderThumbnails() {
 
     const wrapper = document.createElement('div');
     wrapper.className =
-      'page-thumbnail relative cursor-move flex flex-col items-center gap-1 p-2 border-2 border-gray-600 hover:border-indigo-500 rounded-lg bg-gray-700 transition-colors group';
+      'page-thumbnail relative cursor-move flex flex-col items-center gap-1 p-2 border-2 border-slate-600 hover:border-accent rounded-lg bg-slate-700 transition-colors group';
     wrapper.dataset.originalPageIndex = (i - 1).toString();
     wrapper.dataset.pageNumber = i.toString();
 
@@ -300,7 +300,7 @@ async function renderThumbnails() {
 
     const pageLabel = document.createElement('div');
     pageLabel.className =
-      'page-number absolute top-1 left-1 bg-indigo-600 text-white text-xs px-2 py-1 rounded-md font-semibold shadow-lg z-10 pointer-events-none';
+      'page-number absolute top-1 left-1 bg-accent text-white text-xs px-2 py-1 rounded-md font-semibold shadow-lg z-10 pointer-events-none';
     pageLabel.textContent = i.toString();
     imgContainer.appendChild(pageLabel);
 

@@ -359,7 +359,7 @@ export function showWasmRequiredDialog(
 
   const modal = document.createElement('div');
   modal.className =
-    'bg-gray-800 rounded-2xl max-w-md w-full shadow-2xl border border-gray-700';
+    'bg-slate-800 rounded-2xl max-w-md w-full shadow-2xl border border-slate-700';
 
   modal.innerHTML = `
     <div class="p-6">
@@ -371,17 +371,17 @@ export function showWasmRequiredDialog(
         </div>
         <div>
           <h3 class="text-lg font-semibold text-white">Advanced Feature Required</h3>
-          <p class="text-sm text-gray-400">External processing module needed</p>
+          <p class="text-sm text-slate-400">External processing module needed</p>
         </div>
       </div>
 
-      <p class="text-gray-300 mb-4">
+      <p class="text-slate-300 mb-4">
         This feature requires <strong class="text-white">${displayName}</strong> to be configured.
       </p>
 
-      <div class="bg-gray-700/50 rounded-lg p-4 mb-4">
-        <p class="text-sm text-gray-400 mb-2">Features enabled by this module:</p>
-        <ul class="text-sm text-gray-300 space-y-1">
+      <div class="bg-slate-700/50 rounded-lg p-4 mb-4">
+        <p class="text-sm text-slate-400 mb-2">Features enabled by this module:</p>
+        <ul class="text-sm text-slate-300 space-y-1">
           ${features
             .slice(0, 4)
             .map(
@@ -389,17 +389,17 @@ export function showWasmRequiredDialog(
                 `<li class="flex items-center gap-2"><span class="text-green-400">✓</span> ${f}</li>`
             )
             .join('')}
-          ${features.length > 4 ? `<li class="text-gray-500">+ ${features.length - 4} more...</li>` : ''}
+          ${features.length > 4 ? `<li class="text-slate-500">+ ${features.length - 4} more...</li>` : ''}
         </ul>
       </div>
 
-      <p class="text-xs text-gray-500 mb-4">
+      <p class="text-xs text-slate-500 mb-4">
         This module is licensed under AGPL-3.0. By configuring it, you agree to its license terms.
       </p>
     </div>
 
-    <div class="border-t border-gray-700 p-4 flex gap-3">
-      <button id="wasm-modal-cancel" class="flex-1 px-4 py-2.5 rounded-lg bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors font-medium">
+    <div class="border-t border-slate-700 p-4 flex gap-3">
+      <button id="wasm-modal-cancel" class="flex-1 px-4 py-2.5 rounded-lg bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors font-medium">
         Cancel
       </button>
       <button id="wasm-modal-configure" class="flex-1 px-4 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-500 hover:to-blue-400 transition-all font-medium">

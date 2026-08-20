@@ -85,20 +85,20 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
 
     <div
       id="uploader"
-      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools">
@@ -112,29 +112,35 @@
         >
           PDF to CBZ
         </h1>
-        <p class="text-gray-400 mb-6" data-i18n="tools:pdfToCbz.subtitle">
+        <p class="text-slate-400 mb-6" data-i18n="tools:pdfToCbz.subtitle">
           Convert a PDF into a CBZ (Comic Book Archive) file for comic readers.
         </p>
 
         <div
           id="drop-zone"
-          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
         >
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <i
               data-lucide="upload-cloud"
-              class="w-10 h-10 mb-3 text-gray-400"
+              class="w-10 h-10 mb-3 text-slate-400"
             ></i>
-            <p class="mb-2 text-sm text-gray-400">
+            <p class="mb-2 text-sm text-slate-400">
               <span class="font-semibold" data-i18n="upload.clickToSelect"
                 >Click to select a file</span
               >
               <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.hints.singlePdf">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.hints.singlePdf"
+            >
               A single PDF file
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
               Your files never leave your device.
             </p>
           </div>
@@ -152,13 +158,13 @@
           <div>
             <label
               for="cbz-format"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               data-i18n="tools:pdfToCbz.imageFormat"
               >Image Format</label
             >
             <select
               id="cbz-format"
-              class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-accent focus:border-transparent"
             >
               <option value="jpeg">JPEG</option>
               <option value="png">PNG</option>
@@ -169,7 +175,7 @@
           <div id="quality-section">
             <label
               for="cbz-quality"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               data-i18n="tools:pdfToCbz.quality"
               >Image Quality</label
             >
@@ -190,7 +196,7 @@
               >
             </div>
             <p
-              class="mt-1 text-xs text-gray-400"
+              class="mt-1 text-xs text-slate-400"
               data-i18n="tools:pdfToCbz.qualityExplanation"
             >
               Higher quality = larger file size
@@ -200,7 +206,7 @@
           <div>
             <label
               for="cbz-scale"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               data-i18n="tools:pdfToCbz.scale"
               >Scale</label
             >
@@ -221,7 +227,7 @@
               >
             </div>
             <p
-              class="mt-1 text-xs text-gray-400"
+              class="mt-1 text-xs text-slate-400"
               data-i18n="tools:pdfToCbz.scaleExplanation"
             >
               Higher scale = better quality for high-res screens
@@ -232,11 +238,11 @@
             <input
               type="checkbox"
               id="cbz-grayscale"
-              class="w-4 h-4 rounded bg-gray-700 border-gray-600 text-indigo-600 focus:ring-indigo-500"
+              class="w-4 h-4 rounded bg-slate-700 border-slate-600 text-accent focus:ring-accent"
             />
             <label
               for="cbz-grayscale"
-              class="text-sm font-medium text-gray-300"
+              class="text-sm font-medium text-slate-300"
               data-i18n="tools:pdfToCbz.grayscale"
               >Convert to grayscale</label
             >
@@ -246,11 +252,11 @@
             <input
               type="checkbox"
               id="cbz-manga"
-              class="w-4 h-4 rounded bg-gray-700 border-gray-600 text-indigo-600 focus:ring-indigo-500"
+              class="w-4 h-4 rounded bg-slate-700 border-slate-600 text-accent focus:ring-accent"
             />
             <label
               for="cbz-manga"
-              class="text-sm font-medium text-gray-300"
+              class="text-sm font-medium text-slate-300"
               data-i18n="tools:pdfToCbz.manga"
               >Manga mode (right-to-left)</label
             >
@@ -260,12 +266,12 @@
             <input
               type="checkbox"
               id="cbz-metadata"
-              class="w-4 h-4 rounded bg-gray-700 border-gray-600 text-indigo-600 focus:ring-indigo-500"
+              class="w-4 h-4 rounded bg-slate-700 border-slate-600 text-accent focus:ring-accent"
               checked
             />
             <label
               for="cbz-metadata"
-              class="text-sm font-medium text-gray-300"
+              class="text-sm font-medium text-slate-300"
               data-i18n="tools:pdfToCbz.includeMetadata"
               >Include ComicInfo.xml metadata</label
             >
@@ -275,14 +281,14 @@
             <div>
               <label
                 for="cbz-title"
-                class="block mb-1 text-xs font-medium text-gray-400"
+                class="block mb-1 text-xs font-medium text-slate-400"
                 data-i18n="tools:pdfToCbz.titleLabel"
                 >Title</label
               >
               <input
                 type="text"
                 id="cbz-title"
-                class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                 placeholder="Automatikusan a fájlnévből felismerve"
               />
             </div>
@@ -290,21 +296,21 @@
               <div>
                 <label
                   for="cbz-series"
-                  class="block mb-1 text-xs font-medium text-gray-400"
+                  class="block mb-1 text-xs font-medium text-slate-400"
                   data-i18n="tools:pdfToCbz.seriesLabel"
                   >Series</label
                 >
                 <input
                   type="text"
                   id="cbz-series"
-                  class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
               <div class="grid grid-cols-2 gap-2">
                 <div>
                   <label
                     for="cbz-number"
-                    class="block mb-1 text-xs font-medium text-gray-400"
+                    class="block mb-1 text-xs font-medium text-slate-400"
                     data-i18n="tools:pdfToCbz.numberLabel"
                     >#</label
                   >
@@ -313,14 +319,14 @@
                     id="cbz-number"
                     min="0"
                     step="0.1"
-                    class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                     placeholder="1"
                   />
                 </div>
                 <div>
                   <label
                     for="cbz-volume"
-                    class="block mb-1 text-xs font-medium text-gray-400"
+                    class="block mb-1 text-xs font-medium text-slate-400"
                     data-i18n="tools:pdfToCbz.volumeLabel"
                     >Vol.</label
                   >
@@ -329,7 +335,7 @@
                     id="cbz-volume"
                     min="1"
                     step="1"
-                    class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                     placeholder="1"
                   />
                 </div>
@@ -339,41 +345,41 @@
               <div>
                 <label
                   for="cbz-author"
-                  class="block mb-1 text-xs font-medium text-gray-400"
+                  class="block mb-1 text-xs font-medium text-slate-400"
                   data-i18n="tools:pdfToCbz.authorLabel"
                   >Author(s)</label
                 >
                 <input
                   type="text"
                   id="cbz-author"
-                  class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
               <div>
                 <label
                   for="cbz-publisher"
-                  class="block mb-1 text-xs font-medium text-gray-400"
+                  class="block mb-1 text-xs font-medium text-slate-400"
                   data-i18n="tools:pdfToCbz.publisherLabel"
                   >Publisher</label
                 >
                 <input
                   type="text"
                   id="cbz-publisher"
-                  class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
             </div>
             <div>
               <label
                 for="cbz-tags"
-                class="block mb-1 text-xs font-medium text-gray-400"
+                class="block mb-1 text-xs font-medium text-slate-400"
                 data-i18n="tools:pdfToCbz.tagsLabel"
                 >Tags / Genre</label
               >
               <input
                 type="text"
                 id="cbz-tags"
-                class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                 placeholder="Akció, Kaland, Sci-Fi"
               />
             </div>
@@ -381,7 +387,7 @@
               <div>
                 <label
                   for="cbz-year"
-                  class="block mb-1 text-xs font-medium text-gray-400"
+                  class="block mb-1 text-xs font-medium text-slate-400"
                   data-i18n="tools:pdfToCbz.yearLabel"
                   >Published Year</label
                 >
@@ -391,14 +397,14 @@
                   min="1900"
                   max="2100"
                   step="1"
-                  class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                   placeholder="2024"
                 />
               </div>
               <div>
                 <label
                   for="cbz-rating"
-                  class="block mb-1 text-xs font-medium text-gray-400"
+                  class="block mb-1 text-xs font-medium text-slate-400"
                   data-i18n="tools:pdfToCbz.ratingLabel"
                   >Rating (0-5)</label
                 >
@@ -408,7 +414,7 @@
                   min="0"
                   max="5"
                   step="0.5"
-                  class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
             </div>
@@ -430,7 +436,7 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
         <p id="loader-text" class="text-white text-lg font-medium">
@@ -441,10 +447,10 @@
 
     <div
       id="alert-modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
       >
         <h3
           id="alert-title"
@@ -453,10 +459,10 @@
         >
           Alert
         </h3>
-        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
         <button
           id="alert-ok"
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+          class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
         >
           OK
         </button>
@@ -473,35 +479,46 @@
       <div class="space-y-6">
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             1
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">PDF feltöltése</h3>
-            <p class="text-gray-400">Válaszd ki a PDF-et, amelyet képregényarchívummá szeretnél alakítani</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              PDF feltöltése
+            </h3>
+            <p class="text-slate-400">
+              Válaszd ki a PDF-et, amelyet képregényarchívummá szeretnél
+              alakítani
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             2
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">Beállítások kiválasztása</h3>
-            <p class="text-gray-400">Válassz képformátumot, minőséget és opcionális metaadatokat</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Beállítások kiválasztása
+            </h3>
+            <p class="text-slate-400">
+              Válassz képformátumot, minőséget és opcionális metaadatokat
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             3
           </div>
           <div class="flex-1">
             <h3 class="text-lg font-semibold text-white mb-1">CBZ letöltése</h3>
-            <p class="text-gray-400">Töltsd le a .cbz fájlt, és készen áll bármely képregényolvasóhoz</p>
+            <p class="text-slate-400">
+              Töltsd le a .cbz fájlt, és készen áll bármely képregényolvasóhoz
+            </p>
           </div>
         </div>
       </div>
@@ -517,31 +534,39 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <a
           href="pdf-to-jpg.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF → JPG</h3>
-          <p class="text-gray-400 text-sm">PDF oldalak JPG képekké alakítása</p>
+          <p class="text-slate-400 text-sm">
+            PDF oldalak JPG képekké alakítása
+          </p>
         </a>
         <a
           href="pdf-to-png.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF → PNG</h3>
-          <p class="text-gray-400 text-sm">PDF oldalak PNG képekké alakítása</p>
+          <p class="text-slate-400 text-sm">
+            PDF oldalak PNG képekké alakítása
+          </p>
         </a>
         <a
           href="pdf-to-tiff.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF → TIFF</h3>
-          <p class="text-gray-400 text-sm">PDF oldalak TIFF képekké alakítása</p>
+          <p class="text-slate-400 text-sm">
+            PDF oldalak TIFF képekké alakítása
+          </p>
         </a>
         <a
           href="extract-images.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Képek kinyerése</h3>
-          <p class="text-gray-400 text-sm">Az összes kép kinyerése a PDF-ből</p>
+          <p class="text-slate-400 text-sm">
+            Az összes kép kinyerése a PDF-ből
+          </p>
         </a>
       </div>
     </section>
@@ -554,26 +579,50 @@
         Frequently Asked Questions
       </h2>
       <div class="space-y-4">
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Mi az a CBZ-fájl?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Mi az a CBZ-fájl?<i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">A CBZ (Comic Book ZIP) népszerű formátum a digitális képregényekhez és mangákhoz. Lényegében egy ZIP-archívum, amely oldalképeket tartalmaz, és a legtöbb képregényolvasó (például Komga, Kavita, CDisplayEx) támogatja.</p>
+          <p class="mt-3 text-slate-400">
+            A CBZ (Comic Book ZIP) népszerű formátum a digitális képregényekhez
+            és mangákhoz. Lényegében egy ZIP-archívum, amely oldalképeket
+            tartalmaz, és a legtöbb képregényolvasó (például Komga, Kavita,
+            CDisplayEx) támogatja.
+          </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Melyik képformátumot használjam?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Melyik képformátumot használjam?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">A JPEG a legjobb színes képregényekhez (kisebb fájlok). A PNG ideális fekete-fehér mangákhoz (veszteségmentes minőség). A WebP a legjobb tömörítést kínálja, de a régebbi olvasókban nem biztos, hogy működik.</p>
+          <p class="mt-3 text-slate-400">
+            A JPEG a legjobb színes képregényekhez (kisebb fájlok). A PNG
+            ideális fekete-fehér mangákhoz (veszteségmentes minőség). A WebP a
+            legjobb tömörítést kínálja, de a régebbi olvasókban nem biztos, hogy
+            működik.
+          </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Mi az a ComicInfo.xml?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Mi az a ComicInfo.xml?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">A ComicInfo.xml egy metaadatfájl, amelyet a CBZ-be ágyaznak, és olyan adatokat tárol, mint a cím, a szerző és az olvasási irány. A képregénykönyvtár-kezelők (például Komga és Kavita) ezzel rendezik a gyűjteményed.</p>
+          <p class="mt-3 text-slate-400">
+            A ComicInfo.xml egy metaadatfájl, amelyet a CBZ-be ágyaznak, és
+            olyan adatokat tárol, mint a cím, a szerző és az olvasási irány. A
+            képregénykönyvtár-kezelők (például Komga és Kavita) ezzel rendezik a
+            gyűjteményed.
+          </p>
         </details>
       </div>
     </section>

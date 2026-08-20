@@ -91,19 +91,19 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
     <div
       id="uploader"
-      class="min-h-screen flex items-center justify-center p-4 bg-gray-900"
+      class="min-h-screen flex items-center justify-center p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools">
@@ -116,30 +116,36 @@
         >
           Edit Bookmarks
         </h1>
-        <p class="text-gray-400 mb-6" data-i18n="tools:editBookmarks.subtitle">
+        <p class="text-slate-400 mb-6" data-i18n="tools:editBookmarks.subtitle">
           Add, edit, import, delete and extract PDF bookmarks.
         </p>
 
         <!-- Drop Zone for Main PDF Upload -->
         <div
           id="drop-zone"
-          class="relative flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-700 hover:bg-gray-600 transition-colors duration-300"
+          class="relative flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-700 hover:bg-slate-600 transition-colors duration-300"
         >
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <i
               data-lucide="upload-cloud"
-              class="w-10 h-10 mb-3 text-gray-400"
+              class="w-10 h-10 mb-3 text-slate-400"
             ></i>
-            <p class="mb-2 text-sm text-gray-300">
+            <p class="mb-2 text-sm text-slate-300">
               <span class="font-semibold" data-i18n="upload.clickToSelect"
                 >Click to select a file</span
               >
               <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.hints.singlePdf">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.hints.singlePdf"
+            >
               A single PDF file
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
               Your files never leave your device.
             </p>
           </div>
@@ -156,7 +162,7 @@
 
         <!-- Auto Extract Checkbox -->
         <div class="mt-4">
-          <label class="flex items-center gap-2 text-sm text-gray-300">
+          <label class="flex items-center gap-2 text-sm text-slate-300">
             <input
               type="checkbox"
               id="auto-extract-checkbox"
@@ -169,9 +175,9 @@
         </div>
 
         <!-- Import Bookmarks Section -->
-        <div class="mt-8 pt-6 border-t border-gray-700">
+        <div class="mt-8 pt-6 border-t border-slate-700">
           <h3
-            class="text-sm font-semibold text-gray-300 mb-4"
+            class="text-sm font-semibold text-slate-300 mb-4"
             data-i18n="tools:editBookmarks.importSectionTitle"
           >
             Or Import Bookmarks
@@ -180,16 +186,16 @@
           <!-- CSV Upload -->
           <label class="block mb-4">
             <span
-              class="text-xs text-gray-500"
+              class="text-xs text-slate-500"
               data-i18n="tools:editBookmarks.csvFormat"
               >CSV format: title,page,level</span
             >
             <div
-              class="relative flex flex-col items-center justify-center w-full h-32 mt-2 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors duration-300"
+              class="relative flex flex-col items-center justify-center w-full h-32 mt-2 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-800 hover:bg-slate-700 transition-colors duration-300"
             >
               <div class="flex flex-col items-center justify-center pt-4 pb-4">
-                <i data-lucide="sheet" class="w-8 h-8 mb-2 text-gray-400"></i>
-                <p class="text-xs text-gray-400">
+                <i data-lucide="sheet" class="w-8 h-8 mb-2 text-slate-400"></i>
+                <p class="text-xs text-slate-400">
                   <span
                     class="font-semibold"
                     data-i18n="tools:editBookmarks.uploadCsvAction"
@@ -212,16 +218,16 @@
           <!-- JSON Upload -->
           <label class="block">
             <span
-              class="text-xs text-gray-500"
+              class="text-xs text-slate-500"
               data-i18n="tools:editBookmarks.jsonFormat"
               >JSON format</span
             >
             <div
-              class="relative flex flex-col items-center justify-center w-full h-32 mt-2 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors duration-300"
+              class="relative flex flex-col items-center justify-center w-full h-32 mt-2 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-800 hover:bg-slate-700 transition-colors duration-300"
             >
               <div class="flex flex-col items-center justify-center pt-4 pb-4">
-                <i data-lucide="braces" class="w-8 h-8 mb-2 text-gray-400"></i>
-                <p class="text-xs text-gray-400">
+                <i data-lucide="braces" class="w-8 h-8 mb-2 text-slate-400"></i>
+                <p class="text-xs text-slate-400">
                   <span
                     class="font-semibold"
                     data-i18n="tools:editBookmarks.uploadJsonAction"
@@ -244,9 +250,9 @@
       </div>
     </div>
 
-    <div id="app" class="hidden bg-gray-900 min-h-screen">
+    <div id="app" class="hidden bg-slate-950 min-h-screen">
       <header
-        class="bg-gray-800 border-b border-gray-700 shadow-sm sticky top-0 z-50"
+        class="bg-slate-800 border-b border-slate-700 shadow-sm sticky top-0 z-50"
       >
         <div class="max-w-7xl mx-auto px-4 py-3">
           <div class="flex items-center justify-between flex-wrap gap-2">
@@ -256,14 +262,14 @@
             <div class="flex gap-2 flex-wrap">
               <button
                 id="undo-btn"
-                class="px-3 py-2 text-sm bg-gray-700 hover:bg-gray-600 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                class="px-3 py-2 text-sm bg-slate-700 hover:bg-slate-600 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
                 disabled
               >
                 <i data-lucide="undo-2" class="w-4 h-4"></i> Visszavonás
               </button>
               <button
                 id="redo-btn"
-                class="px-3 py-2 text-sm bg-gray-700 hover:bg-gray-600 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                class="px-3 py-2 text-sm bg-slate-700 hover:bg-slate-600 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
                 disabled
               >
                 <i data-lucide="redo-2" class="w-4 h-4"></i> Újra
@@ -283,26 +289,27 @@
 
               <button
                 id="back-btn"
-                class="px-3 py-2 text-sm bg-gray-700 hover:bg-gray-600 text-white rounded flex items-center gap-1"
+                class="px-3 py-2 text-sm bg-slate-700 hover:bg-slate-600 text-white rounded flex items-center gap-1"
               >
-                <i data-lucide="arrow-left" class="w-4 h-4"></i> Vissza az eszközökhöz
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Vissza az
+                eszközökhöz
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      <div class="lg:hidden bg-gray-800 border-b border-gray-700">
+      <div class="lg:hidden bg-slate-800 border-b border-slate-700">
         <div class="flex">
           <button
             id="show-viewer-btn"
-            class="flex-1 py-3 text-sm font-medium bg-indigo-600 text-white"
+            class="flex-1 py-3 text-sm font-medium bg-accent text-white"
           >
             PDF-megjelenítő
           </button>
           <button
             id="show-bookmarks-btn"
-            class="flex-1 py-3 text-sm font-medium text-gray-300 hover:text-white"
+            class="flex-1 py-3 text-sm font-medium text-slate-300 hover:text-white"
           >
             Könyvjelzők
           </button>
@@ -319,7 +326,7 @@
                 <div class="flex items-center gap-2">
                   <button
                     id="prev-page"
-                    class="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded text-sm"
+                    class="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded text-sm"
                   >
                     <i
                       data-lucide="chevron-left"
@@ -328,12 +335,12 @@
                   </button>
                   <span
                     id="page-indicator"
-                    class="text-sm font-medium text-gray-700 whitespace-nowrap"
+                    class="text-sm font-medium text-slate-700 whitespace-nowrap"
                     >1. oldal / 1</span
                   >
                   <button
                     id="next-page"
-                    class="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded text-sm"
+                    class="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded text-sm"
                   >
                     <i
                       data-lucide="chevron-right"
@@ -342,12 +349,12 @@
                   </button>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span class="text-sm text-gray-600">Ugrás:</span>
+                  <span class="text-sm text-slate-600">Ugrás:</span>
                   <input
                     type="number"
                     id="goto-page"
                     min="1"
-                    class="w-16 px-2 py-1 border border-gray-300 rounded text-sm"
+                    class="w-16 px-2 py-1 border border-slate-300 rounded text-sm"
                   />
                   <button
                     id="goto-btn"
@@ -359,26 +366,26 @@
                 <div class="flex items-center gap-2">
                   <button
                     id="zoom-out-btn"
-                    class="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded text-sm"
+                    class="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded text-sm"
                     title="Kicsinyítés"
                   >
                     <i data-lucide="minus" class="w-5 h-5 text-blue-600"></i>
                   </button>
                   <span
                     id="zoom-indicator"
-                    class="text-sm font-medium text-gray-700 whitespace-nowrap min-w-[60px] text-center"
+                    class="text-sm font-medium text-slate-700 whitespace-nowrap min-w-[60px] text-center"
                     >100%</span
                   >
                   <button
                     id="zoom-in-btn"
-                    class="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded text-sm"
+                    class="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded text-sm"
                     title="Nagyítás"
                   >
                     <i data-lucide="plus" class="w-5 h-5 text-blue-600"></i>
                   </button>
                   <button
                     id="zoom-fit-btn"
-                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded text-sm"
+                    class="px-3 py-1 bg-slate-100 hover:bg-slate-200 rounded text-sm"
                     title="Szélességhez igazítás"
                   >
                     Igazítás
@@ -397,7 +404,8 @@
                       class="w-5 h-5 text-blue-600"
                     ></i>
                     <span class="text-sm font-medium text-blue-800"
-                      >Kattints a PDF-re a könyvjelző céljának beállításához</span
+                      >Kattints a PDF-re a könyvjelző céljának
+                      beállításához</span
                     >
                   </div>
                   <button
@@ -410,7 +418,7 @@
               </div>
 
               <div
-                class="overflow-auto border border-gray-200 rounded"
+                class="overflow-auto border border-slate-200 rounded"
                 id="canvas-container"
               >
                 <div class="pdf-canvas-wrapper" id="pdf-canvas-wrapper">
@@ -428,29 +436,29 @@
             class="hidden lg:block w-full lg:w-[50%] flex-shrink-0"
           >
             <div class="bg-white rounded-lg shadow-lg p-4">
-              <h3 class="text-lg font-bold text-gray-800 mb-4">Könyvjelzők</h3>
+              <h3 class="text-lg font-bold text-slate-800 mb-4">Könyvjelzők</h3>
 
               <div class="mb-4">
                 <div class="relative">
                   <i
                     data-lucide="search"
-                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
+                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400"
                   ></i>
                   <input
                     type="text"
                     id="search-bookmarks"
                     placeholder="Könyvjelzők keresése..."
-                    class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-700"
+                    class="w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg text-sm text-slate-700"
                   />
                 </div>
               </div>
 
-              <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+              <div class="mb-4 p-3 bg-slate-50 rounded-lg">
                 <input
                   type="text"
                   id="bookmark-title"
                   placeholder="Könyvjelző címe..."
-                  class="w-full px-3 py-2 border border-gray-300 rounded-lg mb-2 text-sm text-gray-700"
+                  class="w-full px-3 py-2 border border-slate-300 rounded-lg mb-2 text-sm text-slate-700"
                 />
                 <button
                   id="add-top-level-btn"
@@ -458,14 +466,15 @@
                 >
                   <i data-lucide="plus" class="w-4 h-4"></i>
                   <span
-                    >Hozzáadás ehhez az oldalhoz: <span id="current-page-display">1</span></span
+                    >Hozzáadás ehhez az oldalhoz:
+                    <span id="current-page-display">1</span></span
                   >
                 </button>
               </div>
 
               <div class="mb-4">
                 <label
-                  class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2"
+                  class="flex items-center gap-2 text-sm font-medium text-slate-700 mb-2"
                 >
                   <input
                     type="checkbox"
@@ -482,7 +491,7 @@
                   id="batch-operations"
                   class="hidden p-3 bg-blue-50 rounded-lg border border-blue-200"
                 >
-                  <div class="text-xs font-semibold text-gray-700 mb-2">
+                  <div class="text-xs font-semibold text-slate-700 mb-2">
                     Kötegelt műveletek
                   </div>
                   <div class="flex flex-col gap-2">
@@ -496,7 +505,7 @@
                       </button>
                       <button
                         id="deselect-all-btn"
-                        class="flex-1 px-3 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded text-xs flex items-center justify-center gap-1"
+                        class="flex-1 px-3 py-2 bg-slate-500 hover:bg-slate-600 text-white rounded text-xs flex items-center justify-center gap-1"
                       >
                         <i data-lucide="square" class="w-3 h-3"></i> Kijelölés
                         megszüntetése
@@ -541,15 +550,17 @@
               <div class="flex gap-2 mb-4">
                 <button
                   id="expand-all-btn"
-                  class="flex-1 px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-gray-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
+                  class="flex-1 px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-slate-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
                 >
-                  <i data-lucide="chevrons-down" class="w-4 h-4"></i> Mindet kibontás
+                  <i data-lucide="chevrons-down" class="w-4 h-4"></i> Mindet
+                  kibontás
                 </button>
                 <button
                   id="collapse-all-btn"
-                  class="flex-1 px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-gray-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
+                  class="flex-1 px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-slate-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
                 >
-                  <i data-lucide="chevrons-up" class="w-4 h-4"></i> Mindet összecsukás
+                  <i data-lucide="chevrons-up" class="w-4 h-4"></i> Mindet
+                  összecsukás
                 </button>
               </div>
 
@@ -557,14 +568,14 @@
                 <div class="relative">
                   <button
                     id="import-dropdown-btn"
-                    class="w-full px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-gray-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
+                    class="w-full px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-slate-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
                   >
                     <i data-lucide="upload" class="w-4 h-4"></i> Importálás
                     <i data-lucide="chevron-down" class="w-3 h-3"></i>
                   </button>
                   <div
                     id="import-dropdown"
-                    class="hidden absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-10"
+                    class="hidden absolute top-full left-0 mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg z-10"
                   >
                     <button
                       id="import-csv-btn"
@@ -572,7 +583,7 @@
                     >
                       <i
                         data-lucide="file-text"
-                        class="w-4 h-4 text-gray-600"
+                        class="w-4 h-4 text-slate-600"
                       ></i>
                       CSV importálása
                     </button>
@@ -580,7 +591,10 @@
                       id="import-json-btn"
                       class="w-full px-3 py-2 text-sm text-left flex items-center gap-2 rounded-b-lg bg-gradient-to-b from-gray-50 to-gray-100 hover:shadow-sm hover:from-gray-100 hover:to-gray-200 transition duration-150"
                     >
-                      <i data-lucide="braces" class="w-4 h-4 text-gray-600"></i>
+                      <i
+                        data-lucide="braces"
+                        class="w-4 h-4 text-slate-600"
+                      ></i>
                       JSON importálása
                     </button>
                   </div>
@@ -589,38 +603,40 @@
                 <div class="relative">
                   <button
                     id="export-dropdown-btn"
-                    class="w-full px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-gray-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
+                    class="w-full px-3 py-2 bg-gradient-to-b from-gray-100 to-gray-200 hover:shadow-md text-slate-700 rounded text-sm font-medium flex items-center justify-center gap-1 focus:ring-2 focus:ring-gray-300 transition duration-200"
                   >
                     <i data-lucide="download" class="w-4 h-4"></i> Exportálás
                     <i data-lucide="chevron-down" class="w-3 h-3"></i>
                   </button>
                   <div
                     id="export-dropdown"
-                    class="hidden absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-10"
+                    class="hidden absolute top-full left-0 mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-lg z-10"
                   >
                     <button
                       id="export-csv-btn"
-                      class="w-full px-3 py-2 text-sm text-left hover:bg-gray-50 flex items-center gap-2 rounded-t-lg"
+                      class="w-full px-3 py-2 text-sm text-left hover:bg-slate-50 flex items-center gap-2 rounded-t-lg"
                     >
-                      <i data-lucide="file-text" class="w-4 h-4"></i> CSV exportálása
+                      <i data-lucide="file-text" class="w-4 h-4"></i> CSV
+                      exportálása
                     </button>
                     <button
                       id="export-json-btn"
-                      class="w-full px-3 py-2 text-sm text-left hover:bg-gray-50 flex items-center gap-2 rounded-b-lg"
+                      class="w-full px-3 py-2 text-sm text-left hover:bg-slate-50 flex items-center gap-2 rounded-b-lg"
                     >
-                      <i data-lucide="braces" class="w-4 h-4"></i> JSON exportálása
+                      <i data-lucide="braces" class="w-4 h-4"></i> JSON
+                      exportálása
                     </button>
                   </div>
                 </div>
               </div>
 
               <div
-                class="mb-4 max-h-96 overflow-y-auto border border-gray-200 rounded-lg p-2"
+                class="mb-4 max-h-96 overflow-y-auto border border-slate-200 rounded-lg p-2"
               >
                 <ul id="bookmark-tree-list" class="space-y-2"></ul>
                 <div
                   id="no-bookmarks"
-                  class="text-center py-8 text-gray-400 text-sm"
+                  class="text-center py-8 text-slate-400 text-sm"
                 >
                   Még nincsenek könyvjelzők. Adj hozzá egyet fentebb!
                 </div>
@@ -635,7 +651,7 @@
                 </button>
                 <button
                   id="extract-existing-btn"
-                  class="w-full px-4 py-2 bg-gray-50 text-gray-800 border border-gray-200 rounded-xl font-medium flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition duration-200"
+                  class="w-full px-4 py-2 bg-slate-50 text-slate-800 border border-slate-200 rounded-xl font-medium flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition duration-200"
                 >
                   Meglévő könyvjelzők kinyerése
                 </button>
@@ -655,7 +671,7 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
         <p id="loader-text" class="text-white text-lg font-medium">
@@ -677,7 +693,7 @@
       <div class="space-y-6">
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             1
           </div>
@@ -688,14 +704,14 @@
             >
               Upload File
             </h3>
-            <p class="text-gray-400" data-i18n="howItWorks.step1">
+            <p class="text-slate-400" data-i18n="howItWorks.step1">
               Click or drag and drop your file to begin
             </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             2
           </div>
@@ -706,14 +722,14 @@
             >
               Process
             </h3>
-            <p class="text-gray-400" data-i18n="howItWorks.step2">
+            <p class="text-slate-400" data-i18n="howItWorks.step2">
               Click the process button to start
             </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             3
           </div>
@@ -724,7 +740,7 @@
             >
               Download
             </h3>
-            <p class="text-gray-400" data-i18n="howItWorks.step3">
+            <p class="text-slate-400" data-i18n="howItWorks.step3">
               Save your processed file instantly
             </p>
           </div>
@@ -743,38 +759,38 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <a
           href="merge-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF-ek egyesítése</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-egyesítő eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-egyesítő eszköz</p>
         </a>
         <a
           href="compress-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF tömörítése</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-tömörítő eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-tömörítő eszköz</p>
         </a>
         <a
           href="split-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF szétbontása</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-szétbontó eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-szétbontó eszköz</p>
         </a>
         <a
           href="edit-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF szerkesztő</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-szerkesztő eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-szerkesztő eszköz</p>
         </a>
         <a
           href="rotate-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF forgatása</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-forgató eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-forgató eszköz</p>
         </a>
       </div>
     </section>
@@ -788,40 +804,40 @@
         Frequently Asked Questions
       </h2>
       <div class="space-y-4">
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             A könyvjelzőszerkesztés tényleg ingyenes?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Igen! A PDF stúdió 100%-ban ingyenes, rejtett díjak nélkül,
             regisztráció nem szükséges, és korlátlan mennyiségű fájlt
             dolgozhatsz fel.
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             Biztonságban vannak a fájljaim?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Természetesen! Minden feldolgozás a böngésződben történik. A
-            fájljaid soha nem hagyják el az eszközödet, így a teljes
-            adatvédelem biztosított.
+            fájljaid soha nem hagyják el az eszközödet, így a teljes adatvédelem
+            biztosított.
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             Van fájlméret-korlát?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Nincs! Bármekkora fájlt feldolgozhatsz, ahányszor csak szeretnéd,
             teljesen ingyen.
           </p>

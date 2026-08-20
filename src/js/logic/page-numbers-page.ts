@@ -44,16 +44,16 @@ function initializePage() {
   if (dropZone) {
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
-      dropZone.classList.add('border-indigo-500');
+      dropZone.classList.add('border-accent');
     });
 
     dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('border-indigo-500');
+      dropZone.classList.remove('border-accent');
     });
 
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
-      dropZone.classList.remove('border-indigo-500');
+      dropZone.classList.remove('border-accent');
       if (e.dataTransfer?.files.length) {
         handleFiles(e.dataTransfer.files);
       }
@@ -111,17 +111,17 @@ function updateFileDisplay() {
   fileDisplayArea.innerHTML = '';
   const fileDiv = document.createElement('div');
   fileDiv.className =
-    'flex items-center justify-between bg-gray-700 p-3 rounded-lg';
+    'flex items-center justify-between bg-slate-700 p-3 rounded-lg';
 
   const infoContainer = document.createElement('div');
   infoContainer.className = 'flex flex-col flex-1 min-w-0';
 
   const nameSpan = document.createElement('div');
-  nameSpan.className = 'truncate font-medium text-gray-200 text-sm mb-1';
+  nameSpan.className = 'truncate font-medium text-slate-200 text-sm mb-1';
   nameSpan.textContent = pageState.file.name;
 
   const metaSpan = document.createElement('div');
-  metaSpan.className = 'text-xs text-gray-400';
+  metaSpan.className = 'text-xs text-slate-400';
   metaSpan.textContent = `${formatBytes(pageState.file.size)} • ${pageState.pdfDoc.getPageCount()} oldal`;
 
   infoContainer.append(nameSpan, metaSpan);

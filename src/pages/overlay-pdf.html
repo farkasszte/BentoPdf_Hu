@@ -83,20 +83,20 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
 
     <div
       id="uploader"
-      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools">
@@ -110,27 +110,27 @@
         >
           PDF Overlay
         </h1>
-        <p class="text-gray-400 mb-6" data-i18n="tools:pdfOverlay.subtitle">
+        <p class="text-slate-400 mb-6" data-i18n="tools:pdfOverlay.subtitle">
           Overlay or underlay pages from one PDF onto another.
         </p>
 
         <div class="space-y-4">
           <div>
             <label
-              class="block text-sm font-medium text-gray-300 mb-2"
+              class="block text-sm font-medium text-slate-300 mb-2"
               data-i18n="tools:pdfOverlay.basePdfLabel"
               >Base PDF</label
             >
             <div
               id="base-drop-zone"
-              class="relative flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+              class="relative flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
             >
               <div class="flex flex-col items-center justify-center py-4">
                 <i
                   data-lucide="file-text"
-                  class="w-8 h-8 mb-2 text-gray-400"
+                  class="w-8 h-8 mb-2 text-slate-400"
                 ></i>
-                <p class="text-sm text-gray-400">
+                <p class="text-sm text-slate-400">
                   <span
                     class="font-semibold"
                     data-i18n="tools:pdfOverlay.uploadBasePdf"
@@ -150,17 +150,17 @@
 
           <div>
             <label
-              class="block text-sm font-medium text-gray-300 mb-2"
+              class="block text-sm font-medium text-slate-300 mb-2"
               data-i18n="tools:pdfOverlay.overlayPdfLabel"
               >Overlay / Underlay PDF</label
             >
             <div
               id="overlay-drop-zone"
-              class="relative flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+              class="relative flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
             >
               <div class="flex flex-col items-center justify-center py-4">
-                <i data-lucide="layers" class="w-8 h-8 mb-2 text-gray-400"></i>
-                <p class="text-sm text-gray-400">
+                <i data-lucide="layers" class="w-8 h-8 mb-2 text-slate-400"></i>
+                <p class="text-sm text-slate-400">
                   <span
                     class="font-semibold"
                     data-i18n="tools:pdfOverlay.uploadOverlayPdf"
@@ -180,7 +180,7 @@
         </div>
 
         <p
-          class="text-xs text-gray-500 mt-3"
+          class="text-xs text-slate-500 mt-3"
           data-i18n="upload.filesNeverLeave"
         >
           Your files never leave your device.
@@ -188,18 +188,18 @@
 
         <div id="tool-options" class="hidden mt-6 space-y-4">
           <div
-            class="p-4 bg-gray-900 rounded-lg border border-gray-700 space-y-4"
+            class="p-4 bg-slate-950 rounded-lg border border-slate-700 space-y-4"
           >
             <div>
               <label
                 for="mode-select"
-                class="block text-sm font-medium text-gray-300 mb-1"
+                class="block text-sm font-medium text-slate-300 mb-1"
                 data-i18n="tools:pdfOverlay.modeLabel"
                 >Mode</label
               >
               <select
                 id="mode-select"
-                class="w-full bg-gray-800 border border-gray-600 text-white rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full bg-slate-800 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
               >
                 <option
                   value="overlay"
@@ -219,7 +219,7 @@
             <div>
               <label
                 for="page-range"
-                class="block text-sm font-medium text-gray-300 mb-1"
+                class="block text-sm font-medium text-slate-300 mb-1"
                 data-i18n="tools:pdfOverlay.pageRangeLabel"
                 >Apply to pages (optional)</label
               >
@@ -227,10 +227,10 @@
                 id="page-range"
                 type="text"
                 placeholder="pl. 1-5, 8, 10-z (hagyd üresen az összeshez)"
-                class="w-full bg-gray-800 border border-gray-600 text-white rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full bg-slate-800 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-accent focus:border-transparent"
               />
               <p
-                class="text-xs text-gray-500 mt-1"
+                class="text-xs text-slate-500 mt-1"
                 data-i18n="tools:pdfOverlay.pageRangeHint"
               >
                 Use "z" for the last page. Leave empty to apply to all pages.
@@ -242,11 +242,11 @@
                 id="repeat-toggle"
                 type="checkbox"
                 checked
-                class="w-4 h-4 rounded border-gray-600 bg-gray-800 text-indigo-600 focus:ring-indigo-500"
+                class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-accent focus:ring-accent"
               />
               <label
                 for="repeat-toggle"
-                class="text-sm text-gray-300"
+                class="text-sm text-slate-300"
                 data-i18n="tools:pdfOverlay.repeatLabel"
                 >Loop overlay/underlay pages if base is longer</label
               >
@@ -269,7 +269,7 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
         <p
@@ -284,18 +284,18 @@
 
     <div
       id="alert-modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
       >
         <h3 id="alert-title" class="text-xl font-bold text-white mb-2">
           Figyelmeztetés
         </h3>
-        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
         <button
           id="alert-ok"
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+          class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
         >
           OK
         </button>
@@ -312,7 +312,7 @@
       <div class="space-y-6">
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             1
           </div>
@@ -324,7 +324,7 @@
               Upload Two PDFs
             </h3>
             <p
-              class="text-gray-400"
+              class="text-slate-400"
               data-i18n="tools:pdfOverlay.howItWorksUploadDescription"
             >
               Upload your base PDF and the PDF you want to overlay or underlay.
@@ -333,7 +333,7 @@
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             2
           </div>
@@ -345,7 +345,7 @@
               Choose Mode
             </h3>
             <p
-              class="text-gray-400"
+              class="text-slate-400"
               data-i18n="tools:pdfOverlay.howItWorksModeDescription"
             >
               Select overlay (on top) or underlay (behind). Optionally set a
@@ -355,7 +355,7 @@
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             3
           </div>
@@ -367,7 +367,7 @@
               Download
             </h3>
             <p
-              class="text-gray-400"
+              class="text-slate-400"
               data-i18n="tools:pdfOverlay.howItWorksDownloadDescription"
             >
               Download your PDF with the overlay or underlay applied.
@@ -385,7 +385,7 @@
         Frequently Asked Questions
       </h2>
       <div class="space-y-4">
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
@@ -395,7 +395,7 @@
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
           <p
-            class="mt-3 text-gray-400"
+            class="mt-3 text-slate-400"
             data-i18n="tools:pdfOverlay.faqDifferenceAnswer"
           >
             Overlay places pages on top of your base PDF (like a watermark).
@@ -403,7 +403,7 @@
             background).
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
@@ -413,7 +413,7 @@
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
           <p
-            class="mt-3 text-gray-400"
+            class="mt-3 text-slate-400"
             data-i18n="tools:pdfOverlay.faqSinglePageAnswer"
           >
             Yes! Enable the "Loop" option and your overlay PDF pages will repeat
@@ -421,7 +421,7 @@
             page.
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
@@ -431,7 +431,7 @@
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
           <p
-            class="mt-3 text-gray-400"
+            class="mt-3 text-slate-400"
             data-i18n="tools:pdfOverlay.faqPrivacyAnswer"
           >
             Absolutely! All processing happens in your browser. Your files never

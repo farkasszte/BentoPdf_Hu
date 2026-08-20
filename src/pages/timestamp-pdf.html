@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>PDF időbélyegzése ingyen online – RFC 3161 dokumentum-időbélyeg | PDF stúdió</title>
+    <title>
+      PDF időbélyegzése ingyen online – RFC 3161 dokumentum-időbélyeg | PDF
+      stúdió
+    </title>
     <meta
       name="title"
       content="PDF időbélyegzése ingyen online – RFC 3161 dokumentum-időbélyeg | PDF stúdió"
@@ -85,20 +88,20 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
 
     <div
       id="uploader"
-      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools">
@@ -112,7 +115,7 @@
         >
           Timestamp PDF
         </h1>
-        <p class="text-gray-400 mb-4" data-i18n="tools:timestampPdf.subtitle">
+        <p class="text-slate-400 mb-4" data-i18n="tools:timestampPdf.subtitle">
           Add an RFC 3161 document timestamp to your PDF using a trusted Time
           Stamp Authority (TSA) server. Proves your document existed at a
           specific point in time. No certificate required.
@@ -127,32 +130,38 @@
           ></i>
           <div class="text-sm">
             <p class="text-blue-300 font-medium">Internetkapcsolat szükséges</p>
-            <p class="text-blue-400/80 mt-1">Az időbélyegzéshez a kiválasztott TSA-szervert kell elérni, hogy megbízható időbélyeg-tokent kapj.</p>
+            <p class="text-blue-400/80 mt-1">
+              Az időbélyegzéshez a kiválasztott TSA-szervert kell elérni, hogy
+              megbízható időbélyeg-tokent kapj.
+            </p>
           </div>
         </div>
 
         <div
           id="drop-zone"
-          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
         >
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <i
               data-lucide="upload-cloud"
-              class="w-10 h-10 mb-3 text-gray-400"
+              class="w-10 h-10 mb-3 text-slate-400"
             ></i>
-            <p class="mb-2 text-sm text-gray-400">
+            <p class="mb-2 text-sm text-slate-400">
               <span class="font-semibold" data-i18n="upload.clickToSelect"
                 >Click to select a file</span
               >
               <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
             </p>
             <p
-              class="text-xs text-gray-500"
+              class="text-xs text-slate-500"
               data-i18n="upload.hints.pdfDocuments"
             >
               PDF Documents
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
               Your files never leave your device.
             </p>
           </div>
@@ -177,14 +186,14 @@
           <div>
             <label
               for="tsa-preset"
-              class="block text-sm font-medium text-gray-300 mb-1"
+              class="block text-sm font-medium text-slate-300 mb-1"
               data-i18n="tools:timestampPdf.selectTsa"
             >
               Select a TSA server
             </label>
             <select
               id="tsa-preset"
-              class="w-full bg-gray-700 border border-gray-600 text-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              class="w-full bg-slate-700 border border-slate-600 text-slate-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-accent focus:border-transparent"
             ></select>
           </div>
 
@@ -206,20 +215,22 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
-        <p id="loader-text" class="text-white text-lg font-medium">Feldolgozás...</p>
+        <p id="loader-text" class="text-white text-lg font-medium">
+          Feldolgozás...
+        </p>
       </div>
     </div>
 
     <!-- Alert Modal -->
     <div
       id="alert-modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
       >
         <h3
           id="alert-title"
@@ -228,10 +239,10 @@
         >
           Alert
         </h3>
-        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
         <button
           id="alert-ok"
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+          class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
         >
           OK
         </button>
@@ -248,35 +259,48 @@
       <div class="space-y-6">
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             1
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">PDF feltöltése</h3>
-            <p class="text-gray-400">Válaszd ki az időbélyegzendő PDF-dokumentumot</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              PDF feltöltése
+            </h3>
+            <p class="text-slate-400">
+              Válaszd ki az időbélyegzendő PDF-dokumentumot
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             2
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">TSA-szerver kiválasztása</h3>
-            <p class="text-gray-400">Válassz egyet a megbízható TSA-szerverek közül</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              TSA-szerver kiválasztása
+            </h3>
+            <p class="text-slate-400">
+              Válassz egyet a megbízható TSA-szerverek közül
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             3
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">Időbélyegzés és letöltés</h3>
-            <p class="text-gray-400">Alkalmazd az RFC 3161 időbélyeget, és töltsd le az időbélyegzett PDF-et</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Időbélyegzés és letöltés
+            </h3>
+            <p class="text-slate-400">
+              Alkalmazd az RFC 3161 időbélyeget, és töltsd le az időbélyegzett
+              PDF-et
+            </p>
           </div>
         </div>
       </div>
@@ -292,38 +316,38 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         <a
           href="digital-sign-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Digitális aláírás</h3>
-          <p class="text-gray-400 text-sm">Aláírás X.509 tanúsítvánnyal</p>
+          <p class="text-slate-400 text-sm">Aláírás X.509 tanúsítvánnyal</p>
         </a>
         <a
           href="validate-signature-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Aláírás ellenőrzése</h3>
-          <p class="text-gray-400 text-sm">Digitális aláírások ellenőrzése</p>
+          <p class="text-slate-400 text-sm">Digitális aláírások ellenőrzése</p>
         </a>
         <a
           href="encrypt-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF titkosítása</h3>
-          <p class="text-gray-400 text-sm">PDF jelszavas védelme</p>
+          <p class="text-slate-400 text-sm">PDF jelszavas védelme</p>
         </a>
         <a
           href="flatten-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF laposítása</h3>
-          <p class="text-gray-400 text-sm">Megjegyzések véglegesítése</p>
+          <p class="text-slate-400 text-sm">Megjegyzések véglegesítése</p>
         </a>
         <a
           href="sanitize-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF megtisztítása</h3>
-          <p class="text-gray-400 text-sm">Rejtett adatok eltávolítása</p>
+          <p class="text-slate-400 text-sm">Rejtett adatok eltávolítása</p>
         </a>
       </div>
     </section>
@@ -336,33 +360,67 @@
         Frequently Asked Questions
       </h2>
       <div class="space-y-4">
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Mi az a dokumentum-időbélyeg?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Mi az a dokumentum-időbélyeg?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">A dokumentum-időbélyeg (RFC 3161) kriptográfiai bizonyíték arra, hogy a PDF-ed egy adott időpontban létezett. Egy megbízható időbélyeg-szolgáltató (TSA) szerver aláírja a dokumentumod hash-ét az aktuális idővel együtt, így hamisításbiztos időbélyeget hoz létre, amely beágyazódik a PDF-be.</p>
+          <p class="mt-3 text-slate-400">
+            A dokumentum-időbélyeg (RFC 3161) kriptográfiai bizonyíték arra,
+            hogy a PDF-ed egy adott időpontban létezett. Egy megbízható
+            időbélyeg-szolgáltató (TSA) szerver aláírja a dokumentumod hash-ét
+            az aktuális idővel együtt, így hamisításbiztos időbélyeget hoz
+            létre, amely beágyazódik a PDF-be.
+          </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Szükségem van tanúsítványra?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Szükségem van tanúsítványra?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">Nem. A digitális aláírással ellentétben a dokumentum-időbélyeghez nem kell személyes tanúsítvány. A TSA-szerver a saját tanúsítványával biztosítja a megbízható időbélyeget.</p>
+          <p class="mt-3 text-slate-400">
+            Nem. A digitális aláírással ellentétben a dokumentum-időbélyeghez
+            nem kell személyes tanúsítvány. A TSA-szerver a saját
+            tanúsítványával biztosítja a megbízható időbélyeget.
+          </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Elküldik a dokumentumomat a TSA-szervernek?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Elküldik a dokumentumomat a TSA-szervernek?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">Nem. Csak a dokumentumod kriptográfiai hash-e (SHA-256) kerül elküldésre a TSA-szervernek. A PDF-ed tényleges tartalma soha nem hagyja el a böngésződet.</p>
+          <p class="mt-3 text-slate-400">
+            Nem. Csak a dokumentumod kriptográfiai hash-e (SHA-256) kerül
+            elküldésre a TSA-szervernek. A PDF-ed tényleges tartalma soha nem
+            hagyja el a böngésződet.
+          </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Érvényes lesz az időbélyeg a PDF-megjelenítőkben?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Érvényes lesz az időbélyeg a PDF-megjelenítőkben?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">Igen. Az eszköz szabványos RFC 3161 dokumentum-időbélyeget hoz létre (ETSI.RFC3161 SubFilter), amelyet az Adobe Acrobat és más nagyobb PDF-megjelenítők is felismernek.</p>
+          <p class="mt-3 text-slate-400">
+            Igen. Az eszköz szabványos RFC 3161 dokumentum-időbélyeget hoz létre
+            (ETSI.RFC3161 SubFilter), amelyet az Adobe Acrobat és más nagyobb
+            PDF-megjelenítők is felismernek.
+          </p>
         </details>
       </div>
     </section>

@@ -73,14 +73,14 @@ function addCustomFieldRow(key: string = '', value: string = '') {
   keyInput.placeholder = 'Kulcs (pl. Részleg)';
   keyInput.value = key;
   keyInput.className =
-    'custom-meta-key w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 p-2.5';
+    'custom-meta-key w-full bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-accent focus:border-accent p-2.5';
 
   const valueInput = document.createElement('input');
   valueInput.type = 'text';
   valueInput.placeholder = 'Value (e.g., Marketing)';
   valueInput.value = value;
   valueInput.className =
-    'custom-meta-value w-full bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 p-2.5';
+    'custom-meta-value w-full bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-accent focus:border-accent p-2.5';
 
   const removeBtn = document.createElement('button');
   removeBtn.type = 'button';
@@ -194,17 +194,17 @@ async function updateUI() {
   if (pageState.file) {
     const fileDiv = document.createElement('div');
     fileDiv.className =
-      'flex items-center justify-between bg-gray-700 p-3 rounded-lg text-sm';
+      'flex items-center justify-between bg-slate-700 p-3 rounded-lg text-sm';
 
     const infoContainer = document.createElement('div');
     infoContainer.className = 'flex flex-col overflow-hidden';
 
     const nameSpan = document.createElement('div');
-    nameSpan.className = 'truncate font-medium text-gray-200 text-sm mb-1';
+    nameSpan.className = 'truncate font-medium text-slate-200 text-sm mb-1';
     nameSpan.textContent = pageState.file.name;
 
     const metaSpan = document.createElement('div');
-    metaSpan.className = 'text-xs text-gray-400';
+    metaSpan.className = 'text-xs text-slate-400';
     metaSpan.textContent = `${formatBytes(pageState.file.size)} • Betöltés...`;
 
     infoContainer.append(nameSpan, metaSpan);
@@ -414,17 +414,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     dropZone.addEventListener('dragover', function (e) {
       e.preventDefault();
-      dropZone.classList.add('bg-gray-700');
+      dropZone.classList.add('bg-slate-700');
     });
 
     dropZone.addEventListener('dragleave', function (e) {
       e.preventDefault();
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
     });
 
     dropZone.addEventListener('drop', function (e) {
       e.preventDefault();
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
       const files = e.dataTransfer?.files;
       if (files && files.length > 0) {
         const pdfFiles = Array.from(files).filter(function (f) {

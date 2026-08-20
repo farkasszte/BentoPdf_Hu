@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Aláírás ellenőrzése ingyen online – digitális aláírások hitelesítése | PDF stúdió</title>
+    <title>
+      Aláírás ellenőrzése ingyen online – digitális aláírások hitelesítése | PDF
+      stúdió
+    </title>
     <meta
       name="title"
       content="Aláírás ellenőrzése ingyen online – digitális aláírások hitelesítése | PDF stúdió"
@@ -94,20 +97,20 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
 
     <div
       id="uploader"
-      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools">
@@ -122,7 +125,7 @@
           Validate PDF Signature
         </h1>
         <p
-          class="text-gray-400 mb-6"
+          class="text-slate-400 mb-6"
           data-i18n="tools:validateSignaturePdf.subtitle"
         >
           Verify digital signatures in your PDF files. Check certificate
@@ -132,26 +135,29 @@
 
         <div
           id="drop-zone"
-          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
         >
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <i
               data-lucide="cloud-upload"
-              class="w-10 h-10 mb-3 text-gray-400"
+              class="w-10 h-10 mb-3 text-slate-400"
             ></i>
-            <p class="mb-2 text-sm text-gray-400">
+            <p class="mb-2 text-sm text-slate-400">
               <span class="font-semibold" data-i18n="upload.clickToSelect"
                 >Click to select a file</span
               >
               <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
             </p>
             <p
-              class="text-xs text-gray-500"
+              class="text-xs text-slate-500"
               data-i18n="upload.hints.pdfDocuments"
             >
               PDF Documents
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
               Your files never leave your device.
             </p>
           </div>
@@ -167,16 +173,23 @@
 
         <div id="custom-cert-section" class="hidden mt-6 space-y-3">
           <div class="flex items-center justify-between">
-            <h2 class="text-sm font-semibold text-gray-300">Egyedi X.509 tanúsítványfájl (opcionális)</h2>
+            <h2 class="text-sm font-semibold text-slate-300">
+              Egyedi X.509 tanúsítványfájl (opcionális)
+            </h2>
           </div>
-          <p class="text-xs text-gray-500">Tölts fel egy megbízható X.509 tanúsítványt az egyedi megbízhatósági forrás ellenőrzéséhez.</p>
+          <p class="text-xs text-slate-500">
+            Tölts fel egy megbízható X.509 tanúsítványt az egyedi megbízhatósági
+            forrás ellenőrzéséhez.
+          </p>
           <div
             id="cert-drop-zone"
-            class="relative flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+            class="relative flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
           >
             <div class="flex flex-col items-center justify-center py-2">
-              <i data-lucide="shield" class="w-6 h-6 mb-1 text-gray-400"></i>
-              <p class="text-xs text-gray-400">Tanúsítvány feltöltése (.pem, .crt, .cer)</p>
+              <i data-lucide="shield" class="w-6 h-6 mb-1 text-slate-400"></i>
+              <p class="text-xs text-slate-400">
+                Tanúsítvány feltöltése (.pem, .crt, .cer)
+              </p>
             </div>
             <input
               id="cert-input"
@@ -189,7 +202,9 @@
         </div>
 
         <div id="results-section" class="hidden mt-6">
-          <h2 class="text-lg font-semibold text-white mb-4">Aláírás-ellenőrzési eredmények</h2>
+          <h2 class="text-lg font-semibold text-white mb-4">
+            Aláírás-ellenőrzési eredmények
+          </h2>
           <div id="results-container"></div>
         </div>
       </div>
@@ -200,19 +215,21 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
-        <p id="loader-text" class="text-white text-lg font-medium">Feldolgozás...</p>
+        <p id="loader-text" class="text-white text-lg font-medium">
+          Feldolgozás...
+        </p>
       </div>
     </div>
 
     <div
       id="alert-modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
       >
         <h3
           id="alert-title"
@@ -221,10 +238,10 @@
         >
           Alert
         </h3>
-        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
         <button
           id="alert-ok"
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+          class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
         >
           OK
         </button>
@@ -242,35 +259,49 @@
       <div class="space-y-6">
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             1
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">PDF feltöltése</h3>
-            <p class="text-gray-400">Válassz egy digitálisan aláírt PDF-fájlt az eszközödről</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              PDF feltöltése
+            </h3>
+            <p class="text-slate-400">
+              Válassz egy digitálisan aláírt PDF-fájlt az eszközödről
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             2
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">Automatikus elemzés</h3>
-            <p class="text-gray-400">Az eszköz kinyeri és feldolgozza a dokumentum összes digitális aláírását</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Automatikus elemzés
+            </h3>
+            <p class="text-slate-400">
+              Az eszköz kinyeri és feldolgozza a dokumentum összes digitális
+              aláírását
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             3
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">Eredmények megtekintése</h3>
-            <p class="text-gray-400">Lásd az aláíró adatait, a tanúsítvány érvényességét és az aláírás állapotát</p>
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Eredmények megtekintése
+            </h3>
+            <p class="text-slate-400">
+              Lásd az aláíró adatait, a tanúsítvány érvényességét és az aláírás
+              állapotát
+            </p>
           </div>
         </div>
       </div>
@@ -287,24 +318,24 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <a
           href="digital-sign-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Digitális aláírás</h3>
-          <p class="text-gray-400 text-sm">Kriptográfiai aláírás hozzáadása</p>
+          <p class="text-slate-400 text-sm">Kriptográfiai aláírás hozzáadása</p>
         </a>
         <a
           href="encrypt-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF titkosítása</h3>
-          <p class="text-gray-400 text-sm">PDF jelszavas védelme</p>
+          <p class="text-slate-400 text-sm">PDF jelszavas védelme</p>
         </a>
         <a
           href="view-metadata.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">Metaadatok megtekintése</h3>
-          <p class="text-gray-400 text-sm">PDF-tulajdonságok vizsgálata</p>
+          <p class="text-slate-400 text-sm">PDF-tulajdonságok vizsgálata</p>
         </a>
       </div>
     </section>
@@ -318,26 +349,51 @@
         Frequently Asked Questions
       </h2>
       <div class="space-y-4">
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Milyen típusú aláírásokat lehet ellenőrizni?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Milyen típusú aláírásokat lehet ellenőrizni?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">Ez az eszköz a PKCS#7 digitális aláírásokat ellenőrzi, amelyek X.509 tanúsítványokkal készültek — ez a legtöbb PDF-aláíró eszköz és hitelesítésszolgáltató által használt szabványos formátum.</p>
+          <p class="mt-3 text-slate-400">
+            Ez az eszköz a PKCS#7 digitális aláírásokat ellenőrzi, amelyek X.509
+            tanúsítványokkal készültek — ez a legtöbb PDF-aláíró eszköz és
+            hitelesítésszolgáltató által használt szabványos formátum.
+          </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Mit jelent az „Önaláírt tanúsítvány”?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Mit jelent az „Önaláírt tanúsítvány”?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">Az önaláírt tanúsítvány olyan tanúsítvány, amelynél a kibocsátó és a tulajdonos megegyezik. Bár az aláírás technikailag érvényes, ez azt jelenti, hogy a tanúsítványt nem egy megbízható hitelesítésszolgáltató (CA) állította ki.</p>
+          <p class="mt-3 text-slate-400">
+            Az önaláírt tanúsítvány olyan tanúsítvány, amelynél a kibocsátó és a
+            tulajdonos megegyezik. Bár az aláírás technikailag érvényes, ez azt
+            jelenti, hogy a tanúsítványt nem egy megbízható
+            hitelesítésszolgáltató (CA) állította ki.
+          </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
-          >Feltöltik a PDF-emet egy szerverre?<i data-lucide="chevron-down" class="w-5 h-5"></i>
+          >
+            Feltöltik a PDF-emet egy szerverre?<i
+              data-lucide="chevron-down"
+              class="w-5 h-5"
+            ></i>
           </summary>
-          <p class="mt-3 text-gray-400">Nem, minden feldolgozás teljesen a böngésződben történik. A PDF-fájljaid soha nem hagyják el az eszközödet, így a teljes adatvédelem és biztonság garantált.</p>
+          <p class="mt-3 text-slate-400">
+            Nem, minden feldolgozás teljesen a böngésződben történik. A
+            PDF-fájljaid soha nem hagyják el az eszközödet, így a teljes
+            adatvédelem és biztonság garantált.
+          </p>
         </details>
       </div>
     </section>

@@ -146,7 +146,7 @@ async function renderPageMergeThumbnails() {
     ) => {
       const wrapper = document.createElement('div');
       wrapper.className =
-        'page-thumbnail relative cursor-move flex flex-col items-center gap-1 p-2 border-2 border-gray-600 hover:border-indigo-500 rounded-lg bg-gray-700 transition-colors';
+        'page-thumbnail relative cursor-move flex flex-col items-center gap-1 p-2 border-2 border-slate-600 hover:border-accent rounded-lg bg-slate-700 transition-colors';
       wrapper.dataset.fileName = fileKey;
       wrapper.dataset.pageIndex = (pageNumber - 1).toString();
 
@@ -159,14 +159,14 @@ async function renderPageMergeThumbnails() {
 
       const pageNumDiv = document.createElement('div');
       pageNumDiv.className =
-        'absolute top-1 left-1 bg-indigo-600 text-white text-xs px-2 py-1 rounded-md font-semibold shadow-lg';
+        'absolute top-1 left-1 bg-accent text-white text-xs px-2 py-1 rounded-md font-semibold shadow-lg';
       pageNumDiv.textContent = pageNumber.toString();
 
       imgContainer.append(img, pageNumDiv);
 
       const fileNamePara = document.createElement('p');
       fileNamePara.className =
-        'text-xs text-gray-400 truncate w-full text-center';
+        'text-xs text-slate-400 truncate w-full text-center';
       const fullTitle = displayName
         ? `${displayName} (page ${pageNumber})`
         : `Page ${pageNumber}`;
@@ -267,10 +267,10 @@ const resetState = async () => {
   const pagePanel = document.getElementById('page-mode-panel');
 
   if (fileModeBtn && pageModeBtn && filePanel && pagePanel) {
-    fileModeBtn.classList.add('bg-indigo-600', 'text-white');
-    fileModeBtn.classList.remove('bg-gray-700', 'text-gray-300');
-    pageModeBtn.classList.remove('bg-indigo-600', 'text-white');
-    pageModeBtn.classList.add('bg-gray-700', 'text-gray-300');
+    fileModeBtn.classList.add('bg-accent', 'text-white');
+    fileModeBtn.classList.remove('bg-slate-700', 'text-slate-300');
+    pageModeBtn.classList.remove('bg-accent', 'text-white');
+    pageModeBtn.classList.add('bg-slate-700', 'text-slate-300');
 
     filePanel.classList.remove('hidden');
     pagePanel.classList.add('hidden');
@@ -413,14 +413,9 @@ export async function merge() {
         const blob = new Blob([e.data.pdfBytes], { type: 'application/pdf' });
         downloadFile(blob, 'merged.pdf');
         mergeState.mergeSuccess = true;
-        showAlert(
-          'Siker',
-          'PDFs merged successfully!',
-          'success',
-          async () => {
-            await resetState();
-          }
-        );
+        showAlert('Siker', 'PDFs merged successfully!', 'success', async () => {
+          await resetState();
+        });
       } else {
         console.error('Worker merge error:', e.data.message);
         showAlert('Hiba', e.data.message || 'Failed to merge PDFs.');
@@ -500,7 +495,7 @@ export async function refreshMergeUI() {
 
     const li = document.createElement('li');
     li.className =
-      'bg-gray-700 p-3 rounded-lg border border-gray-600 hover:border-indigo-500 transition-colors';
+      'bg-slate-700 p-3 rounded-lg border border-slate-600 hover:border-accent transition-colors';
     li.dataset.fileName = fileKey;
 
     const mainDiv = document.createElement('div');
@@ -513,7 +508,7 @@ export async function refreshMergeUI() {
 
     const dragHandle = document.createElement('div');
     dragHandle.className =
-      'drag-handle cursor-move text-gray-400 hover:text-white p-1 rounded transition-colors';
+      'drag-handle cursor-move text-slate-400 hover:text-white p-1 rounded transition-colors';
     dragHandle.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>`; // Safe: static content
 
     mainDiv.append(nameSpan, dragHandle);
@@ -526,14 +521,14 @@ export async function refreshMergeUI() {
 
     const label = document.createElement('label');
     label.htmlFor = `range-${safeFileName}`;
-    label.className = 'text-xs text-gray-400';
+    label.className = 'text-xs text-slate-400';
     label.textContent = `Oldalak (pl. 1-3, 5) – összesen: ${pageCount}`;
 
     const input = document.createElement('input');
     input.type = 'text';
     input.id = `range-${safeFileName}`;
     input.className =
-      'w-full bg-gray-800 border border-gray-600 text-white rounded-md p-2 text-sm mt-1 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors';
+      'w-full bg-slate-800 border border-slate-600 text-white rounded-md p-2 text-sm mt-1 focus:border-accent focus:ring-1 focus:ring-accent transition-colors';
     input.placeholder = 'Hagyd üresen az összes oldalhoz';
 
     inputWrapper.append(label, input);
@@ -569,10 +564,10 @@ export async function refreshMergeUI() {
     filePanel.classList.remove('hidden');
     pagePanel.classList.add('hidden');
 
-    newFileModeBtn.classList.add('bg-indigo-600', 'text-white');
-    newFileModeBtn.classList.remove('bg-gray-700', 'text-gray-300');
-    newPageModeBtn.classList.remove('bg-indigo-600', 'text-white');
-    newPageModeBtn.classList.add('bg-gray-700', 'text-gray-300');
+    newFileModeBtn.classList.add('bg-accent', 'text-white');
+    newFileModeBtn.classList.remove('bg-slate-700', 'text-slate-300');
+    newPageModeBtn.classList.remove('bg-accent', 'text-white');
+    newPageModeBtn.classList.add('bg-slate-700', 'text-slate-300');
   });
 
   newPageModeBtn.addEventListener('click', async () => {
@@ -582,10 +577,10 @@ export async function refreshMergeUI() {
     filePanel.classList.add('hidden');
     pagePanel.classList.remove('hidden');
 
-    newPageModeBtn.classList.add('bg-indigo-600', 'text-white');
-    newPageModeBtn.classList.remove('bg-gray-700', 'text-gray-300');
-    newFileModeBtn.classList.remove('bg-indigo-600', 'text-white');
-    newFileModeBtn.classList.add('bg-gray-700', 'text-gray-300');
+    newPageModeBtn.classList.add('bg-accent', 'text-white');
+    newPageModeBtn.classList.remove('bg-slate-700', 'text-slate-300');
+    newFileModeBtn.classList.remove('bg-accent', 'text-white');
+    newFileModeBtn.classList.add('bg-slate-700', 'text-slate-300');
 
     await renderPageMergeThumbnails();
   });
@@ -595,15 +590,15 @@ export async function refreshMergeUI() {
     filePanel.classList.add('hidden');
     pagePanel.classList.remove('hidden');
 
-    newPageModeBtn.classList.add('bg-indigo-600', 'text-white');
-    newPageModeBtn.classList.remove('bg-gray-700', 'text-gray-300');
-    newFileModeBtn.classList.remove('bg-indigo-600', 'text-white');
-    newFileModeBtn.classList.add('bg-gray-700', 'text-gray-300');
+    newPageModeBtn.classList.add('bg-accent', 'text-white');
+    newPageModeBtn.classList.remove('bg-slate-700', 'text-slate-300');
+    newFileModeBtn.classList.remove('bg-accent', 'text-white');
+    newFileModeBtn.classList.add('bg-slate-700', 'text-slate-300');
 
     await renderPageMergeThumbnails();
   } else {
-    newFileModeBtn.classList.add('bg-indigo-600', 'text-white');
-    newPageModeBtn.classList.add('bg-gray-700', 'text-gray-300');
+    newFileModeBtn.classList.add('bg-accent', 'text-white');
+    newPageModeBtn.classList.add('bg-slate-700', 'text-slate-300');
   }
 }
 
@@ -635,17 +630,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
-      dropZone.classList.add('bg-gray-700');
+      dropZone.classList.add('bg-slate-700');
     });
 
     dropZone.addEventListener('dragleave', (e) => {
       e.preventDefault();
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
     });
 
     dropZone.addEventListener('drop', async (e) => {
       e.preventDefault();
-      dropZone.classList.remove('bg-gray-700');
+      dropZone.classList.remove('bg-slate-700');
       const files = e.dataTransfer?.files;
       if (files && files.length > 0) {
         const pdfFiles = Array.from(files).filter(

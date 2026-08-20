@@ -68,9 +68,14 @@
     <!-- Mobile Web App -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Jogosultságok módosítása" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Jogosultságok módosítása"
+    />
 
-    <title>PDF-jogosultságok módosítása – PDF-biztonság kezelése – PDF stúdió</title>
+    <title>
+      PDF-jogosultságok módosítása – PDF-biztonság kezelése – PDF stúdió
+    </title>
     <meta
       name="description"
       content="Módosítsd a PDF-jogosultságokat és -jelszavakat. Állítsd be vagy módosítsd a felhasználói jogosultságokat, a titkosítást és a hozzáférési szabályokat. Ingyenes, biztonságos, és teljes egészében a böngésződben fut."
@@ -103,20 +108,20 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
   </head>
 
-  <body class="antialiased bg-gray-900">
+  <body class="antialiased bg-slate-950">
     {{> navbar }}
 
     <div
       id="uploader"
-      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
     >
       <div
         id="tool-uploader"
-        class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-gray-200 border border-gray-700"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
       >
         <button
           id="back-to-tools"
-          class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
         >
           <i data-lucide="arrow-left" class="cursor-pointer"></i>
           <span class="cursor-pointer" data-i18n="tools.backToTools">
@@ -131,7 +136,7 @@
           Change Permissions
         </h1>
         <p
-          class="text-gray-400 mb-6"
+          class="text-slate-400 mb-6"
           data-i18n="tools:changePermissions.subtitle"
         >
           Set or change user permissions on a PDF.
@@ -139,20 +144,23 @@
 
         <div
           id="drop-zone"
-          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
         >
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <i
               data-lucide="upload-cloud"
-              class="w-10 h-10 mb-3 text-gray-400"
+              class="w-10 h-10 mb-3 text-slate-400"
             ></i>
-            <p class="mb-2 text-sm text-gray-400">
+            <p class="mb-2 text-sm text-slate-400">
               <span class="font-semibold" data-i18n="upload.clickToSelect"
                 >Click to select PDF</span
               >
               <span data-i18n="upload.orDragAndDrop">or drag and drop</span>
             </p>
-            <p class="text-xs text-gray-500" data-i18n="upload.filesNeverLeave">
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
               Your files never leave your device.
             </p>
           </div>
@@ -170,35 +178,35 @@
           <div>
             <label
               for="current-password"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               >Jelenlegi jelszó (ha titkosított)</label
             >
             <input
               type="password"
               id="current-password"
               placeholder="Add meg a jelenlegi jelszót"
-              class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5"
+              class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5"
             />
           </div>
 
           <div>
             <label
               for="new-user-password"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               >Új felhasználói jelszó</label
             >
             <input
               type="password"
               id="new-user-password"
               placeholder="A PDF megnyitásához szükséges jelszó"
-              class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5"
+              class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5"
             />
           </div>
 
           <div>
             <label
               for="new-owner-password"
-              class="block mb-2 text-sm font-medium text-gray-300"
+              class="block mb-2 text-sm font-medium text-slate-300"
               >Új tulajdonosi jelszó
               <span class="text-red-400" aria-hidden="true">*</span></label
             >
@@ -208,16 +216,16 @@
               placeholder="Jelszó a jogosultságokhoz"
               required
               aria-required="true"
-              class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5"
+              class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5"
             />
-            <p class="text-xs text-gray-500 mt-1">
+            <p class="text-xs text-slate-500 mt-1">
               Kötelező, ha jogosultságokat vagy felhasználói jelszót állítasz
               be. Ha minden mezőt üresen hagysz, a PDF visszafejtése történik
               meg.
             </p>
           </div>
 
-          <div class="p-4 bg-gray-900 rounded-lg border border-gray-700">
+          <div class="p-4 bg-slate-950 rounded-lg border border-slate-700">
             <h3 class="text-sm font-semibold text-white mb-3">
               Jogosultságok (tulajdonosi jelszó szükséges)
             </h3>
@@ -227,54 +235,64 @@
                   type="checkbox"
                   id="allow-printing"
                   checked
-                  class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded focus:ring-accent"
                 />
-                <span class="text-sm text-gray-300">Nyomtatás engedélyezése</span>
+                <span class="text-sm text-slate-300"
+                  >Nyomtatás engedélyezése</span
+                >
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   id="allow-copying"
                   checked
-                  class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded focus:ring-accent"
                 />
-                <span class="text-sm text-gray-300">Szöveg másolásának engedélyezése</span>
+                <span class="text-sm text-slate-300"
+                  >Szöveg másolásának engedélyezése</span
+                >
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   id="allow-modifying"
                   checked
-                  class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded focus:ring-accent"
                 />
-                <span class="text-sm text-gray-300">Módosítás engedélyezése</span>
+                <span class="text-sm text-slate-300"
+                  >Módosítás engedélyezése</span
+                >
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   id="allow-annotating"
                   checked
-                  class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded focus:ring-accent"
                 />
-                <span class="text-sm text-gray-300">Jegyzetelés engedélyezése</span>
+                <span class="text-sm text-slate-300"
+                  >Jegyzetelés engedélyezése</span
+                >
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   id="allow-filling-forms"
                   checked
-                  class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded focus:ring-accent"
                 />
-                <span class="text-sm text-gray-300">Űrlapkitöltés engedélyezése</span>
+                <span class="text-sm text-slate-300"
+                  >Űrlapkitöltés engedélyezése</span
+                >
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   id="allow-document-assembly"
                   checked
-                  class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded focus:ring-accent"
                 />
-                <span class="text-sm text-gray-300"
+                <span class="text-sm text-slate-300"
                   >Dokumentum-összeállítás engedélyezése</span
                 >
               </label>
@@ -283,9 +301,11 @@
                   type="checkbox"
                   id="allow-page-extraction"
                   checked
-                  class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500"
+                  class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded focus:ring-accent"
                 />
-                <span class="text-sm text-gray-300">Oldalkivonás engedélyezése</span>
+                <span class="text-sm text-slate-300"
+                  >Oldalkivonás engedélyezése</span
+                >
               </label>
             </div>
           </div>
@@ -303,7 +323,7 @@
       class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
     >
       <div
-        class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl"
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
       >
         <div class="solid-spinner"></div>
         <p
@@ -320,10 +340,10 @@
     <!-- Alert Modal -->
     <div
       id="alert-modal"
-      class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700"
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
       >
         <h3
           id="alert-title"
@@ -333,10 +353,10 @@
         >
           Alert
         </h3>
-        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
         <button
           id="alert-ok"
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+          class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
         >
           OK
         </button>
@@ -354,39 +374,41 @@
       <div class="space-y-6">
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             1
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-white mb-1">Fájl feltöltése</h3>
-            <p class="text-gray-400" data-i18n="howItWorks.step1">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Fájl feltöltése
+            </h3>
+            <p class="text-slate-400" data-i18n="howItWorks.step1">
               Click or drag and drop your file to begin
             </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             2
           </div>
           <div class="flex-1">
             <h3 class="text-lg font-semibold text-white mb-1">Feldolgozás</h3>
-            <p class="text-gray-400" data-i18n="howItWorks.step2">
+            <p class="text-slate-400" data-i18n="howItWorks.step2">
               Click the process button to start
             </p>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <div
-            class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold"
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
           >
             3
           </div>
           <div class="flex-1">
             <h3 class="text-lg font-semibold text-white mb-1">Letöltés</h3>
-            <p class="text-gray-400" data-i18n="howItWorks.step3">
+            <p class="text-slate-400" data-i18n="howItWorks.step3">
               Save your processed file instantly
             </p>
           </div>
@@ -405,38 +427,38 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <a
           href="merge-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF-ek egyesítése</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-egyesítő eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-egyesítő eszköz</p>
         </a>
         <a
           href="compress-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF tömörítése</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-tömörítő eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-tömörítő eszköz</p>
         </a>
         <a
           href="split-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF szétbontása</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-szétbontó eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-szétbontó eszköz</p>
         </a>
         <a
           href="edit-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF szerkesztő</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-szerkesztő eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-szerkesztő eszköz</p>
         </a>
         <a
           href="rotate-pdf.html"
-          class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
         >
           <h3 class="text-white font-semibold mb-1">PDF forgatása</h3>
-          <p class="text-gray-400 text-sm">Ingyenes PDF-forgató eszköz</p>
+          <p class="text-slate-400 text-sm">Ingyenes PDF-forgató eszköz</p>
         </a>
       </div>
     </section>
@@ -450,40 +472,40 @@
         Frequently Asked Questions
       </h2>
       <div class="space-y-4">
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             A jogosultságok módosítása tényleg ingyenes?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Igen! A PDF stúdió 100%-ban ingyenes, rejtett díjak nélkül,
             regisztráció nem szükséges, és korlátlan mennyiségű fájlt
             dolgozhatsz fel.
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             Biztonságban vannak a fájljaim?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Természetesen! Minden feldolgozás a böngésződben történik. A
-            fájljaid soha nem hagyják el az eszközödet, így a teljes
-            adatvédelem biztosított.
+            fájljaid soha nem hagyják el az eszközödet, így a teljes adatvédelem
+            biztosított.
           </p>
         </details>
-        <details class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+        <details class="bg-slate-800 p-5 rounded-lg border border-slate-700">
           <summary
             class="cursor-pointer font-semibold text-white flex items-center justify-between"
           >
             Van fájlméret-korlát?
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
           </summary>
-          <p class="mt-3 text-gray-400">
+          <p class="mt-3 text-slate-400">
             Nincs! Bármekkora fájlt feldolgozhatsz, ahányszor csak szeretnéd,
             teljesen ingyen.
           </p>
