@@ -108,7 +108,7 @@ const init = async () => {
             </button>
           </div>
           <div class="shrink-0 pr-1">
-            <span class="text-[11px] font-medium text-muted dark:text-slate-400">
+            <span class="text-xs font-medium text-muted dark:text-slate-400">
               Az adataid nem hagyják el az eszközöd. Az oldal ingyenes, korlátlan és megfelel a GDPR-nak.
             </span>
           </div>
