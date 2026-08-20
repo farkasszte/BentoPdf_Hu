@@ -76,7 +76,7 @@ function loadPages(): Set<string> {
 const PAGES = loadPages();
 
 function getBasePath(): string {
-  return (process.env.BASE_URL || '/bentopdf').replace(/\/$/, '');
+  return (process.env.BASE_URL || '/').replace(/\/$/, '');
 }
 
 function createLanguageMiddleware(isDev: boolean): Connect.NextHandleFunction {
@@ -458,7 +458,7 @@ function swPrecachePlugin(): Plugin {
 }
 
 function rewriteHtmlPathsPlugin(): Plugin {
-  const baseUrl = process.env.BASE_URL || '/bentopdf/';
+  const baseUrl = process.env.BASE_URL || '/';
   const normalizedBase = baseUrl.replace(/\/?$/, '/');
 
   const escapedBase = normalizedBase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -539,13 +539,13 @@ export default defineConfig(() => {
   ];
 
   return {
-    base: (process.env.BASE_URL || '/bentopdf/').replace(/\/?$/, '/'),
+    base: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
     plugins: [
       // basicSsl(),
       handlebars({
         partialDirectory: resolve(__dirname, 'src/partials'),
         context: {
-          baseUrl: (process.env.BASE_URL || '/bentopdf/').replace(/\/?$/, '/'),
+          baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
           simpleMode: process.env.SIMPLE_MODE === 'true',
           brandName: process.env.VITE_BRAND_NAME || '',
           brandLogo: process.env.VITE_BRAND_LOGO || '',
