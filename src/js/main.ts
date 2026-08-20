@@ -77,7 +77,7 @@ const init = async () => {
         'w-full bg-surface dark:bg-slate-900 border-b border-medium dark:border-slate-800 px-4 py-3 sticky top-0 z-50 mb-4 shadow-sm';
       topNav.innerHTML = `
         <div class="w-full flex items-center gap-4 px-3">
-          <div class="shrink-0 pl-1">
+          <div class="shrink-0 pl-1 flex flex-col leading-tight">
             <a
               href="https://www.bentopdf.com"
               target="_blank"
@@ -86,6 +86,11 @@ const init = async () => {
             >
               BentoPDF
             </a>
+            <span
+              class="mt-0.5 text-[10px] sm:text-[11px] font-medium text-muted dark:text-slate-400 whitespace-nowrap"
+            >
+              Az adataid nem hagyják el az eszközöd · Ingyenes és korlátlan · GDPR
+            </span>
           </div>
           <div class="flex items-center justify-center gap-3 flex-1 min-w-0">
             <div class="relative w-full max-w-[33.6rem]">
@@ -608,14 +613,6 @@ const init = async () => {
         toolsContainer.style.overflow = 'visible';
       }
     });
-
-    // Adatvédelmi banner az első kategória fölé (középen)
-    const privacyBanner = document.createElement('div');
-    privacyBanner.className =
-      'col-span-full order-first mb-2 text-center text-sm sm:text-base font-medium text-dark dark:text-dark-text bg-light dark:bg-slate-900 border border-medium dark:border-slate-700 rounded-xl px-4 py-3';
-    privacyBanner.textContent =
-      'Az adataid nem hagyják el az eszközöd. Az oldal ingyenes, korlátlan és megfelel a GDPR-nak.';
-    dom.toolGrid.prepend(privacyBanner);
 
     // Üres állapot üzenet
     const emptyMessage = document.createElement('div');
