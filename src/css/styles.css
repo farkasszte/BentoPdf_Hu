@@ -235,45 +235,50 @@ html.dark .category-header:hover {
 }
 
 /* Custom sleek scrollbars matching Kincsesláda */
-/* Görgetősáv teljes elrejtése a főoldalon (a görgetés megmarad) */
-.no-scrollbar {
+/* Görgetősáv teljes elrejtése a főoldalon (a görgetés megmarad) - html + body */
+.no-scrollbar,
+html.no-scrollbar,
+body.no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.no-scrollbar::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar,
+html.no-scrollbar::-webkit-scrollbar,
+body.no-scrollbar::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
 }
+/* Megmaradó görgetősáv színe a téma accent-jéhez igazítva */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--color-accent);
   border-radius: 9999px;
 }
 .dark ::-webkit-scrollbar-thumb,
 html.dark ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: var(--color-accent);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--color-accent-hover);
 }
 .dark ::-webkit-scrollbar-thumb:hover,
 html.dark ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: var(--color-accent-hover);
 }
 * {
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-color: var(--color-accent) transparent;
 }
 .dark *,
 html.dark * {
-  scrollbar-color: #334155 transparent;
+  scrollbar-color: var(--color-accent) transparent;
 }
 
 .category-chevron {
