@@ -230,10 +230,6 @@
   border-color: var(--ecaccent);
   border-style: dashed;
 }
-#text-editor-app .para-box.locked {
-  border: 1px dotted rgba(248, 113, 113, 0.4);
-  cursor: not-allowed;
-}
 #text-editor-app .obj-box {
   position: absolute;
   border: 1.5px solid var(--ecaccent);
@@ -445,21 +441,6 @@
 }
 #text-editor-app .docname:hover {
   opacity: 1;
-}
-
-#locktip {
-  position: fixed;
-  z-index: 60;
-  max-width: 340px;
-  padding: 8px 10px;
-  background: #374151;
-  color: #f3f4f6;
-  border: 1px solid #4b5563;
-  border-radius: 8px;
-  font-size: 12px;
-  line-height: 1.45;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  pointer-events: none;
 }
 
 #text-editor-app .textsel {
@@ -696,7 +677,7 @@
 #text-editor-app .swatches {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   flex: 1 1 auto;
 }
 #text-editor-app .swatch {
@@ -1965,7 +1946,7 @@
     overflow: hidden;
   }
   #text-editor-app .dockbody {
-    padding: 14px 16px 4px;
+    padding: 14px 16px 12px;
     transform: translateY(12px);
     opacity: 0;
     transition:
@@ -2020,6 +2001,7 @@
     max-height: 42vh;
     overflow-y: auto;
     overscroll-behavior: contain;
+    padding: 4px 4px 10px;
   }
   #text-editor-app .dslot {
     display: none;
@@ -2049,6 +2031,8 @@
   }
   #text-editor-app .dslot .swatches {
     gap: 10px;
+    padding: 4px 2px;
+    row-gap: 12px;
   }
   #text-editor-app .dslot .swatch {
     width: 32px;
@@ -2352,5 +2336,23 @@
   #text-editor-app .ddim,
   #text-editor-app .dchip {
     transition: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #text-editor-app #toast,
+  #text-editor-app .ectoast {
+    bottom: calc(var(--ecdock, 64px) + var(--eckb, 0px) + 12px);
+    left: 12px;
+    right: 12px;
+    transform: none;
+    max-width: none;
+    width: auto;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: left;
+    text-wrap: pretty;
+    z-index: 55;
   }
 }
