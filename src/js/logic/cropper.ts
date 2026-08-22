@@ -10,14 +10,10 @@ import * as pdfjsLib from 'pdfjs-dist';
 import { PDFDocument as PDFLibDocument } from 'pdf-lib';
 import { loadPdfDocument } from '../utils/load-pdf-document.js';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url
-).toString();
-
 // --- Global State for the Cropper Tool ---
 import type { CropPercentages } from '@/types';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
+import '../utils/setup-pdf-worker.js';
 
 const cropperState: {
   pdfDoc: PDFDocumentProxy | null;
@@ -329,7 +325,10 @@ export async function setupCropperTool() {
     if (isApplyToAll) {
       const currentCrop = cropperState.pageCrops[cropperState.currentPageNum];
       if (!currentCrop) {
-        showAlert('Nincs vágási terület', 'Előbb válassz ki egy területet a vágáshoz.');
+        showAlert(
+          'Nincs vágási terület',
+          'Előbb válassz ki egy területet a vágáshoz.'
+        );
         return;
       }
       // Apply the active page's crop to all pages

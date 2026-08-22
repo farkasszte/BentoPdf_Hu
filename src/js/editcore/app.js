@@ -3786,6 +3786,19 @@ function openEditor(spec, caret) {
         openPv = lockedPv;
         renderLockedLines(ed, para.runs, lockedPv, para, para.box.x);
         singleLine = false;
+        const countable = (s) => s.replace(/[\u200B\u2060\n]/g, '').length;
+        const wantChars = para.runs.reduce(
+          (n, r) => n + (r.text ? countable(r.text) : 0),
+          0
+        );
+        const gotChars = countable(ed.textContent);
+        if (wantChars > 0 && gotChars < wantChars * 0.98) {
+          ed.textContent = '';
+          delete ed.dataset.locked;
+          ed.style.textAlign = '';
+          openPv = null;
+          lockedPv = null;
+        }
       } else {
         lockedPv = null;
       }
@@ -3849,6 +3862,7 @@ function openEditor(spec, caret) {
     pristine: !!spec.para && ed.dataset.locked === '1',
   };
   if (state.editing.pristine) wrap.classList.add('pristine');
+  else if (spec.para) renderPage();
   ed.focus();
   placeCaret(ed, caret?.x, caret?.y);
   const refocus = () => {

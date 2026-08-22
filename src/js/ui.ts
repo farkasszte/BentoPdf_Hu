@@ -14,11 +14,7 @@ import {
 import * as pdfjsLib from 'pdfjs-dist';
 import { t } from './i18n/i18n';
 import type { FileInputOptions } from '@/types';
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url
-).toString();
+import './utils/setup-pdf-worker.js';
 
 // Centralizing DOM element selection
 export const dom = {

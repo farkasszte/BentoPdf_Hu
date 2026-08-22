@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 type MapWithUpsert<K, V> = Map<K, V> & {
@@ -107,7 +108,7 @@ describe('Map upsert polyfill', () => {
 
   it('loads before PDF.js so render can use the methods', () => {
     const mainSource = readFileSync(
-      new URL('../js/main.ts', import.meta.url),
+      join(process.cwd(), 'src/js/main.ts'),
       'utf8'
     );
     const polyfillImport = "import './utils/map-upsert-polyfill.js';";
