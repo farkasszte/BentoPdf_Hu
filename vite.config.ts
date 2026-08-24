@@ -12,6 +12,20 @@ import handlebars from 'vite-plugin-handlebars';
 import { resolve } from 'path';
 import fs from 'fs';
 import { constants as zlibConstants } from 'zlib';
+import { createHash } from 'crypto';
+
+function engineVersion(): string {
+  try {
+    const dir = resolve(__dirname, 'node_modules/bentopdf-pdfium');
+    const h = createHash('sha256');
+    for (const f of ['editcore.js', 'editcore.wasm']) {
+      h.update(fs.readFileSync(resolve(dir, f)));
+    }
+    return h.digest('hex').slice(0, 12);
+  } catch {
+    return 'dev';
+  }
+}
 
 const SUPPORTED_LANGUAGES = [
   'hu',
@@ -596,10 +610,12 @@ export default defineConfig(() => {
         algorithm: 'brotliCompress',
         ext: '.br',
         threshold: 1024,
+        filter: /\.(js|mjs|json|css|html|wasm|svg)$/i,
         compressionOptions: {
           params: {
             [zlibConstants.BROTLI_PARAM_QUALITY]: 11,
-            [zlibConstants.BROTLI_PARAM_MODE]: zlibConstants.BROTLI_MODE_TEXT,
+            [zlibConstants.BROTLI_PARAM_MODE]:
+              zlibConstants.BROTLI_MODE_GENERIC,
           },
         },
         deleteOriginFile: false,
@@ -608,6 +624,7 @@ export default defineConfig(() => {
         algorithm: 'gzip',
         ext: '.gz',
         threshold: 1024,
+        filter: /\.(js|mjs|json|css|html|wasm|svg)$/i,
         compressionOptions: {
           level: 9,
         },
@@ -626,6 +643,7 @@ export default defineConfig(() => {
           .map((s) => s.trim())
           .filter(Boolean)
       ),
+      __ENGINE_VERSION__: JSON.stringify(engineVersion()),
     },
     resolve: {
       alias: {
@@ -637,10 +655,13 @@ export default defineConfig(() => {
     },
     optimizeDeps: {
       include: ['pdfkit', 'blob-stream'],
-      exclude: ['coherentpdf', 'wasm-vips'],
+      exclude: ['coherentpdf', 'wasm-vips', 'bentopdf-pdfium'],
     },
     server: {
       host: process.env.VITE_DEV_HOST || 'localhost',
+      watch: {
+        ignored: ['!**/node_modules/bentopdf-pdfium/**'],
+      },
       headers: {
         'Cross-Origin-Opener-Policy': 'same-origin',
         'Cross-Origin-Embedder-Policy': 'require-corp',

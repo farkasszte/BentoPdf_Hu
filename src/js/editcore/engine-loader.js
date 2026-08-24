@@ -1,12 +1,21 @@
 import createModule from 'bentopdf-pdfium';
 import wasmUrl from 'bentopdf-pdfium/editcore.wasm?url';
 
-export const ENGINE_BUILD = 'bentopdf-pdfium';
+let ENGINE_VERSION = 'dev';
+try {
+  ENGINE_VERSION = __ENGINE_VERSION__;
+} catch {
+  ENGINE_VERSION = 'dev';
+}
+
+export const ENGINE_BUILD = `bentopdf-pdfium@${ENGINE_VERSION}`;
 
 export function createEngineModule(options) {
   return createModule({
-    ...(options ?? {}),
-    locateFile: (file, prefix) =>
-      file.endsWith('.wasm') ? wasmUrl : `${prefix}${file}`,
+    locateFile(path) {
+      if (path.endsWith('.wasm')) return wasmUrl;
+      return path;
+    },
+    ...options,
   });
 }
