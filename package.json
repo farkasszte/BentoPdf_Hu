@@ -156,6 +156,9 @@
     ]
   },
   "overrides": {
+    "vitepress": {
+      "vite": "^6.4.3"
+    },
     "uuid": "^14",
     "node-forge": "^1.4.0",
     "flatted": "^3.4.2",
