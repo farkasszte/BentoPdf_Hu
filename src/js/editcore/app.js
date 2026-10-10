@@ -10268,4 +10268,13 @@ async function addImageFromFile(file) {
   } else if (state.undo.length) state.undo.pop();
 }
 
-export { openFile, engineReady, setZoom, getZoom, getDocDescription };
+export {
+  openFile,
+  engineReady,
+  setZoom,
+  getZoom,
+  getDocDescription,
+  setOnSaved,
+  endEdit,
+  saveFile,
+};

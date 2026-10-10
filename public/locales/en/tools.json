@@ -58,7 +58,9 @@
   },
   "editPdfText": {
     "name": "Edit PDF Text",
-    "subtitle": "Click any paragraph and edit it in place with live reflow, fonts, and styling."
+    "subtitle": "Click any paragraph and edit it in place with live reflow, fonts, and styling.",
+    "loadingFonts": "Loading fonts...",
+    "fontsUnavailable": "Some characters could not be rendered because their fonts could not be loaded."
   },
   "jpgToPdf": {
     "name": "JPG to PDF",

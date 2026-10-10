@@ -58,7 +58,9 @@
   },
   "editPdfText": {
     "name": "PDF szöveg szerkesztése",
-    "subtitle": "Szövegek közvetlen módosítása a PDF dokumentumban."
+    "subtitle": "Szövegek közvetlen módosítása a PDF dokumentumban.",
+    "loadingFonts": "Betűtípusok betöltése...",
+    "fontsUnavailable": "Néhány karakter nem jeleníthető meg, mert a betűtípusuk betöltése sikertelen."
   },
   "jpgToPdf": {
     "name": "JPG → PDF",
