@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Kétoldalas szétválogatás – Kétoldalas PDF-ek rendezése ingyen | PDF stúdió
+    </title>
+    <meta
+      name="title"
+      content="Kétoldalas szétválogatás – Kétoldalas PDF-ek rendezése ingyen | PDF stúdió"
+    />
+    <meta
+      name="description"
+      content="★ Kétoldalas szétválogatás és rendezés ingyen online – Két blokkban (előlapok, hátlapok) szkennelt PDF-ek helyes sorrendbe fűzése ★ Regisztráció nélkül ★ Adatvédelem-első ★ Böngészőben fut"
+    />
+    <meta
+      name="keywords"
+      content="kétoldalas szétválogatás, duplex rendezés, kétoldalas szkennelés, pdf rendezés, duplex collate"
+    />
+    <meta name="author" content="PDF stúdió" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <link rel="canonical" href="https://www.bentopdf.com/duplex-collate" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.bentopdf.com/duplex-collate" />
+    <meta
+      property="og:title"
+      content="Kétoldalas szétválogatás – Kétoldalas PDF-ek rendezése ingyen | PDF stúdió"
+    />
+    <meta
+      property="og:description"
+      content="★ Kétoldalas szétválogatás és rendezés ingyen online – Két blokkban (előlapok, hátlapok) szkennelt PDF-ek helyes sorrendbe fűzése ★ Regisztráció nélkül ★ Adatvédelem-első ★ Böngészőben fut"
+    />
+    <meta
+      property="og:image"
+      content="https://www.bentopdf.com/images/og-pdf-workflow.png"
+    />
+    <meta property="og:site_name" content="BentoPDF" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://www.bentopdf.com/duplex-collate"
+    />
+    <meta name="twitter:title" content="Kétoldalas szétválogatás" />
+    <meta
+      name="twitter:description"
+      content="Két blokkban szkennelt PDF-ek helyes előlap-hátlap sorrendbe fűzése."
+    />
+
+    <link href="/src/css/styles.css" rel="stylesheet" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/images/favicon-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+
+  <body class="antialiased bg-slate-950">
+    <!-- htmlhint spec-char-escape:false -->
+    {{> navbar }}
+    <!-- htmlhint spec-char-escape:true -->
+
+    <div
+      id="uploader"
+      class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-slate-950"
+    >
+      <div
+        id="tool-uploader"
+        class="bg-slate-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-2xl w-full text-slate-200 border border-slate-700"
+      >
+        <button
+          id="back-to-tools"
+          class="flex items-center gap-2 text-accent hover:text-accent-light mb-6 font-semibold"
+        >
+          <i data-lucide="arrow-left" class="cursor-pointer"></i>
+          <span class="cursor-pointer" data-i18n="tools.backToTools">
+            Vissza az eszközökhöz
+          </span>
+        </button>
+
+        <h1
+          class="text-2xl font-bold text-white mb-2"
+          data-i18n="tools:duplexCollate.name"
+        >
+          Kétoldalas szétválogatás
+        </h1>
+        <p class="text-slate-400 mb-6" data-i18n="tools:duplexCollate.subtitle">
+          Két blokkban szkennelt (előbb előlapok, majd hátlapok) PDF-ek helyes
+          sorrendbe fűzése.
+        </p>
+
+        <div
+          id="drop-zone"
+          class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer bg-slate-950 hover:bg-slate-700 transition-colors duration-300"
+        >
+          <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <i
+              data-lucide="upload-cloud"
+              class="w-10 h-10 mb-3 text-slate-400"
+            ></i>
+            <p class="mb-2 text-sm text-slate-400">
+              <span class="font-semibold" data-i18n="upload.clickToSelect">
+                Kattints a fájl kiválasztásához
+              </span>
+              <span data-i18n="upload.orDragAndDrop">vagy húzd ide</span>
+            </p>
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.hints.singlePdf"
+            >
+              Egyetlen PDF-fájl
+            </p>
+            <p
+              class="text-xs text-slate-500"
+              data-i18n="upload.filesNeverLeave"
+            >
+              A fájljaid sosem hagyják el az eszközödet.
+            </p>
+          </div>
+          <input
+            id="file-input"
+            type="file"
+            class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+            accept="application/pdf"
+          />
+        </div>
+
+        <div id="file-display-area" class="mt-4 space-y-2"></div>
+
+        <div
+          id="odd-page-banner"
+          class="hidden mt-3 p-3 bg-yellow-900/50 border border-yellow-600 text-yellow-300 text-sm rounded-lg"
+        ></div>
+
+        <div id="duplex-options" class="hidden mt-6 space-y-4">
+          <div class="p-3 bg-slate-950 rounded-lg border border-slate-700">
+            <p class="text-sm text-slate-300">
+              <span data-i18n="tools:duplexCollate.totalPagesLabel">
+                Összes oldal:
+              </span>
+              <span id="total-pages" class="text-white">0</span>
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div>
+              <label
+                for="split-page"
+                class="block mb-2 text-sm font-medium text-slate-300"
+                data-i18n="tools:duplexCollate.splitAfterPageLabel"
+              >
+                Szétválasztás ezen oldal után
+              </label>
+              <input
+                id="split-page"
+                type="number"
+                min="1"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5"
+                placeholder="pl. 50"
+                data-i18n-placeholder="tools:duplexCollate.splitAfterPagePlaceholder"
+              />
+            </div>
+
+            <div>
+              <label
+                for="back-order"
+                class="block mb-2 text-sm font-medium text-slate-300"
+                data-i18n="tools:duplexCollate.backBlockOrderLabel"
+              >
+                Hátlapok sorrendje
+              </label>
+              <select
+                id="back-order"
+                class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5"
+              >
+                <option
+                  value="reverse"
+                  selected
+                  data-i18n="tools:duplexCollate.backBlockReverseOption"
+                >
+                  Fordított sorrend (a legtöbb lapadagolónál)
+                </option>
+                <option
+                  value="keep"
+                  data-i18n="tools:duplexCollate.backBlockKeepOption"
+                >
+                  Eredeti sorrend megtartása
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            id="auto-split-btn"
+            class="w-full bg-slate-700 hover:bg-slate-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+            data-i18n="tools:duplexCollate.autoSplitButton"
+          >
+            Automatikus felosztás (felezés)
+          </button>
+
+          <div class="p-3 bg-slate-950 rounded-lg border border-slate-700">
+            <p id="duplex-preview-summary" class="text-sm text-slate-300"></p>
+            <p
+              id="duplex-warning"
+              class="text-sm text-yellow-400 mt-2 hidden"
+            ></p>
+          </div>
+
+          <label
+            class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
+          >
+            <input
+              id="export-grouped"
+              type="checkbox"
+              class="w-4 h-4 text-accent bg-slate-700 border-slate-600 rounded"
+            />
+            <span data-i18n="tools:duplexCollate.exportGroupedLabel">
+              Több dokumentumra bontás (csoportosítás)
+            </span>
+          </label>
+
+          <div id="grouped-options" class="hidden">
+            <label
+              for="pages-per-document"
+              class="block mb-2 text-sm font-medium text-slate-300"
+              data-i18n="tools:duplexCollate.pagesPerDocumentLabel"
+            >
+              Oldalszám dokumentumonként
+            </label>
+            <input
+              id="pages-per-document"
+              type="number"
+              min="1"
+              value="2"
+              class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg p-2.5"
+            />
+            <p
+              class="text-xs text-slate-400 mt-2"
+              data-i18n="tools:duplexCollate.groupedHelp"
+            >
+              Bekapcsolva az eredmény egy ZIP fájl lesz, benne a különálló PDF
+              dokumentumokkal.
+            </p>
+          </div>
+
+          <button
+            id="process-btn"
+            class="btn-gradient w-full mt-2"
+            data-i18n="tools:duplexCollate.collateButton"
+          >
+            Oldalak összefésülése és rendezése
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="loader-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+    >
+      <div
+        class="bg-slate-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-slate-700 shadow-xl"
+      >
+        <div class="solid-spinner"></div>
+        <p id="loader-text" class="text-white text-lg font-medium">
+          Feldolgozás...
+        </p>
+      </div>
+    </div>
+
+    <div
+      id="alert-modal"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
+    >
+      <div
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
+      >
+        <h3 id="alert-title" class="text-xl font-bold text-white mb-2">
+          Értesítés
+        </h3>
+        <p id="alert-message" class="text-slate-300 mb-6"></p>
+        <button
+          id="alert-ok"
+          class="w-full bg-accent hover:bg-accent-light text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="confirm-modal"
+      class="fixed inset-0 bg-slate-950 bg-opacity-90 flex items-center justify-center z-50 hidden"
+    >
+      <div
+        class="bg-slate-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-slate-700"
+      >
+        <h3
+          id="confirm-title"
+          class="text-xl font-bold text-white mb-2"
+          data-i18n="tools:duplexCollate.unevenConfirmTitle"
+        >
+          Eltérő oldalszámú blokkok
+        </h3>
+        <p
+          id="confirm-message"
+          class="text-slate-300 mb-6 whitespace-pre-line"
+        ></p>
+        <div class="flex gap-3">
+          <button
+            id="confirm-cancel"
+            class="flex-1 bg-slate-700 hover:bg-slate-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+            data-i18n="common.cancel"
+          >
+            Mégse
+          </button>
+          <button
+            id="confirm-proceed"
+            class="flex-1 bg-accent hover:bg-accent-light text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+            data-i18n="warning.proceed"
+          >
+            Folytatás
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-white mb-8 text-center"
+        data-i18n="howItWorks.title"
+      >
+        Hogyan működik
+      </h2>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
+          >
+            1
+          </div>
+          <div class="flex-1">
+            <h3
+              class="text-lg font-semibold text-white mb-1"
+              data-i18n="tools:duplexCollate.howItWorksStep1Title"
+            >
+              Töltsd fel a szkennelt fájlt
+            </h3>
+            <p
+              class="text-slate-400"
+              data-i18n="tools:duplexCollate.howItWorksStep1"
+            >
+              Húzd be az egyetlen PDF-fájlt, amely az előlapokat, majd a
+              hátlapokat tartalmazza.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
+          >
+            2
+          </div>
+          <div class="flex-1">
+            <h3
+              class="text-lg font-semibold text-white mb-1"
+              data-i18n="tools:duplexCollate.howItWorksStep2Title"
+            >
+              Állítsd be a felosztási pontot
+            </h3>
+            <p
+              class="text-slate-400"
+              data-i18n="tools:duplexCollate.howItWorksStep2"
+            >
+              Jelöld meg, hol végződnek az előlapok, és válaszd ki a hátlapok
+              sorrendjét.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div
+            class="flex-shrink-0 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold"
+          >
+            3
+          </div>
+          <div class="flex-1">
+            <h3
+              class="text-lg font-semibold text-white mb-1"
+              data-i18n="tools:duplexCollate.howItWorksStep3Title"
+            >
+              Fésüld össze és töltsd le
+            </h3>
+            <p
+              class="text-slate-400"
+              data-i18n="tools:duplexCollate.howItWorksStep3"
+            >
+              Töltsd le az egybefűzött PDF-et, vagy ZIP-fájlként az eredeti
+              dokumentumokra bontva.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="max-w-4xl mx-auto px-4 py-8">
+      <h2
+        class="text-2xl font-bold text-white mb-6 text-center"
+        data-i18n="tools.relatedTools"
+      >
+        Kapcsolódó eszközök
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a
+          href="alternate-merge.html"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
+        >
+          <h3 class="text-white font-semibold mb-1">Oldalak váltogatása</h3>
+          <p class="text-slate-400 text-sm">
+            Oldalak keverése két külön PDF-ből
+          </p>
+        </a>
+        <a
+          href="organize-pdf.html"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
+        >
+          <h3 class="text-white font-semibold mb-1">Oldalak rendezése</h3>
+          <p class="text-slate-400 text-sm">Oldalak mozgatása és törlése</p>
+        </a>
+        <a
+          href="reverse-pages.html"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
+        >
+          <h3 class="text-white font-semibold mb-1">Oldalak megfordítása</h3>
+          <p class="text-slate-400 text-sm">Oldalsorrend megfordítása</p>
+        </a>
+        <a
+          href="extract-pages.html"
+          class="block bg-slate-800 p-4 rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
+        >
+          <h3 class="text-white font-semibold mb-1">Oldalak kivonása</h3>
+          <p class="text-slate-400 text-sm">Oldalak mentése külön fájlba</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-white mb-6 text-center"
+        data-i18n="faq.sectionTitle"
+      >
+        Gyakran Ismételt Kérdések
+      </h2>
+      <div class="faq-list">
+        <details class="faq-d">
+          <summary class="faq-d-q">
+            Milyen szkennelésekhez készült ez az eszköz?
+            <i data-lucide="plus" class="faq-d-icon"></i>
+          </summary>
+          <p class="faq-d-a">
+            Olyan PDF-ekhez, amelyeket egyoldalas adagolójú szkennerrel hoztak
+            létre úgy, hogy a lapokat kétszer engedték át: először az összes
+            előlapot, majd a megfordított köteget a hátlapokkal. Az eszköz az
+            előlap 1, hátlap 1, előlap 2, hátlap 2 sorrendbe fésüli össze az
+            oldalakat. Ha az előlapok és hátlapok két külön PDF fájlban vannak,
+            használd az
+            <a
+              href="/alternate-merge"
+              class="text-accent hover:text-accent-light"
+              >Oldalak váltogatása és keverése</a
+            >
+            eszközt.
+          </p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">
+            Honnan tudom, hogy hova állítsam a felosztási pontot?
+            <i data-lucide="plus" class="faq-d-icon"></i>
+          </summary>
+          <p class="faq-d-a">
+            A felosztási pont az előlapok utolsó oldala. Normál kétmenetes
+            szkennelésnél ez pontosan az összes oldal fele. Kattints az
+            „Automatikus felosztás (felezés)” gombra a kitöltéshez.
+          </p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">
+            Mire jó a csoportosított exportálás?
+            <i data-lucide="plus" class="faq-d-icon"></i>
+          </summary>
+          <p class="faq-d-a">
+            Ha a köteg több rövidebb dokumentumot tartalmazott (pl. kétoldalas
+            űrlapokat), add meg a dokumentumonkénti oldalszámot, és a rendszer a
+            megadott méretű részekre vágja a kimenetet, majd ZIP fájlként
+            töltheted le.
+          </p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">
+            A feltöltött dokumentumom kikerül az internetre a rendezés során?
+            <i data-lucide="plus" class="faq-d-icon"></i>
+          </summary>
+          <p class="faq-d-a">
+            Nem. A PDF feldolgozása teljes egészében a böngésződben, a helyi
+            eszközödön történik, így az érzékeny adatok sosem hagyják el a
+            gépedet.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- htmlhint spec-char-escape:false -->
+    {{> footer }}
+    <!-- htmlhint spec-char-escape:true -->
+
+    <script type="module" src="/src/js/utils/lucide-init.ts"></script>
+    <script type="module" src="/src/js/utils/full-width.ts"></script>
+    <script type="module" src="/src/js/utils/simple-mode-footer.ts"></script>
+    <script type="module" src="/src/js/logic/duplex-collate-page.ts"></script>
+    <script type="module" src="/src/js/mobileMenu.ts"></script>
+    <script type="module" src="/src/js/main.ts"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Kétoldalas szétválogatás – PDF stúdió",
+        "applicationCategory": "PDF Tool",
+        "operatingSystem": "Any - Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Hogyan rendezd a kétoldalas szkennelt PDF-et online",
+        "description": "Ismerd meg, hogyan fésülheted össze a kétoldalas szkennelésből származó oldalakat a PDF stúdióval",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Töltsd fel a szkennelt fájlt",
+            "text": "Húzd be a PDF fájlt, amely az előlapokat és a hátlapokat tartalmazza"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Állítsd be a felosztást",
+            "text": "Add meg a felosztási pontot és a hátlapok sorrendjét"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Rendezés és letöltés",
+            "text": "Töltsd le a helyes sorrendbe fűzött PDF-et"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Főoldal",
+            "item": "https://www.bentopdf.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Kétoldalas szétválogatás",
+            "item": "https://www.bentopdf.com/duplex-collate"
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>
