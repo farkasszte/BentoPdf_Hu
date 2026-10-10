@@ -85,15 +85,16 @@ html.dark body {
 }
 
 .tool-card {
+  position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid #e4e4e7;
   background-color: #fafafa;
-  padding: 0.75rem 1rem;
+  padding: 0.875rem 1rem;
   border-radius: 1rem;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 5.5rem;
   text-align: left;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
@@ -158,15 +159,27 @@ html.dark .tool-card p {
   color: #94a3b8;
 }
 
-.tool-card > div:first-of-type i,
+.tool-card-icon,
+.tool-card-icon i,
 .tool-card .ph {
   color: #24a66e;
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tool-card:hover .group-hover\:text-white i,
-.tool-card:hover .group-hover\:text-white {
-  color: #ffffff !important;
+.tool-card-icon {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.tool-card:hover .tool-card-icon {
+  transform: scale(1.1);
 }
 
 .fav-toggle-btn {
@@ -315,11 +328,19 @@ html.dark .category-chevron {
   align-items: center;
   justify-content: flex-start;
   text-align: left;
+  min-height: auto;
 }
 
 .dark .compact-mode .tool-card,
 html.dark .compact-mode .tool-card {
   border-bottom: 1px solid #1e293b;
+}
+
+.compact-mode .tool-card .tool-card-icon {
+  position: static;
+  order: -1;
+  margin-right: 0.75rem;
+  transform: none !important;
 }
 
 .compact-mode .tool-card i {

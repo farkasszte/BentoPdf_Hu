@@ -710,37 +710,37 @@
   },
   "odtToPdf": {
     "name": "ODT → PDF",
-    "subtitle": "OpenDocument szövegfájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "OpenDocument szövegfájlok konvertálása PDF formátumba.",
     "acceptedFormats": "ODT fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "csvToPdf": {
     "name": "CSV → PDF",
-    "subtitle": "CSV táblázatfájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "CSV táblázatfájlok konvertálása PDF formátumba.",
     "acceptedFormats": "CSV fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "rtfToPdf": {
     "name": "RTF → PDF",
-    "subtitle": "Rich Text Format dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Rich Text Format dokumentumok konvertálása PDF formátumba.",
     "acceptedFormats": "RTF fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "wordToPdf": {
     "name": "Word → PDF",
-    "subtitle": "Word dokumentumok (DOCX, DOC, ODT, RTF) konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Word dokumentumok (DOCX, DOC, ODT, RTF) konvertálása PDF formátumba.",
     "acceptedFormats": "DOCX, DOC, ODT, RTF fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "excelToPdf": {
     "name": "Excel → PDF",
-    "subtitle": "Excel táblázatok (XLSX, XLS, ODS, CSV) konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Excel táblázatok (XLSX, XLS, ODS, CSV) konvertálása PDF formátumba.",
     "acceptedFormats": "XLSX, XLS, ODS, CSV fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "powerpointToPdf": {
     "name": "PowerPoint → PDF",
-    "subtitle": "PowerPoint prezentációk (PPTX, PPT, ODP) konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "PowerPoint prezentációk (PPTX, PPT, ODP) konvertálása PDF formátumba.",
     "acceptedFormats": "PPTX, PPT, ODP fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
@@ -782,91 +782,91 @@
   },
   "xpsToPdf": {
     "name": "XPS → PDF",
-    "subtitle": "XPS/OXPS dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "XPS/OXPS dokumentumok konvertálása PDF formátumba.",
     "acceptedFormats": "XPS, OXPS fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "mobiToPdf": {
     "name": "MOBI → PDF",
-    "subtitle": "MOBI e-könyvek konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "MOBI e-könyvek konvertálása PDF formátumba.",
     "acceptedFormats": "MOBI fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "epubToPdf": {
     "name": "EPUB → PDF",
-    "subtitle": "EPUB e-könyvek konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "EPUB e-könyvek konvertálása PDF formátumba.",
     "acceptedFormats": "EPUB fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "fb2ToPdf": {
     "name": "FB2 → PDF",
-    "subtitle": "FictionBook (FB2) e-könyvek konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "FictionBook (FB2) e-könyvek konvertálása PDF formátumba.",
     "acceptedFormats": "FB2 fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "cbzToPdf": {
     "name": "CBZ → PDF",
-    "subtitle": "Képregényarchívumok (CBZ/CBR) konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Képregényarchívumok (CBZ/CBR) konvertálása PDF formátumba.",
     "acceptedFormats": "CBZ, CBR fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "wpdToPdf": {
     "name": "WPD → PDF",
-    "subtitle": "WordPerfect dokumentumok (WPD) konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "WordPerfect dokumentumok (WPD) konvertálása PDF formátumba.",
     "acceptedFormats": "WPD fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "wpsToPdf": {
     "name": "WPS → PDF",
-    "subtitle": "WPS Office dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "WPS Office dokumentumok konvertálása PDF formátumba.",
     "acceptedFormats": "WPS fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "xmlToPdf": {
     "name": "XML → PDF",
-    "subtitle": "XML dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "XML dokumentumok konvertálása PDF formátumba.",
     "acceptedFormats": "XML fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "pagesToPdf": {
     "name": "Pages → PDF",
-    "subtitle": "Apple Pages dokumentumok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Apple Pages dokumentumok konvertálása PDF formátumba.",
     "acceptedFormats": "Pages fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "odgToPdf": {
     "name": "ODG → PDF",
-    "subtitle": "OpenDocument Graphics (ODG) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "OpenDocument Graphics (ODG) fájlok konvertálása PDF formátumba.",
     "acceptedFormats": "ODG fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "odsToPdf": {
     "name": "ODS → PDF",
-    "subtitle": "OpenDocument Spreadsheet (ODS) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "OpenDocument Spreadsheet (ODS) fájlok konvertálása PDF formátumba.",
     "acceptedFormats": "ODS fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "odpToPdf": {
     "name": "ODP → PDF",
-    "subtitle": "OpenDocument Presentation (ODP) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "OpenDocument Presentation (ODP) fájlok konvertálása PDF formátumba.",
     "acceptedFormats": "ODP fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "pubToPdf": {
     "name": "PUB → PDF",
-    "subtitle": "Microsoft Publisher (PUB) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Microsoft Publisher (PUB) fájlok konvertálása PDF formátumba.",
     "acceptedFormats": "PUB fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "vsdToPdf": {
     "name": "VSD → PDF",
-    "subtitle": "Microsoft Visio (VSD, VSDX) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Microsoft Visio (VSD, VSDX) fájlok konvertálása PDF formátumba.",
     "acceptedFormats": "VSD, VSDX fájlok",
     "convertButton": "Konvertálás PDF-be"
   },
   "psdToPdf": {
     "name": "PSD → PDF",
-    "subtitle": "Adobe Photoshop (PSD) fájlok konvertálása PDF formátumba. Több fájl támogatott.",
+    "subtitle": "Adobe Photoshop (PSD) fájlok konvertálása PDF formátumba.",
     "acceptedFormats": "PSD fájlok",
     "convertButton": "Konvertálás PDF-be"
   },

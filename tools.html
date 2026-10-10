@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
-      Minden PDF-eszköz katalógusa - 100+ ingyenes online PDF-eszköz | PDF stúdió
+      Minden PDF-eszköz katalógusa - 100+ ingyenes online PDF-eszköz | PDF
+      stúdió
     </title>
     <meta
       name="description"
@@ -95,7 +96,7 @@
             <input
               type="text"
               id="search-input"
-              placeholder="Eszközök keresése… (pl. „tömörítés", „Word-be konvertálás", „egyesítés")"
+              placeholder="Eszközök keresése… (pl. „tömörítés”, „Word-be konvertálás”, „egyesítés”)"
               class="w-full bg-gray-800 border border-gray-700 text-white rounded-lg pl-12 pr-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
@@ -143,7 +144,7 @@
       <div class="max-w-6xl mx-auto">
         <div
           id="tools-grid"
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
         ></div>
 
         <div id="no-results" class="hidden text-center py-12">
@@ -153,7 +154,9 @@
           <h3 class="text-xl font-semibold text-white mb-2">
             Nem találtunk eszközöket
           </h3>
-          <p class="text-gray-400">Próbáld módosítani a keresést vagy a szűrőt</p>
+          <p class="text-gray-400">
+            Próbáld módosítani a keresést vagy a szűrőt
+          </p>
         </div>
       </div>
     </section>
@@ -812,14 +815,18 @@
         const grid = document.getElementById('tools-grid');
         const noResults = document.getElementById('no-results');
 
-        const filtered = tools.filter((tool) => {
-          const matchesCategory =
-            currentCategory === 'all' || tool.category === currentCategory;
-          const matchesSearch =
-            tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            tool.name.toLowerCase().includes(searchQuery.toLowerCase());
-          return matchesCategory && matchesSearch;
-        });
+        const filtered = tools
+          .filter((tool) => {
+            const matchesCategory =
+              currentCategory === 'all' || tool.category === currentCategory;
+            const matchesSearch =
+              tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              tool.name.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesCategory && matchesSearch;
+          })
+          .sort((a, b) =>
+            a.title.localeCompare(b.title, 'hu', { sensitivity: 'base' })
+          );
 
         if (filtered.length === 0) {
           grid.classList.add('hidden');
@@ -834,9 +841,9 @@
         grid.innerHTML = filtered
           .map(
             (tool) => `
-                <a href="/${tool.name}.html" class="tool-card">
-                    <i class="ph ph-${tool.icon} text-4xl text-indigo-400 mb-2"></i>
-                    <h3 class="font-semibold text-white text-sm">${tool.title}</h3>
+                <a href="/${tool.name}.html" class="tool-card group relative flex flex-col justify-between p-3.5 min-h-[5.5rem]">
+                    <h3 class="font-semibold text-white text-sm pr-7">${tool.title}</h3>
+                    <i class="ph ph-${tool.icon} text-2xl text-accent absolute bottom-2.5 right-2.5 pointer-events-none group-hover:scale-110 transition-transform"></i>
                 </a>
             `
           )

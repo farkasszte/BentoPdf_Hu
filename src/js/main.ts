@@ -17,6 +17,7 @@ import {
   applyTranslations,
   rewriteLinks,
   injectLanguageSwitcher,
+  getLanguageFromUrl,
   t,
 } from './i18n/index.js';
 import {
@@ -394,6 +395,21 @@ const init = async () => {
     'Rasterize PDF': 'tools:rasterizePdf',
   };
 
+  const getToolDisplayName = (tool: { name: string }): string => {
+    const toolKey = toolTranslationKeys[tool.name];
+    return toolKey ? t(`${toolKey}.name`) : tool.name;
+  };
+
+  const getToolSubtitle = (tool: {
+    name: string;
+    subtitle?: string;
+  }): string => {
+    const toolKey = toolTranslationKeys[tool.name];
+    return toolKey && tool.subtitle
+      ? t(`${toolKey}.subtitle`)
+      : tool.subtitle || '';
+  };
+
   // Homepage-only tool grid rendering (not used on individual tool pages)
   if (dom.toolGrid) {
     dom.toolGrid.textContent = '';
@@ -420,7 +436,7 @@ const init = async () => {
       if (isFav) {
         return `<svg class="w-4 h-4 text-accent fill-accent transition-all duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
       }
-      return `<svg class="w-4 h-4 text-slate-300 dark:text-slate-600 hover:text-accent opacity-0 group-hover:opacity-100 transition-all duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+      return `<svg class="w-4 h-4 text-slate-300 dark:text-slate-600 hover:text-accent dark:hover:text-accent transition-all duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
     }
 
     function updateAllFavoriteButtons(favs: string[]) {
@@ -460,16 +476,29 @@ const init = async () => {
       applyActiveFilters();
     }
 
+    const currentLang = getLanguageFromUrl();
     const filteredCategories = categories
       .filter(
         (category) =>
           category.name !== 'Popular Tools' &&
           category.name !== 'Népszerű eszközök'
       )
-      .map((category) => ({
-        ...category,
-        tools: category.tools.filter((tool) => !isToolDisabled(tool.id)),
-      }))
+      .map((category) => {
+        const enabledTools = category.tools.filter(
+          (tool) => !isToolDisabled(tool.id)
+        );
+        const sortedTools = [...enabledTools].sort((a, b) =>
+          getToolDisplayName(a).localeCompare(
+            getToolDisplayName(b),
+            currentLang,
+            { sensitivity: 'base' }
+          )
+        );
+        return {
+          ...category,
+          tools: sortedTools,
+        };
+      })
       .filter((category) => category.tools.length > 0);
 
     filteredCategories.forEach((category) => {
@@ -493,7 +522,7 @@ const init = async () => {
 
       const toolsContainer = document.createElement('div');
       toolsContainer.className =
-        'category-tools grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4';
+        'category-tools grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4';
 
       const isCollapsed = collapsedCategories.includes(category.name);
       if (isCollapsed) {
@@ -535,12 +564,12 @@ const init = async () => {
         const toolId = getToolId(tool);
 
         const cardClasses =
-          'tool-card group relative flex flex-row items-center gap-4 p-3 rounded-2xl border border-medium dark:border-slate-800 bg-surface dark:bg-slate-900 shadow-sm hover:-translate-y-1.5 hover:border-accent hover:shadow-xl transition-all duration-300 transform no-underline cursor-pointer w-full text-left';
+          'tool-card group relative flex flex-col justify-between p-3.5 sm:p-4 min-h-[92px] rounded-2xl border border-medium dark:border-slate-800 bg-surface dark:bg-slate-900 shadow-sm hover:-translate-y-1.5 hover:border-accent hover:shadow-xl transition-all duration-300 transform no-underline cursor-pointer w-full text-left';
 
         if (tool.href) {
           toolCard = document.createElement('a');
           toolCard.href = tool.href;
-          toolCard.className = `block ${cardClasses}`;
+          toolCard.className = cardClasses;
           toolCard.dataset.toolId = toolId;
         } else {
           toolCard = document.createElement('div');
@@ -550,34 +579,31 @@ const init = async () => {
 
         const iconContainer = document.createElement('div');
         iconContainer.className =
-          'w-10 h-10 p-2 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white dark:bg-accent/20 transition-all duration-300 flex items-center justify-center shrink-0';
+          'tool-card-icon absolute bottom-3 right-3 text-accent pointer-events-none transition-transform duration-300 group-hover:scale-110 flex items-center justify-center';
 
         const icon = document.createElement('i');
         if (tool.icon.startsWith('ph-')) {
           icon.className = `ph ${tool.icon} text-2xl`;
         } else {
-          icon.className = 'w-5 h-5';
+          icon.className = 'w-6 h-6';
           icon.setAttribute('data-lucide', tool.icon);
         }
         iconContainer.appendChild(icon);
 
         const textContainer = document.createElement('div');
-        textContainer.className = 'flex flex-col min-w-0 flex-1 ml-1 pr-6';
+        textContainer.className = 'flex flex-col min-w-0 flex-1 pr-9 pb-1';
 
         const toolName = document.createElement('h3');
         toolName.className =
           'font-bold text-base leading-tight text-darker dark:text-dark-text group-hover:text-accent dark:group-hover:text-accent transition-colors text-left';
-        const toolKey = toolTranslationKeys[tool.name];
-        toolName.textContent = toolKey ? t(`${toolKey}.name`) : tool.name;
+        toolName.textContent = getToolDisplayName(tool);
         textContainer.appendChild(toolName);
 
         if (tool.subtitle) {
           const toolSubtitle = document.createElement('p');
           toolSubtitle.className =
-            'text-sm leading-snug font-medium text-muted dark:text-slate-400 mt-1 line-clamp-2 text-left';
-          toolSubtitle.textContent = toolKey
-            ? t(`${toolKey}.subtitle`)
-            : tool.subtitle;
+            'text-sm leading-snug font-medium text-muted dark:text-slate-400 mt-1 text-left';
+          toolSubtitle.textContent = getToolSubtitle(tool);
           textContainer.appendChild(toolSubtitle);
         }
 
@@ -599,7 +625,7 @@ const init = async () => {
           toggleToolFavorite(toolId);
         });
 
-        toolCard.append(iconContainer, textContainer, favBtn);
+        toolCard.append(textContainer, iconContainer, favBtn);
         toolsContainer.appendChild(toolCard);
       });
 
@@ -1126,11 +1152,24 @@ const init = async () => {
 
     const allShortcuts = ShortcutsManager.getAllShortcuts();
     const isMac = navigator.userAgent.toUpperCase().includes('MAC');
+    const currentLang = getLanguageFromUrl();
     const shortcutCategories = categories
-      .map((category) => ({
-        ...category,
-        tools: category.tools.filter((tool) => !isToolDisabled(tool.id)),
-      }))
+      .map((category) => {
+        const enabledTools = category.tools.filter(
+          (tool) => !isToolDisabled(tool.id)
+        );
+        const sortedTools = [...enabledTools].sort((a, b) =>
+          getToolDisplayName(a).localeCompare(
+            getToolDisplayName(b),
+            currentLang,
+            { sensitivity: 'base' }
+          )
+        );
+        return {
+          ...category,
+          tools: sortedTools,
+        };
+      })
       .filter((category) => category.tools.length > 0);
     const allTools = shortcutCategories.flatMap((c) => c.tools);
 
@@ -1173,8 +1212,7 @@ const init = async () => {
 
         const name = document.createElement('span');
         name.className = 'text-slate-200 font-medium';
-        const toolKey = toolTranslationKeys[tool.name];
-        name.textContent = toolKey ? t(`${toolKey}.name`) : tool.name;
+        name.textContent = getToolDisplayName(tool);
 
         left.append(icon, name);
 
