@@ -77,7 +77,7 @@ load_supported_ocr_languages() {
     exit 1
   fi
 
-  SUPPORTED_OCR_LANGUAGES_RAW=$(node -e "const fs = require('fs'); const source = fs.readFileSync(process.argv[1], 'utf8'); const languages = []; const pattern = /^\\s*([a-z0-9_]+):\\s*'([^']+)'/gm; let match; while ((match = pattern.exec(source)) !== null) { languages.push(match[1] + '\\t' + match[2]); } process.stdout.write(languages.join('\\n'));" "$TESSERACT_LANGUAGE_CONFIG")
+  SUPPORTED_OCR_LANGUAGES_RAW=$(bun -e "const fs = require('fs'); const source = fs.readFileSync(process.argv[1], 'utf8'); const languages = []; const pattern = /^\\s*([a-z0-9_]+):\\s*'([^']+)'/gm; let match; while ((match = pattern.exec(source)) !== null) { languages.push(match[1] + '\\t' + match[2]); } process.stdout.write(languages.join('\\n'));" "$TESSERACT_LANGUAGE_CONFIG")
 
   if [ -z "$SUPPORTED_OCR_LANGUAGES_RAW" ]; then
     error "Failed to load supported OCR languages from ${TESSERACT_LANGUAGE_CONFIG}"
@@ -153,7 +153,7 @@ load_required_ocr_fonts() {
     exit 1
   fi
 
-  OCR_FONT_MANIFEST_RAW=$(node -e "const fs = require('fs'); const source = fs.readFileSync(process.argv[1], 'utf8'); const selected = (process.argv[2] || '').split(',').map((value) => value.trim()).filter(Boolean); const sections = source.split('export const fontFamilyToUrl'); const languageSection = sections[0] || ''; const fontSection = sections[1] || ''; const languageToFamily = {}; const fontFamilyToUrl = {}; let match; const languagePattern = /^\s*([a-z_]+):\s*'([^']+)',/gm; while ((match = languagePattern.exec(languageSection)) !== null) { languageToFamily[match[1]] = match[2]; } const fontPattern = /^\s*'([^']+)':\s*'([^']+)',/gm; while ((match = fontPattern.exec(fontSection)) !== null) { fontFamilyToUrl[match[1]] = match[2]; } const families = new Set(['Noto Sans']); for (const lang of selected) { families.add(languageToFamily[lang] || 'Noto Sans'); } const lines = Array.from(families).sort().map((family) => { const url = fontFamilyToUrl[family] || fontFamilyToUrl['Noto Sans']; const fileName = url.split('/').pop(); return [family, url, fileName].join('\t'); }); process.stdout.write(lines.join('\n'));" "$FONT_MAPPING_CONFIG" "$OCR_LANGUAGES")
+  OCR_FONT_MANIFEST_RAW=$(bun -e "const fs = require('fs'); const source = fs.readFileSync(process.argv[1], 'utf8'); const selected = (process.argv[2] || '').split(',').map((value) => value.trim()).filter(Boolean); const sections = source.split('export const fontFamilyToUrl'); const languageSection = sections[0] || ''; const fontSection = sections[1] || ''; const languageToFamily = {}; const fontFamilyToUrl = {}; let match; const languagePattern = /^\s*([a-z_]+):\s*'([^']+)',/gm; while ((match = languagePattern.exec(languageSection)) !== null) { languageToFamily[match[1]] = match[2]; } const fontPattern = /^\s*'([^']+)':\s*'([^']+)',/gm; while ((match = fontPattern.exec(fontSection)) !== null) { fontFamilyToUrl[match[1]] = match[2]; } const families = new Set(['Noto Sans']); for (const lang of selected) { families.add(languageToFamily[lang] || 'Noto Sans'); } const lines = Array.from(families).sort().map((family) => { const url = fontFamilyToUrl[family] || fontFamilyToUrl['Noto Sans']; const fileName = url.split('/').pop(); return [family, url, fileName].join('\t'); }); process.stdout.write(lines.join('\n'));" "$FONT_MAPPING_CONFIG" "$OCR_LANGUAGES")
 
   if [ -z "$OCR_FONT_MANIFEST_RAW" ]; then
     error "Failed to resolve OCR font assets from ${FONT_MAPPING_CONFIG}"
@@ -268,13 +268,13 @@ fi
 check_prerequisites() {
   local missing=false
 
-  if ! command -v npm &>/dev/null; then
-    error "npm is required but not found. Install Node.js first."
+  if ! command -v bun &>/dev/null; then
+    error "bun is required but not found. Install Bun first: https://bun.sh"
     missing=true
   fi
 
   if [ "$SKIP_WASM" = false ] && ! command -v curl &>/dev/null; then
-    error "curl is required to download OCR language data."
+    error "curl is required to download WASM and OCR packages."
     missing=true
   fi
 
@@ -292,9 +292,9 @@ check_prerequisites() {
 read_versions() {
   PYMUPDF_VERSION=$(grep "pymupdf:" src/js/const/cdn-version.ts | grep -o "'[^']*'" | tr -d "'")
   GS_VERSION=$(grep "ghostscript:" src/js/const/cdn-version.ts | grep -o "'[^']*'" | tr -d "'")
-  APP_VERSION=$(node -p "require('./package.json').version")
-  TESSERACT_VERSION=$(node -p "require('./package-lock.json').packages['node_modules/tesseract.js'].version")
-  TESSERACT_CORE_VERSION=$(node -p "require('./package-lock.json').packages['node_modules/tesseract.js-core'].version")
+  APP_VERSION=$(bun -p "require('./package.json').version")
+  TESSERACT_VERSION=$(bun -e "const lock = Bun.JSONC.parse(require('fs').readFileSync('./bun.lock', 'utf8')); const spec = lock.packages['tesseract.js']?.[0] || ''; console.log(spec.split('@').pop() || '');")
+  TESSERACT_CORE_VERSION=$(bun -e "const lock = Bun.JSONC.parse(require('fs').readFileSync('./bun.lock', 'utf8')); const spec = lock.packages['tesseract.js-core']?.[0] || ''; console.log(spec.split('@').pop() || '');")
 
   if [ -z "$PYMUPDF_VERSION" ] || [ -z "$GS_VERSION" ] || [ -z "$TESSERACT_VERSION" ] || [ -z "$TESSERACT_CORE_VERSION" ]; then
     error "Failed to read external asset versions from the repository metadata"
@@ -632,35 +632,46 @@ else
   WASM_TMP=$(mktemp -d)
   trap 'rm -rf "$WASM_TMP"' EXIT
 
+  download_npm_tarball() {
+    local pkg_spec="$1"
+    local tarball_url
+    tarball_url=$(bun info "$pkg_spec" dist.tarball 2>/dev/null | tail -n 1 | tr -d '\r')
+    if [ -z "$tarball_url" ]; then
+      return 1
+    fi
+    local filename="${tarball_url##*/}"
+    curl -fsSL "$tarball_url" -o "$WASM_TMP/$filename"
+  }
+
   info "Downloading @bentopdf/pymupdf-wasm@${PYMUPDF_VERSION}..."
-  if ! (cd "$WASM_TMP" && npm pack "@bentopdf/pymupdf-wasm@${PYMUPDF_VERSION}" --quiet 2>&1); then
+  if ! download_npm_tarball "@bentopdf/pymupdf-wasm@${PYMUPDF_VERSION}"; then
     error "Failed to download @bentopdf/pymupdf-wasm@${PYMUPDF_VERSION}"
     error "Check your internet connection and that the package exists on npm."
     exit 1
   fi
 
   info "Downloading @bentopdf/gs-wasm@${GS_VERSION}..."
-  if ! (cd "$WASM_TMP" && npm pack "@bentopdf/gs-wasm@${GS_VERSION}" --quiet 2>&1); then
+  if ! download_npm_tarball "@bentopdf/gs-wasm@${GS_VERSION}"; then
     error "Failed to download @bentopdf/gs-wasm@${GS_VERSION}"
     error "Check your internet connection and that the package exists on npm."
     exit 1
   fi
 
   info "Downloading coherentpdf..."
-  if ! (cd "$WASM_TMP" && npm pack coherentpdf --quiet 2>&1); then
+  if ! download_npm_tarball "coherentpdf"; then
     error "Failed to download coherentpdf"
     error "Check your internet connection and that the package exists on npm."
     exit 1
   fi
 
   info "Downloading tesseract.js@${TESSERACT_VERSION}..."
-  if ! (cd "$WASM_TMP" && npm pack "tesseract.js@${TESSERACT_VERSION}" --quiet 2>&1); then
+  if ! download_npm_tarball "tesseract.js@${TESSERACT_VERSION}"; then
     error "Failed to download tesseract.js@${TESSERACT_VERSION}"
     exit 1
   fi
 
   info "Downloading tesseract.js-core@${TESSERACT_CORE_VERSION}..."
-  if ! (cd "$WASM_TMP" && npm pack "tesseract.js-core@${TESSERACT_CORE_VERSION}" --quiet 2>&1); then
+  if ! download_npm_tarball "tesseract.js-core@${TESSERACT_CORE_VERSION}"; then
     error "Failed to download tesseract.js-core@${TESSERACT_CORE_VERSION}"
     exit 1
   fi
@@ -776,7 +787,7 @@ else
   info "  Font Base:   ${OCR_FONT_BASE_URL}"
   info "  Languages:   ${OCR_LANGUAGES}"
   echo ""
-  info "Building... this may take a few minutes (npm install + Vite build)."
+  info "Building... this may take a few minutes (bun install + Vite build)."
   echo ""
 
   docker build -f "$DOCKERFILE" "${BUILD_ARGS[@]}" -t "$IMAGE_NAME" .

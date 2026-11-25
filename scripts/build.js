@@ -22,12 +22,12 @@ function processFile(filePath) {
   try {
     // 1. Obfuscate the file
     console.log(`Obfuscating: ${filePath}`);
-    const obfuscateCmd = `npx javascript-obfuscator "${filePath}" --output "${outputPath}"`;
+    const obfuscateCmd = `bunx javascript-obfuscator "${filePath}" --output "${outputPath}"`;
     execSync(obfuscateCmd);
 
     // 2. Minify the obfuscated file using Terser
     console.log(`Minifying: ${outputPath}`);
-    const minifyCmd = `npx terser "${outputPath}" -o "${outputPath}" --compress --mangle`;
+    const minifyCmd = `bunx terser "${outputPath}" -o "${outputPath}" --compress --mangle`;
     execSync(minifyCmd);
 
     console.log(`Success: ${outputPath}`);

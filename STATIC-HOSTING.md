@@ -92,7 +92,7 @@ emit canonicals, hreflang, and structured data pointing at your domain.
   ```
 - Netlify, Vercel, GitHub Pages, or any other static host: set `SITE_URL`
   in your project's environment variables and re-deploy. The build script
-  reads it during `npm run build`.
+  reads it during `bun run build`.
 
 ### Stay invisible to search engines (no SEO competition either way)
 

@@ -37,7 +37,7 @@ public/sitemap.xml
 security-headers.conf
 security-headers-docs.conf
 
-# CodeQL local scan artifacts (npm run security:codeql)
+# CodeQL local scan artifacts (bun run security:codeql)
 codeql-db/
 codeql-results.sarif
 codeql-results.csv

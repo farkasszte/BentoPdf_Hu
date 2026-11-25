@@ -23,26 +23,26 @@ PDF-szerkesztő (vízjel, aláírás, oldallábléc, szöveg, megjegyzések…),
 
 ## Követelmények
 
-- Node.js 22+ és npm
+- [Bun](https://bun.sh) 1.2+ (és Node.js 22+ a build szkriptekhez)
 - GitHub-hozzáférés az egyes `file:` és git-függőségek telepítéséhez
   (`bentopdf-pdfium`, `bentopdf-viewer` a `vendor/`-ban; `xlsx` a CDN SheetJS-ről jön)
 
 ## Fejlesztés
 
 ```bash
-npm install          # először (GitHub/működő npm-források kellenek hozzá)
-npm run dev          # Vite dev szerver (localhost:3000)
+bun install          # először (GitHub/működő npm-források kellenek hozzá)
+bun run dev          # Vite dev szerver (localhost:3000)
 ```
 
 ## Éles build + előnézet
 
 ```bash
-npm run build        # tsc + vite build + i18n oldalak, sitemap, biztonsági fejlécek → dist/
-npm run preview      # a buildelt dist/ helyi előnézete
+bun run build        # tsc + vite build + i18n oldalak, sitemap, biztonsági fejlécek → dist/
+bun run preview      # a buildelt dist/ helyi előnézete
 ```
 
-`npm run build:production` a CDN-alapú építéshez; `npm run build:gzip` / `:brotli` / `:all`
-a tömörített változatokhoz (`variable COMPRESSION_MODE=…`).
+`bun run build:production` a CDN-alapú építéshez; `bun run build:gzip` / `:brotli` / `:all`
+a tömörített változatokhoz (`COMPRESSION_MODE=…`).
 
 ## Deploy
 
@@ -66,7 +66,8 @@ git push -u origin main
 ### Vercel
 
 1. Importáld a repót a Vercelben. A `vercel.json` már beállítja:
-   - build parancs: `npm run build`
+   - install parancs: `bun install`
+   - build parancs: `bun run build`
    - output könyvtár: `dist`
    - `BASE_URL=/` (gyökéren jelenik meg).
 2. Várj az automatikus buildre — kész. (Előnézet is készül minden push-ra.)
@@ -83,7 +84,7 @@ git push -u origin main
      workflow-ban a `BASE_URL`-t `/`-ra kell venni.
 
 > A buildhez nincs `git:` függőség: a `vendor/`-beli tarballok és a
-> `xlsx` (cdn.sheetjs.com) önállóan telepíthetők `npm ci`-vel.
+> `xlsx` (cdn.sheetjs.com) önállóan telepíthetők `bun install --frozen-lockfile`-lal.
 
 > **⚠️ SITE_URL (kötelező beállítani!)** A sitemap, a canonical/og URL-ek és a
 > JSON-LD a buildkor a `SITE_URL` env-ből épül, alapértelmezésben
@@ -93,7 +94,7 @@ git push -u origin main
 > - **Vercel**: _Project → Settings → Environment Variables_ → `SITE_URL = https://<a-te-domained>/`
 > - **Pages**: a workflow-ban a `Build` lépéshez `SITE_URL=https://<felhasznalo>.github.io/<repo-neve>/`
 >   (projekt-repó) env.
->   Helyileg: `SITE_URL=https://… npm run build`.
+>   Helyileg: `SITE_URL=https://… bun run build`.
 
 ## Takarítás (elhagyható, személyes döntés)
 
@@ -107,9 +108,9 @@ infrastruktúra, ha nem kell: `Dockerfile*`, `docker-compose*.yml`,
 ## Tesztelés
 
 ```bash
-npm run test:run     # Vitest unit tesztek
-npm run lint         # ESLint
-npm run security:audit  # npm audit + biztonsági lint
+bun run test:run        # Vitest unit tesztek
+bun run lint            # ESLint
+bun run security:audit  # bun audit + biztonsági lint
 ```
 
 ## Licenc és AGPL-megfelelés

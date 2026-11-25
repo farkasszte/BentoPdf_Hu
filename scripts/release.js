@@ -122,7 +122,7 @@ function main() {
 
   // 4. Build and package the distribution files
   console.log(`📦 Building and packaging distribution files...`);
-  execSync('npm run package', { stdio: 'inherit' });
+  execSync('bun run package', { stdio: 'inherit' });
   console.log(`📦 Distribution files packaged successfully`);
 
   // 5. Push everything to main

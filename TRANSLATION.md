@@ -74,7 +74,7 @@ BentoPDF uses a **static pre-rendering** approach for SEO-optimized i18n:
 3. Add Japanese to `supportedLanguages` and `languageNames` in `src/js/i18n/i18n.ts`
 4. Add `'ja'` to `SUPPORTED_LANGUAGES` in `vite.config.ts`
 5. Restart the dev server
-6. Run `npm run build` to generate static language pages
+6. Run `bun run build` to generate static language pages
 7. Test thoroughly
 
 ---
@@ -173,7 +173,7 @@ const SUPPORTED_LANGUAGES = [
 
 ```bash
 # Restart the dev server
-npm run dev
+bun run dev
 
 # Visit the Japanese version
 # http://localhost:5173/ja/
@@ -183,7 +183,7 @@ npm run dev
 
 ```bash
 # Run build (includes i18n page generation)
-npm run build
+bun run build
 
 # Verify files were created
 ls dist/ja/
@@ -329,7 +329,7 @@ In `common.json`:
 1. **Start development server:**
 
    ```bash
-   npm run dev
+   bun run dev
    ```
 
 2. **Visit each language:**
@@ -541,7 +541,7 @@ const SUPPORTED_LANGUAGES = [
 After updating, restart the dev server:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 ---
@@ -558,7 +558,7 @@ When adding a new language, make sure these files are updated:
 - [ ] Test settings modal and shortcuts
 - [ ] Test language switcher in footer
 - [ ] Verify URL routing works (`/{lang}/`)
-- [ ] Run `npm run build` and verify `dist/{lang}/` folder is created
+- [ ] Run `bun run build` and verify `dist/{lang}/` folder is created
 - [ ] Test that all tools load correctly
 
 ---

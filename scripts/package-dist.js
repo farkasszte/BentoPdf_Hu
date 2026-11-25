@@ -11,11 +11,14 @@ const version = packageJson.version;
 import { createWriteStream, existsSync } from 'fs';
 import archiver from 'archiver';
 
-function buildAndZip(label, envVars, zipName) {
+function buildAndZip(label, envOverrides, zipName) {
   console.log(`📦 Building ${label} dist for version ${version}...`);
 
   try {
-    execSync(`${envVars} npm run build`, { stdio: 'inherit', shell: true });
+    execSync('bun run build', {
+      stdio: 'inherit',
+      env: { ...process.env, ...envOverrides },
+    });
     console.log(`✅ ${label} build completed successfully`);
   } catch (error) {
     console.error(`❌ ${label} build failed:`, error.message);
@@ -50,9 +53,9 @@ function buildAndZip(label, envVars, zipName) {
   });
 }
 
-await buildAndZip('Full mode', '', `dist-${version}.zip`);
+await buildAndZip('Full mode', {}, `dist-${version}.zip`);
 await buildAndZip(
   'Simple mode',
-  'SIMPLE_MODE=true',
+  { SIMPLE_MODE: 'true' },
   `dist-simple-${version}.zip`
 );

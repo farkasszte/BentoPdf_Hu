@@ -320,11 +320,13 @@ export function uint8ArrayToBase64(bytes: Uint8Array): string {
 export function sanitizeEmailHtml(html: string): string {
   if (!html) return html;
 
-  let sanitized = DOMPurify.sanitize(html, {
+  const sanitizeOptions = {
     FORBID_TAGS: ['style', 'link', 'script', 'iframe', 'object', 'embed'],
     FORBID_ATTR: ['style'],
     ALLOW_DATA_ATTR: false,
-  });
+  };
+
+  let sanitized = DOMPurify.sanitize(html, sanitizeOptions);
 
   sanitized = sanitized.replace(
     /href=["']https?:\/\/[^"']*safelinks\.protection\.outlook\.com[^"']*url=([^&"']+)[^"']*["']/gi,
@@ -351,16 +353,17 @@ export function sanitizeEmailHtml(html: string): string {
     (_match, url: string) => {
       const baseUrl = url.split('?')[0];
       if (baseUrl && baseUrl.length < 200) {
-        return `href="${baseUrl}"`;
+        return `href="${escapeHtml(baseUrl)}"`;
       }
-      return `href="${url.substring(0, 200)}"`;
+      return `href="${escapeHtml(url.substring(0, 200))}"`;
     }
   );
   sanitized = sanitized.replace(
     /<img[^>]*(?:width=["']1["'][^>]*height=["']1["']|height=["']1["'][^>]*width=["']1["'])[^>]*\/?>/gi,
     ''
   );
-  sanitized = sanitized.replace(/<\/?table[^>]*>/gi, '<div>');
+  sanitized = sanitized.replace(/<table[^>]*>/gi, '<div>');
+  sanitized = sanitized.replace(/<\/table>/gi, '</div>');
   sanitized = sanitized.replace(/<\/?(tbody|thead|tfoot)[^>]*>/gi, '');
   sanitized = sanitized.replace(/<tr[^>]*>/gi, '<div>');
   sanitized = sanitized.replace(/<\/tr>/gi, '</div>');
@@ -383,7 +386,7 @@ export function sanitizeEmailHtml(html: string): string {
     }
   }
 
-  return sanitized;
+  return DOMPurify.sanitize(sanitized, sanitizeOptions);
 }
 
 /**

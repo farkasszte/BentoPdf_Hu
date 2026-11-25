@@ -30,9 +30,9 @@ git add .
 git commit -m "Add new PDF watermark feature"
 
 # 2. Choose your release type and run
-npm run release        # Patch: 1.0.0 → 1.0.1 (bug fixes, small improvements)
-npm run release:minor  # Minor: 1.0.0 → 1.1.0 (new features, backward compatible)
-npm run release:major  # Major: 1.0.0 → 2.0.0 (breaking changes)
+bun run release        # Patch: 1.0.0 → 1.0.1 (bug fixes, small improvements)
+bun run release:minor  # Minor: 1.0.0 → 1.1.0 (new features, backward compatible)
+bun run release:major  # Major: 1.0.0 → 2.0.0 (breaking changes)
 ```
 
 **What Happens:**
@@ -63,7 +63,7 @@ Changes not staged for commit:
 **❌ This Will Fail:**
 
 ```bash
-npm run release
+bun run release
 # Error: Your local changes would be overwritten by merge
 ```
 
@@ -74,14 +74,14 @@ npm run release
 ```bash
 git add .
 git commit -m "Add new features and improvements"
-npm run release
+bun run release
 ```
 
 **Option B: Stash Changes Temporarily**
 
 ```bash
 git stash
-npm run release
+bun run release
 git stash pop  # Restore your changes after release
 ```
 
@@ -90,7 +90,7 @@ git stash pop  # Restore your changes after release
 ```bash
 git add package.json src/js/main.js
 git commit -m "Add core improvements"
-npm run release
+bun run release
 git add README.md
 git commit -m "Update documentation"
 ```
@@ -109,7 +109,7 @@ git add src/js/bug-fix.js
 git commit -m "Fix critical PDF rendering issue"
 
 # 2. Release as patch (bug fix)
-npm run release
+bun run release
 # This creates: 1.0.0 → 1.0.1
 ```
 
@@ -133,7 +133,7 @@ git add .
 git commit -m "Add major PDF editing features and API changes"
 
 # 2. Release as major version
-npm run release:major
+bun run release:major
 # This creates: 1.0.0 → 2.0.0
 ```
 
@@ -157,9 +157,9 @@ git add .
 git commit -m "Add multiple PDF tools: watermark, encryption, and compression"
 
 # 2. Choose appropriate release type
-npm run release:minor  # For new features (1.0.0 → 1.1.0)
+bun run release:minor  # For new features (1.0.0 → 1.1.0)
 # OR
-npm run release:major  # For breaking changes (1.0.0 → 2.0.0)
+bun run release:major  # For breaking changes (1.0.0 → 2.0.0)
 ```
 
 ---
@@ -177,7 +177,7 @@ git add src/js/main.js
 git commit -m "Test release process"
 
 # 2. Run patch release
-npm run release
+bun run release
 # This creates: 1.0.0 → 1.0.1
 
 # 3. Verify everything works
@@ -195,9 +195,9 @@ git reset --hard HEAD~1
 
 | Scenario            | Command                 | Version Change  | When to Use                          |
 | ------------------- | ----------------------- | --------------- | ------------------------------------ |
-| **Bug Fix**         | `npm run release`       | `1.0.0 → 1.0.1` | Fixing bugs, small improvements      |
-| **New Feature**     | `npm run release:minor` | `1.0.0 → 1.1.0` | Adding features, backward compatible |
-| **Breaking Change** | `npm run release:major` | `1.0.0 → 2.0.0` | API changes, major rewrites          |
+| **Bug Fix**         | `bun run release`       | `1.0.0 → 1.0.1` | Fixing bugs, small improvements      |
+| **New Feature**     | `bun run release:minor` | `1.0.0 → 1.1.0` | Adding features, backward compatible |
+| **Breaking Change** | `bun run release:major` | `1.0.0 → 2.0.0` | API changes, major rewrites          |
 
 ---
 
@@ -259,7 +259,7 @@ You need to add these secrets to your GitHub repository:
 ```bash
 git add .
 git commit -m "Your commit message"
-npm run release
+bun run release
 ```
 
 ### **❌ "Permission denied" in GitHub Actions**
@@ -292,7 +292,7 @@ npm run release
 echo "// Test" >> src/js/main.js
 git add src/js/main.js
 git commit -m "Test release"
-npm run release
+bun run release
 ```
 
 ### **Verify Results:**
@@ -314,4 +314,4 @@ git reset --hard HEAD~1
 
 ## 🎉 **That's It!**
 
-Your release system is now ready! Just follow the scenarios above based on your situation and run the appropriate `npm run release` command.
+Your release system is now ready! Just follow the scenarios above based on your situation and run the appropriate `bun run release` command.
